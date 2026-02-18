@@ -120,57 +120,57 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AGNT-01 | TBD | Pending |
-| AGNT-02 | TBD | Pending |
-| AGNT-03 | TBD | Pending |
-| AGNT-04 | TBD | Pending |
-| AGNT-05 | TBD | Pending |
-| AGNT-06 | TBD | Pending |
-| AGNT-07 | TBD | Pending |
-| AGNT-08 | TBD | Pending |
-| AGNT-09 | TBD | Pending |
-| AGNT-10 | TBD | Pending |
-| ISMS-01 | TBD | Pending |
-| ISMS-02 | TBD | Pending |
-| ISMS-03 | TBD | Pending |
-| ISMS-04 | TBD | Pending |
-| ISMS-05 | TBD | Pending |
-| ISMS-06 | TBD | Pending |
-| ISMS-07 | TBD | Pending |
-| ISMS-08 | TBD | Pending |
-| ISMS-09 | TBD | Pending |
-| AIMS-01 | TBD | Pending |
-| AIMS-02 | TBD | Pending |
-| AIMS-03 | TBD | Pending |
-| AIMS-04 | TBD | Pending |
-| AIMS-05 | TBD | Pending |
-| AIMS-06 | TBD | Pending |
-| OVLY-01 | TBD | Pending |
-| OVLY-02 | TBD | Pending |
-| OVLY-03 | TBD | Pending |
-| TISX-01 | TBD | Pending |
-| TISX-02 | TBD | Pending |
-| TISX-03 | TBD | Pending |
-| OPCT-01 | TBD | Pending |
-| OPCT-02 | TBD | Pending |
-| OPCT-03 | TBD | Pending |
-| OPCT-04 | TBD | Pending |
-| OPCT-05 | TBD | Pending |
-| OPCT-06 | TBD | Pending |
-| SENG-01 | TBD | Pending |
-| SENG-02 | TBD | Pending |
-| SENG-03 | TBD | Pending |
-| SENG-04 | TBD | Pending |
-| SENG-05 | TBD | Pending |
-| TOOL-01 | TBD | Pending |
-| TOOL-02 | TBD | Pending |
-| TOOL-03 | TBD | Pending |
+| AGNT-01 | Phase 6 | Pending |
+| AGNT-02 | Phase 4 | Pending |
+| AGNT-03 | Phase 2 | Pending |
+| AGNT-04 | Phase 6 | Pending |
+| AGNT-05 | Phase 6 | Pending |
+| AGNT-06 | Phase 6 | Pending |
+| AGNT-07 | Phase 4 | Pending |
+| AGNT-08 | Phase 1 | Pending |
+| AGNT-09 | Phase 1 | Pending |
+| AGNT-10 | Phase 10 | Pending |
+| ISMS-01 | Phase 2 | Pending |
+| ISMS-02 | Phase 2 | Pending |
+| ISMS-03 | Phase 3 | Pending |
+| ISMS-04 | Phase 3 | Pending |
+| ISMS-05 | Phase 3 | Pending |
+| ISMS-06 | Phase 3 | Pending |
+| ISMS-07 | Phase 7 | Pending |
+| ISMS-08 | Phase 7 | Pending |
+| ISMS-09 | Phase 2 | Pending |
+| AIMS-01 | Phase 2 | Pending |
+| AIMS-02 | Phase 5 | Pending |
+| AIMS-03 | Phase 5 | Pending |
+| AIMS-04 | Phase 5 | Pending |
+| AIMS-05 | Phase 5 | Pending |
+| AIMS-06 | Phase 5 | Pending |
+| OVLY-01 | Phase 1 | Pending |
+| OVLY-02 | Phase 1 | Pending |
+| OVLY-03 | Phase 1 | Pending |
+| TISX-01 | Phase 8 | Pending |
+| TISX-02 | Phase 8 | Pending |
+| TISX-03 | Phase 8 | Pending |
+| OPCT-01 | Phase 7 | Pending |
+| OPCT-02 | Phase 7 | Pending |
+| OPCT-03 | Phase 7 | Pending |
+| OPCT-04 | Phase 7 | Pending |
+| OPCT-05 | Phase 7 | Pending |
+| OPCT-06 | Phase 7 | Pending |
+| SENG-01 | Phase 4 | Pending |
+| SENG-02 | Phase 4 | Pending |
+| SENG-03 | Phase 4 | Pending |
+| SENG-04 | Phase 4 | Pending |
+| SENG-05 | Phase 4 | Pending |
+| TOOL-01 | Phase 9 | Pending |
+| TOOL-02 | Phase 9 | Pending |
+| TOOL-03 | Phase 9 | Pending |
 
 **Coverage:**
 - v1 requirements: 45 total
-- Mapped to phases: 0
-- Unmapped: 45 (pending roadmap creation)
+- Mapped to phases: 45
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-18*
-*Last updated: 2026-02-18 after initial definition*
+*Last updated: 2026-02-18 after roadmap creation*
