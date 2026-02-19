@@ -44,8 +44,8 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 ### Startup Overlay
 
 - [x] **OVLY-01**: SDLC-v2 Startup phase extraction produced — maps which v2 sections apply NOW vs. Growth vs. Enterprise, with explicit "not yet" justifications
-- [ ] **OVLY-02**: Role consolidation mapping produced — 8 SDLC-v2 personas collapsed to 5 humans + 7 agents with RACI matrix
-- [ ] **OVLY-03**: Gate model simplified for startup — risk-tiered gates compressed, governance consolidated into 2 meetings (Weekly Technical + Monthly Strategic)
+- [x] **OVLY-02**: Role consolidation mapping produced — 8 SDLC-v2 personas collapsed to 5 humans + 7 agents with RACI matrix
+- [x] **OVLY-03**: Gate model simplified for startup — risk-tiered gates compressed, governance consolidated into 2 meetings (Weekly Technical + Monthly Strategic)
 
 ### TISAX Maintenance
 
@@ -146,8 +146,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AIMS-05 | Phase 5 | Pending |
 | AIMS-06 | Phase 5 | Pending |
 | OVLY-01 | Phase 1 | Complete |
-| OVLY-02 | Phase 1 | Pending |
-| OVLY-03 | Phase 1 | Pending |
+| OVLY-02 | Phase 1 | Complete |
+| OVLY-03 | Phase 1 | Complete |
 | TISX-01 | Phase 8 | Pending |
 | TISX-02 | Phase 8 | Pending |
 | TISX-03 | Phase 8 | Pending |

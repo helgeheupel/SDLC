@@ -12,7 +12,7 @@ This roadmap delivers a hierarchical system of 7 Claude Code AI agents and the f
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-v2 to startup-weight, define agent interaction model, establish subagent protocol
+- [x] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-v2 to startup-weight, define agent interaction model, establish subagent protocol
 - [ ] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
 - [ ] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
 - [ ] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
@@ -40,8 +40,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md -- Startup SDLC companion document sections 1-8 (OVLY-01)
 - [x] 01-02-PLAN.md -- Agent interaction model, subagent protocol, handoff template, directory structure (AGNT-08, AGNT-09)
-- [ ] 01-03-PLAN.md -- Startup SDLC companion document sections 9-18 (OVLY-01)
-- [ ] 01-04-PLAN.md -- RACI matrix and 2-meeting governance model (OVLY-02, OVLY-03)
+- [x] 01-03-PLAN.md -- Startup SDLC companion document sections 9-18 (OVLY-01)
+- [x] 01-04-PLAN.md -- RACI matrix and 2-meeting governance model (OVLY-02, OVLY-03)
 
 ### Phase 2: CISO Agent and IS/AI Policy Foundation
 **Goal**: The CISO Agent exists and has produced the foundational policy documents that every downstream agent and artifact depends on
@@ -189,7 +189,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Startup Overlay and Agent Foundation | 2/4 | In progress | - |
+| 1. Startup Overlay and Agent Foundation | 4/4 | Complete | 2026-02-19 |
 | 2. CISO Agent and IS/AI Policy Foundation | 0/TBD | Not started | - |
 | 3. Risk Framework and Statement of Applicability | 0/TBD | Not started | - |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
