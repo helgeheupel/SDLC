@@ -22,6 +22,8 @@ This Information Security Policy establishes the information security governance
 
 This policy exists within the Integrated Management System (IMS) defined in the IMS Context preamble (HH-IMS-CTX-001). The IMS Context establishes the relationship between the ISMS (ISO 27001:2022) and the AIMS (ISO 42001:2023) as one integrated management system.
 
+The operational procedures supporting this policy are documented in the Information Security Policy Operational Annex (HH-ISMS-POL-001-ANNEX).
+
 ### Applicability
 
 This policy applies to:
