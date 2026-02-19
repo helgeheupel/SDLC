@@ -11,7 +11,7 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 
 - [ ] **AGNT-01**: SDLC Lead Agent created as CEO's primary orchestrator — can spawn and coordinate all 6 specialist agents and subagents
 - [ ] **AGNT-02**: CTO Agent (Architecture + AI Engineering) created with PSA + CAIE domain expertise — can spawn subagents for architecture analysis, code review, technology evaluation
-- [ ] **AGNT-03**: CISO Agent (Security + EU Compliance + AI Governance) created with EU-CA + AIGO + partial US-CA expertise — can spawn subagents for risk assessment, policy drafting, gap analysis
+- [x] **AGNT-03**: CISO Agent (Security + EU Compliance + AI Governance) created with EU-CA + AIGO + partial US-CA expertise — can spawn subagents for risk assessment, policy drafting, gap analysis
 - [ ] **AGNT-04**: Head of AI Science Agent created with CAIS expertise — can spawn subagents for model evaluation, AI strategy, research assessment
 - [ ] **AGNT-05**: Head of Platform/SRE Agent created with PSRE expertise — can spawn subagents for SLO design, observability, incident response, BCP/DR planning
 - [ ] **AGNT-06**: Product/Strategy Lead Agent created with CSA expertise — can spawn subagents for market analysis, OKR design, portfolio governance
@@ -122,7 +122,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | AGNT-01 | Phase 6 | Pending |
 | AGNT-02 | Phase 4 | Pending |
-| AGNT-03 | Phase 2 | Pending |
+| AGNT-03 | Phase 2 | Complete |
 | AGNT-04 | Phase 6 | Pending |
 | AGNT-05 | Phase 6 | Pending |
 | AGNT-06 | Phase 6 | Pending |
