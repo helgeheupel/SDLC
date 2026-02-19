@@ -13,7 +13,7 @@ This roadmap delivers a hierarchical system of 7 Claude Code AI agents and the f
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-Growth-v2 to startup-weight, define agent interaction model, establish subagent protocol
-- [ ] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
+- [x] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
 - [ ] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
 - [ ] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
 - [ ] **Phase 5: AIMS Core and AI System Registry** - Produce AI System Registry, AI risk/impact assessment processes, ISO 42001 Annex A control mapping, AIMS PDCA documentation
@@ -56,9 +56,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- CISO Agent CLAUDE.md construction and domain context reference (AGNT-03)
-- [ ] 02-02-PLAN.md -- IMS Context + IS Policy + ISMS/AIMS scope statements (ISMS-01, ISMS-02)
-- [ ] 02-03-PLAN.md -- AI Policy + document control framework (AIMS-01, ISMS-09)
+- [x] 02-01-PLAN.md -- CISO Agent CLAUDE.md construction and domain context reference (AGNT-03)
+- [x] 02-02-PLAN.md -- IMS Context + IS Policy + ISMS/AIMS scope statements (ISMS-01, ISMS-02)
+- [x] 02-03-PLAN.md -- AI Policy + document control framework (AIMS-01, ISMS-09)
 
 ### Phase 3: Risk Framework and Statement of Applicability
 **Goal**: The organization has a validated risk posture and every ISO 27001 Annex A control has been assessed for applicability, creating the backbone for all control implementations
@@ -191,7 +191,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Startup Overlay and Agent Foundation | 4/4 | Complete | 2026-02-19 |
-| 2. CISO Agent and IS/AI Policy Foundation | 0/3 | Planned | - |
+| 2. CISO Agent and IS/AI Policy Foundation | 3/3 | Complete | 2026-02-19 |
 | 3. Risk Framework and Statement of Applicability | 0/TBD | Not started | - |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
 | 5. AIMS Core and AI System Registry | 0/TBD | Not started | - |
