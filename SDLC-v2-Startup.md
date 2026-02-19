@@ -337,3 +337,424 @@ Patent-sensitive artifacts are stored in a dedicated repository with access cont
 **Growth Trigger:** N/A -- reference document, always applicable.
 
 ---
+
+## 5. Enterprise Risk Management Framework [v2 S.5]
+
+### 5.1 Risk Management Principles [v2 S.5.1]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| ISO 31000 risk management principles (5 principles) | [v2 S.5.1] | Startup | These are values, not mechanisms. All five principles (value creation, integration, structured/comprehensive, dynamic, best available information) apply from day one. Required for ISO 27001 and ISO 42001 certification. |
+
+**Startup Implementation:** Adopt all five risk management principles. Operationalize them through the simplified risk methodology described below: risk assessment embedded in SDLC phases, risk register as living artifact in Git, and risk activities informing every gate decision.
+
+**Growth Trigger:** No escalation needed; principles are phase-independent.
+
+### 5.2 Risk Appetite Statement [v2 S.5.2]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Risk appetite statement (general) | [v2 S.5.2] | Startup | Must define risk appetite for ISO 27001 certification. Management must approve it. |
+| Risk appetite by category (6 categories) | [v2 S.5.2.1] | Startup | All six categories (Strategic, Operational, Compliance, AI, Financial, Reputational) are relevant. The appetite levels defined in v2 are appropriate for Startup. |
+| Risk tolerance thresholds (5 levels with EUR values) | [v2 S.5.2.2] | Startup (simplified) | Adopt the threshold structure but adjust EUR values to Startup scale. Full quantitative thresholds assume Growth-stage revenue. |
+| Residual risk acceptance authority | [v2 S.5.2.3] | Startup (simplified) | CEO is the ultimate residual risk acceptance authority per user decision. Simplify the authority matrix: CEO accepts all High/Critical residual risk; team leads accept Low/Medium. |
+
+**Startup Implementation:** Produce a risk appetite statement covering all six categories with CEO approval. Simplify tolerance thresholds to Startup scale. Residual risk acceptance: Low/Medium by risk owner, High/Critical by CEO (not CTO/CISO split as in v2, because CEO covers CISO responsibilities at Startup per user decision).
+
+**Growth Trigger:** Dedicated CISO hired (6th person), enabling the dual CTO/CISO acceptance authority described in v2.
+
+### 5.3 Risk Taxonomy [v2 S.5.3]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Level 1 risk categories (6 categories) | [v2 S.5.3.1] | Startup | STR, OPS, CMP, AIR, FIN, REP categories provide comprehensive coverage. Adopt fully. |
+| Level 2 subcategories (~20 subcategories) | [v2 S.5.3.2] | Startup (simplified) | Adopt the most relevant subcategories: OPS.SEC (cybersecurity), CMP.CRT (certification), AIR.MDL (AI model risk), AIR.OUT (AI output risk). Full 20 subcategories adopted progressively. |
+| Level 3 specific risks (individual register entries) | [v2 S.5.3.3] | Growth | Full Level 3 taxonomy maintained as living catalog. Startup populates Level 3 as risks are identified (top 30 in initial workshop). |
+
+**Startup Implementation:** Adopt all 6 Level 1 categories. Use 10-12 most relevant Level 2 subcategories immediately (OPS.SEC, OPS.BCP, OPS.SUP, CMP.CRT, CMP.REG, CMP.DAT, AIR.DAT, AIR.MDL, AIR.OUT, STR.MKT, FIN.REV, REP.BRD). Populate Level 3 through initial risk workshop (target: top 30 risks). Remaining Level 2 subcategories added as the risk register matures.
+
+**Growth Trigger:** Risk register exceeds 50 entries, requiring full Level 2 subcategory coverage for effective classification.
+
+### 5.4 Risk Assessment Methodology [v2 S.5.4]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| 5x5 qualitative likelihood-impact matrix | [v2 S.5.4.1] | Startup | Required for ISO 27001 certification. Calibrated scales ensure consistent risk scoring. Adopt fully with the defined likelihood and impact scales. |
+| FAIR quantitative methodology + Monte Carlo | [v2 S.5.4.2] | Growth | Quantitative analysis requires specialized skills, tooling (RiskLens/SAFE One/Python), and sufficient risk data. Startup lacks the data volume and analyst capacity. |
+| IEC 31010 technique selection per SDLC phase | [v2 S.5.4.3] | Startup (simplified) | Use risk matrix for all phases. Add STRIDE/LINDDUN for threat modeling (Phase 1/Requirements). Add change risk scoring for deployments (Phase 4). Defer FMEA, BIA, Bow-Tie, Bayesian analysis, and Markov analysis to Growth. |
+
+**Startup Implementation:** Use the 5x5 qualitative matrix for all risk assessments. Adopt the calibrated likelihood scale (Rare through Almost Certain with annual probability bounds) and impact scale (Negligible through Severe across four dimensions). Risk rating = Likelihood x Impact with the four-level classification (Low 1-6, Medium 7-12, High 13-19, Critical 20-25). Defer FAIR quantitative analysis entirely.
+
+**Growth Trigger:** First risk requiring investment justification >EUR 100K, or auditor feedback requesting quantitative risk analysis.
+
+### 5.5 Risk Register Architecture [v2 S.5.5]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Risk entry schema (full JSON schema) | [v2 S.5.5.1] | Startup (simplified) | The full schema has 50+ fields including quantitative, AI-specific, and multi-framework compliance fields. Startup uses a simplified schema focused on certification-required fields. |
+| Risk register operations (GRC platform, automation, KRI feeds) | [v2 S.5.5.2] | Growth | Full GRC platform automation with KRI feeds from Azure Monitor/Sentinel requires infrastructure investment. Startup uses NorthGRC (per constraint) with manual entry. |
+
+**Startup Implementation:** Maintain risk register in YAML-in-Git format with simplified schema: riskId, title, description, category (L1), subcategory (L2), likelihood (1-5), impact (1-5), riskLevel, owner, treatment strategy, treatment actions, residualRiskLevel, status, affectedEntities, reviewDate. Sync with NorthGRC manually for evidence management. AI-specific fields (isAIRisk, iso23894Category, euAIActClassification) included for AI-related risks only.
+
+**Growth Trigger:** Risk register exceeds 50 entries or automated KRI feeds become available from monitoring infrastructure.
+
+### 5.6 Cross-Framework Risk Integration [v2 S.5.6]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Single assessment producing multiple framework outputs | [v2 S.5.6] | Growth | Cross-framework risk integration requires mature GRC tooling and familiarity with all seven framework requirements. Startup focuses on ISO 27001 + ISO 42001 integration only. |
+| Framework-specific evidence package generation | [v2 S.5.6.1] | Growth | Automated evidence package generation from a single assessment requires GRC platform automation. |
+
+**Startup Implementation:** Conduct risk assessments that satisfy both ISO 27001 (clause 6.1.2) and ISO 42001 (clause 6.1.2) simultaneously. For each risk, note whether it is an IS risk, AI risk, or both. Defer TISAX-, SOC 2-, NIS2-, FedRAMP-, and EU AI Act-specific evidence generation to Growth. NIS2 overlap with ISO 27001 is handled through shared controls.
+
+**Growth Trigger:** Pursuit of SOC 2 or FedRAMP certification requiring dedicated evidence packages.
+
+### 5.7 Risk Communication and Reporting [v2 S.5.7]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Real-time risk dashboard (role-based) | [v2 S.5.7.1] | Growth | Real-time dashboards require GRC platform integration and automated data feeds. |
+| Reporting cadence (KRI alerts, monthly, quarterly, annual) | [v2 S.5.7.2] | Startup (simplified) | Startup uses monthly risk reporting and quarterly full review. No real-time KRI alerts. |
+| Risk escalation protocol (KRI breach, score increases) | [v2 S.5.7.3] | Startup (simplified) | Simplified escalation: risk owner notifies CEO directly for High/Critical risks. No tiered escalation through ART-level management. |
+
+**Startup Implementation:** Monthly risk summary presented in the monthly strategic governance meeting. Quarterly full risk register review. Escalation protocol: risk owner raises High/Critical risks to CEO within 24 hours via direct communication. No automated KRI monitoring or real-time dashboards.
+
+**Growth Trigger:** Risk register exceeds 50 entries, or automated monitoring infrastructure enables real-time KRI feeds.
+
+### 5.8 Progressive Adoption of Risk Framework [v2 S.5.8]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Startup stage (months 0-6) requirements | [v2 S.5.8.1] | Startup | This IS the operative section. Describes exactly what to implement now. |
+| Growth stage (months 6-18) enhancements | [v2 S.5.8.2] | Growth | Reference only. Describes what to add when transitioning. |
+| Enterprise stage (months 18-36) full maturity | [v2 S.5.8.3] | Enterprise | Reference only. |
+
+**Startup Implementation:** Follow [v2 S.5.8.1] as the implementation checklist: (1) CEO-approved risk appetite statement, (2) full 3-level taxonomy adopted with Level 3 populated as risks are identified, (3) NorthGRC configured with simplified schema, (4) initial workshop to populate top 30 risks, (5) qualitative 5x5 matrix only, (6) CEO as enterprise risk owner, (7) quarterly full review + monthly top-10 review, (8) risk activities in Phase 0 (Orient) and Phase 4 (Deployment) gates.
+
+**Growth Trigger:** Growth stage triggers per [v2 S.5.8.2]: FAIR analysis for High/Critical risks, automated KRI feeds, monthly full review, real-time dashboard.
+
+---
+
+## 6. Unified Control Library and Compliance Matrix [v2 S.6]
+
+### 6.1 UCL Architecture [v2 S.6.1]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| UCL purpose and scope (single source of truth for all frameworks) | [v2 S.6.1.1] | Startup | The concept of a unified control library applies from day one, even if Startup implements only a subset. |
+| Three-tier architecture (canonical, framework-specific, entity-specific) | [v2 S.6.1.2] | Growth | Startup needs only Tier 1 canonical controls (~140). Framework-specific extensions (Tier 2) and entity-specific implementations (Tier 3) add complexity without value at <20 people. |
+| UCL schema (YAML per control) | [v2 S.6.1.3] | Startup | Machine-readable controls enable automation from day one. Start with ISO 27001 Annex A (93 controls) + ISO 42001 Annex A. Simplified YAML schema. |
+| UCL domain taxonomy (20 domains) | [v2 S.6.1.4] | Startup | Adopt the full 20-domain taxonomy as an organizational framework even if not all domains have controls populated yet. Provides structure for future growth. |
+| UCL storage and maintenance | [v2 S.6.1.5] | Growth | Quarterly review cycle, SLA-driven maintenance, and formal change process are Growth-appropriate. Startup reviews controls as needed. |
+
+**Startup Implementation:** Create UCL YAML files for ISO 27001 Annex A controls (93) and ISO 42001 Annex A controls. Use the 20-domain taxonomy to organize them. Store in Git under `ucl/` directory. Focus on Tier 1 canonical controls only. Skip framework-specific extensions (Tier 2) and entity-specific variations (Tier 3) until additional certifications are pursued.
+
+**Growth Trigger:** First enterprise customer requires formal certification evidence beyond ISO 27001 + ISO 42001, or first TISAX assessment requires framework-specific control evidence.
+
+### 6.2 Cross-Framework Control Mapping [v2 S.6.2]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| 42-domain cross-framework mapping | [v2 S.6.2.1] | Growth | Full 7-framework mapping across 42 domains requires effort disproportionate to Startup scope (3 active frameworks). |
+| Implement-once leverage analysis | [v2 S.6.2.2] | Growth | Leverage analysis becomes valuable when pursuing 3+ certifications simultaneously. |
+
+**Startup Implementation:** Focus on ISO 27001 + ISO 42001 overlap only. Identify the ~45 controls shared across both frameworks as the highest-value implementation targets. Note TISAX overlap with ISO 27001 for maintenance purposes. Defer SOC 2, FedRAMP, NIS2-specific, and EU AI Act-specific control mappings.
+
+**Growth Trigger:** Pursuit of SOC 2 or additional certifications that justify full cross-framework mapping effort.
+
+### 6.3 Entity-Framework Applicability [v2 S.6.3]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Framework applicability by entity (GmbH, B.V., Inc.) | [v2 S.6.3.1] | Startup | Must determine which frameworks apply to which entity from day one. This drives the certification scope statement. |
+| UCL domain applicability by entity | [v2 S.6.3.2] | Startup (simplified) | Determine domain applicability for the 3 active frameworks (ISO 27001, ISO 42001, TISAX) only. Defer FedRAMP, SOC 2 domain applicability. |
+
+**Startup Implementation:** Produce an entity-framework applicability matrix for the Startup scope: ISO 27001 (all 3 entities), ISO 42001 (all 3 entities), TISAX (GmbH + B.V.), NIS2 (GmbH + B.V., overlap with ISO 27001), EU AI Act (GmbH + B.V.). Mark SOC 2 (Inc., deferred) and FedRAMP (Inc., deferred).
+
+**Growth Trigger:** Activation of SOC 2 or FedRAMP certification drives full entity-framework applicability analysis.
+
+### 6.4 Evidence Automation Architecture [v2 S.6.4]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Evidence lifecycle (generation, validation, storage, retrieval, presentation) | [v2 S.6.4.1] | Growth | Full automated evidence lifecycle requires GRC platform integration and pipeline maturity. |
+| Evidence schema (JSON with attestation and retention) | [v2 S.6.4.2] | Growth | Structured evidence schema with Cosign signatures and retention policies is Growth-appropriate. |
+| CI/CD pipeline evidence generation | [v2 S.6.4.3] | Startup (simplified) | Start with basic pipeline evidence: SAST reports, SCA dependency reports, test results. Store as artifacts in Git or CI system. No structured evidence schema or attestation yet. |
+| Runtime evidence collection | [v2 S.6.4.4] | Growth | Azure Policy, Defender, Sentinel evidence feeds require infrastructure setup. |
+| GRC platform integration | [v2 S.6.4.5] | Growth | NorthGRC is the GRC platform (per constraint). Full API integration deferred. Manual evidence upload at Startup. |
+
+**Startup Implementation:** Collect evidence manually + from CI/CD pipelines (SAST, SCA, test results). Store evidence in Git alongside the artifacts they attest to. Upload relevant evidence to NorthGRC manually for audit readiness. No automated evidence ingestion, schema validation, or Sigstore attestation.
+
+**Growth Trigger:** Evidence collection burden exceeds manual capacity, or auditor requires more rigorous evidence management.
+
+### 6.5 OSCAL Integration [v2 S.6.5]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| OSCAL component architecture (SSP, SAP, SAR, POA&M) | [v2 S.6.5.1] | Enterprise | OSCAL is specifically for FedRAMP. FedRAMP deferred until US federal customer pipeline. |
+| OSCAL generation pipeline | [v2 S.6.5.2] | Enterprise | Same rationale. |
+| OSCAL-UCL binding | [v2 S.6.5.3] | Enterprise | Same rationale. |
+| OSCAL validation in CI | [v2 S.6.5.4] | Enterprise | Same rationale. |
+
+**Startup Implementation:** None. OSCAL is out of scope until FedRAMP is pursued.
+
+**Growth Trigger:** US federal customer pipeline activates FedRAMP requirement.
+
+### 6.6 Audit Readiness Framework [v2 S.6.6]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Integrated audit calendar | [v2 S.6.6.1] | Startup (simplified) | Need audit calendar for ISO 27001 + ISO 42001 only. Defer SOC 2, TISAX assessment, FedRAMP scheduling to Growth. TISAX maintenance is in scope but assessment timing depends on existing certification cycle. |
+| Internal audit program | [v2 S.6.6.2] | Startup | Required by ISO 27001 Clause 9.2 and ISO 42001 Clause 9.2. Must establish internal audit capability before Stage 1 audit. |
+| Evidence freshness requirements | [v2 S.6.6.3] | Startup (simplified) | Track evidence freshness for ISO 27001 and ISO 42001 only. Both require 12-month maximum evidence age. |
+| Pre-audit readiness checklist | [v2 S.6.6.4] | Startup | Checklist needed before Stage 1 audit. Simplified to cover ISO 27001 + ISO 42001 requirements only. |
+
+**Startup Implementation:** Establish audit calendar targeting ISO 27001 Stage 1 + Stage 2 and ISO 42001 Stage 1 + Stage 2 within the 12-week timeline. Internal audit program covering ISMS + AIMS scope. Evidence freshness tracking for the two primary certifications. Pre-audit checklist covering: management review completed, internal audit completed, all major findings closed, SoA current, AI System Registry current.
+
+**Growth Trigger:** Pursuit of additional certifications (SOC 2, TISAX reassessment, FedRAMP) expanding the audit calendar.
+
+### 6.7 Twenty-Nine ISO Standards Integration Map [v2 S.6.7]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Core management system standards (27001, 42001) | [v2 S.6.7.1] | Startup | Primary certification standards. Both normative. |
+| AI lifecycle and engineering standards (5338, 5339, 23053, 5392, 42119-2) | [v2 S.6.7.2] | Startup (simplified) | ISO 5338 is normative for ISO 42001. Adopt conceptually. Others are informative -- reference as needed. |
+| AI risk, ethics, governance standards (23894, 38507, 24027, 24368, 24372, 12792) | [v2 S.6.7.3] | Startup (simplified) | ISO 23894 is normative for ISO 42001. ISO 12792 required for EU AI Act transparency. Others informative. |
+| AI cybersecurity (27090) | [v2 S.6.7.4] | Growth | Informative standard; deferred. |
+| Information security foundations (27000, 27032) | [v2 S.6.7.5] | Startup | 27000 provides ISMS vocabulary (normative reference). 27032 informative. |
+| AI terminology (22989) | [v2 S.6.7.6] | Startup | Normative for ISO 42001. Ensures consistent terminology. |
+| Process assessment standards (33001-33061, 20226) | [v2 S.6.7.7] | Growth | Formal process assessment deferred. |
+| Risk management standards (31000, 31010) | [v2 S.6.7.8] | Startup | Both normative references for ISO 27001 and ISO 42001. |
+| Sector-specific (34504, 29110) | [v2 S.6.7.9] | Growth | Automotive AI testing conditional on customer need. VSE lifecycle profiles informative. |
+
+**Startup Implementation:** Focus on 4-5 core standards: ISO 27001, ISO 42001, ISO 31000, ISO 23894, and ISO 22989 (terminology). Add ISO 42005 (AI impact assessment) and ISO 12792 (AI transparency) for EU AI Act compliance. Reference ISO 5338 conceptually. Defer the remaining 21 standards to Growth/Enterprise.
+
+**Growth Trigger:** Specific standard becomes normatively required for a pursued certification, or auditor requests evidence of alignment.
+
+### 6.8 Normative References [v2 S.6.8]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Reference category summary (40 total references) | [v2 S.6.8.1] | Startup | The reference list is a catalog, not a mandate. Always applicable as a reference. |
+| National transposition references (NIS2UmsuCG, Dutch NIS2, CCPA/CPRA, BSI/NCSC-NL templates) | [v2 S.6.8.2] | Startup (simplified) | NIS2 transpositions for Germany (NIS2UmsuCG) and Netherlands apply to GmbH and B.V. CCPA/CPRA deferred with SOC 2. |
+
+**Startup Implementation:** Maintain awareness of the full reference list. Actively track the German NIS2 transposition (NIS2UmsuCG) for GmbH and Dutch NIS2 transposition for B.V. Include BSI and NCSC-NL reporting templates in compliance procedures. Defer CCPA/CPRA-specific references until US privacy requirements activated.
+
+**Growth Trigger:** US privacy regulation (CCPA/CPRA) becomes relevant with US customer base, or new EU regulation transpositions require updated procedures.
+
+---
+
+## 7. Organizational Model [v2 S.7]
+
+### 7.1 Scaling Configuration [v2 S.7.1]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| SAFe-adapted scaling principles | [v2 S.7.1] | Startup | The concept of progressive scaling (organizational model adapts to team size) applies from day one. SAFe itself is Growth/Enterprise. |
+
+**Startup Implementation:** Adopt the scaling principle: governance grows with the organization. Current configuration is a single team with sprint-based delivery. SAFe ceremonies (PI Planning, ART Sync, Inspect & Adapt) are not applicable at Startup.
+
+**Growth Trigger:** Team size exceeds 20 people, triggering consideration of ART structure per [v2 S.4.5].
+
+### 7.2 Phase A: Startup Organization [v2 S.7.2]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Single cross-functional team structure | [v2 S.7.2] | Startup | Directly applicable. The team IS a single cross-functional unit. |
+| Role definitions (CTO, PO, Engineers, Security Advisor) | [v2 S.7.2] | Startup | V2 defines generic roles. User decision maps these to 6 specific humans + 7 agents. The mapping is critical and differs from v2's assumptions. |
+
+**Startup Implementation:**
+
+V2 assumes generic startup roles. The actual HH Group team maps as follows:
+
+| v2 Role | HH Human | HH Agent Equivalent | Notes |
+|---------|----------|-------------------|-------|
+| CTO (strategy + architecture + security) | CEO (Helge Heupel) + CTO | SDLC Lead Agent, CTO Agent, CISO Agent | CEO covers CISO responsibilities + orchestration. CTO covers architecture + AI engineering. |
+| Product Owner | CEO + Strategy Partner | Product/Strategy Agent | Dual ownership: CEO drives strategic alignment, Strategy Partner drives product. |
+| Engineers (3-8) | IT Pentester/Super Admin | Platform/SRE Agent, AppSec Agent | Azure + infrastructure expertise. |
+| Security/Compliance Advisor | CISO (dedicated, 6th person) | CISO Agent | Not fractional -- dedicated per user decision. |
+| AI Science Lead | (no dedicated human) | AI Science Agent | Agent fills this role; CEO supervises. |
+| Finance Advisory | Finance Industry SM | (no dedicated agent) | Advisory role, not agent-backed. |
+
+The RACI matrix mapping these 6 humans + 7 agents to specific SDLC activities will be produced in Plan 01-04 (OVLY-02).
+
+**Growth Trigger:** Hiring beyond 6 humans requires updating the role mapping and RACI matrix.
+
+### 7.3 Phase B: Growth Organization [v2 S.7.3]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Single ART with 3-4 teams | [v2 S.7.3] | Growth | Not applicable now. Reference only. |
+| Platform Team + Feature Teams | [v2 S.7.3] | Growth | Team splitting deferred until workload justifies separate platform and feature teams. |
+| Security Champion (full-time) | [v2 S.7.3] | Growth | At Startup, CISO covers security champion responsibilities. |
+| AI Ethics Champion (full-time) | [v2 S.7.3] | Growth | At Startup, CEO handles AI governance as part of CISO responsibilities. |
+
+**Startup Implementation:** Read for awareness only. Understand what Growth organization looks like so the team can plan for it.
+
+**Growth Trigger:** Phase A-to-B transition triggers per [v2 S.4.5].
+
+### 7.4 Phase C: Enterprise Organization [v2 S.7.4]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Dual ART (Verity VE + Verity EAM) | [v2 S.7.4] | Enterprise | Not applicable. Reference only. |
+| Full SAFe 6.0 with Lean Portfolio Management | [v2 S.7.4] | Enterprise | Not applicable. Reference only. |
+| VMO (Value Management Office) | [v2 S.7.4] | Enterprise | Not applicable. Reference only. |
+| Dedicated CISO function | [v2 S.7.4] | Startup | User decision places dedicated CISO at Startup (unusual for 6-person team; reflects compliance-intensive nature of the target market). |
+
+**Startup Implementation:** Read for awareness only. Note that dedicated CISO is already in place at Startup (ahead of v2's Enterprise-phase placement), reflecting the compliance-intensive strategy.
+
+**Growth Trigger:** Phase B-to-C transition triggers per [v2 S.4.5].
+
+### 7.5 AI Teammate Roles [v2 S.7.5]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| AI teammate role definitions (4 roles: Code Partner, Test Partner, Compliance Partner, Documentation Partner) | [v2 S.7.5] | Startup | AI teammates ARE the team at Startup. However, v2 defines 4 generic AI roles; user decision creates 7 specialist agents with broader responsibilities. |
+| Trust levels and autonomy boundaries | [v2 S.7.5] | Startup | Trust levels must be defined for all 7 agents. V2's IEA trust model (Section 8) applies. |
+| Human supervisor assignment | [v2 S.7.5] | Startup | Every agent must have a designated human supervisor per ISO 42001 human oversight requirements. |
+| AI teammate operating principles (6 principles) | [v2 S.7.5] | Startup | All 6 operating principles apply: team roster tracking, same DoD as humans + human review, autonomy adjustment with CEO approval, supervisor representation in ceremonies, uptime tracking, supervisor fallback. |
+
+**Startup Implementation:**
+
+V2 defines 4 generic AI roles. The HH Group implementation creates 7 specialist agents:
+
+| HH Agent | v2 Nearest Equivalent | Trust Level | Human Supervisor |
+|----------|----------------------|-------------|-----------------|
+| SDLC Lead Agent | (no equivalent -- new role) | Level 2: Supervised Autonomous | CEO |
+| CTO Agent | AI Code Partner (expanded) | Level 2: Supervised Autonomous | CTO |
+| CISO Agent | AI Compliance Partner (expanded) | Level 2: Supervised Autonomous | CISO |
+| AI Science Agent | (no equivalent -- new role) | Level 2: Supervised Autonomous | CEO |
+| Platform/SRE Agent | AI Code Partner (subset) | Level 2: Supervised Autonomous | IT Pentester |
+| Product/Strategy Agent | (no equivalent -- new role) | Level 2: Supervised Autonomous | CEO + Strategy Partner |
+| AppSec Agent | AI Test Partner (subset) | Level 2: Supervised Autonomous | CISO |
+
+All agents start at Trust Level 2 (Supervised Autonomous). Promotion to Level 3 (Conditional Autonomous) requires demonstrated accuracy over 30+ interactions and CEO approval. All agent outputs require human review before becoming official artifacts.
+
+**Growth Trigger:** Agent performance data enables evidence-based trust level adjustments; team expansion changes supervisor assignments.
+
+### 7.6 Human-AI Team Composition [v2 S.7.6]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Phase A composition (5-15 humans + 3 AI roles) | [v2 S.7.6] | Startup | V2 assumes 5-15 humans with 3 AI teammate types. Actual HH Group is 6 humans + 7 agents -- higher AI density than v2 envisions. |
+| Effective team capacity description | [v2 S.7.6] | Startup | V2 states "humans focus on architecture, customer interaction, strategic decisions; AI handles code drafting, test generation, documentation." HH Group extends this: AI agents handle compliance artifact drafting, risk assessment support, security review, and architecture decision support. |
+
+**Startup Implementation:** The 6+7 model means AI agents contribute to ~60% of draft artifact production (compliance documents, risk assessments, architecture decisions, security reviews). Humans contribute 100% of sign-off, risk acceptance, customer interaction, and strategic decisions. Every agent output is a draft until human-reviewed. The team operates as a "13-member team with 6 decision-makers."
+
+**Growth Trigger:** Team expansion changes the human-to-agent ratio; agent capabilities evolve with platform improvements.
+
+---
+
+## 8. Intent-Execution Architecture [v2 S.8]
+
+### 8.1 Architecture Overview [v2 S.8.1]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| IEA core principle (LLM untrusted, execution layer trusted, Intent Contract as bridge) | [v2 S.8.1] | Startup | The principle is sound and applicable from day one. All agent outputs are untrusted until validated. |
+| Dual-view architecture (Trust-Flow + ISO 5392 Functional Decomposition) | [v2 S.8.1.1] | Growth | The full dual-view architecture with 9 components is Growth-appropriate. Startup uses a simplified trust model focused on human review as the primary validation mechanism. |
+| View 1: Trust-Flow Architecture (6 trust levels, 9 components) | [v2 S.8.1.1] | Growth | Full Trust-Flow architecture requires infrastructure (AI Gateway, Policy Gateway, Verification & Attestation engine). |
+| View 2: ISO 5392 Functional Decomposition | [v2 S.8.1.1] | Growth | Formal ISO 5392 mapping deferred. The functional components exist conceptually but are not formalized as separate systems at Startup. |
+
+**Startup Implementation:** Adopt the IEA core principle: treat all AI (agent) outputs as untrusted until human-reviewed. The "Intent Contract" at Startup is the PR -- agents produce artifacts in branches, humans review and merge. Git history serves as the trust promotion audit trail. The full component model (AI Gateway, Policy Gateway, HITL Gate, Workflow Orchestrator, Verification & Attestation, Data Pipeline Manager, Model Lifecycle Manager, Feedback Loop Engine) is a Growth target.
+
+**Growth Trigger:** Production AI features in Verity VE/EAM require formal trust boundary enforcement beyond PR-based review.
+
+### 8.2 Graduated Trust Scale [v2 S.8.2]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Seven-level trust model (Level 0-6) | [v2 S.8.2.1] | Startup (simplified) | Adopt the trust levels conceptually. Full enforcement mechanism (automated promotion through levels) at Growth. At Startup, the practical levels are: 0 (raw agent output), 4 (human-approved via PR review), 6 (deployed to production). |
+| Trust level to AI classification mapping | [v2 S.8.2.2] | Growth | Formal mapping of AI tiers (Assistant/Collaborator/Decision Support) to minimum trust levels requires IEA infrastructure. |
+| Minimum trust level by action type | [v2 S.8.2.3] | Startup (simplified) | Adopt the minimum trust levels for key actions: all code requires human review (Level 4) before merge, deployment requires CTO approval (Level 5+), auth/crypto/PII code requires explicit human design (Level 4). |
+
+**Startup Implementation:** Use the trust level concept to calibrate human oversight. All agent outputs start at Level 0. PR review promotes to Level 4. Deployment promotes to Level 5. Production attestation (signed release) promotes to Level 6. The intermediate levels (1-3) collapse into the PR review process at Startup -- syntax validation, policy checks, and peer review all happen within the code review workflow.
+
+**Growth Trigger:** AI Gateway implementation enables automated trust level promotion through Levels 1-3.
+
+### 8.3 Component Model [v2 S.8.3]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Original 5 components (Intent Capture, Policy Gateway, HITL Gate, Workflow Orchestrator, Verification & Attestation) | [v2 S.8.3.1] | Growth | Full component architecture deferred. Startup uses simplified equivalents: agents (Intent Capture), PR review (Policy Gateway + HITL Gate + Peer Review), CI/CD (Workflow Orchestrator), Git history (Verification & Attestation). |
+| New 4 components (AI Gateway, Data Pipeline Manager, Model Lifecycle Manager, Feedback Loop Engine) | [v2 S.8.3.1] | Growth | All four new v2 components are Growth-appropriate. They address ISO 5338, 5392, 23053, and 23894 gaps that become relevant with production AI systems. |
+
+**Startup Implementation:** The 9-component IEA exists conceptually but maps to simpler Startup mechanisms:
+
+| v2 Component | Startup Equivalent |
+|---|---|
+| Intent Capture Layer | Agent prompt + context assembly |
+| AI Gateway / LLM Proxy | Direct API access with basic logging |
+| Policy Gateway | CLAUDE.md agent boundaries + human review norms |
+| HITL Gate | PR review process |
+| Workflow Orchestrator | CI/CD pipeline |
+| Verification & Attestation | Git history + signed releases |
+| Data Pipeline Manager | Manual data management |
+| Model Lifecycle Manager | Not applicable (no custom models at Startup) |
+| Feedback Loop Engine | Manual retrospective learnings |
+
+**Growth Trigger:** First production AI feature in Verity VE/EAM requiring formal IEA component deployment.
+
+### 8.4 Intent Contract Specification [v2 S.8.4]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Full v2 Intent Contract JSON schema (50+ fields) | [v2 S.8.4.1] | Growth | The full schema with trust levels, provenance, data lineage, compositional risk, ISO 42001 mapping, bias assessment, and attestation is Growth-appropriate. |
+| Schema change summary (v1 to v2) | [v2 S.8.4.2] | Growth | Reference only. Relevant when implementing the full IEA. |
+
+**Startup Implementation:** No formal Intent Contract schema at Startup. The "contract" is implicit in the PR: agent produces artifact, PR description captures provenance (which agent, what context), reviewer validates, merge = approval. Consider adopting a lightweight metadata header for agent-produced artifacts (agent name, date, confidence level, human reviewer).
+
+**Growth Trigger:** Production AI features require formal provenance tracking and audit trail beyond Git history.
+
+### 8.5 AI Gateway / LLM Proxy [v2 S.8.5]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Mandatory AI Gateway for all LLM interactions | [v2 S.8.5.1] | Growth | Centralized gateway requires infrastructure investment. At Startup, LLM interactions happen through Claude Code sessions (agent platform) and direct API calls. |
+| Gateway capabilities (routing, rate limiting, PII detection, prompt injection defense, model version pinning, schema validation, observability) | [v2 S.8.5.2] | Growth | Each capability maps to an ISO/regulation requirement but requires engineering effort disproportionate to Startup scale. |
+| Request flow through AI Gateway (10-step process) | [v2 S.8.5.3] | Growth | Deferred with the gateway itself. |
+
+**Startup Implementation:** Use direct API access (Claude Code, Azure OpenAI) with basic logging. Ensure: (1) all LLM API keys stored securely (Azure Key Vault or equivalent), (2) basic cost tracking via API provider dashboards, (3) manual PII review of agent inputs/outputs. No centralized gateway, prompt injection defense, or automated PII scanning.
+
+**Growth Trigger:** LLM usage exceeds 10K tokens/day across the organization, or first production AI feature requires PII handling controls.
+
+### 8.6 Trust Boundary Rules [v2 S.8.6]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Trust level authorization matrix (what each level can/cannot do) | [v2 S.8.6.1] | Growth | Full matrix requires automated trust level tracking. |
+| Mandatory HITL conditions (8 from v1 + 8 from v2) | [v2 S.8.6.2] | Startup (simplified) | Adopt the human-in-the-loop requirements from v1 (auth/crypto/PII code, production deployment, model changes, compliance rules, High/Critical risk, cross-entity flows, API changes). Defer v2 additions (compositional risk, feedback loop triggers, bias parameters, gateway rules, data pipeline changes, AI retirement, low-confidence + medium-risk combos, adversarial detection). |
+| Compositional risk rules (chain depth, aggregate risk, escalation) | [v2 S.8.6.3] | Growth | Compositional risk tracking requires IEA infrastructure to detect and aggregate risk across intent chains. |
+
+**Startup Implementation:** Enforce human-in-the-loop for: (1) all code modifying authentication, authorization, or encryption, (2) all production deployments, (3) all AI model/prompt changes, (4) all compliance policy modifications, (5) any action rated High or Critical risk, (6) cross-entity data flows, (7) customer-facing API contract changes. These are enforced through PR review process and CTO deployment approval, not through automated trust boundary enforcement.
+
+**Growth Trigger:** IEA component deployment enables automated trust boundary enforcement and compositional risk tracking.
+
+### 8.7 ISO 5392 Functional Decomposition [v2 S.8.7]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| Functional component mapping (6 ISO 5392 functions to IEA components) | [v2 S.8.7.1] | Growth | Formal ISO 5392 decomposition view is Growth-appropriate when implementing IEA components. |
+| Functional interaction diagram | [v2 S.8.7.2] | Growth | Deferred with the functional decomposition. |
+| Cross-cutting concerns mapping (trustworthiness, interoperability, performance, scalability, maintainability) | [v2 S.8.7.3] | Growth | Cross-cutting concerns are addressed informally at Startup through architectural decisions and code review. |
+
+**Startup Implementation:** None. Understand the ISO 5392 functional decomposition conceptually for ISO 42001 audit conversations, but do not produce formal mapping artifacts.
+
+**Growth Trigger:** ISO 42001 surveillance auditor requests formal AI reference architecture documentation per ISO 5392.
+
+### 8.8 AI Lifecycle Integration (ISO 5338) [v2 S.8.8]
+
+| Item | v2 Reference | Phase | Justification |
+|------|-------------|-------|---------------|
+| ISO 5338 lifecycle stage mapping (7 stages to IEA components) | [v2 S.8.8.1] | Startup (simplified) | Adopt lifecycle stages conceptually. The 7 Claude Code agents are AI systems that go through a lifecycle (concept, deployment, operation, retirement). Document the lifecycle at a high level for ISO 42001 compliance. |
+| Data management process (ISO 5338 clause 7.2) | [v2 S.8.8.2] | Growth | Formal data management sub-processes (acquisition planning, quality assessment, annotation, versioning, governance, disposal) require data infrastructure. |
+| ML model management process (ISO 5338 clause 7.3) | [v2 S.8.8.3] | Growth | No custom ML models at Startup. Agents use Claude API (third-party model). Model management focuses on API version tracking, not training/evaluation. |
+| AI system retirement process | [v2 S.8.8.4] | Growth | Formal 9-step retirement process is Growth-appropriate. At Startup, agent retirement = archiving CLAUDE.md and updating the AI System Registry. |
+| Model card requirements | [v2 S.8.8.3] | Startup (simplified) | Produce simplified model cards for the 7 agents: system ID, intended use, risk classification, human supervisor, limitations. Defer full model card with evaluation results, ethical considerations, and computational approach. |
+
+**Startup Implementation:** For each of the 7 Claude Code agents, document: (1) system identity (name, version), (2) intended use and scope, (3) risk classification per EU AI Act, (4) human supervisor, (5) known limitations, (6) oversight measures. This satisfies ISO 42001's AI system documentation requirements at a level appropriate for Startup. Full ISO 5338 lifecycle process formalization at Growth when custom AI models are developed.
+
+**Growth Trigger:** Development of custom AI models for Verity VE/EAM requiring formal data management, model training, and evaluation processes.
+
+---
