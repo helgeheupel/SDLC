@@ -53,11 +53,12 @@ Plans:
   3. An ISMS Scope Statement exists covering all 3 entities, 3 jurisdictions, and all information assets with explicit boundaries
   4. An AI Policy exists as a standalone governance document with commitment to responsible AI, regulatory conformity, and prohibited practices
   5. A document control framework is established with version control, approval workflow, distribution, and retention procedures satisfying ISO 27001 cl. 7.5
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md -- CISO Agent CLAUDE.md construction and domain context reference (AGNT-03)
+- [ ] 02-02-PLAN.md -- IMS Context + IS Policy + ISMS/AIMS scope statements (ISMS-01, ISMS-02)
+- [ ] 02-03-PLAN.md -- AI Policy + document control framework (AIMS-01, ISMS-09)
 
 ### Phase 3: Risk Framework and Statement of Applicability
 **Goal**: The organization has a validated risk posture and every ISO 27001 Annex A control has been assessed for applicability, creating the backbone for all control implementations
@@ -190,7 +191,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Startup Overlay and Agent Foundation | 4/4 | Complete | 2026-02-19 |
-| 2. CISO Agent and IS/AI Policy Foundation | 0/TBD | Not started | - |
+| 2. CISO Agent and IS/AI Policy Foundation | 0/3 | Planned | - |
 | 3. Risk Framework and Statement of Applicability | 0/TBD | Not started | - |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
 | 5. AIMS Core and AI System Registry | 0/TBD | Not started | - |
