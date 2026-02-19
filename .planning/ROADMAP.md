@@ -30,16 +30,18 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Depends on**: Nothing (first phase)
 **Requirements**: OVLY-01, OVLY-02, OVLY-03, AGNT-08, AGNT-09
 **Success Criteria** (what must be TRUE):
-  1. A Startup Overlay document exists that explicitly maps every SDLC-v2 section to NOW / Growth / Enterprise with justifications for each "not yet" deferral
-  2. A role consolidation RACI matrix exists showing how 8 SDLC-v2 personas map to 5 humans + 7 agents, and any team member can identify who owns what
+  1. A Startup Overlay document exists that explicitly maps every SDLC-v2 section to Startup / Growth / Enterprise with justifications for each "not yet" deferral
+  2. A role consolidation RACI matrix exists showing how 8 SDLC-v2 personas map to 6 humans + 7 agents, and any team member can identify who owns what
   3. The gate model is documented as 2 meetings (Weekly Technical + Monthly Strategic) with risk-tiered criteria, not the full Enterprise gate structure
   4. The agent interaction model is documented (hierarchical: CEO to SDLC Lead to specialists, plus direct CEO-to-specialist paths) and any agent session can reference it
   5. The subagent spawning protocol exists with clear rules for context passing, result collection, and token budget governance
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Startup SDLC companion document sections 1-8 (OVLY-01)
+- [ ] 01-02-PLAN.md -- Agent interaction model, subagent protocol, handoff template, directory structure (AGNT-08, AGNT-09)
+- [ ] 01-03-PLAN.md -- Startup SDLC companion document sections 9-18 (OVLY-01)
+- [ ] 01-04-PLAN.md -- RACI matrix and 2-meeting governance model (OVLY-02, OVLY-03)
 
 ### Phase 2: CISO Agent and IS/AI Policy Foundation
 **Goal**: The CISO Agent exists and has produced the foundational policy documents that every downstream agent and artifact depends on
@@ -187,7 +189,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Startup Overlay and Agent Foundation | 0/TBD | Not started | - |
+| 1. Startup Overlay and Agent Foundation | 0/4 | Not started | - |
 | 2. CISO Agent and IS/AI Policy Foundation | 0/TBD | Not started | - |
 | 3. Risk Framework and Statement of Applicability | 0/TBD | Not started | - |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
