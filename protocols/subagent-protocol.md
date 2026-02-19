@@ -8,8 +8,8 @@
 This document governs when and how agents spawn subagents via the Task tool, including model selection, tool restrictions, context passing rules, result collection, and error handling.
 
 **Related protocols:**
-- [Agent Interaction Model](interaction-model.md) -- operational modes, hierarchy, entry point decisions
-- [HANDOFF.md Template](handoff-template.md) -- structured handoff artifact when subagent spawning is not appropriate
+- [Agent Interaction Model](interaction-model.md) – operational modes, hierarchy, entry point decisions
+- [HANDOFF.md Template](handoff-template.md) – structured handoff artifact when subagent spawning is not appropriate
 
 ---
 
@@ -23,7 +23,7 @@ Claude Code subagents **cannot spawn other subagents**. This is a hard limitatio
 Level 0: CEO (human) starts a Claude Code session
 Level 1: Agent runs in the session (standalone or SDLC Lead)
 Level 2: Agent spawns subagent via Task tool
-         [MAXIMUM -- subagent CANNOT spawn further]
+         [MAXIMUM – subagent CANNOT spawn further]
 ```
 
 ### What This Means in Practice
@@ -33,8 +33,8 @@ Level 2: Agent spawns subagent via Task tool
 | CEO -> CISO Agent (standalone) | 1 level | Yes |
 | CEO -> CISO Agent -> research subagent | 2 levels | Yes |
 | CEO -> SDLC Lead -> CTO subagent | 2 levels | Yes |
-| CEO -> SDLC Lead -> CTO subagent -> analysis subagent | 3 levels | **NO -- depth violation** |
-| CEO -> CISO Agent -> NIS2 subagent -> audit subagent | 3 levels | **NO -- depth violation** |
+| CEO -> SDLC Lead -> CTO subagent -> analysis subagent | 3 levels | **NO – depth violation** |
+| CEO -> CISO Agent -> NIS2 subagent -> audit subagent | 3 levels | **NO – depth violation** |
 
 ### Workarounds for Depth Limitation
 
@@ -63,7 +63,7 @@ When a task appears to require 3+ levels of delegation:
 | Trigger | Example | Action |
 |---------|---------|--------|
 | Cross-domain task requiring specialist expertise | "Review threat model for AI pipeline" | SDLC Lead spawns CTO or AppSec subagent |
-| Focused research within a domain | "What does SDLC-v2 say about NIS2 timelines?" | Any agent spawns haiku research subagent |
+| Focused research within a domain | "What does SDLC-Growth-v2 say about NIS2 timelines?" | Any agent spawns haiku research subagent |
 | Large artifact requiring parallel analysis | "Assess all 93 Annex A controls" | Agent spawns multiple focused subagents for control groups |
 | Decision requiring specialist input | "Should we use Azure Key Vault or HashiCorp Vault?" | Agent spawns CTO subagent for analysis |
 | Evidence gathering across multiple files | "Collect all risk register entries related to AI systems" | Agent spawns haiku search subagent |
@@ -133,9 +133,9 @@ Every Task tool invocation for subagent spawning MUST include these elements:
    - Good: "Read protocols/interaction-model.md and list all sections that reference ISO 27001 clauses, with the clause number and section title."
    - Bad: "Look at the interaction model and find ISO stuff."
 
-2. **Relevant file paths to read:** Reference files by path -- let the subagent read them. Do NOT paste large documents into the spawn prompt.
-   - Good: "Read agents/shared/SDLC-v2.md Section 12 for security/privacy controls."
-   - Bad: [pasting 500 lines of SDLC-v2 into the prompt]
+2. **Relevant file paths to read:** Reference files by path – let the subagent read them. Do NOT paste large documents into the spawn prompt.
+   - Good: "Read agents/shared/SDLC-Growth-v2.md Section 12 for security/privacy controls."
+   - Bad: [pasting 500 lines of SDLC-Growth-v2 into the prompt]
 
 3. **Constraints and boundaries:** What the subagent must NOT do.
    - "Do NOT modify any files. Read-only analysis."
@@ -145,8 +145,8 @@ Every Task tool invocation for subagent spawning MUST include these elements:
    - "Return a markdown table with columns: Control ID, Control Name, Applicability, Justification."
    - "Return a bullet list of findings with file path references."
 
-5. **SDLC-v2 section references:** If the task relates to specific SDLC-v2 sections, name them.
-   - "Relevant SDLC-v2 sections: S.5.3 (risk assessment), S.6.1 (UCL)."
+5. **SDLC-Growth-v2 section references:** If the task relates to specific SDLC-Growth-v2 sections, name them.
+   - "Relevant SDLC-Growth-v2 sections: S.5.3 (risk assessment), S.6.1 (UCL)."
 
 ### What the Spawn Prompt Must NOT Include
 
@@ -169,8 +169,8 @@ For each control in A.5-A.8:
 
 Constraints:
 - Do NOT modify any files
-- Do NOT accept risk -- flag controls requiring CEO decision
-- Reference SDLC-v2 Section 12 (agents/shared/SDLC-v2.md) for security control context
+- Do NOT accept risk – flag controls requiring CEO decision
+- Reference SDLC-Growth-v2 Section 12 (agents/shared/SDLC-Growth-v2.md) for security control context
 
 Return format: Markdown table with columns:
 | Control ID | Control Name | Applicable | Justification | Startup Implementation |
@@ -309,4 +309,4 @@ Model: sonnet | maxTurns: 25 | Tools: Read, Grep, Glob, Bash
 ---
 
 *Document: protocols/subagent-protocol.md*
-*Version: 1.0 -- Created during Phase 1 Plan 02*
+*Version: 1.0 – Created during Phase 1 Plan 02*

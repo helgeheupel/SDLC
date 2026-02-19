@@ -56,7 +56,7 @@ Research identified 50 table-stakes artifacts (without which no certificate is p
 - Real-time compliance dashboard (AF-03) — attractive demo, not a certification requirement
 - SOC 2 Type II artifacts (AF-04) — no US customer requiring it; dilutes focus
 - FedRAMP authorization package (AF-05) — no US federal customer; 6–18 month effort
-- Full SDLC-v2 Enterprise implementation (AF-08) — explicitly out of scope per PROJECT.md
+- Full SDLC-Growth-v2 Enterprise implementation (AF-08) — explicitly out of scope per PROJECT.md
 - Automated penetration testing pipeline (AF-07) — manual pentest + DAST scanning is sufficient
 - GRC platform with dedicated tooling beyond Vanta (AF-01) — justified only at 20+ people
 
@@ -69,7 +69,7 @@ The architecture is a CEO-orchestrated, file-mediated multi-agent system where 6
 2. **CTO Agent + AppSec Agent (parallel)** — architecture decisions, IEA implementation plan, threat models, SBOM pipeline; consume CISO's policy framework as constraints
 3. **AI Science Agent + Platform/SRE Agent + Product/Strategy Agent (parallel)** — ISO 42001 Annex A artifacts, SLO/BCP/DR, strategic alignment; lightest inter-dependencies
 4. **Artifact pipeline (Git + Vanta)** — four-stage lifecycle from agent draft to archived evidence; every artifact carries structured YAML metadata mapping to ISO controls
-5. **Shared context layer** — SDLC-v2.md, risk register, startup overlay, shared definitions; read-only reference for all agents ensuring consistency
+5. **Shared context layer** — SDLC-Growth-v2.md, risk register, startup overlay, shared definitions; read-only reference for all agents ensuring consistency
 6. **CEO orchestrator (human)** — sole decision authority; directs agent sessions, reviews drafts, approves artifacts, conducts management review and risk workshops
 
 **Key patterns to follow:**
@@ -100,7 +100,7 @@ The dependency structure is clear and must drive phase ordering. All research co
 
 **Delivers:**
 - IMS architecture decision and integration blueprint
-- Startup Overlay for SDLC-v2 (which sections apply at startup phase)
+- Startup Overlay for SDLC-Growth-v2 (which sections apply at startup phase)
 - CISO Agent CLAUDE.md (system prompt) constructed and validated
 - SSOT registry with canonical definitions (risk methodology parameters, role definitions, terminology glossary, control numbering)
 - IS Policy, AI Policy, ISMS Scope, AIMS Scope — approved by CEO
@@ -251,7 +251,7 @@ The dependency structure is clear and must drive phase ordering. All research co
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All tool selections grounded in existing project context (SDLC-v2, Azure-native stack) + professional knowledge of GRC market. Vanta ISO 42001 pricing should be verified with sales team. |
+| Stack | HIGH | All tool selections grounded in existing project context (SDLC-Growth-v2, Azure-native stack) + professional knowledge of GRC market. Vanta ISO 42001 pricing should be verified with sales team. |
 | Features | HIGH | ISO 27001 and ISO 42001 mandatory requirements are deterministic (normative standards). Agent differentiator features are logically derived. Timeline feasibility is medium confidence. |
 | Architecture | HIGH | Claude Code CLI + Git + CLAUDE.md system prompts are the existing project environment. 4-stage pipeline and IMS approach are established patterns. Build order is dependency-driven with no ambiguity. |
 | Pitfalls | HIGH | All pitfalls are grounded in the existing gap analyses (AIGO, EU-CA, PSA, PSRE) and well-documented ISO certification failure modes. ISO 42001-specific pitfalls are medium confidence (limited precedent). |
@@ -273,7 +273,7 @@ The dependency structure is clear and must drive phase ordering. All research co
 ## Sources
 
 ### Primary (HIGH confidence)
-- SDLC-v2.md (7,434 lines) — primary architectural reference for agent design, evidence automation architecture, risk management framework, tool selections
+- SDLC-Growth-v2.md (7,434 lines) — primary architectural reference for agent design, evidence automation architecture, risk management framework, tool selections
 - ISO/IEC 27001:2022+Amd.1:2024 (licensed copy) — mandatory requirements, Annex A control list (93 controls)
 - ISO/IEC 42001:2023 (licensed copy) — mandatory requirements, Annex A control list (A.2–A.10)
 - Phase 1 gap analyses: AIGO (AI Governance), EU-CA (EU Compliance), PSA (Software Architecture), PSRE (SRE) — gap identification, priority setting, cross-entity complexity

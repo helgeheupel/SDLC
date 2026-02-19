@@ -12,7 +12,7 @@ This roadmap delivers a hierarchical system of 7 Claude Code AI agents and the f
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [x] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-v2 to startup-weight, define agent interaction model, establish subagent protocol
+- [x] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-Growth-v2 to startup-weight, define agent interaction model, establish subagent protocol
 - [ ] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
 - [ ] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
 - [ ] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
@@ -30,8 +30,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Depends on**: Nothing (first phase)
 **Requirements**: OVLY-01, OVLY-02, OVLY-03, AGNT-08, AGNT-09
 **Success Criteria** (what must be TRUE):
-  1. A Startup Overlay document exists that explicitly maps every SDLC-v2 section to Startup / Growth / Enterprise with justifications for each "not yet" deferral
-  2. A role consolidation RACI matrix exists showing how 8 SDLC-v2 personas map to 6 humans + 7 agents, and any team member can identify who owns what
+  1. A Startup Overlay document exists that explicitly maps every SDLC-Growth-v2 section to Startup / Growth / Enterprise with justifications for each "not yet" deferral
+  2. A role consolidation RACI matrix exists showing how 8 SDLC-Growth-v2 personas map to 6 humans + 7 agents, and any team member can identify who owns what
   3. The gate model is documented as 2 meetings (Weekly Technical + Monthly Strategic) with risk-tiered criteria, not the full Enterprise gate structure
   4. The agent interaction model is documented (hierarchical: CEO to SDLC Lead to specialists, plus direct CEO-to-specialist paths) and any agent session can reference it
   5. The subagent spawning protocol exists with clear rules for context passing, result collection, and token budget governance
@@ -111,7 +111,7 @@ Plans:
 **Depends on**: Phase 1 (interaction model), Phase 2 (policy constraints)
 **Requirements**: AGNT-01, AGNT-04, AGNT-05, AGNT-06
 **Success Criteria** (what must be TRUE):
-  1. The SDLC Lead Agent (CLAUDE.md) is constructed as the CEO's primary orchestrator and can coordinate all 6 specialist agents, route work, and maintain SDLC-v2 compliance
+  1. The SDLC Lead Agent (CLAUDE.md) is constructed as the CEO's primary orchestrator and can coordinate all 6 specialist agents, route work, and maintain SDLC-Growth-v2 compliance
   2. The AI Science Agent (CLAUDE.md) is constructed and can produce AI research assessments, model evaluation frameworks, and ISO 42001 Annex A artifacts
   3. The Platform/SRE Agent (CLAUDE.md) is constructed and can produce SLO frameworks, observability configurations, incident management procedures, and BCP/DR plans
   4. The Product/Strategy Agent (CLAUDE.md) is constructed and can produce strategic alignment artifacts, OKR frameworks, WSJF scoring, and portfolio governance

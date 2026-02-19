@@ -38,12 +38,12 @@ key-files:
 
 key-decisions:
   - "Agent directory at agents/ (project root) not .claude/agents/ -- prioritizes version control and portability over auto-discovery"
-  - "SDLC-v2 stored in agents/shared/ as read-on-demand file, not inlined in agent system prompts"
+  - "SDLC-Growth-v2 stored in agents/shared/ as read-on-demand file, not inlined in agent system prompts"
   - "Default subagent config: sonnet, 25 maxTurns, Read/Grep/Glob/Bash tools"
   - "Maximum 2 re-spawns per subagent task before escalation"
 
 patterns-established:
-  - "Agent Definition Template: 7 required sections (Identity, Core Responsibilities, SDLC-v2 Context, Output Standards, Collaboration Protocol, Boundaries, Subagent Spawning)"
+  - "Agent Definition Template: 7 required sections (Identity, Core Responsibilities, SDLC-Growth-v2 Context, Output Standards, Collaboration Protocol, Boundaries, Subagent Spawning)"
   - "HANDOFF.md Protocol: file-naming HANDOFF-[source]-to-[target]-[YYYY-MM-DD].md"
   - "2-level spawning depth: parent + subagent, never deeper; workarounds via sequential spawning or HANDOFF.md"
   - "Token budget governance via model selection: haiku (3K prompt, 10 turns) / sonnet (10K, 25) / opus (15K, 50)"
@@ -85,7 +85,7 @@ Each task was committed atomically:
 - `protocols/interaction-model.md` - Agent interaction model (7 sections: system overview, hierarchy, operational modes, decision matrix, sign-off protocol, agent template, communication protocol)
 - `protocols/subagent-protocol.md` - Subagent spawning protocol (7 sections: architecture constraints, spawn triggers, governance matrix, context passing, result collection, error handling, audit trail)
 - `protocols/handoff-template.md` - HANDOFF.md template with usage instructions and 2 worked examples
-- `agents/shared/README.md` - Agent directory documentation and SDLC-v2 reference setup instructions
+- `agents/shared/README.md` - Agent directory documentation and SDLC-Growth-v2 reference setup instructions
 - `agents/sdlc-lead/CLAUDE.md` - Placeholder (Phase 6)
 - `agents/cto/CLAUDE.md` - Placeholder (Phase 4)
 - `agents/ciso/CLAUDE.md` - Placeholder (Phase 2)
@@ -97,7 +97,7 @@ Each task was committed atomically:
 
 ## Decisions Made
 - **Agent directory location:** `agents/` at project root (not `.claude/agents/`). The CEO loads agents explicitly via `claude --agent agents/ciso/CLAUDE.md`. This prioritizes version control, project portability, and explicit loading over Claude Code's auto-discovery mechanism.
-- **SDLC-v2 context delivery:** Stored as a file in `agents/shared/SDLC-v2.md`, read on demand by agents. Not inlined in system prompts (preserves ~30K tokens of context window budget).
+- **SDLC-Growth-v2 context delivery:** Stored as a file in `agents/shared/SDLC-Growth-v2.md`, read on demand by agents. Not inlined in system prompts (preserves ~30K tokens of context window budget).
 - **Default subagent configuration:** sonnet with 25 maxTurns and Read/Grep/Glob/Bash tools. Deviate only when task profile clearly matches haiku (quick lookups) or opus (complex reasoning).
 - **Re-spawn limit:** Maximum 2 re-spawns per subagent task. After 2 failures, parent completes the task itself or escalates via HANDOFF.md.
 

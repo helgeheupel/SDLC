@@ -11,10 +11,10 @@
 
 ## Purpose
 
-This document compresses the full SDLC-v2 Enterprise gate structure (5 governance bodies, formal process assessment) into 2 meetings while preserving risk-tiered criteria. It defines the governance model for the Startup phase of the Helge Heupel Group SDLC.
+This document compresses the full SDLC-Growth-v2 Enterprise gate structure (5 governance bodies, formal process assessment) into 2 meetings while preserving risk-tiered criteria. It defines the governance model for the Startup phase of the Helge Heupel Group SDLC.
 
 **Related documents:**
-- [SDLC-v2-Startup.md](SDLC-v2-Startup.md) -- Startup SDLC companion document (gate criteria from [v2 S.13])
+- [SDLC-Startup-v2.md](SDLC-Startup-v2.md) -- Startup SDLC companion document (gate criteria from SDLC Growth Sec. 13)
 - [RACI-Startup.md](RACI-Startup.md) -- Role consolidation RACI matrix (meeting attendees aligned with RACI roles)
 - [protocols/interaction-model.md](protocols/interaction-model.md) -- Agent interaction model
 
@@ -22,13 +22,13 @@ This document compresses the full SDLC-v2 Enterprise gate structure (5 governanc
 
 ## 1. Governance Philosophy at Startup
 
-The CTO/CISO expert assessment warns: "startups don't die from coordination overhead -- not from missing ISO clauses." The startup governance model optimizes for velocity while maintaining compliance.
+The Helge Heupel Group startup governance model optimizes for velocity while maintaining compliance at adequate level to comply with TISAX, ISO 27001, and ISO 42001.
 
 ### Key Principles
 
-1. **2 meetings replace 5+ governance bodies** from SDLC-v2 [v2 S.13.3]. Consolidation eliminates decision latency and artificial handoffs while preserving the substance of each governance function.
+1. **2 meetings replace 5+ governance bodies** from SDLC-Growth-v2 SDLC Growth Sec. 13.3. Consolidation eliminates decision latency and artificial handoffs while preserving the substance of each governance function.
 
-2. **Risk-tiering is PRESERVED -- not all changes are equal.** The 4 risk tiers (Low, Medium, High, Critical) from [v2 S.13.1] remain fully operative. Governance intensity scales with risk, not with ceremony.
+2. **Risk-tiering is PRESERVED – not all changes are equal.** The 4 risk tiers (Low, Medium, High, Critical) from SDLC Growth Sec. 13.1 remain fully operative. Governance intensity scales with risk, not with ceremony.
 
 3. **Automated checks replace manual gates for Low/Medium risk.** CI/CD pipeline validation, PR approval, and automated test suites serve as the gate mechanism for routine changes. No meeting required.
 
@@ -131,7 +131,7 @@ This meeting satisfies ISO 27001 cl. 9.3 and ISO 42001 cl. 9.3 when the followin
 
 ## 3. Risk-Tiered Gate Model
 
-The 6 SDLC-v2 gates (G0-G5) are preserved and mapped to the 2-meeting structure with risk tiering. Reference: [v2 S.13.1] (4 risk tiers) and [v2 S.13.2] (gate criteria).
+The 6 SDLC-Growth-v2 gates (G0-G5) are preserved and mapped to the 2-meeting structure with risk tiering. Reference: SDLC Growth Sec. 13.1 (4 risk tiers) and SDLC Growth Sec. 13.2 (gate criteria).
 
 ### 3.1 Risk Tier Definitions
 
@@ -142,7 +142,7 @@ The 6 SDLC-v2 gates (G0-G5) are preserved and mapped to the 2-meeting structure 
 | **High** | Changes with significant scope, data sensitivity, or security implications | Features handling PII, authentication changes, new AI features, infrastructure changes |
 | **Critical** | Changes with organization-wide impact, regulatory implications, or irreversible consequences | Security policy changes, cross-entity data flows, AI system deployment, production database schema changes, NIS2-reportable changes |
 
-Risk classification uses 6 factors from [v2 S.13.1]: user impact, data sensitivity, AI involvement, regulatory scope, architecture impact, reversibility. The highest-severity factor determines the tier.
+Risk classification uses 6 factors from SDLC Growth Sec. 13.1: user impact, data sensitivity, AI involvement, regulatory scope, architecture impact, reversibility. The highest-severity factor determines the tier.
 
 ### 3.2 Gate-to-Meeting Mapping
 
@@ -169,7 +169,7 @@ Risk classification uses 6 factors from [v2 S.13.1]: user impact, data sensitivi
 
 ## 4. Gate Criteria at Startup
 
-For each gate, the simplified Startup criteria are listed below. Growth additions are noted for reference. Full Growth criteria are documented in [v2 S.13.2].
+For each gate, the simplified Startup criteria are listed below. Growth additions are noted for reference. Full Growth criteria are documented in SDLC Growth Sec. 13.2.
 
 ### G0 -- Strategic Alignment (Orient -> Requirements)
 
@@ -245,9 +245,9 @@ For each gate, the simplified Startup criteria are listed below. Growth addition
 
 ## 5. Governance Consolidation Mapping
 
-The full SDLC-v2 governance structure (from [v2 S.13.3]) defines 5 governance bodies. At Startup, these consolidate into the 2 meetings:
+The full SDLC-Growth-v2 governance structure (from SDLC Growth Sec. 13.3) defines 5 governance bodies. At Startup, these consolidate into the 2 meetings:
 
-| SDLC-v2 Governance Body [v2 S.13.3] | Startup Consolidation | Rationale |
+| SDLC-Growth-v2 Governance Body SDLC Growth Sec. 13.3 | Startup Consolidation | Rationale |
 |---|---|---|
 | Architecture Review Board | Weekly Technical (architecture agenda item 3) | CTO reviews ADRs and architecture decisions; IT Pentester provides platform perspective |
 | Security Governance Board | Weekly Technical (security findings item 1 + security in item 2) | CISO reviews security findings and policy; CTO provides technical security context |
@@ -257,7 +257,7 @@ The full SDLC-v2 governance structure (from [v2 S.13.3]) defines 5 governance bo
 
 ### Mapping Validation
 
-Every function of the 5 SDLC-v2 governance bodies is covered by one of the 2 meetings:
+Every function of the 5 SDLC-Growth-v2 governance bodies is covered by one of the 2 meetings:
 
 | Governance Function | Covered By | Agenda Item |
 |---|---|---|
@@ -284,7 +284,7 @@ The 2-meeting governance model is designed for a team of 6 humans + 7 agents ope
 |---|---|---|---|
 | 1 | Team size | Exceeds 12 people (including AI teammates counted by effective load) | Split Weekly Technical into separate Architecture Review and Security Review meetings |
 | 2 | Deployment volume | More than 3 High/Critical deployments per week requiring approval | Create dedicated Release Management meeting or async release approval process |
-| 3 | Audit finding | External auditor recommends separation of duties in governance | Separate the governance bodies as recommended, referencing SDLC-v2 [v2 S.13.3] for the full structure |
+| 3 | Audit finding | External auditor recommends separation of duties in governance | Separate the governance bodies as recommended, referencing SDLC-Growth-v2 SDLC Growth Sec. 13.3 for the full structure |
 | 4 | Product line expansion | Second product line launches requiring separate governance tracks | Create product-specific governance tracks with shared security/compliance oversight |
 | 5 | Regulatory expansion | New certification scope (SOC 2, FedRAMP) requires dedicated governance | Create compliance-specific governance body for the new framework |
 
@@ -293,7 +293,7 @@ The 2-meeting governance model is designed for a team of 6 humans + 7 agents ope
 When a trigger is met:
 
 1. **Assess impact:** Determine which governance functions need separation
-2. **Reference SDLC-v2:** Consult [v2 S.13.3] for the full governance body definitions and [v2 S.4.5] for transition criteria
+2. **Reference SDLC-Growth-v2:** Consult SDLC Growth Sec. 13.3 for the full governance body definitions and SDLC Growth Sec. 4.5 for transition criteria
 3. **Incremental separation:** Do not create all 5 bodies at once. Separate the specific function that triggered the change
 4. **Update RACI:** Modify [RACI-Startup.md](RACI-Startup.md) to reflect new meeting attendee assignments
 5. **Update this document:** Version increment with rationale for each governance body added
@@ -310,4 +310,4 @@ When a trigger is met:
 *Document: governance-model.md*
 *Document ID: HH-GOV-Startup-v1.0*
 *Created during Phase 1 Plan 04*
-*Reference: SDLC-v2 [v2 S.13], [RACI-Startup.md](RACI-Startup.md)*
+*Reference: SDLC-Growth-v2 SDLC Growth Sec. 13, [RACI-Startup.md](RACI-Startup.md)*

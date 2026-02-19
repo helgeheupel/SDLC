@@ -1,4 +1,4 @@
-# Helge Heupel Group -- Startup Phase Role Consolidation and RACI Matrix
+# Helge Heupel Group – Startup Phase Role Consolidation and RACI Matrix
 
 | Field | Value |
 |---|---|
@@ -11,23 +11,23 @@
 
 ## Purpose
 
-This document maps the 8 SDLC-v2 role archetypes (from [v2 S.7.2]) to the actual Helge Heupel Group startup team of 6 humans + 7 AI agents. It provides a RACI matrix so that any team member -- human or agent -- can identify who is Responsible, Accountable, Consulted, and Informed for any SDLC activity.
+This document maps the 8 SDLC-Growth-v2 role archetypes (from SDLC Growth Sec. 7.2) to the actual Helge Heupel Group startup team of 6 humans + 7 AI agents. It provides a RACI matrix so that any team member – human or agent – can identify who is Responsible, Accountable, Consulted, and Informed for any SDLC activity.
 
 **Related documents:**
-- [SDLC-v2-Startup.md](SDLC-v2-Startup.md) -- Startup SDLC companion document (activities derived from Startup-applicable items)
-- [protocols/interaction-model.md](protocols/interaction-model.md) -- Agent interaction model (agent roles aligned with [interaction-model](protocols/interaction-model.md))
-- [protocols/agent-qualifications.md](protocols/agent-qualifications.md) -- Agent qualification assignment (12 archetypes mapped to 7 agents)
-- [governance-model.md](governance-model.md) -- 2-meeting governance model with risk-tiered criteria
+- [SDLC-Startup-v2.md](SDLC-Startup-v2.md) – Startup SDLC companion document (activities derived from Startup-applicable items)
+- [protocols/interaction-model.md](protocols/interaction-model.md) – Agent interaction model (agent roles aligned with [interaction-model](protocols/interaction-model.md))
+- [protocols/agent-qualifications.md](protocols/agent-qualifications.md) – Agent qualification assignment (12 archetypes mapped to 7 agents)
+- [governance-model.md](governance-model.md) – 2-meeting governance model with risk-tiered criteria
 
 ---
 
 ## 1. Role Consolidation Mapping
 
-SDLC-v2 Section 7.2 defines 8 generic role archetypes for a Startup organization. The HH Group maps these to 6 specific humans and 7 Claude Code AI agents. The mapping is informed by the [agent qualification assignment](protocols/agent-qualifications.md), which further maps 12 SDLC-v2 executive archetypes to the 7 agents.
+SDLC-Growth-v2 Section 7.2 defines 8 generic role archetypes for a Startup organization. The HH Group maps these to 6 specific humans and 7 Claude Code AI agents. The mapping is informed by the [agent qualification assignment](protocols/agent-qualifications.md), which further maps 12 SDLC-Growth-v2 executive archetypes to the 7 agents.
 
 ### 1.1 Archetype-to-Team Mapping
 
-| SDLC-v2 Role Archetype | Human(s) | Agent(s) | Notes |
+| SDLC-Growth-v2 Role Archetype | Human(s) | Agent(s) | Notes |
 |---|---|---|---|
 | CTO | CTO | CTO Agent | CTO human owns architecture and AI engineering decisions; CTO Agent produces architecture artifacts, ADRs, and AI system designs |
 | Product Owner | CEO + Strategy Partner | Product/Strategy Agent | CEO drives strategic alignment; Strategy Partner drives product. Agent produces OKR frameworks, WSJF scoring, and portfolio artifacts |
@@ -57,55 +57,55 @@ The SDLC Lead Agent serves as the CEO's primary AI interface for complex orchest
 
 | Field | Detail |
 |---|---|
-| SDLC-v2 Archetype | Orchestrator + Product Owner (partial) + AI Ethics Champion (partial) |
+| SDLC-Growth-v2 Archetype | Orchestrator + Product Owner (partial) + AI Ethics Champion (partial) |
 | Primary Responsibilities | Strategic vision, ultimate policy approval, risk acceptance, AI governance leadership, product direction, multi-agent orchestration |
 | Agent Counterpart(s) | SDLC Lead Agent (orchestration), Product/Strategy Agent (strategic artifacts) |
-| RACI Role | **A (Accountable)** for all policies, risk acceptance, and strategic decisions. R for orchestration and product direction |
+| RACI Role | **A (Accountable)** for all policies, risk acceptance, and strategic decisions. **R (Responsible)** for orchestration and product direction |
 
 ### 2.2 Strategy Partner
 
 | Field | Detail |
 |---|---|
-| SDLC-v2 Archetype | Product Owner (primary) |
+| SDLC-Growth-v2 Archetype | Product Owner (primary) |
 | Primary Responsibilities | Product roadmap, user story validation, market analysis, prioritization, stakeholder engagement |
 | Agent Counterpart(s) | Product/Strategy Agent |
-| RACI Role | R for product roadmap and requirements. C on strategic decisions |
+| RACI Role | **R (Responsible)** for product roadmap and requirements. **C Consulted** on strategic decisions |
 
 ### 2.3 Finance Industry Senior Manager
 
 | Field | Detail |
 |---|---|
-| SDLC-v2 Archetype | Advisory (no direct archetype mapping) |
+| SDLC-Growth-v2 Archetype | Advisory (no direct archetype mapping) |
 | Primary Responsibilities | Domain expertise in financial industry compliance, market strategy advice, regulatory landscape guidance |
 | Agent Counterpart(s) | None (advisory role, not agent-backed) |
-| RACI Role | **C (Consulted)** on financial risk, market strategy, and industry-specific compliance. I on most SDLC activities |
+| RACI Role | **C (Consulted)** on financial risk, market strategy, and industry-specific compliance. **I (Informed)** on most SDLC activities |
 
 ### 2.4 IT Pentester / Super Admin (Azure)
 
 | Field | Detail |
 |---|---|
-| SDLC-v2 Archetype | Engineers + Security Champion + SRE Lead |
+| SDLC-Growth-v2 Archetype | Engineers + Security Champion + SRE Lead |
 | Primary Responsibilities | Azure infrastructure, penetration testing, platform operations, security testing, incident response |
 | Agent Counterpart(s) | Platform/SRE Agent (infrastructure, operations), AppSec Agent (security testing) |
-| RACI Role | R for infrastructure, security testing, and platform operations. A for deployment execution and platform decisions |
+| RACI Role | **R (Responsible)** for infrastructure, security testing, and platform operations. **A (Accountable)** for deployment execution and platform decisions |
 
 ### 2.5 CTO
 
 | Field | Detail |
 |---|---|
-| SDLC-v2 Archetype | CTO |
+| SDLC-Growth-v2 Archetype | CTO |
 | Primary Responsibilities | Architecture decisions, AI system design, technology evaluation, code review authority, ADR ownership |
 | Agent Counterpart(s) | CTO Agent |
-| RACI Role | **A (Accountable)** for technical architecture decisions. R for AI engineering and technology strategy |
+| RACI Role | **A (Accountable)** for technical architecture decisions. **R (Resonsible)** for AI engineering and technology strategy |
 
 ### 2.6 CISO
 
 | Field | Detail |
 |---|---|
-| SDLC-v2 Archetype | Security/Compliance Advisor + Compliance Lead |
+| SDLC-Growth-v2 Archetype | Security/Compliance Advisor + Compliance Lead |
 | Primary Responsibilities | IS policy drafting, risk assessment, ISMS management, NIS2 compliance, TISAX maintenance, ISO 42001 AI governance, EU AI Act conformity |
 | Agent Counterpart(s) | CISO Agent |
-| RACI Role | **A (Accountable)** for security policies (under CEO sign-off). R for compliance frameworks and risk assessment |
+| RACI Role | **A (Accountable)** for security policies (under CEO sign-off). **R (Responsible)** for compliance frameworks and risk assessment |
 
 ---
 
@@ -123,81 +123,81 @@ The SDLC Lead Agent serves as the CEO's primary AI interface for complex orchest
 - Agents: **SL** = SDLC Lead Agent, **CTOa** = CTO Agent, **CISOa** = CISO Agent, **AIS** = AI Science Agent, **PLT** = Platform/SRE Agent, **PRD** = Product/Strategy Agent, **SEC** = AppSec Agent
 
 **Rules:**
-- Every row has exactly one **A** -- always in a human column (columns 1-6)
+- Every row has exactly one **A** – always in a human column (columns 1-6)
 - An agent that is **R** must have a human that is **A** in the same row
 - Agents are never **A** (agents produce; humans own risk)
-- Agent activities are initiated by humans -- agents do not self-start
+- Agent activities are initiated by humans – agents do not self-start
 
 ### 3.2 RACI Matrix
 
-**Legend:** R = Responsible, A = Accountable, C = Consulted, I = Informed, -- = Not involved
+**Legend:** R = Responsible, A = Accountable, C = Consulted, I = Informed, – = Not involved
 
 #### Strategy and Planning
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Strategic vision and OKR definition [v2 S.2] | A | R | C | I | C | C | I | -- | -- | -- | -- | R | -- |
-| 2 | Product roadmap and prioritization [v2 S.2.3] | A | R | C | I | C | I | I | -- | -- | -- | -- | R | -- |
-| 3 | Investment thesis development [v2 S.2] | A | R | C | I | C | I | I | -- | -- | -- | -- | R | -- |
+| 1 | Strategic vision and OKR definition SDLC Growth Sec. 2 | A | R | C | I | C | C | I | – | – | – | – | R | – |
+| 2 | Product roadmap and prioritization SDLC Growth Sec. 2.3 | A | R | C | I | C | I | I | – | – | – | – | R | – |
+| 3 | Investment thesis development SDLC Growth Sec. 2 | A | R | C | I | C | I | I | – | – | – | – | R | – |
 
 #### Requirements and Design
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 4 | Requirements capture and user story creation [v2 S.9.2] | I | A | I | I | C | I | -- | -- | -- | -- | -- | R | -- |
-| 5 | Threat modeling (per feature/system) [v2 S.9.2, S.12] | I | I | -- | C | A | C | -- | C | C | -- | -- | -- | R |
-| 6 | Architecture decisions and ADRs [v2 S.9.1] | C | I | -- | C | A | C | -- | R | -- | C | C | -- | -- |
-| 7 | AI system design [v2 S.10, S.11] | C | I | -- | -- | A | C | -- | R | C | R | -- | -- | -- |
+| 4 | Requirements capture and user story creation SDLC Growth Sec. 9.2 | I | A | I | I | C | I | – | – | – | – | – | R | – |
+| 5 | Threat modeling (per feature/system) SDLC Growth Sec. 9.2, S.12 | I | I | – | C | A | C | – | C | C | – | – | – | R |
+| 6 | Architecture decisions and ADRs SDLC Growth Sec. 9.1 | C | I | – | C | A | C | – | R | – | C | C | – | – |
+| 7 | AI system design SDLC Growth Sec. 10, S.11 | C | I | – | – | A | C | – | R | C | R | – | – | – |
 
 #### Development
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 8 | Code development and review [v2 S.9.3] | I | I | -- | R | A | I | -- | R | -- | -- | R | -- | -- |
-| 9 | AI prompt engineering [v2 S.10.4] | I | I | -- | -- | A | I | -- | R | -- | C | -- | -- | -- |
-| 10 | Security code review [v2 S.9.3, S.12] | I | -- | -- | R | C | A | -- | C | R | -- | -- | -- | R |
-| 11 | Infrastructure as Code [v2 S.15.6] | I | -- | -- | A | C | I | -- | C | -- | -- | R | -- | -- |
+| 8 | Code development and review SDLC Growth Sec. 9.3 | I | I | – | R | A | I | – | R | – | – | R | – | – |
+| 9 | AI prompt engineering SDLC Growth Sec. 10.4 | I | I | – | – | A | I | – | R | – | C | – | – | – |
+| 10 | Security code review SDLC Growth Sec. 9.3, S.12 | I | – | – | R | C | A | – | C | R | – | – | – | R |
+| 11 | Infrastructure as Code SDLC Growth Sec. 15.6 | I | – | – | A | C | I | – | C | – | – | R | – | – |
 
 #### Testing
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 12 | Unit/integration/e2e testing [v2 S.9.4] | I | I | -- | R | A | I | -- | R | -- | -- | R | -- | -- |
-| 13 | Security testing (SAST/DAST) [v2 S.9.4, S.12] | I | -- | -- | R | C | A | -- | -- | C | -- | -- | -- | R |
-| 14 | AI model testing and validation [v2 S.9.4, S.11] | I | I | -- | -- | A | C | -- | C | -- | R | -- | -- | -- |
+| 12 | Unit/integration/e2e testing SDLC Growth Sec. 9.4 | I | I | – | R | A | I | – | R | – | – | R | – | – |
+| 13 | Security testing (SAST/DAST) SDLC Growth Sec. 9.4, S.12 | I | – | – | R | C | A | – | – | C | – | – | – | R |
+| 14 | AI model testing and validation SDLC Growth Sec. 9.4, S.11 | I | I | – | – | A | C | – | C | – | R | – | – | – |
 
 #### Deployment and Operations
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 15 | Deployment approval and execution [v2 S.9.5] | I | I | -- | R | A | C | -- | -- | -- | -- | R | -- | -- |
-| 16 | Incident management and response [v2 S.16.2] | C | I | -- | R | C | A | -- | -- | C | -- | R | -- | -- |
-| 17 | NIS2 incident reporting [v2 S.12.4, S.16] | A | I | -- | C | I | R | -- | -- | R | -- | R | -- | -- |
-| 18 | Monitoring and alerting [v2 S.16.1] | I | I | -- | A | C | I | -- | -- | -- | -- | R | -- | -- |
-| 19 | Disaster recovery planning [v2 S.16.4] | C | I | -- | R | C | A | -- | C | C | -- | R | -- | -- |
+| 15 | Deployment approval and execution SDLC Growth Sec. 9.5 | I | I | – | R | A | C | – | – | – | – | R | – | – |
+| 16 | Incident management and response SDLC Growth Sec. 16.2 | C | I | – | R | C | A | – | – | C | – | R | – | – |
+| 17 | NIS2 incident reporting SDLC Growth Sec. 12.4, S.16 | A | I | – | C | I | R | – | – | R | – | R | – | – |
+| 18 | Monitoring and alerting SDLC Growth Sec. 16.1 | I | I | – | A | C | I | – | – | – | – | R | – | – |
+| 19 | Disaster recovery planning SDLC Growth Sec. 16.4 | C | I | – | R | C | A | – | C | C | – | R | – | – |
 
 #### Compliance and Governance
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 20 | IS Policy drafting and review [v2 S.12, S.6] | A | I | I | I | C | R | -- | -- | R | -- | -- | -- | -- |
-| 21 | AI Policy drafting and review [v2 S.10, S.11] | A | I | I | I | C | R | -- | -- | R | R | -- | -- | -- |
-| 22 | Risk assessment and register maintenance [v2 S.5] | A | I | C | C | C | R | -- | -- | R | C | C | -- | -- |
-| 23 | Statement of Applicability maintenance [v2 S.6] | A | I | -- | I | C | R | -- | -- | R | -- | -- | -- | -- |
-| 24 | Internal audit execution [v2 S.13.5] | A | I | -- | C | C | R | -- | -- | R | -- | -- | -- | -- |
-| 25 | Management review preparation [v2 S.13.3] | A | C | C | I | C | R | R | -- | R | -- | -- | C | -- |
-| 26 | ISO 42001 Annex A control implementation [v2 S.11] | A | I | -- | I | C | R | -- | C | R | R | -- | -- | -- |
-| 27 | TISAX evidence maintenance [v2 S.6, S.13.5] | A | I | -- | C | I | R | -- | -- | R | -- | C | -- | -- |
-| 28 | Document control and version management [v2 S.7.5] | A | I | -- | I | I | R | C | -- | R | -- | -- | -- | -- |
+| 20 | IS Policy drafting and review SDLC Growth Sec. 12, S.6 | A | I | I | I | C | R | – | – | R | – | – | – | – |
+| 21 | AI Policy drafting and review SDLC Growth Sec. 10, S.11 | A | I | I | I | C | R | – | – | R | R | – | – | – |
+| 22 | Risk assessment and register maintenance SDLC Growth Sec. 5 | A | I | C | C | C | R | – | – | R | C | C | – | – |
+| 23 | Statement of Applicability maintenance SDLC Growth Sec. 6 | A | I | – | I | C | R | – | – | R | – | – | – | – |
+| 24 | Internal audit execution SDLC Growth Sec. 13.5 | A | I | – | C | C | R | – | – | R | – | – | – | – |
+| 25 | Management review preparation SDLC Growth Sec. 13.3 | A | C | C | I | C | R | R | – | R | – | – | C | – |
+| 26 | ISO 42001 Annex A control implementation SDLC Growth Sec. 11 | A | I | – | I | C | R | – | C | R | R | – | – | – |
+| 27 | TISAX evidence maintenance SDLC Growth Sec. 6, S.13.5 | A | I | – | C | I | R | – | – | R | – | C | – | – |
+| 28 | Document control and version management SDLC Growth Sec. 7.5 | A | I | – | I | I | R | C | – | R | – | – | – | – |
 
 #### Agent-Specific
 
 | # | SDLC Activity [v2 Reference] | CEO | SP | FSM | ITP | CTO | CISO | SL | CTOa | CISOa | AIS | PLT | PRD | SEC |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 29 | Agent creation and configuration [v2 S.7.5] | A | I | -- | I | R | C | C | -- | -- | -- | -- | -- | -- |
-| 30 | Agent output review and approval [v2 S.8] | A | C | -- | C | R | R | I | -- | -- | -- | -- | -- | -- |
-| 31 | Subagent spawning governance [v2 S.7.5] | A | I | -- | I | C | C | R | -- | -- | -- | -- | -- | -- |
-| 32 | HANDOFF.md review and routing [v2 S.7.5] | A | I | -- | I | C | C | R | -- | -- | -- | -- | -- | -- |
+| 29 | Agent creation and configuration SDLC Growth Sec. 7.5 | A | I | – | I | R | C | C | – | – | – | – | – | – |
+| 30 | Agent output review and approval SDLC Growth Sec. 8 | A | C | – | C | R | R | I | – | – | – | – | – | – |
+| 31 | Subagent spawning governance SDLC Growth Sec. 7.5 | A | I | – | I | C | C | R | – | – | – | – | – | – |
+| 32 | HANDOFF.md review and routing SDLC Growth Sec. 7.5 | A | I | – | I | C | C | R | – | – | – | – | – | – |
 
 ---
 
@@ -254,7 +254,7 @@ As the organization grows beyond the initial 6 humans + 7 agents, the RACI matri
 
 **Agents Take on More R Responsibilities:**
 - Trust level promotion (Level 2 to Level 3) allows agents more autonomous R assignments
-- Promotion criteria: 30+ interactions with demonstrated accuracy, CEO approval (per [v2 S.7.5])
+- Promotion criteria: 30+ interactions with demonstrated accuracy, CEO approval (per SDLC Growth Sec. 7.5)
 - Example: CTO Agent at Level 3 could auto-approve Low-risk ADRs (still reviewed post-hoc)
 
 **New Activities Emerge:**
@@ -264,7 +264,7 @@ As the organization grows beyond the initial 6 humans + 7 agents, the RACI matri
 - Multi-team coordination ceremonies (PI Planning, ART Sync)
 - Separate governance bodies replacing the 2-meeting structure
 
-**Reference:** SDLC-v2 Section 7.3 for Growth organization model; Section 4.5 for transition triggers.
+**Reference:** SDLC-Growth-v2 Section 7.3 for Growth organization model; Section 4.5 for transition triggers.
 
 ### 5.2 Transition Triggers
 
@@ -280,4 +280,4 @@ The RACI matrix should be updated when any of the following occur:
 *Document: RACI-Startup.md*
 *Document ID: HH-RACI-Startup-v1.0*
 *Created during Phase 1 Plan 04*
-*Reference: SDLC-v2 [v2 S.7.2], [interaction-model](protocols/interaction-model.md)*
+*Reference: SDLC-Growth-v2 SDLC Growth Sec. 7.2, [interaction-model](protocols/interaction-model.md)*

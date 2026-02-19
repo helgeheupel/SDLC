@@ -46,7 +46,7 @@ Recent decisions affecting current work:
 - [Roadmap]: Phases 3 and 4 can run in parallel (CTO/AppSec agents depend on Phase 2, not Phase 3)
 - [Roadmap]: SDLC Lead Agent placed in Phase 6 (not Phase 1) because it orchestrates specialists that must exist first
 - [01-02]: Agent directory at agents/ (project root) not .claude/agents/ -- prioritizes version control and portability over auto-discovery
-- [01-02]: SDLC-v2 stored in agents/shared/ as read-on-demand file, not inlined in agent system prompts
+- [01-02]: SDLC-Growth-v2 stored in agents/shared/ as read-on-demand file, not inlined in agent system prompts
 - [01-02]: Default subagent config: sonnet, 25 maxTurns, Read/Grep/Glob/Bash tools
 - [01-02]: Maximum 2 re-spawns per subagent task before escalation
 - [01-01]: All 12 governing principles apply in spirit; 8 fully, 3 simplified, 1 (radical traceability) deferred to Growth
@@ -55,7 +55,7 @@ Recent decisions affecting current work:
 - [01-01]: IEA maps to PR-based workflow at Startup; 9 v2 components collapse to agents + PR review + CI/CD + Git history
 - [01-01]: Focus on 8-9 standards/frameworks at Startup; defer 21+ to Growth/Enterprise
 - [01-01]: Simplified risk register schema (~15 fields in YAML-in-Git, not 50+ field full schema)
-- [01-03]: 66% of SDLC-v2 applicable at Startup (263/398 entries); 31% deferred to Growth; 3% to Enterprise
+- [01-03]: 66% of SDLC-Growth-v2 applicable at Startup (263/398 entries); 31% deferred to Growth; 3% to Enterprise
 - [01-03]: Gate criteria mapped at per-risk-tier granularity: Low/Medium auto-flow, High/Critical require human approval
 - [01-03]: AI sections (10, 11) map with dual ISO 27001 + ISO 42001 certification awareness
 - [01-03]: NIS2 controls consistently Startup (legally mandatory); FedRAMP/SOC 2 consistently Growth/Enterprise (deferred)

@@ -43,8 +43,8 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 
 ### Startup Overlay
 
-- [x] **OVLY-01**: SDLC-v2 Startup phase extraction produced — maps which v2 sections apply NOW vs. Growth vs. Enterprise, with explicit "not yet" justifications
-- [x] **OVLY-02**: Role consolidation mapping produced — 8 SDLC-v2 personas collapsed to 5 humans + 7 agents with RACI matrix
+- [x] **OVLY-01**: SDLC-Growth-v2 Startup phase extraction produced — maps which v2 sections apply at Startup vs. Growth vs. Enterprise, with explicit "not yet" justifications
+- [x] **OVLY-02**: Role consolidation mapping produced — 8 SDLC-Growth-v2 personas collapsed to 5 humans + 7 agents with RACI matrix
 - [x] **OVLY-03**: Gate model simplified for startup — risk-tiered gates compressed, governance consolidated into 2 meetings (Weekly Technical + Monthly Strategic)
 
 ### TISAX Maintenance
@@ -98,13 +98,13 @@ Deferred to Growth phase. Tracked but not in current roadmap.
 
 - **PROD-01**: Agents support Verity VE development under SDLC framework
 - **PROD-02**: Agents support Verity EAM development under SDLC framework
-- **PROD-03**: Full SDLC-v2 Growth-phase governance activated
+- **PROD-03**: Full SDLC-Growth-v2 Growth-phase governance activated
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Full Enterprise-phase governance (5 boards, dual ARTs) | SDLC-v2 Enterprise target; not needed until 80+ people |
+| Full Enterprise-phase governance (5 boards, dual ARTs) | SDLC-Growth-v2 Enterprise target; not needed until 80+ people |
 | FedRAMP authorization | No US federal customer demand yet; advisory only |
 | SOC 2 Type II | No US SaaS customer demand yet |
 | Verity VE/EAM product development | Separate project; agents will support it later |

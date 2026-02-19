@@ -7,13 +7,13 @@ tags: [raci, governance, startup-overlay, role-consolidation, risk-tiered-gates,
 # Dependency graph
 requires:
   - phase: 01-01
-    provides: "SDLC-v2-Startup.md with per-control mapping of all 18 sections"
+    provides: "SDLC-Startup-v2.md with per-control mapping of all 18 sections"
   - phase: 01-02
     provides: "Agent interaction model, subagent protocol, agent directory structure"
   - phase: 01-03
     provides: "Complete Startup SDLC companion document (sections 9-18 with gate criteria)"
 provides:
-  - "RACI-Startup.md: Role consolidation RACI matrix mapping 8 SDLC-v2 archetypes to 6 humans + 7 agents"
+  - "RACI-Startup.md: Role consolidation RACI matrix mapping 8 SDLC-Growth-v2 archetypes to 6 humans + 7 agents"
   - "governance-model.md: 2-meeting governance model with risk-tiered gate criteria"
 affects: [phase-02 (CISO agent uses RACI for role boundaries), all-downstream-phases (governance model constrains gate criteria)]
 
@@ -29,7 +29,7 @@ key-files:
 key-decisions:
   - "Accountable (A) is ALWAYS a human -- never an agent -- in every RACI row"
   - "32 SDLC activities mapped across 6 domains (Strategy, Requirements, Development, Testing, Deployment, Compliance, Agent-Specific)"
-  - "2 meetings replace 5 SDLC-v2 governance bodies: Weekly Technical (30min) + Monthly Strategic (60min)"
+  - "2 meetings replace 5 SDLC-Growth-v2 governance bodies: Weekly Technical (30min) + Monthly Strategic (60min)"
   - "Low/Medium risk items auto-flow via CI/CD and PR approval -- no meeting required"
   - "High risk items require Weekly Technical meeting approval"
   - "Critical risk items require Weekly Technical meeting plus CEO/CISO explicit sign-off"
@@ -62,7 +62,7 @@ completed: 2026-02-19
 
 ## Accomplishments
 
-- Created RACI-Startup.md with document header, role consolidation mapping (8 SDLC-v2 archetypes to 6 humans + 7 agents), 6 human role profiles, full RACI matrix (32 activities x 13 columns), reading guide, and growth transition section
+- Created RACI-Startup.md with document header, role consolidation mapping (8 SDLC-Growth-v2 archetypes to 6 humans + 7 agents), 6 human role profiles, full RACI matrix (32 activities x 13 columns), reading guide, and growth transition section
 - Created governance-model.md with governance philosophy, 2-meeting structure (Weekly Technical 30min + Monthly Strategic 60min), risk-tiered gate model (4 tiers x 6 gates), gate criteria per gate (G0-G5), governance body consolidation mapping (5 bodies to 2 meetings), and growth transition triggers
 - Every RACI row has exactly one Accountable (A) human -- no agent is ever Accountable
 - Monthly Strategic meeting explicitly satisfies ISO 27001 cl. 9.3 and ISO 42001 cl. 9.3 management review requirements with mandatory input mapping table
@@ -108,7 +108,7 @@ None -- no external service configuration required.
 - governance-model.md provides gate criteria that constrain all future development and deployment decisions
 - Phase 1 is now complete (4/4 plans) -- ready for Phase 2 (CISO Agent and IS/AI Policy Foundation)
 - All 5 Phase 1 success criteria are met:
-  1. Startup Overlay document exists (SDLC-v2-Startup.md, Plans 01+03)
+  1. Startup Overlay document exists (SDLC-Startup-v2.md, Plans 01+03)
   2. Role consolidation RACI matrix exists (RACI-Startup.md, Plan 04)
   3. Gate model documented as 2 meetings with risk-tiered criteria (governance-model.md, Plan 04)
   4. Agent interaction model documented (protocols/interaction-model.md, Plan 02)

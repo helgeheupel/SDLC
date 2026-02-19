@@ -6,7 +6,7 @@
 <domain>
 ## Phase Boundary
 
-Create the Startup SDLC companion document (per-control mapping of SDLC-v2 to Startup/Growth/Enterprise phases) and define the agent infrastructure foundation (interaction model, subagent protocol, directory structure). This phase does NOT create the actual agents — it creates the framework they operate within.
+Create the Startup SDLC companion document (per-control mapping of SDLC-Growth-v2 to Startup/Growth/Enterprise phases) and define the agent infrastructure foundation (interaction model, subagent protocol, directory structure). This phase does NOT create the actual agents — it creates the framework they operate within.
 
 </domain>
 
@@ -14,10 +14,10 @@ Create the Startup SDLC companion document (per-control mapping of SDLC-v2 to St
 ## Implementation Decisions
 
 ### Startup SDLC Companion Document
-- **Format:** Standalone companion document ("SDLC-v2-Startup.md"), not an edit to SDLC-v2.md — references v2 sections but stands alone as the operative guide
+- **Format:** Standalone companion document ("SDLC-Startup-v2.md"), not an edit to SDLC-Growth-v2.md — references v2 sections but stands alone as the operative guide
 - **Naming convention:** "Startup SDLC", "Growth SDLC", "Enterprise SDLC" — these are the three phases, not "NOW/Growth/Enterprise"
-- **Granularity:** Per-control mapping — every individual control, gate, and artifact in SDLC-v2 mapped to Startup/Growth/Enterprise with justifications (300+ entries)
-- **SDLC-v2 preserved:** V2 remains the Growth SDLC target state; the Startup SDLC is a companion that says "for now, do this subset"
+- **Granularity:** Per-control mapping — every individual control, gate, and artifact in SDLC-Growth-v2 mapped to Startup/Growth/Enterprise with justifications (300+ entries)
+- **SDLC-Growth-v2 preserved:** V2 remains the Growth SDLC target state; the Startup SDLC is a companion that says "for now, do this subset"
 - **Product development integration:** Verity VE and Verity EAM product development (including patent-pending innovations) flows through the same SDLC phases (Orient → Requirements → Development etc.) alongside compliance work — integrated, not parallel tracks
 - **Patent-sensitive artifacts:** Kept in a separate repo with stricter access controls; SDLC references them by ID only. Aligned with TISAX prototype protection (ISA Chapter 7)
 
@@ -40,14 +40,14 @@ Create the Startup SDLC companion document (per-control mapping of SDLC-v2 to St
 ### Agent Directory Structure
 - **Location:** Per-agent directories under `agents/` — each with its own CLAUDE.md + reference docs
 - **Naming:** By role — `agents/sdlc-lead/`, `agents/cto/`, `agents/ciso/`, `agents/ai-science/`, `agents/platform-sre/`, `agents/product-strategy/`, `agents/appsec/`
-- **Context:** Full SDLC-v2 document available to every agent (7,434 lines) — not section-filtered
+- **Context:** Full SDLC-Growth-v2 document available to every agent (7,434 lines) — not section-filtered
 - **Subagent spawning:** Protocol to be defined in this phase — governs when/how agents spawn subagents, context passing, result collection, token budget governance
 
 ### Claude's Discretion
 - Exact HANDOFF.md template structure
 - Subagent spawning token budget thresholds
 - Internal organization of each agent's reference docs within their directory
-- How the Startup SDLC companion document cross-references SDLC-v2 section numbers
+- How the Startup SDLC companion document cross-references SDLC-Growth-v2 section numbers
 
 </decisions>
 

@@ -8,12 +8,12 @@
 
 - This template is used when one agent's work must continue with another agent
 - The CEO reads the HANDOFF.md and passes it to the target agent as session context
-- Fill in ALL sections. If a section is not applicable, write "N/A" -- do not delete the section
+- Fill in ALL sections. If a section is not applicable, write "N/A" – do not delete the section
 - File naming convention: `HANDOFF-[source]-to-[target]-[YYYY-MM-DD].md`
   - Example: `HANDOFF-ciso-to-cto-2026-03-15.md`
   - Example: `HANDOFF-sdlc-lead-to-appsec-2026-04-01.md`
 - Store HANDOFF.md files in the working branch alongside the artifacts they reference
-- The HANDOFF.md is a Git-versioned audit artifact -- it satisfies ISO 27001 cl. 7.5 traceability
+- The HANDOFF.md is a Git-versioned audit artifact – it satisfies ISO 27001 cl. 7.5 traceability
 
 **Agent role identifiers for file naming:**
 `sdlc-lead` | `cto` | `ciso` | `ai-science` | `platform-sre` | `product-strategy` | `appsec`
@@ -34,7 +34,7 @@
 
 ## What Was Done
 
-[Bullet summary of completed work with exact file paths. Be specific -- the receiving
+[Bullet summary of completed work with exact file paths. Be specific – the receiving
 agent should know exactly what files exist and what state they are in.]
 
 - Created [file path]: [what was done and current state]
@@ -54,8 +54,8 @@ agent should know exactly what files exist and what state they are in.]
 "continue the work" but precise like "Review sections 3.1-3.5 of IS-Policy.md
 against ISO 27001 cl. 5.2 requirements and add missing elements."]
 
-1. [First task -- specific, verifiable, with file references]
-2. [Second task -- specific, verifiable, with file references]
+1. [First task – specific, verifiable, with file references]
+2. [Second task – specific, verifiable, with file references]
 3. [Third task if applicable]
 
 ## Context the Receiving Agent Needs
@@ -65,13 +65,13 @@ from reading the artifacts. Do not restate what is already in the files.]
 
 - **Decision:** [what was decided and why]
 - **Constraint:** [what limits the approach]
-- **Assumption:** [what was assumed -- could be wrong]
+- **Assumption:** [what was assumed – could be wrong]
 
 ## Open Questions for Human Decision
 
 [Items that require CEO/human judgment before proceeding. If none, state "None."]
 
-- [ ] [Question requiring human decision -- include options if possible]
+- [ ] [Question requiring human decision – include options if possible]
 - [ ] [Question requiring human decision]
 
 ## Subagents Used
@@ -89,8 +89,8 @@ If no subagents were used, state "None."]
 [What must be true before the receiving agent can proceed.
 If no dependencies, state "None."]
 
-- [ ] [Dependency 1 -- specific and verifiable]
-- [ ] [Dependency 2 -- specific and verifiable]
+- [ ] [Dependency 1 – specific and verifiable]
+- [ ] [Dependency 2 – specific and verifiable]
 ```
 
 ---
@@ -113,7 +113,7 @@ If no dependencies, state "None."]
 
 - Created artifacts/policies/is-policy.md: Information Security Policy draft covering
   ISO 27001 cl. 5.2 requirements, all 3 HH entities, and management commitment statement
-- Analyzed SDLC-v2 Section 12: Identified 8 security controls requiring architecture decisions
+- Analyzed SDLC-Growth-v2 Section 12: Identified 8 security controls requiring architecture decisions
 
 ## Artifacts Produced
 
@@ -127,7 +127,7 @@ If no dependencies, state "None."]
 1. Review Section 4.2 of is-policy.md ("Technical Security Architecture") and add
    Azure-specific implementation details for encryption at rest and in transit
 2. Evaluate the 8 controls listed in security-controls-gaps.md and provide ADR-format
-   decisions for each (use ADR template from SDLC-v2 S.9.3)
+   decisions for each (use ADR template from SDLC-Growth-v2 S.9.3)
 3. Add network segmentation approach to is-policy.md Section 4.3
 
 ## Context the Receiving Agent Needs
@@ -189,7 +189,7 @@ If no dependencies, state "None."]
 ## Context the Receiving Agent Needs
 
 - **Decision:** Threat model uses STRIDE + LINDDUN (dual methodology per AppSec recommendation)
-- **Constraint:** Patent-sensitive -- reference [PATENT-VE-003] by ID only
+- **Constraint:** Patent-sensitive – reference [PATENT-VE-003] by ID only
 - **Assumption:** Verity VE will use third-party AI models (not exclusively in-house)
 
 ## Open Questions for Human Decision
@@ -212,4 +212,4 @@ None.
 ---
 
 *Document: protocols/handoff-template.md*
-*Version: 1.0 -- Created during Phase 1 Plan 02*
+*Version: 1.0 – Created during Phase 1 Plan 02*

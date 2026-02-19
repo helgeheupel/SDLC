@@ -8,9 +8,9 @@
 This document defines how the 7 Claude Code AI agents interact with each other and with human team members. It is the authoritative reference for determining which agent to invoke, how agents communicate, and what rules govern agent behavior.
 
 **Related protocols:**
-- [Subagent Spawning Protocol](subagent-protocol.md) -- when/how agents spawn subagents, model selection, token budget governance
-- [HANDOFF.md Template](handoff-template.md) -- structured handoff artifact for cross-agent context passing
-- Agent directory: `agents/` -- per-agent CLAUDE.md definitions and reference documents
+- [Subagent Spawning Protocol](subagent-protocol.md) – when/how agents spawn subagents, model selection, token budget governance
+- [HANDOFF.md Template](handoff-template.md) – structured handoff artifact for cross-agent context passing
+- Agent directory: `agents/` – per-agent CLAUDE.md definitions and reference documents
 
 ---
 
@@ -20,7 +20,7 @@ The HH SDLC Agent System consists of **7 Claude Code AI agents** organized into 
 
 | # | Agent | Role | Domain |
 |---|-------|------|--------|
-| 1 | **SDLC Lead** | Orchestrator | Cross-domain coordination, SDLC-v2 compliance, certification progress tracking |
+| 1 | **SDLC Lead** | Orchestrator | Cross-domain coordination, SDLC-Growth-v2 compliance, certification progress tracking |
 | 2 | **CTO** | Specialist | Architecture, AI engineering, ADRs, technology evaluation |
 | 3 | **CISO** | Specialist | Security, EU compliance (NIS2, GDPR), AI governance (ISO 42001), ISMS |
 | 4 | **AI Science** | Specialist | AI research assessment, model evaluation, ISO 42001 Annex A artifacts |
@@ -68,7 +68,7 @@ CEO (Helge Heupel)
 
 **The hierarchy is an organizational chart, NOT a runtime call chain.**
 
-- The CEO can engage any agent directly -- the hierarchy does not require going through the SDLC Lead
+- The CEO can engage any agent directly – the hierarchy does not require going through the SDLC Lead
 - The SDLC Lead coordinates multi-agent workflows but does not "own" the specialists
 - Specialists report their work to the CEO (via HANDOFF.md or PR), not to the SDLC Lead
 - The hierarchy describes authority and coordination patterns, not technical invocation requirements
@@ -76,8 +76,8 @@ CEO (Helge Heupel)
 ### Authority Model
 
 - **CEO**: Ultimate sign-off authority for all policies, risk acceptance, and strategic decisions
-- **SDLC Lead Agent**: Coordination authority -- can route work to specialists, merge outputs, identify cross-domain conflicts
-- **Specialist Agents**: Domain authority within their expertise -- produce artifacts, flag cross-domain dependencies, escalate decisions requiring human judgment
+- **SDLC Lead Agent**: Coordination authority – can route work to specialists, merge outputs, identify cross-domain conflicts
+- **Specialist Agents**: Domain authority within their expertise – produce artifacts, flag cross-domain dependencies, escalate decisions requiring human judgment
 - **Rule**: Agents produce. Humans own risk. No agent may accept risk on behalf of the organization.
 
 ---
@@ -103,7 +103,7 @@ CEO (Helge Heupel)
 
 **Constraints:**
 - The agent operates only within its defined domain boundaries
-- Cross-domain dependencies are flagged, not resolved -- the agent produces a HANDOFF.md for the CEO to route
+- Cross-domain dependencies are flagged, not resolved – the agent produces a HANDOFF.md for the CEO to route
 - The agent can spawn subagents for focused research/analysis within its domain (see [subagent-protocol.md](subagent-protocol.md))
 
 ### 3.2 Multi-Agent Mode
@@ -113,7 +113,7 @@ CEO (Helge Heupel)
 **When to use:**
 - Cross-domain coordination (e.g., "Coordinate CTO and CISO on threat model review")
 - Tasks requiring multiple specialist inputs merged into a single artifact
-- Unclear routing -- the SDLC Lead determines which specialist(s) to involve
+- Unclear routing – the SDLC Lead determines which specialist(s) to involve
 - Certification-readiness reviews requiring cross-artifact consistency
 
 **How it works:**
@@ -154,7 +154,7 @@ CEO (Helge Heupel)
 2. Agent produces the artifact(s) and commits to the branch
 3. Agent creates a Pull Request with:
    - Clear description of what was produced
-   - Which SDLC-v2 sections or ISO clauses the artifact addresses
+   - Which SDLC-Growth-v2 sections or ISO clauses the artifact addresses
    - Any open questions or decisions requiring human input
 4. Human (typically the CEO) reviews the PR diff
 5. Human approves, requests changes, or rejects
@@ -164,17 +164,17 @@ CEO (Helge Heupel)
 ### Audit Trail Compliance
 
 This workflow satisfies:
-- **ISO 27001 cl. 7.5** -- Documented information control (creation, updating, version control, distribution, access, storage, disposition)
-- **ISO 42001 cl. 7.5** -- Same documented information requirements applied to AI management system
-- **TISAX ISA** -- Traceability of changes to security-relevant documentation
+- **ISO 27001 cl. 7.5** – Documented information control (creation, updating, version control, distribution, access, storage, disposition)
+- **ISO 42001 cl. 7.5** – Same documented information requirements applied to AI management system
+- **TISAX ISA** – Traceability of changes to security-relevant documentation
 
 ### Sign-Off Authority
 
 | Artifact Type | Sign-Off Authority | Escalation |
 |---------------|-------------------|------------|
-| IS Policy, AI Policy | CEO (as CISO delegate) | None -- CEO is ultimate authority |
+| IS Policy, AI Policy | CEO (as CISO delegate) | None – CEO is ultimate authority |
 | Risk register entries | CEO | None |
-| Risk treatment decisions | CEO | None -- CEO accepts residual risk |
+| Risk treatment decisions | CEO | None – CEO accepts residual risk |
 | Architecture decisions (ADRs) | CTO (human) | CEO if cross-domain impact |
 | Operational procedures | Relevant domain lead | CEO for security-sensitive procedures |
 | Agent definitions (CLAUDE.md) | CEO | None |
@@ -204,7 +204,7 @@ model: [opus | sonnet | haiku]
 Every agent CLAUDE.md MUST include ALL of the following sections:
 
 ```markdown
-# [Agent Role Name] -- Helge Heupel Group
+# [Agent Role Name] – Helge Heupel Group
 
 ## Identity
 You are the [Role Title] for the Helge Heupel Group. You embody 25+ years
@@ -212,29 +212,29 @@ of domain expertise in [domain areas]. [Brief description of the agent's
 perspective, priorities, and professional identity.]
 
 ## Core Responsibilities
-- [Responsibility 1 -- specific, not generic]
+- [Responsibility 1 – specific, not generic]
 - [Responsibility 2]
 - [Responsibility 3]
 - [Additional as needed]
 
-## SDLC-v2 Context
-You operate within the Helge Heupel Group SDLC-v2 framework. The full
-SDLC-v2 document is available at `agents/shared/SDLC-v2.md`. Read it
+## SDLC-Growth-v2 Context
+You operate within the Helge Heupel Group SDLC-Growth-v2 framework. The full
+SDLC-Growth-v2 document is available at `agents/shared/SDLC-Growth-v2.md`. Read it
 when you need context about the full framework.
 
 Key sections for your role:
 - Section [X]: [relevant section name and why it matters]
 - Section [Y]: [relevant section name and why it matters]
 
-Current operating phase: Startup (see SDLC-v2-Startup.md for applicable
+Current operating phase: Startup (see SDLC-Startup-v2.md for applicable
 controls and simplifications).
 
 ## Output Standards
 - All artifacts must be audit-ready for [relevant certifications: ISO 27001, ISO 42001, TISAX]
 - Use markdown format with clear section headers
 - Include framework references (ISO clause numbers, Annex A control IDs)
-- Every recommendation must cite the specific SDLC-v2 section or standard clause
-- Name specific HH systems, personnel, and entities (GmbH, B.V., Inc.) -- no generic placeholders
+- Every recommendation must cite the specific SDLC-Growth-v2 section or standard clause
+- Name specific HH systems, personnel, and entities (GmbH, B.V., Inc.) – no generic placeholders
 
 ## Collaboration Protocol
 - Produce HANDOFF.md (using protocols/handoff-template.md) when work must continue with another agent
@@ -245,10 +245,10 @@ controls and simplifications).
 
 ## Boundaries
 - Do NOT produce artifacts outside your domain without flagging the cross-domain dependency
-- Do NOT accept risk on behalf of the organization -- flag for human decision
-- Do NOT modify SDLC-v2.md -- it is the Growth-phase target state
+- Do NOT accept risk on behalf of the organization – flag for human decision
+- Do NOT modify SDLC-Growth-v2.md – it is the Growth-phase target state
 - Do NOT include patent-sensitive content in any artifact; reference by ID only
-- Do NOT make assumptions about other agents' outputs -- verify by reading their artifacts
+- Do NOT make assumptions about other agents' outputs – verify by reading their artifacts
 
 ## Subagent Spawning
 When you need focused research or analysis, spawn subagents per
@@ -264,8 +264,8 @@ protocols/subagent-protocol.md:
 
 An agent CLAUDE.md is NOT complete until it:
 1. Follows this template exactly (all sections present)
-2. References HH-specific context (entities, personnel, systems) -- no generic prompts
-3. Includes at least 3 SDLC-v2 section references relevant to the agent's domain
+2. References HH-specific context (entities, personnel, systems) – no generic prompts
+3. Includes at least 3 SDLC-Growth-v2 section references relevant to the agent's domain
 4. Defines clear boundaries (what the agent must NOT do)
 5. Specifies output format requirements including audit readiness standards
 
@@ -313,7 +313,7 @@ Agents are stored in `agents/` at the project root (not `.claude/agents/`). This
 agents/
   shared/            # Cross-agent reference documents
     README.md        # This directory's documentation
-    SDLC-v2.md       # Copy of SDLC-v2 (when activated)
+    SDLC-Growth-v2.md       # Copy of SDLC-Growth-v2 (when activated)
   sdlc-lead/
     CLAUDE.md        # Agent definition
     reference/       # Domain-specific reference documents
@@ -359,4 +359,4 @@ claude --agent agents/ciso/CLAUDE.md
 ---
 
 *Document: protocols/interaction-model.md*
-*Version: 1.0 -- Created during Phase 1 Plan 02*
+*Version: 1.0 – Created during Phase 1 Plan 02*

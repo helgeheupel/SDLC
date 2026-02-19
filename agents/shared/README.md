@@ -8,7 +8,7 @@
 agents/
   shared/                    # This directory -- cross-agent reference documents
     README.md                # This file
-    SDLC-v2.md               # Full SDLC-v2 document (copy when activated)
+    SDLC-Growth-v2.md               # Full SDLC-Growth-v2 document (copy when activated)
   sdlc-lead/                 # SDLC Lead Agent (orchestrator)
     CLAUDE.md                # Agent definition
     reference/               # Domain-specific reference documents
@@ -32,14 +32,14 @@ agents/
     reference/
 ```
 
-## SDLC-v2 Reference
+## SDLC-Growth-v2 Reference
 
-The full SDLC-v2 document (7,434 lines, ~30K tokens) is the authoritative framework for all agent operations. Each agent's CLAUDE.md references this shared copy rather than inlining the document.
+The full SDLC-Growth-v2 document (7,434 lines, ~30K tokens) is the authoritative framework for all agent operations. Each agent's CLAUDE.md references this shared copy rather than inlining the document.
 
-**Setup instruction:** Copy or symlink SDLC-v2.md to `agents/shared/SDLC-v2.md` when the agent system is activated:
+**Setup instruction:** Copy or symlink SDLC-Growth-v2.md to `agents/shared/SDLC-Growth-v2.md` when the agent system is activated:
 
 ```bash
-cp path/to/SDLC-v2.md agents/shared/SDLC-v2.md
+cp path/to/SDLC-Growth-v2.md agents/shared/SDLC-Growth-v2.md
 ```
 
 Agents read this file on demand when they need context about the full framework. It is NOT embedded in agent system prompts (to preserve context window budget).
@@ -48,7 +48,7 @@ Agents read this file on demand when they need context about the full framework.
 
 | Agent | Directory | Phase Created | Primary Domain |
 |-------|-----------|---------------|----------------|
-| SDLC Lead | `agents/sdlc-lead/` | Phase 6 | Cross-domain orchestration, SDLC-v2 compliance |
+| SDLC Lead | `agents/sdlc-lead/` | Phase 6 | Cross-domain orchestration, SDLC-Growth-v2 compliance |
 | CTO | `agents/cto/` | Phase 4 | Architecture, AI engineering, ADRs |
 | CISO | `agents/ciso/` | Phase 2 | Security, EU compliance, AI governance, ISMS |
 | AI Science | `agents/ai-science/` | Phase 6 | AI research, model evaluation, ISO 42001 Annex A |
@@ -86,4 +86,4 @@ Files placed in `reference/` are intended to be read by the agent during session
 ---
 
 *Created: Phase 1 Plan 02 (Agent Foundation)*
-*Framework: SDLC-v2 (Startup phase)*
+*Framework: SDLC-Growth-v2 (Startup phase)*

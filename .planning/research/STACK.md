@@ -11,9 +11,9 @@
 
 This document defines the prescriptive technology stack for achieving ISO 27001:2022+Amd.1:2024 + ISO 42001:2023 dual certification for the Helge Heupel Group (1 CEO + 4 consultants + 6 Claude Code AI agents) by mid-May 2026. The stack is optimized for a startup-weight team that must produce enterprise-grade compliance artifacts at speed, leveraging AI agents as first-class artifact producers with human sign-off.
 
-**Key architectural decision:** Documentation-as-code with a lightweight GRC platform, not enterprise GRC tooling. The team is too small for ServiceNow GRC's implementation overhead, and the existing SDLC-v2 framework already defines a comprehensive evidence automation architecture that maps to Git-native workflows.
+**Key architectural decision:** Documentation-as-code with a lightweight GRC platform, not enterprise GRC tooling. The team is too small for ServiceNow GRC's implementation overhead, and the existing SDLC-Growth-v2 framework already defines a comprehensive evidence automation architecture that maps to Git-native workflows.
 
-**Stack philosophy:** Azure-native infrastructure (per CTO/CISO recommendation and SDLC-v2 Section 15) + Git-native compliance artifacts + Vanta for continuous monitoring + Claude Code agents for artifact generation + human review/sign-off workflow.
+**Stack philosophy:** Azure-native infrastructure (per CTO/CISO recommendation and SDLC-Growth-v2 Section 15) + Git-native compliance artifacts + Vanta for continuous monitoring + Claude Code agents for artifact generation + human review/sign-off workflow.
 
 ---
 
@@ -28,12 +28,12 @@ This document defines the prescriptive technology stack for achieving ISO 27001:
 | Platform | Verdict | Rationale |
 |----------|---------|-----------|
 | **Vanta** | **RECOMMENDED** | Native ISO 27001 + ISO 42001 support (added 2025). 200+ integrations including Azure, Azure AD/Entra ID, GitHub, Azure DevOps. Startup pricing (~$10-15K/year for ISO 27001 + ISO 42001 bundle). Auditor-facing portal reduces audit prep time by 50-70%. Time-to-value: 2-4 weeks. Adequate for a 5-person team. |
-| ServiceNow GRC | NOT NOW | Enterprise-grade (correct for Growth phase at EUR 10-50M ARR). Implementation takes 3-6 months with a dedicated GRC engineer. Minimum ~$50-100K/year. SDLC-v2 Section 15.5 correctly identifies "Vanta (initial) / ServiceNow GRC (at scale)" -- follow this progression. |
+| ServiceNow GRC | NOT AT STARTUP | Enterprise-grade (correct for Growth phase at EUR 10-50M ARR). Implementation takes 3-6 months with a dedicated GRC engineer. Minimum ~$50-100K/year. SDLC-Growth-v2 Section 15.5 correctly identifies "Vanta (initial) / ServiceNow GRC (at scale)" -- follow this progression. |
 | Drata | ALTERNATIVE | Comparable to Vanta. Slightly stronger on SOC 2, slightly weaker on ISO 42001 maturity. Either works; Vanta has better Azure-native integration. |
 | Sprinto | ALTERNATIVE | Good for SOC 2 + ISO 27001 at lower price point (~$8-12K). ISO 42001 support is nascent (announced but not mature). Not recommended if ISO 42001 is a primary target. |
 | Secureframe | ALTERNATIVE | Strong SOC 2/ISO 27001. ISO 42001 support added mid-2025. Less mature Azure integration than Vanta. |
 | Anecdotes.ai | NICHE | Purpose-built for ISO 42001 + EU AI Act. Very new (founded 2024). Could be a supplementary tool for AI-specific compliance mapping. Worth monitoring but not as primary GRC. |
-| Manual (spreadsheets) | DO NOT USE | A 5-person team cannot maintain manual evidence collection across 93 ISO 27001 controls + 28 ISO 42001 Annex A controls + TISAX ISA 6 objectives. The SDLC-v2 gap analyses (EU-CA, AIGO) identified 130+ gaps -- tracking these manually is unsustainable. |
+| Manual (spreadsheets) | DO NOT USE | A 5-person team cannot maintain manual evidence collection across 93 ISO 27001 controls + 28 ISO 42001 Annex A controls + TISAX ISA 6 objectives. The SDLC-Growth-v2 gap analyses (EU-CA, AIGO) identified 130+ gaps -- tracking these manually is unsustainable. |
 
 **Vanta configuration for dual certification:**
 
@@ -72,8 +72,8 @@ At Growth phase (EUR 10-50M ARR, 20+ employees, SOC 2 Type II + FedRAMP requirem
 
 | Approach | Verdict | Rationale |
 |----------|---------|-----------|
-| **Claude Code CLI + system prompts** | **RECOMMENDED** | Already the team's working environment. Agents have full filesystem access to read standards, produce artifacts, and commit to Git. No additional infrastructure needed. The SDLC-v2 Section 10.8 already defines agent governance (tiers, trust levels, kill switches). |
-| Claude API + custom orchestrator | NOT NOW | Adds engineering overhead to build orchestration logic. Not justified for 6 agents with a single human orchestrator (CEO). Appropriate for Growth phase if agent-to-agent workflows become complex. |
+| **Claude Code CLI + system prompts** | **RECOMMENDED** | Already the team's working environment. Agents have full filesystem access to read standards, produce artifacts, and commit to Git. No additional infrastructure needed. The SDLC-Growth-v2 Section 10.8 already defines agent governance (tiers, trust levels, kill switches). |
+| Claude API + custom orchestrator | NOT AT STARTUP | Adds engineering overhead to build orchestration logic. Not justified for 6 agents with a single human orchestrator (CEO). Appropriate for Growth phase if agent-to-agent workflows become complex. |
 | LangChain / LangGraph / CrewAI | DO NOT USE | Adds unnecessary abstraction layers. These frameworks are designed for complex multi-agent workflows with tool use, memory management, and routing. The HH use case is simpler: human-invoked agents that produce document artifacts. The overhead of maintaining a Python orchestration layer is not justified for a 5-person team. |
 | AutoGen (Microsoft) | DO NOT USE | Similar to LangChain concern -- adds engineering complexity. Also, AutoGen's multi-agent conversation patterns are designed for collaborative problem-solving, not document production. |
 | Claude MCP (Model Context Protocol) servers | CONSIDER FOR GROWTH | MCP servers could provide agents with structured access to the GRC platform API, risk register, and evidence store. Not needed for startup phase where filesystem access suffices. |
@@ -127,7 +127,7 @@ Each agent's system prompt (stored as `CLAUDE.md` or dedicated agent definition 
 
 ### 2.3 Agent Interaction Model -- Confidence: HIGH
 
-Per SDLC-v2 Section 10.8.4, the recommended workflow patterns for compliance artifact production:
+Per SDLC-Growth-v2 Section 10.8.4, the recommended workflow patterns for compliance artifact production:
 
 | Pattern | Use Case | Example |
 |---------|----------|---------|
@@ -139,7 +139,7 @@ Per SDLC-v2 Section 10.8.4, the recommended workflow patterns for compliance art
 - All agent outputs committed to a `drafts/` branch, never directly to `main`
 - Pull request required for any artifact moving to `main` (human review gate)
 - Git commit metadata includes agent ID and session hash for audit trail
-- Per SDLC-v2 Section 10.8.5: kill switch, budget enforcement, timeout enforcement, rollback capability
+- Per SDLC-Growth-v2 Section 10.8.5: kill switch, budget enforcement, timeout enforcement, rollback capability
 
 ---
 
@@ -147,9 +147,9 @@ Per SDLC-v2 Section 10.8.4, the recommended workflow patterns for compliance art
 
 ### 3.1 Evidence Architecture: Git-Native + Vanta -- Confidence: HIGH
 
-The SDLC-v2 Section 6.4 already defines a comprehensive evidence automation architecture. The stack must implement this design.
+The SDLC-Growth-v2 Section 6.4 already defines a comprehensive evidence automation architecture. The stack must implement this design.
 
-**Evidence lifecycle (per SDLC-v2 Section 6.4.1):**
+**Evidence lifecycle (per SDLC-Growth-v2 Section 6.4.1):**
 
 ```
 Generate  ->  Validate  ->  Store  ->  Query  ->  Package
@@ -169,7 +169,7 @@ Agent output  attestation  store (Git)  Dashboard
 | Vanta platform | Control status, test results, personnel evidence | Vanta SaaS (EU data center) | Vanta native format | Automated tests + manual attestations |
 | Human sign-offs | Management review minutes, risk acceptance decisions, policy approvals | Git repository (signed commits) + Vanta | Markdown with cryptographic attestation | CEO/consultant signs off via Git + records in Vanta |
 
-### 3.2 Evidence Schema (per SDLC-v2 Section 6.4.2) -- Confidence: HIGH
+### 3.2 Evidence Schema (per SDLC-Growth-v2 Section 6.4.2) -- Confidence: HIGH
 
 Each evidence artifact conforms to this schema, enabling automated binding to controls:
 
@@ -248,7 +248,7 @@ compliance/
 
 | Approach | Verdict | Rationale |
 |----------|---------|-----------|
-| **Markdown + YAML in Git** | **RECOMMENDED** | Aligns with SDLC-v2 Principle 7 ("Everything as Code"). Full audit trail via Git history. Claude Code agents can read/write natively. PR-based review = human sign-off with timestamp. Diff-based change tracking satisfies ISO 27001 cl. 7.5.3 (document control). No additional tooling cost. |
+| **Markdown + YAML in Git** | **RECOMMENDED** | Aligns with SDLC-Growth-v2 Principle 7 ("Everything as Code"). Full audit trail via Git history. Claude Code agents can read/write natively. PR-based review = human sign-off with timestamp. Diff-based change tracking satisfies ISO 27001 cl. 7.5.3 (document control). No additional tooling cost. |
 | SharePoint / Confluence | DO NOT USE | Creates a parallel documentation silo outside the developer workflow. AI agents cannot natively produce/edit documents in these systems. Change tracking is weaker than Git. Requires manual evidence export for auditors. |
 | GRC platform document module | SUPPLEMENTARY ONLY | Use Vanta's document storage for the auditor-facing "golden copies" of approved policies. Source of truth remains Git. Sync approved documents to Vanta after PR merge. |
 | Notion / Coda | DO NOT USE | Not designed for compliance documentation. Weak audit trails. No structured frontmatter. AI agent integration requires API work. |
@@ -292,7 +292,7 @@ Git-native document control satisfies all ISO requirements:
 
 ### 5.1 Risk Register: YAML-in-Git + Vanta -- Confidence: HIGH
 
-**What:** The unified risk register (per SDLC-v2 Section 5.5) is maintained as structured YAML in the compliance Git repository, with a synchronized view in Vanta for dashboard/reporting.
+**What:** The unified risk register (per SDLC-Growth-v2 Section 5.5) is maintained as structured YAML in the compliance Git repository, with a synchronized view in Vanta for dashboard/reporting.
 
 **Why YAML-in-Git, not a dedicated GRC risk module:**
 
@@ -302,7 +302,7 @@ Git-native document control satisfies all ISO requirements:
 - Structured schema enables automated cross-framework evidence generation
 - Vanta sync provides the dashboard/reporting layer humans and auditors need
 
-**Risk register schema (per SDLC-v2 Section 5.5):**
+**Risk register schema (per SDLC-Growth-v2 Section 5.5):**
 
 ```yaml
 risks:
@@ -338,13 +338,13 @@ risks:
 
 ### 5.2 Risk Assessment Methodology Tool -- Confidence: MEDIUM
 
-For the semi-quantitative risk assessment methodology (5x5 likelihood x impact matrix, per SDLC-v2 and EU-CA gap analysis recommendation):
+For the semi-quantitative risk assessment methodology (5x5 likelihood x impact matrix, per SDLC-Growth-v2 and EU-CA gap analysis recommendation):
 
 | Tool | Purpose | Recommendation |
 |------|---------|---------------|
-| **YAML templates + Claude Code agents** | Agents populate risk assessments using structured templates; CEO/CISO reviews | RECOMMENDED for startup. Agents can reference the ISO 23894 AI risk management standard and the SDLC-v2 risk methodology to produce consistent assessments. |
+| **YAML templates + Claude Code agents** | Agents populate risk assessments using structured templates; CEO/CISO reviews | RECOMMENDED for startup. Agents can reference the ISO 23894 AI risk management standard and the SDLC-Growth-v2 risk methodology to produce consistent assessments. |
 | **Vanta risk management module** | Track risk status, trigger reviews, generate reports | SUPPLEMENTARY -- use for dashboard and auditor reporting |
-| **FAIR (Factor Analysis of Information Risk)** | Quantitative risk analysis for high-impact risks | DEFERRED to Growth phase. Mentioned in SDLC-v2 Section 5.1 but overkill for startup with <30 top risks. |
+| **FAIR (Factor Analysis of Information Risk)** | Quantitative risk analysis for high-impact risks | DEFERRED to Growth phase. Mentioned in SDLC-Growth-v2 Section 5.1 but overkill for startup with <30 top risks. |
 
 ---
 
@@ -352,7 +352,7 @@ For the semi-quantitative risk assessment methodology (5x5 likelihood x impact m
 
 ### 6.1 Recommendation: YAML Registry in Git -- Confidence: HIGH
 
-The AIGO gap analysis identified the AI system registry as a CRITICAL gap. The SDLC-v2 Section 10.7 defines the registry requirements.
+The AIGO gap analysis identified the AI system registry as a CRITICAL gap. The SDLC-Growth-v2 Section 10.7 defines the registry requirements.
 
 **Why YAML-in-Git, not a database:**
 
@@ -363,7 +363,7 @@ The AIGO gap analysis identified the AI system registry as a CRITICAL gap. The S
 - No additional infrastructure to maintain
 - Can be rendered to human-readable format via CI/CD
 
-**Registry schema (per SDLC-v2 Section 10.7 + AIGO gap analysis):**
+**Registry schema (per SDLC-Growth-v2 Section 10.7 + AIGO gap analysis):**
 
 ```yaml
 ai_systems:
@@ -427,9 +427,9 @@ ai_systems:
 
 ### 7.1 Azure-Native Compliance Stack -- Confidence: HIGH
 
-Per SDLC-v2 Section 15, the Azure-native stack provides the infrastructure compliance layer:
+Per SDLC-Growth-v2 Section 15, the Azure-native stack provides the infrastructure compliance layer:
 
-| Tool | Purpose | Compliance Mapping | Status in SDLC-v2 |
+| Tool | Purpose | Compliance Mapping | Status in SDLC-Growth-v2 |
 |------|---------|-------------------|-------------------|
 | **Azure Policy (Deny + Audit)** | Infrastructure compliance enforcement | ISO 27001 A.5.36, A.8.9; all frameworks | Defined |
 | **Microsoft Defender for Cloud** | Cloud security posture management (CSPM) | ISO 27001 A.8.7, A.8.8; NIS2 Art.21(e) | Defined |
@@ -440,7 +440,7 @@ Per SDLC-v2 Section 15, the Azure-native stack provides the infrastructure compl
 
 ### 7.2 CI/CD Pipeline Evidence Generation -- Confidence: HIGH
 
-Per SDLC-v2 Section 6.4.3, each pipeline stage produces structured evidence:
+Per SDLC-Growth-v2 Section 6.4.3, each pipeline stage produces structured evidence:
 
 | Pipeline Stage | Evidence Artifact | UCL Controls | Framework Mapping |
 |---------------|-------------------|-------------|-------------------|
@@ -456,7 +456,7 @@ Per SDLC-v2 Section 6.4.3, each pipeline stage produces structured evidence:
 
 | Tool | Purpose | Recommendation |
 |------|---------|---------------|
-| **Open Policy Agent (OPA) + Rego** | Policy-as-code for Kubernetes admission control and general policy enforcement | RECOMMENDED -- already in SDLC-v2 stack. Write Rego policies for ISMS/AIMS controls that can be machine-enforced. |
+| **Open Policy Agent (OPA) + Rego** | Policy-as-code for Kubernetes admission control and general policy enforcement | RECOMMENDED -- already in SDLC-Growth-v2 stack. Write Rego policies for ISMS/AIMS controls that can be machine-enforced. |
 | **Azure Policy (built-in + custom)** | Azure resource compliance | RECOMMENDED -- enforce data residency, encryption, network isolation at Azure level |
 | **Checkov** | IaC compliance scanning against CIS benchmarks + custom policies | RECOMMENDED -- pre-deployment gate in CI/CD |
 
@@ -475,7 +475,7 @@ Step 1: CEO identifies artifact needed (e.g., "IS Policy per ISO 27001 cl. 5.2")
      |
 Step 2: CEO invokes appropriate agent (e.g., CISO Agent) with context
      |    Agent reads: ISO 27001 standard (PDF), AIGO/EU-CA gap analyses,
-     |    SDLC-v2 requirements, existing artifacts in compliance/ repo
+     |    SDLC-Growth-v2 requirements, existing artifacts in compliance/ repo
      |
 Step 3: Agent produces draft artifact in Markdown with YAML frontmatter
      |    Commits to drafts/ branch
@@ -567,8 +567,8 @@ Based on the EU-CA and AIGO gap analyses, these are the artifacts the agents mus
 | **Archer (RSA)** | GRC | Legacy enterprise GRC. Massive implementation overhead. Not cloud-native. |
 | **LangChain / CrewAI / AutoGen** | Agent framework | Unnecessary abstraction layer for document-producing agents. Adds Python dependency and orchestration complexity. Claude Code CLI is sufficient. |
 | **Confluence / SharePoint** | Document management | Creates parallel documentation silo. Not agent-friendly. Weaker audit trail than Git. |
-| **Snyk** | SCA | Replaced by Microsoft Defender for DevOps + Trivy per SDLC-v2 to reduce vendor count. |
-| **Jira** | Work tracking | Azure Boards already in stack per SDLC-v2. Adding Jira duplicates work tracking. |
+| **Snyk** | SCA | Replaced by Microsoft Defender for DevOps + Trivy per SDLC-Growth-v2 to reduce vendor count. |
+| **Jira** | Work tracking | Azure Boards already in stack per SDLC-Growth-v2. Adding Jira duplicates work tracking. |
 | **Notion** | Documentation | No structured compliance support. Weak audit trail. Not designed for this use case. |
 | **Custom-built GRC** | GRC | Building a GRC platform is a multi-quarter engineering project. Buy, don't build, for compliance tooling. |
 | **Excel/Google Sheets** | Risk register, SoA | Not version-controlled. No agent integration. No automated evidence binding. Manual effort does not scale. |
@@ -670,7 +670,7 @@ At pre-revenue / early revenue stage, this represents the "8-12% of revenue for 
 | Agent Framework | Claude Code CLI, LangChain, CrewAI, AutoGen, Custom API | Claude Code CLI | Already in use; no additional infrastructure; sufficient for human-orchestrated agent workflows | HIGH |
 | Documentation Format | Markdown+YAML, Confluence, SharePoint, Notion | Markdown+YAML in Git | Agent-native; version-controlled; PR-based review; aligns with "Everything as Code" | HIGH |
 | Risk Register | YAML-in-Git, Vanta module, ServiceNow, Excel | YAML-in-Git + Vanta sync | Agent-writable; version-controlled; Vanta provides dashboard layer | HIGH |
-| AI System Registry | YAML-in-Git, Database, Vanta, Custom app | YAML-in-Git | Agent-writable; machine-readable; no infra overhead; aligns with SDLC-v2 design | HIGH |
+| AI System Registry | YAML-in-Git, Database, Vanta, Custom app | YAML-in-Git | Agent-writable; machine-readable; no infra overhead; aligns with SDLC-Growth-v2 design | HIGH |
 | Evidence Storage | Git + Vanta, SharePoint, S3, Custom | Git + Vanta | Dual-layer: Git for source of truth + agent access; Vanta for auditor access | HIGH |
 | IMS vs Separate MS | Integrated, Separate ISMS+AIMS | Integrated | Both standards share Harmonized Structure; single team cannot run two parallel MS; auditor efficiency | HIGH |
 | TISAX Approach | Vanta custom, Manual, Dedicated tool | Vanta custom + Git YAML | No good dedicated TISAX tool at startup scale; hybrid approach pragmatic | MEDIUM |
@@ -684,7 +684,7 @@ At pre-revenue / early revenue stage, this represents the "8-12% of revenue for 
 | 2026-02-18 | Initial research document | GSD Project Researcher (Claude Opus 4.6) |
 
 **Research sources:**
-- SDLC-v2.md (7,434 lines) -- primary architectural reference
+- SDLC-Growth-v2.md (7,434 lines) -- primary architectural reference
 - Phase 1 gap analyses: AIGO (AI Governance), EU-CA (EU Compliance), PSA (Software Architecture), PSRE (SRE) -- gap identification and priority setting
 - ISO/IEC 42001:2023 standard (licensed copy in project) -- AIMS requirements
 - ISO/IEC 27001:2022+Amd.1:2024 (licensed copy in project) -- ISMS requirements

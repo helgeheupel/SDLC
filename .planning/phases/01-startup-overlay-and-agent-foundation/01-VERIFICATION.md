@@ -21,8 +21,8 @@ re_verification: false
 
 | #  | Truth                                                                                                                                                              | Status     | Evidence                                                                                                              |
 |----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------------------------|
-| 1  | A Startup Overlay document exists that explicitly maps every SDLC-v2 section to Startup / Growth / Enterprise with justifications for each "not yet" deferral     | VERIFIED   | SDLC-v2-Startup.md: 2078 lines, 398 per-control entries, 750 `[v2 S.X]` cross-references, all 18 sections + appendices present |
-| 2  | A role consolidation RACI matrix exists showing how 8 SDLC-v2 personas map to 6 humans + 7 agents, and any team member can identify who owns what                 | VERIFIED   | RACI-Startup.md: 32 SDLC activities x 13 columns (6 humans + 7 agents); all 8 archetypes mapped; A always human      |
+| 1  | A Startup Overlay document exists that explicitly maps every SDLC-Growth-v2 section to Startup / Growth / Enterprise with justifications for each "not yet" deferral     | VERIFIED   | SDLC-Startup-v2.md: 2078 lines, 398 per-control entries, 750 `SDLC Growth Sec. X` cross-references, all 18 sections + appendices present |
+| 2  | A role consolidation RACI matrix exists showing how 8 SDLC-Growth-v2 personas map to 6 humans + 7 agents, and any team member can identify who owns what                 | VERIFIED   | RACI-Startup.md: 32 SDLC activities x 13 columns (6 humans + 7 agents); all 8 archetypes mapped; A always human      |
 | 3  | The gate model is documented as 2 meetings (Weekly Technical + Monthly Strategic) with risk-tiered criteria, not the full Enterprise gate structure                | VERIFIED   | governance-model.md: exactly 2 meetings, 4-tier x 6-gate matrix, Low/Medium auto-flow, High/Critical human approval  |
 | 4  | The agent interaction model is documented (hierarchical: CEO to SDLC Lead to specialists, plus direct CEO-to-specialist paths) and any agent session can reference it | VERIFIED | protocols/interaction-model.md: hierarchy section, both operational modes, entry point decision matrix, direct specialist paths |
 | 5  | The subagent spawning protocol exists with clear rules for context passing, result collection, and token budget governance                                          | VERIFIED   | protocols/subagent-protocol.md: sections 3 (Spawning Governance), 4 (Context Passing), 5 (Result Collection); model/maxTurns matrix |
@@ -33,17 +33,17 @@ re_verification: false
 
 ## Required Artifacts
 
-### Plan 01-01 and 01-03: SDLC-v2-Startup.md
+### Plan 01-01 and 01-03: SDLC-Startup-v2.md
 
 | Artifact                | Expected                                              | Status        | Details                                                                            |
 |-------------------------|-------------------------------------------------------|---------------|------------------------------------------------------------------------------------|
-| `SDLC-v2-Startup.md`   | Complete Startup SDLC companion (all 18 sections)     | VERIFIED      | 2078 lines; 398 per-control entries; 750 `[v2 S.]` cross-references               |
+| `SDLC-Startup-v2.md`   | Complete Startup SDLC companion (all 18 sections)     | VERIFIED      | 2078 lines; 398 per-control entries; 750 `SDLC Growth Sec.` cross-references               |
 | Section coverage        | Sections 1-18 + appendices + summary statistics       | VERIFIED      | All 22 `##` headers confirmed: sections 1-18, Appendices, Summary Statistics, Purpose, Patent Handling, TOC |
 | Patent handling section | TISAX ISA Chapter 7 references (7.1.1, 7.2.1, 7.3.1) | VERIFIED      | All three sub-items present with reference-by-ID-only protocol                    |
 | Phase assignments       | Startup / Startup (simplified) / Growth / Enterprise  | VERIFIED      | 142 Startup, 121 Startup (simplified), 123 Growth, 12 Enterprise (total 398)     |
 | "Not yet" justifications | Every deferred item has explicit justification        | VERIFIED      | Justification column in every table row; Growth Trigger paragraphs throughout     |
 | Section 9 gate criteria | Per-gate-criterion entries G0-G5 across 4 risk tiers  | VERIFIED      | 490 cross-references to sections 9-18 confirmed; gate model documented            |
-| Document cross-refs     | `[v2 S.X.Y.Z]` format used consistently              | VERIFIED      | 750 instances of this exact pattern in the document                               |
+| Document cross-refs     | `SDLC Growth Sec. X.Y.Z` format used consistently              | VERIFIED      | 750 instances of this exact pattern in the document                               |
 
 ### Plan 01-02: Protocol Documents and Agent Directory
 
@@ -52,7 +52,7 @@ re_verification: false
 | `protocols/interaction-model.md`      | Agent interaction model with Operational Modes  | VERIFIED    | 362 lines; sections: System Overview, Hierarchy, Operational Modes, Entry Point Matrix, Sign-Off, Agent Template, Communication |
 | `protocols/subagent-protocol.md`      | Subagent spawning with Spawning Governance      | VERIFIED    | 312 lines; sections: Architecture Constraints (2-level limit), When to Spawn, Spawning Governance, Context Passing, Result Collection, Error Handling, Audit Trail |
 | `protocols/handoff-template.md`       | HANDOFF.md template with "What Was Done"        | VERIFIED    | 215 lines; template includes all required sections: What Was Done, Artifacts Produced, What Needs to Happen Next, Context, Open Questions, Subagents Used, Dependencies |
-| `agents/shared/README.md`             | Agent directory doc referencing SDLC-v2         | VERIFIED    | 89 lines; SDLC-v2 setup instructions present; all 7 agent roles listed                        |
+| `agents/shared/README.md`             | Agent directory doc referencing SDLC-Growth-v2         | VERIFIED    | 89 lines; SDLC-Growth-v2 setup instructions present; all 7 agent roles listed                        |
 | 7 agent directories with CLAUDE.md    | Placeholder CLAUDE.md per agent                 | VERIFIED    | All 7 directories confirmed: sdlc-lead, cto, ciso, ai-science, platform-sre, product-strategy, appsec; all have CLAUDE.md (intentional placeholders for future phases) |
 | `reference/` under each agent         | .gitkeep or directory                           | VERIFIED    | All 7 agent directories contain a `reference` subdirectory                                     |
 
@@ -69,13 +69,13 @@ re_verification: false
 
 | From                              | To                              | Via                                        | Status   | Details                                                                  |
 |-----------------------------------|---------------------------------|--------------------------------------------|----------|--------------------------------------------------------------------------|
-| `SDLC-v2-Startup.md`             | `SDLC-v2.md`                   | `[v2 S.X.Y.Z]` cross-references            | WIRED    | 750 instances; sections 9-18 references: 490 instances                   |
+| `SDLC-Startup-v2.md`             | `SDLC-Growth-v2.md`                   | `SDLC Growth Sec. X.Y.Z` cross-references            | WIRED    | 750 instances; sections 9-18 references: 490 instances                   |
 | `protocols/interaction-model.md` | `protocols/subagent-protocol.md` | Link at lines 11, 107, 123, 255, 285     | WIRED    | Multiple explicit cross-references; "(see [subagent-protocol.md])"       |
 | `protocols/interaction-model.md` | `protocols/handoff-template.md` | Link at lines 12, 240, 292               | WIRED    | Explicit cross-reference: "using the template in [protocols/handoff-template.md]" |
 | `protocols/interaction-model.md` | `agents/`                       | Directory references at lines 13, 310    | WIRED    | Explicit agents/ directory references throughout                         |
-| `RACI-Startup.md`                | `SDLC-v2-Startup.md`           | `[v2 S.X]` references in activity rows   | WIRED    | 35 instances; all 32 RACI rows include v2 section references             |
+| `RACI-Startup.md`                | `SDLC-Startup-v2.md`           | `SDLC Growth Sec. X` references in activity rows   | WIRED    | 35 instances; all 32 RACI rows include v2 section references             |
 | `RACI-Startup.md`                | `protocols/interaction-model.md` | Cross-reference at lines 18, 50, 283    | WIRED    | Multiple explicit links to interaction-model.md                          |
-| `governance-model.md`            | `SDLC-v2-Startup.md`           | `[v2 S.13]` at lines 17, 29, 31, 134    | WIRED    | Gate criteria derived from companion document; explicit [v2 S.13.x] refs |
+| `governance-model.md`            | `SDLC-Startup-v2.md`           | `SDLC Growth Sec. 13` at lines 17, 29, 31, 134    | WIRED    | Gate criteria derived from companion document; explicit SDLC Growth Sec. 13.x refs |
 | `governance-model.md`            | `RACI-Startup.md`              | RACI references at lines 18, 72, 126, 298 | WIRED  | Meeting attendees aligned with RACI roles; explicit [RACI-Startup.md] links |
 
 ---
@@ -84,8 +84,8 @@ re_verification: false
 
 | Requirement | Source Plan | Description                                                                      | Status    | Evidence                                                                    |
 |-------------|-------------|----------------------------------------------------------------------------------|-----------|-----------------------------------------------------------------------------|
-| OVLY-01     | 01-01, 01-03 | SDLC-v2 Startup phase extraction — maps which v2 sections apply NOW vs. Growth vs. Enterprise | SATISFIED | SDLC-v2-Startup.md: all 18 sections mapped, 398 per-control entries with phase assignments and deferral justifications |
-| OVLY-02     | 01-04       | Role consolidation mapping — 8 SDLC-v2 personas collapsed to humans + 7 agents with RACI | SATISFIED | RACI-Startup.md: 8 archetypes mapped to 6 humans + 7 agents; 32 SDLC activities with A always human. Note: REQUIREMENTS.md says "5 humans" but ROADMAP Success Criteria says "6 humans" — the RACI correctly implements 6 (CEO, Strategy Partner, Finance SM, IT Pentester, CTO, CISO). The discrepancy is in REQUIREMENTS.md text and does not affect the implementation, which matches the ROADMAP success criteria. |
+| OVLY-01     | 01-01, 01-03 | SDLC-Growth-v2 Startup phase extraction — maps which v2 sections apply at Startup vs. Growth vs. Enterprise | SATISFIED | SDLC-Startup-v2.md: all 18 sections mapped, 398 per-control entries with phase assignments and deferral justifications |
+| OVLY-02     | 01-04       | Role consolidation mapping — 8 SDLC-Growth-v2 personas collapsed to humans + 7 agents with RACI | SATISFIED | RACI-Startup.md: 8 archetypes mapped to 6 humans + 7 agents; 32 SDLC activities with A always human. Note: REQUIREMENTS.md says "5 humans" but ROADMAP Success Criteria says "6 humans" — the RACI correctly implements 6 (CEO, Strategy Partner, Finance SM, IT Pentester, CTO, CISO). The discrepancy is in REQUIREMENTS.md text and does not affect the implementation, which matches the ROADMAP success criteria. |
 | OVLY-03     | 01-04       | Gate model simplified for startup — risk-tiered gates, 2 meetings                | SATISFIED | governance-model.md: Weekly Technical (30min) + Monthly Strategic (60min); 4 risk tiers x 6 gates; ISO management review satisfied |
 | AGNT-08     | 01-02       | Agent interaction model defined — hierarchical, file-mediated, CEO can engage any specialist directly | SATISFIED | protocols/interaction-model.md: hierarchy section + both operational modes + entry point decision matrix + direct specialist path |
 | AGNT-09     | 01-02       | Subagent spawning protocol defined — context passing, result collection, token budget governance | SATISFIED | protocols/subagent-protocol.md: all three areas documented; haiku/sonnet/opus model matrix; maxTurns specified per trigger type |
@@ -132,9 +132,9 @@ The following items would benefit from human review before first operational use
 
 No gaps found. All five success criteria are satisfied:
 
-1. **Startup Overlay document** — SDLC-v2-Startup.md exists with 398 per-control entries across all 18 SDLC-v2 sections, each mapped to Startup/Growth/Enterprise with explicit justifications. Cross-reference count (750) far exceeds the plan's 300+ target.
+1. **Startup Overlay document** — SDLC-Startup-v2.md exists with 398 per-control entries across all 18 SDLC-Growth-v2 sections, each mapped to Startup/Growth/Enterprise with explicit justifications. Cross-reference count (750) far exceeds the plan's 300+ target.
 
-2. **Role consolidation RACI matrix** — RACI-Startup.md maps all 8 SDLC-v2 archetypes to 6 humans + 7 agents across 32 SDLC activities. The accountable-is-always-human rule is implemented and documented. Any team member can identify ownership via the matrix.
+2. **Role consolidation RACI matrix** — RACI-Startup.md maps all 8 SDLC-Growth-v2 archetypes to 6 humans + 7 agents across 32 SDLC activities. The accountable-is-always-human rule is implemented and documented. Any team member can identify ownership via the matrix.
 
 3. **Gate model as 2 meetings** — governance-model.md documents exactly 2 meetings (Weekly Technical 30min, Monthly Strategic 60min) with a 4-tier x 6-gate matrix. Low/Medium items auto-flow; High/Critical require human approval. The full Enterprise gate structure is not present — only the 2-meeting consolidation.
 

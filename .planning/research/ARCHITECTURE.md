@@ -15,7 +15,7 @@ This document defines the architecture for a system of 6 Claude Code AI agents t
 
 1. Each agent is a **CLAUDE.md system prompt file** in the SDLC repository, not a hosted service. Claude Code sessions load the prompt; the agent "exists" for the duration of the session.
 2. Inter-agent communication is **file-mediated via Git**, not real-time API-based. Agent A produces an artifact; Agent B reads it in a subsequent session. The CEO orchestrates sequencing.
-3. The artifact lifecycle follows a **4-stage pipeline**: Draft (agent) -> Review (human) -> Approve (sign-off log) -> Archive (evidence repository). This aligns with SDLC-v2 Section 8 IEA Trust Levels and Section 10.8 Agent Governance.
+3. The artifact lifecycle follows a **4-stage pipeline**: Draft (agent) -> Review (human) -> Approve (sign-off log) -> Archive (evidence repository). This aligns with SDLC-Growth-v2 Section 8 IEA Trust Levels and Section 10.8 Agent Governance.
 4. Build order is **dependency-driven**: CISO Agent first (foundational policies), then CTO/Platform/AppSec in parallel, then AI Science, then Product/Strategy last.
 
 ---
@@ -40,7 +40,7 @@ This document defines the architecture for a system of 6 Claude Code AI agents t
        |            |             |              |             |       |
  +===================================================================+
  |              SHARED CONTEXT LAYER                                  |
- |  SDLC-v2.md | Risk Register | Artifact Repository | CLAUDE.md    |
+ |  SDLC-Growth-v2.md | Risk Register | Artifact Repository | CLAUDE.md    |
  +===================================================================+
        |            |             |              |             |
  +===================================================================+
@@ -55,13 +55,13 @@ This document defines the architecture for a system of 6 Claude Code AI agents t
 | Component | Type | Boundary | Inputs | Outputs |
 |-----------|------|----------|--------|---------|
 | **CEO Orchestrator** | Human | Selects agent sessions, provides directives, reviews all outputs | Business context, certification requirements, human consultant feedback | Session directives, approval decisions, sign-off records |
-| **CTO Agent** | Claude Code session (CLAUDE.md) | Architecture decisions, AI system design, ADRs, IEA governance | SDLC-v2 Sections 2, 3, 7, 8, 15; existing architecture; CISO risk outputs | ADRs, architecture diagrams, AI system design docs, technology decisions |
-| **CISO Agent** | Claude Code session (CLAUDE.md) | IS policies, risk assessment, ISMS documentation, NIS2, AI governance | SDLC-v2 Sections 5, 6, 10, 11, 12; regulatory requirements; risk register | IS Policy, SoA, risk register, risk treatment plan, NIS2 docs, AI governance artifacts |
-| **AI Science Agent** | Claude Code session (CLAUDE.md) | AI research assessment, model evaluation, ISO 42001 Annex A artifacts | SDLC-v2 Sections 10, 11; CISO AI governance framework; CTO architecture | AI strategy docs, model evaluation frameworks, Annex A implementation evidence |
-| **Platform/SRE Agent** | Claude Code session (CLAUDE.md) | SLO frameworks, observability, incident management, BCP/DR, runbooks | SDLC-v2 Sections 15, 16; CTO architecture decisions; CISO security requirements | SLO definitions, observability config, incident procedures, BCP/DR plans, runbooks |
-| **Product/Strategy Agent** | Claude Code session (CLAUDE.md) | Strategic alignment, OKR frameworks, WSJF, portfolio governance | SDLC-v2 Section 2; business strategy; market context | Strategy artifacts, OKR frameworks, WSJF templates, portfolio governance docs |
-| **AppSec Agent** | Claude Code session (CLAUDE.md) | Threat models, SAST/DAST config, SBOM/AI-BOM, supply chain security | SDLC-v2 Sections 9, 10.5, 12.3; CTO architecture; CISO security policies | Threat models, security tooling configs, SBOM pipelines, SLSA evidence |
-| **Shared Context Layer** | Files in Git | Read-only reference for all agents | SDLC-v2.md, risk register, existing artifacts | N/A (reference only) |
+| **CTO Agent** | Claude Code session (CLAUDE.md) | Architecture decisions, AI system design, ADRs, IEA governance | SDLC-Growth-v2 Sections 2, 3, 7, 8, 15; existing architecture; CISO risk outputs | ADRs, architecture diagrams, AI system design docs, technology decisions |
+| **CISO Agent** | Claude Code session (CLAUDE.md) | IS policies, risk assessment, ISMS documentation, NIS2, AI governance | SDLC-Growth-v2 Sections 5, 6, 10, 11, 12; regulatory requirements; risk register | IS Policy, SoA, risk register, risk treatment plan, NIS2 docs, AI governance artifacts |
+| **AI Science Agent** | Claude Code session (CLAUDE.md) | AI research assessment, model evaluation, ISO 42001 Annex A artifacts | SDLC-Growth-v2 Sections 10, 11; CISO AI governance framework; CTO architecture | AI strategy docs, model evaluation frameworks, Annex A implementation evidence |
+| **Platform/SRE Agent** | Claude Code session (CLAUDE.md) | SLO frameworks, observability, incident management, BCP/DR, runbooks | SDLC-Growth-v2 Sections 15, 16; CTO architecture decisions; CISO security requirements | SLO definitions, observability config, incident procedures, BCP/DR plans, runbooks |
+| **Product/Strategy Agent** | Claude Code session (CLAUDE.md) | Strategic alignment, OKR frameworks, WSJF, portfolio governance | SDLC-Growth-v2 Section 2; business strategy; market context | Strategy artifacts, OKR frameworks, WSJF templates, portfolio governance docs |
+| **AppSec Agent** | Claude Code session (CLAUDE.md) | Threat models, SAST/DAST config, SBOM/AI-BOM, supply chain security | SDLC-Growth-v2 Sections 9, 10.5, 12.3; CTO architecture; CISO security policies | Threat models, security tooling configs, SBOM pipelines, SLSA evidence |
+| **Shared Context Layer** | Files in Git | Read-only reference for all agents | SDLC-Growth-v2.md, risk register, existing artifacts | N/A (reference only) |
 | **Artifact Store** | Git repository directories | Versioned storage for all agent outputs | Agent drafts | Reviewed, approved, and archived compliance artifacts |
 
 ### 2.3 Component Boundaries
@@ -101,20 +101,20 @@ CLAUDE.md
 +--------------------------------------------------------------------+
 | 1. IDENTITY AND ROLE                                                |
 |    - Agent name, persona (25+ years domain expertise)               |
-|    - SDLC-v2 archetype mapping (PSA, CAIE, EU-CA, etc.)           |
+|    - SDLC-Growth-v2 archetype mapping (PSA, CAIE, EU-CA, etc.)           |
 |    - Primary ISO clause ownership                                   |
 |    - Relationship to human counterparts                             |
 +--------------------------------------------------------------------+
 | 2. CONSTRAINTS AND GOVERNANCE                                       |
 |    - "Agents produce drafts. Humans own risk."                      |
 |    - IEA Trust Level: Level 2 (Supervised Autonomous)               |
-|    - SDLC-v2 Section 10.8 agent governance rules                   |
+|    - SDLC-Growth-v2 Section 10.8 agent governance rules                   |
 |    - Prohibited actions (no sign-off, no risk acceptance)           |
 |    - Token budget awareness                                         |
 +--------------------------------------------------------------------+
-| 3. SDLC-v2 CONTEXT INJECTION                                       |
-|    - Full SDLC-v2.md as reference (or section-specific excerpts)   |
-|    - Startup Overlay: which sections apply NOW                      |
+| 3. SDLC-Growth-v2 CONTEXT INJECTION                                       |
+|    - Full SDLC-Growth-v2.md as reference (or section-specific excerpts)   |
+|    - Startup Overlay: which sections apply at Startup               |
 |    - Section cross-references for the agent's domain               |
 +--------------------------------------------------------------------+
 | 4. ARTIFACT PRODUCTION RULES                                        |
@@ -145,9 +145,9 @@ CLAUDE.md
 
 ### 3.2 Context Injection Strategy
 
-The SDLC-v2 is 7,434 lines. Injecting it fully into every agent session is possible but wasteful. The architecture uses **section-specific injection** with a **reference index**.
+The SDLC-Growth-v2 is 7,434 lines. Injecting it fully into every agent session is possible but wasteful. The architecture uses **section-specific injection** with a **reference index**.
 
-| Agent | Primary SDLC-v2 Sections (full injection) | Secondary Sections (summary + reference) |
+| Agent | Primary SDLC-Growth-v2 Sections (full injection) | Secondary Sections (summary + reference) |
 |-------|--------------------------------------------|------------------------------------------|
 | CTO Agent | 2 (Strategy as Code), 3 (Principles), 7 (Org Model), 8 (IEA v2), 15 (Toolchain) | 4 (Progressive Adoption), 9 (SDLC Phases), 10 (AI Integration) |
 | CISO Agent | 5 (Risk Management), 6 (UCL), 10 (AI Integration), 11 (AIMS), 12 (Security/Privacy) | 3 (Principles), 4 (Progressive Adoption), 13 (Quality Gates) |
@@ -159,7 +159,7 @@ The SDLC-v2 is 7,434 lines. Injecting it fully into every agent session is possi
 **Implementation:** Each agent's CLAUDE.md includes:
 1. The full text of its primary sections (copy-pasted, not referenced).
 2. A structured summary of secondary sections with section numbers for `@file` references.
-3. A `REFERENCE_INDEX.md` listing all SDLC-v2 sections with one-line descriptions, so the agent can request specific sections from the CEO if needed.
+3. A `REFERENCE_INDEX.md` listing all SDLC-Growth-v2 sections with one-line descriptions, so the agent can request specific sections from the CEO if needed.
 
 ### 3.3 Prompt Size Estimates
 
@@ -186,7 +186,7 @@ Agents do **not** communicate directly. The CEO is the orchestrator who:
 3. Reviews the artifact (or delegates review to a human consultant).
 4. Starts a session with Agent B, providing Agent A's artifact as input context.
 
-This aligns with SDLC-v2 Section 10.8.3: "All inter-agent communication must flow through Intent Contracts... No direct agent-to-agent API calls, shared memory, or side channels."
+This aligns with SDLC-Growth-v2 Section 10.8.3: "All inter-agent communication must flow through Intent Contracts... No direct agent-to-agent API calls, shared memory, or side channels."
 
 In this architecture, the **CEO acts as the Intent Contract bridge** between agents. The Git repository acts as the shared state store.
 
@@ -195,7 +195,7 @@ CEO Decision: "CISO produces IS Policy -> CTO reviews architecture alignment ->
                AppSec reviews security controls -> CEO finalizes"
 
 Session 1 (CISO Agent):
-  Input:  SDLC-v2 Sections 5, 12; certification requirements
+  Input:  SDLC-Growth-v2 Sections 5, 12; certification requirements
   Output: /artifacts/drafts/isms-is-policy-v0.1.md
 
 CEO Review: Reads draft, identifies items needing CTO input
@@ -213,7 +213,7 @@ CEO Consolidation:
   Assigns human consultant for formal review
 ```
 
-### 4.2 Interaction Patterns (SDLC-v2 Section 10.8.4 Alignment)
+### 4.2 Interaction Patterns (SDLC-Growth-v2 Section 10.8.4 Alignment)
 
 | Pattern | Description | When Used | CEO Role |
 |---------|-------------|-----------|----------|
@@ -264,7 +264,7 @@ CEO Consolidation:
 
 ### 5.1 Pipeline Stages
 
-The artifact lifecycle maps to SDLC-v2 Section 8 IEA Trust Levels:
+The artifact lifecycle maps to SDLC-Growth-v2 Section 8 IEA Trust Levels:
 
 ```
 +----------+     +-----------+     +-----------+     +------------+
@@ -278,8 +278,8 @@ The artifact lifecycle maps to SDLC-v2 Section 8 IEA Trust Levels:
 
 | Stage | IEA Trust Level | Actor | Activities | Output Location |
 |-------|----------------|-------|------------|-----------------|
-| **Draft** | 0 (Untrusted) | Agent (Claude Code session) | Generate artifact from SDLC-v2 context + directive; apply domain expertise; flag uncertainties and assumptions; include metadata header | `/artifacts/drafts/{domain}/{artifact-name}-v{version}.md` |
-| **Review** | 3 (Peer-Reviewed) | Human consultant + optionally another agent | Verify accuracy against ISO clauses; check SDLC-v2 alignment; validate completeness; annotate issues; suggest revisions | `/artifacts/reviewed/{domain}/{artifact-name}-v{version}.md` + review comments |
+| **Draft** | 0 (Untrusted) | Agent (Claude Code session) | Generate artifact from SDLC-Growth-v2 context + directive; apply domain expertise; flag uncertainties and assumptions; include metadata header | `/artifacts/drafts/{domain}/{artifact-name}-v{version}.md` |
+| **Review** | 3 (Peer-Reviewed) | Human consultant + optionally another agent | Verify accuracy against ISO clauses; check SDLC-Growth-v2 alignment; validate completeness; annotate issues; suggest revisions | `/artifacts/reviewed/{domain}/{artifact-name}-v{version}.md` + review comments |
 | **Approved** | 4 (Human-Approved) | CEO or designated approver | Formal sign-off; record approver identity, date, scope; confirm artifact meets certification requirements | `/artifacts/approved/{domain}/{artifact-name}-v{version}.md` + sign-off log entry |
 | **Archived** | 6 (Attested) | Automated (Git commit + evidence metadata) | Version-locked in Git; indexed in evidence register; linked to applicable ISO controls in SoA; retention policy applied | `/evidence/{framework}/{control-id}/{artifact-name}-v{version}.md` |
 
@@ -328,7 +328,7 @@ sign_off_log: []          # [{approver, date, scope, decision}]
 | | | AIMS-ISMS Integration Document | 42001 cl. 4, 27001 cl. 4 | P1 |
 | | NIS2 | NIS2 Compliance Matrix | NIS2 Art. 21(a-j) | P1 |
 | **CTO Agent** | Architecture | Architecture Decision Records (template + key ADRs) | 42001 A.4.4 | P1 |
-| | | IEA v2 Implementation Plan (Startup scope) | SDLC-v2 S.8 | P1 |
+| | | IEA v2 Implementation Plan (Startup scope) | SDLC-Growth-v2 S.8 | P1 |
 | | | Technology Stack Decision Record | 27001 A.8 | P1 |
 | **AI Science Agent** | AIMS Annex A | AI Impact Assessment Process | 42001 A.5.2, ISO 42005 | P0 |
 | | | AI System Lifecycle Procedures | 42001 A.6.2 | P1 |
@@ -338,8 +338,8 @@ sign_off_log: []          # [{approver, date, scope, decision}]
 | | | Incident Management Procedure | 27001 A.5.24-28, NIS2 Art. 21(b) | P1 |
 | | | Business Continuity Plan | 27001 A.5.29-30, NIS2 Art. 21(c) | P1 |
 | | | Backup and Recovery Procedure | 27001 A.8.13 | P2 |
-| **Product/Strategy Agent** | Strategy | Strategic Alignment Framework | SDLC-v2 S.2 | P2 |
-| | | OKR Framework (compliance-integrated) | SDLC-v2 S.2.2 | P2 |
+| **Product/Strategy Agent** | Strategy | Strategic Alignment Framework | SDLC-Growth-v2 S.2 | P2 |
+| | | OKR Framework (compliance-integrated) | SDLC-Growth-v2 S.2.2 | P2 |
 | **AppSec Agent** | Security Engineering | Threat Model Template + Methodology | 27001 A.8.27, NIS2 Art. 21(a) | P1 |
 | | | SAST/DAST/SCA Configuration Plan | 27001 A.8.28 | P1 |
 | | | SBOM/AI-BOM Generation Pipeline Design | 27001 A.5.21, NIS2 Art. 21(d) | P2 |
@@ -372,16 +372,16 @@ Every approved artifact maps to one or more SoA control entries. The CISO Agent 
 
 ### 6.1 CISO Agent (Primary -- Build First)
 
-**SDLC-v2 Archetype Mapping:** EU-CA (EU Compliance Architect) + AIGO (AI Governance Officer) + partial US-CA
+**SDLC-Growth-v2 Archetype Mapping:** EU-CA (EU Compliance Architect) + AIGO (AI Governance Officer) + partial US-CA
 
 **Why build first:** Every other agent's outputs are constrained by the CISO's risk framework, IS Policy, and AI Policy. The Statement of Applicability defines what controls exist; other agents produce evidence for those controls. Without the CISO's foundational artifacts, other agents lack their governance envelope.
 
 **Key prompt elements:**
-- Full text of SDLC-v2 Sections 5 (Risk Management), 6 (UCL), 11 (AIMS), 12 (Security/Privacy)
+- Full text of SDLC-Growth-v2 Sections 5 (Risk Management), 6 (UCL), 11 (AIMS), 12 (Security/Privacy)
 - ISO 27001:2022 Annex A control list (all 93) with applicability guidance
 - ISO 42001:2023 Annex A control list (A.2-A.10) with Startup-phase scoping
-- NIS2 Art. 21(a-j) requirements per SDLC-v2 Section 12.4
-- TISAX VDA ISA 6 control objectives per SDLC-v2 Section 12.5
+- NIS2 Art. 21(a-j) requirements per SDLC-Growth-v2 Section 12.4
+- TISAX VDA ISA 6 control objectives per SDLC-Growth-v2 Section 12.5
 - Risk assessment methodology (5x5 qualitative matrix per Section 5.4.1)
 - Startup phase constraints (Section 4.2): governance consolidated into 2 meetings, CTO=CISO=AI Governance Lead
 
@@ -389,10 +389,10 @@ Every approved artifact maps to one or more SoA control entries. The CISO Agent 
 
 ### 6.2 CTO Agent
 
-**SDLC-v2 Archetype Mapping:** PSA (Principal Solution Architect) + CAIE (Chief AI Infrastructure Engineer)
+**SDLC-Growth-v2 Archetype Mapping:** PSA (Principal Solution Architect) + CAIE (Chief AI Infrastructure Engineer)
 
 **Key prompt elements:**
-- Full text of SDLC-v2 Sections 2 (Strategy as Code), 7 (Org Model), 8 (IEA v2), 15 (Toolchain)
+- Full text of SDLC-Growth-v2 Sections 2 (Strategy as Code), 7 (Org Model), 8 (IEA v2), 15 (Toolchain)
 - Azure-native architecture patterns per Section 15
 - IEA v2 graduated trust scale (7 levels, Section 8.2)
 - ADR template and decision criteria
@@ -402,10 +402,10 @@ Every approved artifact maps to one or more SoA control entries. The CISO Agent 
 
 ### 6.3 AI Science Agent
 
-**SDLC-v2 Archetype Mapping:** CAIS (Chief AI Scientist)
+**SDLC-Growth-v2 Archetype Mapping:** CAIS (Chief AI Scientist)
 
 **Key prompt elements:**
-- Full text of SDLC-v2 Sections 10 (AI Integration Policy), 11 (AIMS -- complete)
+- Full text of SDLC-Growth-v2 Sections 10 (AI Integration Policy), 11 (AIMS -- complete)
 - ISO 42001 Annex A controls A.4-A.8 implementation guidance
 - ISO 42005 impact assessment process
 - AI lifecycle stages per ISO 5338 (Section 10.2)
@@ -416,10 +416,10 @@ Every approved artifact maps to one or more SoA control entries. The CISO Agent 
 
 ### 6.4 Platform/SRE Agent
 
-**SDLC-v2 Archetype Mapping:** PSRE (Platform and Site Reliability Engineer)
+**SDLC-Growth-v2 Archetype Mapping:** PSRE (Platform and Site Reliability Engineer)
 
 **Key prompt elements:**
-- Full text of SDLC-v2 Sections 15 (Toolchain), 16 (Operations/Reliability)
+- Full text of SDLC-Growth-v2 Sections 15 (Toolchain), 16 (Operations/Reliability)
 - SLO framework design per Section 16.1
 - Incident management per Section 16 + NIS2 Art. 21(b)
 - BCP/DR per Section 16 + NIS2 Art. 21(c)
@@ -429,10 +429,10 @@ Every approved artifact maps to one or more SoA control entries. The CISO Agent 
 
 ### 6.5 Product/Strategy Agent
 
-**SDLC-v2 Archetype Mapping:** CSA (Chief Strategy Architect)
+**SDLC-Growth-v2 Archetype Mapping:** CSA (Chief Strategy Architect)
 
 **Key prompt elements:**
-- Full text of SDLC-v2 Section 2 (Strategy as Code), Section 4 (Progressive Adoption)
+- Full text of SDLC-Growth-v2 Section 2 (Strategy as Code), Section 4 (Progressive Adoption)
 - WSJF scoring methodology (Section 2.3)
 - OKR framework and strategy artifact schemas (Section 2.2)
 - Startup phase business context: pivoting to Verity VE/EAM
@@ -441,10 +441,10 @@ Every approved artifact maps to one or more SoA control entries. The CISO Agent 
 
 ### 6.6 AppSec Agent (Product Security Engineering)
 
-**SDLC-v2 Archetype Mapping:** PSE (Product Security Engineer) -- NEW role not in original SDLC-v2 archetypes
+**SDLC-Growth-v2 Archetype Mapping:** PSE (Product Security Engineer) -- NEW role not in original SDLC-Growth-v2 archetypes
 
 **Key prompt elements:**
-- Full text of SDLC-v2 Sections 9 (SDLC Phases -- security gates), 10.5 (AI Supply Chain), 12.3 (Secure Dev Practices)
+- Full text of SDLC-Growth-v2 Sections 9 (SDLC Phases -- security gates), 10.5 (AI Supply Chain), 12.3 (Secure Dev Practices)
 - OWASP LLM Top 10 for AI-specific threats
 - STRIDE/LINDDUN threat modeling methodology per Section 12.3
 - SBOM (CycloneDX) and AI-BOM requirements per Section 10.5.5
@@ -489,7 +489,7 @@ Phase 4 (Integration):
 
 1. **CISO Agent is the critical path.** Any delay in CISO Agent completion delays all downstream agents. Prioritize getting the CISO Agent's system prompt right -- it is the most complex (widest ISO coverage) and the most foundational.
 
-2. **The Startup Overlay should be built before or concurrently with Phase 1.** The CISO Agent needs to know which SDLC-v2 controls apply NOW (Startup phase) vs. later. Without the overlay, the agent will produce Enterprise-weight artifacts that are over-complex for a 5-person team.
+2. **The Startup Overlay should be built before or concurrently with Phase 1.** The CISO Agent needs to know which SDLC-Growth-v2 controls apply at Startup vs. later. Without the overlay, the agent will produce Enterprise-weight artifacts that are over-complex for a 5-person team.
 
 3. **Human consultant allocation should match the build phases.** The CTO consultant should review CTO Agent outputs in Phase 2. The Pentester/Super Admin should review AppSec Agent outputs in Phase 2. Strategy Partner should review Product/Strategy Agent outputs in Phase 3.
 
@@ -505,7 +505,7 @@ The CEO manages the 6 agents using 4 primary patterns:
 
 | Pattern | When | Example |
 |---------|------|---------|
-| **Directive** | CEO tells agent exactly what to produce | "Draft the IS Policy per ISO 27001 cl. 5.2, scoped to SDLC-v2 Section 12.2.5 document hierarchy. Startup phase." |
+| **Directive** | CEO tells agent exactly what to produce | "Draft the IS Policy per ISO 27001 cl. 5.2, scoped to SDLC-Growth-v2 Section 12.2.5 document hierarchy. Startup phase." |
 | **Consultative** | CEO asks agent to analyze and recommend | "Review the current risk register and identify gaps against ISO 27001 Annex A. Recommend priority treatment items." |
 | **Review** | CEO provides another agent's output for domain review | "Here is the CTO Agent's ADR for Azure architecture. Review from CISO perspective and flag security concerns." |
 | **Gap Analysis** | CEO asks agent to assess completeness | "Examine all artifacts in /artifacts/approved/ and identify which SoA controls lack evidence." |
@@ -519,7 +519,7 @@ The CEO manages the 6 agents using 4 primary patterns:
 | **Finance Industry Senior Manager** | CISO Agent (risk/compliance), Product/Strategy Agent | Reviews financial risk aspects, compliance cost estimates, enterprise customer requirements. |
 | **IT Pentester/Super Admin** | AppSec Agent, Platform/SRE Agent | Reviews threat models, security configurations, penetration test scope. Validates technical security controls. |
 
-### 8.3 Sign-Off Protocol (SDLC-v2 Section 10.8 Alignment)
+### 8.3 Sign-Off Protocol (SDLC-Growth-v2 Section 10.8 Alignment)
 
 Every artifact requiring formal approval follows this protocol:
 
@@ -548,13 +548,13 @@ Every artifact requiring formal approval follows this protocol:
 
 ```
 /Users/helgeheupel/Documents/HH/SDLC/
-  SDLC-v2.md                          # The 7,434-line framework (reference)
+  SDLC-Growth-v2.md                          # The 7,434-line framework (reference)
 
   agents/
     ciso/
       CLAUDE.md                        # CISO Agent system prompt
       context/                         # Agent-specific context files
-        sdlc-v2-sections.md            # Extracted SDLC-v2 sections for this agent
+        sdlc-growth-v2-sections.md            # Extracted SDLC-Growth-v2 sections for this agent
         iso27001-annex-a.md            # Control reference
         iso42001-annex-a.md            # Control reference
     cto/
@@ -573,8 +573,8 @@ Every artifact requiring formal approval follows this protocol:
       CLAUDE.md
       context/
     shared/
-      REFERENCE_INDEX.md               # All SDLC-v2 sections with summaries
-      startup-overlay.md               # Which sections apply NOW
+      REFERENCE_INDEX.md               # All SDLC-Growth-v2 sections with summaries
+      startup-overlay.md               # Which sections apply at Startup
       artifact-templates/              # Shared templates for all agents
       metadata-schema.yaml             # Artifact metadata standard
 
@@ -628,9 +628,9 @@ CEO reviews:
   - Starts next agent session as needed
 ```
 
-### 9.3 Agent Governance Alignment with SDLC-v2
+### 9.3 Agent Governance Alignment with SDLC-Growth-v2
 
-| SDLC-v2 Requirement | Implementation in This Architecture |
+| SDLC-Growth-v2 Requirement | Implementation in This Architecture |
 |---------------------|-------------------------------------|
 | Section 10.8.1 Agent Registry | Each agent registered in `agents/shared/AGENT_REGISTRY.yaml` with ID, purpose, capabilities, tier, owner |
 | Section 10.8.2 Trust Level | All 6 agents operate at **Tier 2 (Collaborator)**: propose actions, human must approve before acceptance |
@@ -648,10 +648,10 @@ CEO reviews:
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|------------|
 | Agent produces inaccurate ISO control mapping | Audit finding; rework | Medium | Human consultant review for every control mapping; cross-reference against official ISO standard text |
-| Context window limits prevent agent from processing full SDLC-v2 | Incomplete artifacts | Low | Section-specific injection strategy (Section 3.2); agents can request additional sections |
+| Context window limits prevent agent from processing full SDLC-Growth-v2 | Incomplete artifacts | Low | Section-specific injection strategy (Section 3.2); agents can request additional sections |
 | Agent sessions produce inconsistent artifacts across sessions | Evidence inconsistency | Medium | Artifact metadata standard enforced; templates used; CEO reviews for consistency before approval |
 | Single CEO bottleneck for orchestration | Delays in artifact production | High | Delegate review to human consultants; batch agent sessions; prioritize critical path (CISO first) |
-| SDLC-v2 is Enterprise-weight; agents produce over-complex artifacts | Governance overhead | High | Startup Overlay (built first) explicitly tells agents what applies NOW; agent prompts include phase-awareness |
+| SDLC-Growth-v2 is Enterprise-weight; agents produce over-complex artifacts | Governance overhead | High | Startup Overlay (built first) explicitly tells agents what applies at Startup; agent prompts include phase-awareness |
 | Agent drift from intended persona across long sessions | Quality degradation | Low | Keep sessions focused (one artifact per session); re-read CLAUDE.md at session start |
 
 ---
@@ -665,7 +665,7 @@ CEO reviews:
 - [x] Inter-agent communication patterns specified (Section 4)
 - [x] Artifact production pipeline with stages (Section 5)
 - [x] Human-agent interaction model (Section 8)
-- [x] SDLC-v2 alignment verified (Section 9.3)
+- [x] SDLC-Growth-v2 alignment verified (Section 9.3)
 - [x] Risks and mitigations identified (Section 10)
 
 ---
@@ -674,7 +674,7 @@ CEO reviews:
 
 1. **CISO Agent is Week 1 deliverable.** Roadmap must allocate the first sprint to CISO Agent prompt construction and validation. This is the critical path.
 
-2. **Startup Overlay is a prerequisite.** Before any agent can produce right-sized artifacts, the SDLC-v2 Startup Overlay must exist. Build it in Week 1 alongside CISO Agent.
+2. **Startup Overlay is a prerequisite.** Before any agent can produce right-sized artifacts, the SDLC-Growth-v2 Startup Overlay must exist. Build it in Week 1 alongside CISO Agent.
 
 3. **Phase 2 agents (CTO + AppSec) can be built in parallel in Week 2-3.** Roadmap can assign these to different workstreams.
 

@@ -102,7 +102,7 @@ An auditor performing a Stage 1 review reads *all* the documentation. Contradict
 
 ### Description
 
-The CTO/CISO feedback is explicit: "don't let documentation outpace telemetry" and the SDLC-v2 is "over-complex for Phase 1." AI agents have a natural tendency to produce comprehensive output -- they will generate 50-page procedures, 200-row risk registers, and enterprise-grade governance frameworks because the ISO standards describe these at full maturity. The SDLC-v2 itself is already 7,434 lines covering 18 sections at Enterprise-weight.
+The CTO/CISO feedback is explicit: "don't let documentation outpace telemetry" and the SDLC-Growth-v2 is "over-complex for Phase 1." AI agents have a natural tendency to produce comprehensive output -- they will generate 50-page procedures, 200-row risk registers, and enterprise-grade governance frameworks because the ISO standards describe these at full maturity. The SDLC-Growth-v2 itself is already 7,434 lines covering 18 sections at Enterprise-weight.
 
 For a 5-person startup, producing 300 pages of compliance documentation is counterproductive for three reasons:
 1. **Maintenance burden.** Every page committed must be maintained. A 5-person team cannot maintain 300 pages of living documentation alongside product development.
@@ -116,20 +116,20 @@ For a 5-person startup, producing 300 pages of compliance documentation is count
 - Procedures describe multi-person handoff workflows that require more people than exist on the team
 - Governance bodies are defined that cannot actually convene (e.g., a 5-member AI Governance Board when the company has 5 people total -- the Board *is* the company)
 - Artifacts describe quarterly review cycles that would consume more person-hours than the team has available
-- SDLC-v2's 18 sections are all fully elaborated at Enterprise maturity
+- SDLC-Growth-v2's 18 sections are all fully elaborated at Enterprise maturity
 
 ### Prevention strategy
 
 1. **Page budget per artifact.** Set maximum page counts: IS Policy (3--5 pages), AI Policy (3--5 pages), Risk Assessment Methodology (5--8 pages), SoA (spreadsheet, not prose), Procedures (2--3 pages each), Risk Register (spreadsheet with <40 rows). Any agent output exceeding the budget is rejected.
 2. **"Who does this?" test.** Every procedure must name a specific person (by role, and that role must map to one of the 5 team members + CEO). If a procedure requires a role that does not exist, the procedure must be redesigned.
-3. **Startup overlay enforcement.** Use SDLC-v2's Progressive Adoption Model (Section 4) to explicitly mark each artifact section as Startup/Growth/Enterprise. Only Startup-phase content is produced for certification. Growth/Enterprise content is deferred.
+3. **Startup overlay enforcement.** Use SDLC-Growth-v2's Progressive Adoption Model (Section 4) to explicitly mark each artifact section as Startup/Growth/Enterprise. Only Startup-phase content is produced for certification. Growth/Enterprise content is deferred.
 4. **Proportionality principle.** Apply ISO 42001's own proportionality guidance: controls should be proportionate to the risk. A 5-person team with 2 products and 3 Azure subscriptions does not need the same documentation as a 500-person enterprise.
 5. **Telemetry-first approach.** For every control, ask: "Can we prove this with automated telemetry rather than a written procedure?" Automated evidence (Azure Policy compliance reports, Sentinel alerts, CI/CD pipeline logs) is more convincing to auditors than prose.
 
 ### Phase mapping
 
 - **Week 1:** Set page budgets and role mapping constraints in all agent prompts
-- **Week 2:** Define Startup overlay markers for SDLC-v2 sections
+- **Week 2:** Define Startup overlay markers for SDLC-Growth-v2 sections
 - **Weeks 3--8:** Enforce budgets during production; reject over-documented outputs
 - **Weeks 9--10:** Verify all procedures pass the "who does this?" test
 
@@ -520,7 +520,7 @@ AI agents producing artifacts in English for a single organizational context wil
 ### Prevention strategy
 
 1. **Entity-specific artifact tagging.** Every artifact must explicitly state which entity(ies) it applies to. Use metadata tags (e.g., `applies_to: [GmbH, B.V., Inc.]` or `applies_to: [GmbH]`).
-2. **Jurisdiction-specific addenda.** Follow SDLC-v2's Section 18 (Entity-Specific Addenda) pattern: one set of core policies/procedures plus entity-specific addenda for DE, NL, and US regulatory specifics.
+2. **Jurisdiction-specific addenda.** Follow SDLC-Growth-v2's Section 18 (Entity-Specific Addenda) pattern: one set of core policies/procedures plus entity-specific addenda for DE, NL, and US regulatory specifics.
 3. **Language matrix.** Define which documents must exist in German (for BSI, BfDI, Betriebsrat), which in Dutch (for AP, NCSC-NL), and which in English only (internal technical documentation).
 4. **Legal review of multi-entity structure.** Engage legal counsel in Week 2 to validate: GDPR controller/processor determinations, NIS2 entity categorization for GmbH and B.V., and cross-entity cost allocation approach.
 5. **Multi-site scope statement.** Draft the IAF MD 1-compliant scope statement in Week 2, explicitly defining: central functions (managed by CEO), local functions (entity-specific regulatory compliance), and sampling approach for Stage 2 audit.

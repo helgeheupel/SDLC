@@ -9,7 +9,7 @@ requires:
   - phase: none
     provides: "First plan in first phase -- no dependencies"
 provides:
-  - "SDLC-v2-Startup.md sections 1-8: per-control mapping of SDLC-v2 to Startup/Growth/Enterprise phases"
+  - "SDLC-Startup-v2.md sections 1-8: per-control mapping of SDLC-Growth-v2 to Startup/Growth/Enterprise phases"
   - "Patent-sensitive artifact handling protocol aligned with TISAX ISA Chapter 7"
   - "6 human + 7 agent role mapping table with trust levels and supervisors"
   - "Simplified IEA component mapping (9 v2 components to Startup equivalents)"
@@ -21,7 +21,7 @@ tech-stack:
   patterns: [per-control-mapping-tables, v2-cross-reference-format, startup-implementation-plus-growth-trigger-pattern]
 
 key-files:
-  created: [SDLC-v2-Startup.md]
+  created: [SDLC-Startup-v2.md]
   modified: []
 
 key-decisions:
@@ -34,7 +34,7 @@ key-decisions:
 
 patterns-established:
   - "Per-control mapping format: table (Item, v2 Reference, Phase, Justification) + Startup Implementation paragraph + Growth Trigger paragraph"
-  - "Cross-reference convention: [v2 S.X.Y.Z] for all SDLC-v2 section references"
+  - "Cross-reference convention: SDLC Growth Sec. X.Y.Z for all SDLC-Growth-v2 section references"
   - "Phase assignment categories: Startup (apply now), Startup (simplified), Growth, Enterprise"
   - "Patent-sensitive artifact handling: reference-by-ID-only, separate repo, TISAX Chapter 7 alignment"
 
@@ -47,7 +47,7 @@ completed: 2026-02-19
 
 # Phase 1 Plan 01: Startup SDLC Companion Document (Sections 1-8) Summary
 
-**Per-control mapping of SDLC-v2 sections 1-8 to Startup/Growth/Enterprise phases with 250 cross-references, patent handling protocol, and 6+7 role mapping**
+**Per-control mapping of SDLC-Growth-v2 sections 1-8 to Startup/Growth/Enterprise phases with 250 cross-references, patent handling protocol, and 6+7 role mapping**
 
 ## Performance
 
@@ -58,7 +58,7 @@ completed: 2026-02-19
 - **Files modified:** 1
 
 ## Accomplishments
-- Created SDLC-v2-Startup.md with document header, patent-sensitive handling section, and full TOC for all 18 v2 sections
+- Created SDLC-Startup-v2.md with document header, patent-sensitive handling section, and full TOC for all 18 v2 sections
 - Mapped sections 1-4 (Purpose, Strategy, Principles, Adoption Model) at per-control granularity with 115 cross-references
 - Mapped sections 5-8 (Risk Management, UCL, Organizational Model, Intent-Execution Architecture) with 135 additional cross-references
 - Produced role mapping table: 6 humans (CEO, Strategy Partner, Finance SM, IT Pentester, CTO, CISO) to 7 agents with trust levels and human supervisors
@@ -69,10 +69,10 @@ completed: 2026-02-19
 Each task was committed atomically:
 
 1. **Task 1: Create companion document header and sections 1-4** - `62dd79b` (feat)
-2. **Task 2: Map SDLC-v2 sections 5-8 to Startup/Growth/Enterprise** - `8c674b5` (feat)
+2. **Task 2: Map SDLC-Growth-v2 sections 5-8 to Startup/Growth/Enterprise** - `8c674b5` (feat)
 
 ## Files Created/Modified
-- `SDLC-v2-Startup.md` - Startup SDLC companion document covering sections 1-8 with per-control mappings (760 lines, 250 cross-references, 269 table rows)
+- `SDLC-Startup-v2.md` - Startup SDLC companion document covering sections 1-8 with per-control mappings (760 lines, 250 cross-references, 269 table rows)
 
 ## Decisions Made
 - **Governing principles:** All 12 apply in spirit; Principles 1, 2, 4, 7, 8, 10, 11, 12 fully; Principles 3, 5, 6 simplified; Principle 9 (Radical Traceability) deferred to Growth
@@ -94,13 +94,13 @@ None
 None - no external service configuration required.
 
 ## Next Phase Readiness
-- SDLC-v2-Startup.md sections 1-8 complete, ready for Plan 01-03 to append sections 9-18
+- SDLC-Startup-v2.md sections 1-8 complete, ready for Plan 01-03 to append sections 9-18
 - Role mapping table in Section 7.2 provides input for RACI matrix in Plan 01-04
 - All phase assignments and justifications established as the baseline for downstream agents
 
 ## Self-Check: PASSED
 
-- SDLC-v2-Startup.md: FOUND
+- SDLC-Startup-v2.md: FOUND
 - 01-01-SUMMARY.md: FOUND
 - Commit 62dd79b (Task 1): FOUND
 - Commit 8c674b5 (Task 2): FOUND

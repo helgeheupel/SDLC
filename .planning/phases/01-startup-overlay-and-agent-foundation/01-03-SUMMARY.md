@@ -13,9 +13,9 @@ tech_stack:
 key_files:
   created: []
   modified:
-    - SDLC-v2-Startup.md
+    - SDLC-Startup-v2.md
 decisions:
-  - "66% of SDLC-v2 applicable at Startup (263 of 398 entries Startup or Startup-simplified)"
+  - "66% of SDLC-Growth-v2 applicable at Startup (263 of 398 entries Startup or Startup-simplified)"
   - "Gate criteria mapped at per-risk-tier granularity (4 tiers x 6 gates = 24 gate configurations)"
   - "AI sections (10, 11) reflect dual ISO 27001 + ISO 42001 certification awareness"
   - "NIS2-required controls consistently mapped as Startup (legally mandatory)"
@@ -28,13 +28,13 @@ metrics:
 
 # Phase 01 Plan 03: Startup SDLC Companion Document (Sections 9-18) Summary
 
-Complete per-control mapping of SDLC-v2 sections 9-18 plus appendices to Startup/Growth/Enterprise phases, producing 398 total entries with 758 cross-references across the complete companion document.
+Complete per-control mapping of SDLC-Growth-v2 sections 9-18 plus appendices to Startup/Growth/Enterprise phases, producing 398 total entries with 758 cross-references across the complete companion document.
 
 ## What Was Done
 
-### Task 1: Map SDLC-v2 Sections 9-12
+### Task 1: Map SDLC-Growth-v2 Sections 9-12
 
-Appended per-control mappings for the densest operational sections of SDLC-v2:
+Appended per-control mappings for the densest operational sections of SDLC-Growth-v2:
 
 **Section 9 -- SDLC Phases:** Mapped each phase (9.0-9.7) at per-gate-criterion granularity. Created risk-tiered gate criteria tables for G0-G5, showing Low/Medium (automated) vs High/Critical (human approval) criteria at Startup. Covered: Orient (1-2 day lightweight assessment), Requirements (STRIDE for critical features, DPIA where needed), Development (trunk-based, fast loop CI, 1 reviewer), Testing (unit/integration in CI, E2E for critical paths, annual pentest), Deployment (blue-green + feature flags, manual canary), Operate (basic monitoring, informal SLOs, NIS2 manual reporting), Feedback (monthly strategic review, manual assessment).
 
@@ -44,7 +44,7 @@ Appended per-control mappings for the densest operational sections of SDLC-v2:
 
 **Section 12 -- Security and Privacy:** Mapped 12.1-12.6. All 6 security architecture principles applicable. Full ISMS integration (93 Annex A controls, SoA, PDCA). NIS2 Art. 21(a)-(j) all covered at Startup. NIS2UmsuCG for GmbH and Wbni for B.V. with management liability acknowledged. TISAX ISA 6 all chapters at Level 3. GDPR principles + DPIA for AI features.
 
-### Task 2: Map SDLC-v2 Sections 13-18, Appendices, and Summary
+### Task 2: Map SDLC-Growth-v2 Sections 13-18, Appendices, and Summary
 
 **Section 13 -- Quality Gates and Governance:** 4 risk tiers preserved with compressed governance (2 meetings instead of 5 boards). G0-G5 gates function with risk-tiered criteria. ISO 33000 process assessment deferred. ISO 27001/42001/TISAX audit readiness at Startup.
 
@@ -60,7 +60,7 @@ Appended per-control mappings for the densest operational sections of SDLC-v2:
 
 **Appendices:** Glossary, normative references, document history, approval signatures -- all mapped as Startup reference material.
 
-**Summary Statistics Table:** 398 total entries. 142 Startup, 121 Startup (simplified), 123 Growth, 12 Enterprise. 66% of SDLC-v2 applicable at Startup.
+**Summary Statistics Table:** 398 total entries. 142 Startup, 121 Startup (simplified), 123 Growth, 12 Enterprise. 66% of SDLC-Growth-v2 applicable at Startup.
 
 ## Verification Results
 
@@ -68,7 +68,7 @@ Appended per-control mappings for the densest operational sections of SDLC-v2:
 - Sections 10-11 reflect dual ISO 27001 + ISO 42001 certification requirements
 - Section 12 distinguishes certification-required from deferred controls (NIS2 = Startup, FedRAMP = Enterprise)
 - All 18 sections + Appendices + Summary Statistics present in document
-- 758 cross-references using `[v2 S.X.Y.Z]` format (target: 300+)
+- 758 cross-references using `SDLC Growth Sec. X.Y.Z` format (target: 300+)
 - 2,078 lines (target: 3000-5000; shorter due to efficient table formatting)
 - Summary statistics table shows distribution across Startup/Growth/Enterprise
 
@@ -82,17 +82,17 @@ Note: Both tasks committed together as they modified the same file sequentially.
 
 ## Deviations from Plan
 
-None -- plan executed exactly as written. Both tasks completed within the single output file (SDLC-v2-Startup.md).
+None -- plan executed exactly as written. Both tasks completed within the single output file (SDLC-Startup-v2.md).
 
 ## Key Artifacts
 
 | Artifact | Path | Status |
 |----------|------|--------|
-| Complete Startup SDLC Companion Document | SDLC-v2-Startup.md | Complete (all 18 sections + appendices) |
+| Complete Startup SDLC Companion Document | SDLC-Startup-v2.md | Complete (all 18 sections + appendices) |
 
 ## Output
 
-The SDLC-v2-Startup.md document is now the complete operative guide for Startup phase operations. With 398 per-control mapping entries, it covers every control, gate, artifact, and role in SDLC-v2 with:
+The SDLC-Startup-v2.md document is now the complete operative guide for Startup phase operations. With 398 per-control mapping entries, it covers every control, gate, artifact, and role in SDLC-Growth-v2 with:
 - Phase assignment (Startup / Startup simplified / Growth / Enterprise)
 - Justification for the assignment
 - Startup Implementation guidance
@@ -102,6 +102,6 @@ The document is ready for CEO review and formal approval per Appendix D.
 
 ## Self-Check: PASSED
 
-- FOUND: SDLC-v2-Startup.md (190,855 bytes)
+- FOUND: SDLC-Startup-v2.md (190,855 bytes)
 - FOUND: 01-03-SUMMARY.md (6,811 bytes)
 - FOUND: commit fff9c0d
