@@ -38,7 +38,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Startup SDLC companion document sections 1-8 (OVLY-01)
+- [x] 01-01-PLAN.md -- Startup SDLC companion document sections 1-8 (OVLY-01)
 - [x] 01-02-PLAN.md -- Agent interaction model, subagent protocol, handoff template, directory structure (AGNT-08, AGNT-09)
 - [ ] 01-03-PLAN.md -- Startup SDLC companion document sections 9-18 (OVLY-01)
 - [ ] 01-04-PLAN.md -- RACI matrix and 2-meeting governance model (OVLY-02, OVLY-03)
@@ -189,7 +189,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Startup Overlay and Agent Foundation | 1/4 | In progress | - |
+| 1. Startup Overlay and Agent Foundation | 2/4 | In progress | - |
 | 2. CISO Agent and IS/AI Policy Foundation | 0/TBD | Not started | - |
 | 3. Risk Framework and Statement of Applicability | 0/TBD | Not started | - |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |

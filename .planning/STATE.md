@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 1 of 10 (Startup Overlay and Agent Foundation)
-Plan: 2 of 4 in current phase
+Plan: 2 of 4 complete in current phase
 Status: Executing
-Last activity: 2026-02-19 -- Completed 01-02-PLAN.md (agent interaction model, subagent protocol, handoff template, directory structure)
+Last activity: 2026-02-19 -- Completed 01-01-PLAN.md (Startup SDLC companion document sections 1-8)
 
-Progress: [█░░░░░░░░░] 5%
+Progress: [██░░░░░░░░] 5%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 5min
-- Total execution time: 0.08 hours
+- Total plans completed: 2
+- Average duration: 7min
+- Total execution time: 0.22 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 1 | 1 | 5min | 5min |
+| 1 | 2 | 13min | 7min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (5min)
+- Last 5 plans: 01-02 (5min), 01-01 (8min)
 - Trend: N/A (need more data)
 
 *Updated after each plan completion*
@@ -49,6 +49,12 @@ Recent decisions affecting current work:
 - [01-02]: SDLC-v2 stored in agents/shared/ as read-on-demand file, not inlined in agent system prompts
 - [01-02]: Default subagent config: sonnet, 25 maxTurns, Read/Grep/Glob/Bash tools
 - [01-02]: Maximum 2 re-spawns per subagent task before escalation
+- [01-01]: All 12 governing principles apply in spirit; 8 fully, 3 simplified, 1 (radical traceability) deferred to Growth
+- [01-01]: CEO accepts High/Critical residual risk (not CTO/CISO split) because CEO covers CISO responsibilities at Startup
+- [01-01]: All 7 agents start at Trust Level 2 (Supervised Autonomous); promotion requires 30+ interactions + CEO approval
+- [01-01]: IEA maps to PR-based workflow at Startup; 9 v2 components collapse to agents + PR review + CI/CD + Git history
+- [01-01]: Focus on 8-9 standards/frameworks at Startup; defer 21+ to Growth/Enterprise
+- [01-01]: Simplified risk register schema (~15 fields in YAML-in-Git, not 50+ field full schema)
 
 ### Pending Todos
 
@@ -64,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 01-02-PLAN.md
+Stopped at: Completed 01-01-PLAN.md (Startup SDLC companion sections 1-8)
 Resume file: None
