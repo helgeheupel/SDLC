@@ -30,11 +30,11 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 - [ ] **ISMS-06**: Risk treatment plan produced — treatment strategy per risk, control mappings, residual risk acceptance
 - [ ] **ISMS-07**: Internal audit program defined — audit schedule, scope, methodology, competence requirements
 - [ ] **ISMS-08**: Management review template produced — mandatory inputs per cl. 9.3.2, mandatory outputs per cl. 9.3.3
-- [ ] **ISMS-09**: Document control framework established — version control, approval, distribution, retention per cl. 7.5
+- [x] **ISMS-09**: Document control framework established — version control, approval, distribution, retention per cl. 7.5
 
 ### AIMS Foundation (ISO 42001)
 
-- [ ] **AIMS-01**: AI Policy produced — standalone governance document, commitment to responsible AI, regulatory conformity, prohibited practices
+- [x] **AIMS-01**: AI Policy produced — standalone governance document, commitment to responsible AI, regulatory conformity, prohibited practices
 - [ ] **AIMS-02**: AI System Registry produced — all 7 agents + future product AI registered with full schema (system ID, intended use, risk classification, lifecycle status, applicable controls)
 - [ ] **AIMS-03**: AI risk assessment process defined — dual-axis classification (EU AI Act product risk × SDLC usage tier), ISO 23894 risk sources
 - [ ] **AIMS-04**: AI impact assessment process defined — per ISO 42005, mandatory for High-Risk and Limited-Risk AI systems
@@ -138,8 +138,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ISMS-06 | Phase 3 | Pending |
 | ISMS-07 | Phase 7 | Pending |
 | ISMS-08 | Phase 7 | Pending |
-| ISMS-09 | Phase 2 | Pending |
-| AIMS-01 | Phase 2 | Pending |
+| ISMS-09 | Phase 2 | Complete |
+| AIMS-01 | Phase 2 | Complete |
 | AIMS-02 | Phase 5 | Pending |
 | AIMS-03 | Phase 5 | Pending |
 | AIMS-04 | Phase 5 | Pending |
