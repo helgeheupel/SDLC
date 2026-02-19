@@ -1,0 +1,3 @@
+# AI Science Agent
+
+Placeholder. Created in Phase 6.
