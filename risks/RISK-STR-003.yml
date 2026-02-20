@@ -1,0 +1,64 @@
+---
+risk-id: RISK-STR-003
+title: "Competitor with established enterprise relationships entering the same market space"
+description: >
+  An established enterprise software vendor (SAP, ServiceNow, Salesforce) or
+  well-funded AI startup enters the value engineering or enterprise architecture
+  management space with competitive AI-powered products. Established vendors
+  have existing enterprise customer relationships, sales channels, and brand
+  recognition that the HH Group lacks at Startup phase. The HH Group's
+  competitive advantage lies in the intersection of AI innovation and
+  compliance readiness (ISO 27001, ISO 42001, TISAX), but this advantage
+  may be temporary if larger competitors achieve similar certifications.
+category: STR
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CEO role"
+status: active
+likelihood: 4
+impact: 3
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: retain
+treatment-controls:
+  - control-id: A.5.7
+    description: "Threat intelligence including competitive landscape monitoring for market entry signals"
+  - control-id: A.5.6
+    description: "Industry engagement maintaining awareness of competitor product announcements and strategic moves"
+  - control-id: A.5.1
+    description: "Information security policies supporting rapid compliance certification as competitive moat"
+  - control-id: A.8.25
+    description: "Secure development lifecycle enabling rapid iteration on product differentiation"
+residual-likelihood: 4
+residual-impact: 3
+residual-risk-score: 12
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Competitive entry from established enterprise vendors is a near-certainty in
+  the AI-powered enterprise software space. The question is not whether
+  competitors will enter, but when and how effectively. Rated Likely (4) because
+  the AI enterprise software market is attracting significant investment and
+  large vendors are actively expanding AI capabilities. Impact is Moderate (3)
+  because the HH Group's competitive advantage combines domain expertise, patent-
+  pending innovation ([PATENT-VE-001], [PATENT-EAM-001]), and compliance
+  readiness (ISO 27001/42001/TISAX) that is difficult for larger organizations
+  to replicate quickly. Treatment strategy is Retain because competitive risk
+  is inherent to market participation and cannot be eliminated through controls.
+  The residual risk is accepted as a structural characteristic of the startup
+  business model. Competitive monitoring and rapid iteration maintain awareness
+  and responsiveness.
+workshop-notes: ""
+---

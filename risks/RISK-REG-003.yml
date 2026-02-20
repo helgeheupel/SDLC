@@ -1,0 +1,63 @@
+---
+risk-id: RISK-REG-003
+title: "EU AI Act non-compliance for Verity products regarding risk classification and conformity"
+description: >
+  Verity VE [PATENT-VE-001] and Verity EAM [PATENT-EAM-001] fail to comply with
+  the EU AI Act (Regulation 2024/1689) requirements, including AI system risk
+  classification, transparency obligations under Art. 52, or future conformity
+  assessment requirements. Prohibited practices have been in force since February
+  2, 2025, and full conformity obligations extend to August 2026. Incorrect risk
+  classification (e.g., treating a high-risk system as limited-risk) could trigger
+  enforcement action by national market surveillance authorities in Germany (BNetzA)
+  or the Netherlands.
+category: REG
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.31
+    description: "Legal and regulatory requirements identification with EU AI Act compliance roadmap and risk classification assessment"
+  - control-id: A.5.36
+    description: "Compliance verification through periodic EU AI Act gap assessment against evolving requirements"
+  - control-id: A.5.9
+    description: "AI system inventory with documented EU AI Act risk classification for each system"
+  - control-id: A.5.5
+    description: "Contact with authorities (BNetzA, national AI authorities) for classification guidance"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  The EU AI Act is the first comprehensive AI regulation globally, with enforcement
+  timelines extending through 2026. The HH Group's Verity VE and EAM products are
+  AI-powered systems operating in the EU market, making EU AI Act compliance
+  mandatory. Current classification indicates Limited-Risk per Art. 52 (transparency
+  obligations), but the regulatory landscape is evolving. Rated Possible (3)
+  because the EU AI Act is new and interpretation of risk classification categories
+  is still developing; incorrect classification is a realistic scenario. Impact is
+  Major (4) because non-compliance could result in fines up to EUR 35 million or
+  7% of global turnover, market access restrictions, and reputational damage that
+  would undermine enterprise customer acquisition. Compliance roadmap, risk
+  classification documentation, and authority engagement reduce likelihood to
+  Unlikely (2) and impact to Moderate (3).
+workshop-notes: ""
+---

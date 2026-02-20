@@ -1,0 +1,63 @@
+---
+risk-id: RISK-SUP-001
+title: "Microsoft Azure service disruption or pricing change affecting all HH services"
+description: >
+  Microsoft Azure, the sole cloud infrastructure provider for all HH Group
+  services, experiences a sustained service disruption or implements significant
+  pricing changes that affect the economic viability of the HH Group's cloud
+  architecture. All production workloads (Verity VE, Verity EAM), identity
+  management (Entra ID), productivity tools (M365), and compliance infrastructure
+  are hosted on Azure, creating a deep vendor dependency. A major Azure outage
+  in the West Europe or Germany West Central regions would simultaneously affect
+  all HH Group operations across all 3 entities.
+category: SUP
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.19
+    description: "Information security in supplier relationships with Microsoft Enterprise Agreement including SLA guarantees"
+  - control-id: A.5.22
+    description: "Monitoring and review of Azure service health, pricing changes, and feature deprecation announcements"
+  - control-id: A.5.29
+    description: "Business continuity planning including Azure-independent degraded-mode operations"
+  - control-id: A.5.21
+    description: "ICT supply chain management with documented multi-cloud migration readiness assessment"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Sole-provider cloud dependency is an accepted structural risk at Startup phase,
+  documented in the IS Policy risk appetite statement. Azure's historical
+  availability across European regions has been generally strong, but significant
+  outages affecting entire regions have occurred. Pricing changes are more
+  predictable but could affect the startup's cost structure significantly. Rated
+  Possible (3) because Azure regional disruptions occur, and Microsoft has a
+  history of adjusting pricing and deprecating services. Impact is Major (4)
+  because all HH Group operations depend on Azure, and a sustained outage or
+  major pricing increase would affect product delivery, customer commitments, and
+  operational continuity simultaneously. Enterprise Agreement SLAs, service health
+  monitoring, and multi-cloud readiness reduce likelihood to Unlikely (2) and
+  impact to Moderate (3).
+workshop-notes: ""
+---

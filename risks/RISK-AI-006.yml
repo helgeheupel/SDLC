@@ -1,0 +1,62 @@
+---
+risk-id: RISK-AI-006
+title: "AI model drift degrading Verity product quality without detection"
+description: >
+  The AI models underlying Verity VE [PATENT-VE-001] and Verity EAM
+  [PATENT-EAM-001] experience performance degradation over time (model drift)
+  due to changes in input data distributions, evolving business contexts, or
+  upstream model updates from AI API providers (Anthropic, OpenAI). Without
+  continuous monitoring, this degradation may go undetected until customers
+  report quality issues or until an external audit identifies the gap, eroding
+  the value proposition of Verity products.
+category: AI
+ai-risk: true
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 3
+inherent-risk-score: 9
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.16
+    description: "Monitoring activities with continuous AI model performance dashboards tracking output quality metrics"
+  - control-id: A.5.23
+    description: "Information security for cloud services with SLA monitoring for AI API providers including model version change notifications"
+  - control-id: A.8.29
+    description: "Security testing with periodic regression testing of AI outputs against known-good baselines"
+  - control-id: A.5.9
+    description: "Asset inventory including AI model version registry with performance snapshots"
+residual-likelihood: 2
+residual-impact: 2
+residual-risk-score: 4
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  AI model drift is an expected phenomenon for systems relying on external LLM
+  APIs where the provider may update models without notice. Both Anthropic and
+  OpenAI have historically changed model behavior through updates, potentially
+  affecting downstream product quality. Rated Possible (3) because API providers
+  routinely update models and input data distributions evolve naturally. Impact is
+  Moderate (3) because drift typically causes gradual quality degradation rather
+  than sudden failure, and customers may tolerate minor quality fluctuations before
+  reporting issues. Impact on individuals: degraded AI output quality could lead
+  to systematically misleading recommendations affecting users' professional
+  decisions, though the impact is correctable once detected. Performance monitoring,
+  regression testing, and model version tracking reduce likelihood to Unlikely (2)
+  and impact to Minor (2) by enabling early detection before customer impact.
+workshop-notes: ""
+---

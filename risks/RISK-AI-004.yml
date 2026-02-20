@@ -1,0 +1,62 @@
+---
+risk-id: RISK-AI-004
+title: "Hallucination in Verity VE recommendations leading to incorrect business decisions"
+description: >
+  The Verity VE [PATENT-VE-001] product generates AI-powered recommendations
+  that contain factual inaccuracies, fabricated data, or misleading analysis
+  (hallucination) that enterprise customers rely upon for business decisions.
+  Customers may not independently verify AI-generated recommendations, leading
+  to decisions based on incorrect information. The risk is amplified because
+  Verity VE targets enterprise decision-makers who expect high-confidence outputs
+  from a specialized AI product.
+category: AI
+ai-risk: true
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.25
+    description: "Quality assurance in product development with automated hallucination detection and output validation pipelines"
+  - control-id: A.5.23
+    description: "Information security for use of cloud services including AI API provider monitoring and model performance tracking"
+  - control-id: A.5.9
+    description: "Inventory of information and associated assets including AI model version registry with performance baselines"
+  - control-id: A.8.29
+    description: "Security testing in development and acceptance including AI output quality testing before release"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  LLM hallucination is an inherent characteristic of generative AI systems and
+  cannot be fully eliminated. The Verity VE product [PATENT-VE-001] relies on
+  AI-generated recommendations that enterprise customers use for business decisions,
+  making hallucination a direct product quality risk. Rated Possible (3) because
+  hallucination occurs at varying rates across all LLM-based systems and complete
+  prevention is not yet technically feasible. Impact is Major (4) because
+  enterprise customers making incorrect decisions based on hallucinated
+  recommendations could suffer financial losses and lose trust in Verity products.
+  Impact on individuals: employees relying on Verity VE for professional decisions
+  could face career or financial consequences from acting on incorrect
+  recommendations. Hallucination detection pipelines, output validation, and model
+  performance tracking reduce likelihood to Unlikely (2) and impact to Moderate (3).
+workshop-notes: ""
+---

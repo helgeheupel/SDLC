@@ -1,0 +1,64 @@
+---
+risk-id: RISK-AI-005
+title: "Bias in Verity EAM classifications producing discriminatory or unfair outcomes"
+description: >
+  The Verity EAM [PATENT-EAM-001] product produces biased AI classifications
+  that systematically disadvantage certain types of assets, departments, or
+  stakeholder groups due to training data bias, algorithmic bias, or
+  representation gaps in the model. Biased classifications could lead to
+  unfair resource allocation decisions, discriminatory prioritization, or
+  systematic undervaluation of certain enterprise capabilities, affecting
+  the individuals and teams associated with those areas.
+category: AI
+ai-risk: true
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.9
+    description: "AI system inventory with documented data sources, training methodology, and bias assessment for each model"
+  - control-id: A.8.25
+    description: "Secure development lifecycle including bias testing as part of AI model validation before release"
+  - control-id: A.5.35
+    description: "Independent review with periodic third-party bias audits of Verity EAM classification outputs"
+  - control-id: A.8.29
+    description: "Security testing in development including fairness metrics and demographic parity analysis"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  AI bias in classification systems is a well-documented risk that has led to
+  significant regulatory and reputational consequences across industries. The
+  Verity EAM product [PATENT-EAM-001] performs classifications that enterprise
+  customers use for resource allocation and strategic planning, making bias a
+  direct fairness concern. Rated Possible (3) because bias can emerge from
+  training data, feature selection, or algorithmic design and may not be apparent
+  during development. Impact is Major (4) because biased classifications affecting
+  enterprise customers could trigger EU AI Act scrutiny and erode trust in the
+  product. Impact on individuals and society: biased classifications could
+  systematically disadvantage employees, departments, or business units,
+  affecting career progression, resource access, and professional evaluation
+  fairness per ISO 42001 cl. 6.1.2(d)(1). Bias testing, fairness metrics,
+  and independent audits reduce likelihood to Unlikely (2) and impact to
+  Moderate (3).
+workshop-notes: ""
+---

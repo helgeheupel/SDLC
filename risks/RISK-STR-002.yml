@@ -1,0 +1,62 @@
+---
+risk-id: RISK-STR-002
+title: "Failure to achieve product-market fit for Verity VE/EAM within funding runway"
+description: >
+  Verity VE [PATENT-VE-001] and Verity EAM [PATENT-EAM-001] fail to achieve
+  product-market fit with enterprise customers before the HH Group's funding
+  runway is exhausted. This risk encompasses scenarios including: enterprise
+  sales cycles exceeding projected timelines, product features not matching
+  enterprise buyer requirements, pricing model not aligned with enterprise
+  procurement expectations, or insufficient competitive differentiation.
+  At Startup phase, the company has limited financial reserves, making the
+  runway a hard constraint on the time available to find product-market fit.
+category: STR
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CEO role"
+status: active
+likelihood: 3
+impact: 5
+inherent-risk-score: 15
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.8
+    description: "Information security in project management ensuring security features align with enterprise buyer requirements"
+  - control-id: A.5.1
+    description: "Security policies as competitive differentiator for enterprise customers requiring ISO 27001/TISAX compliance"
+  - control-id: A.5.6
+    description: "Industry engagement for product-market validation and enterprise customer feedback loops"
+  - control-id: A.5.29
+    description: "Business continuity planning including financial contingency scenarios"
+residual-likelihood: 3
+residual-impact: 4
+residual-risk-score: 12
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Product-market fit risk is inherent to all startup ventures and is the primary
+  existential threat. Enterprise sales cycles in AI/SaaS typically range from
+  3-12 months, and the HH Group must demonstrate value within its funding
+  runway. Rated Possible (3) because enterprise AI product-market fit is
+  challenging to achieve, though the TISAX/ISO certifications being pursued
+  provide credibility that competitors may lack. Impact is Severe/Existential (5)
+  because failure to achieve product-market fit within the runway would threaten
+  the continued existence of all 3 entities. Security certifications as
+  differentiators, enterprise engagement, and financial contingency planning
+  reduce impact to Major (4); likelihood remains Possible (3) because the
+  external market factors cannot be fully controlled.
+workshop-notes: ""
+---

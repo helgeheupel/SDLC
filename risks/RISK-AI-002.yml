@@ -1,0 +1,62 @@
+---
+risk-id: RISK-AI-002
+title: "Prompt injection attack on Claude Code agents executing in SDLC pipeline"
+description: >
+  An attacker exploits prompt injection vulnerabilities in the 7 Claude Code AI
+  agents that operate within the HH Group's SDLC pipeline. Attack vectors include
+  malicious content embedded in Git repository files that agents read during
+  execution, crafted issue descriptions or PR comments that manipulate agent
+  behavior, or indirect prompt injection through third-party data sources. A
+  successful injection could cause agents to exfiltrate sensitive information,
+  modify security controls, bypass review requirements, or produce deliberately
+  flawed compliance artifacts.
+category: AI
+ai-risk: true
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.25
+    description: "Secure development lifecycle with mandatory human review of all agent-generated changes via PR before merge"
+  - control-id: A.8.28
+    description: "Secure coding practices including input validation and sandboxed agent execution environments"
+  - control-id: A.8.4
+    description: "Access to source code restricted with agent permissions scoped to minimum required repository access"
+  - control-id: A.5.7
+    description: "Threat intelligence monitoring for prompt injection techniques and LLM attack patterns"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Prompt injection is the most significant security risk for LLM-based applications,
+  with OWASP ranking it as the top LLM vulnerability. The HH Group's use of 7
+  Claude Code agents with repository access creates multiple attack surfaces for
+  indirect prompt injection. Rated Possible (3) because prompt injection techniques
+  are evolving rapidly and complete prevention is not yet achievable. Impact is
+  Major (4) because a compromised agent could modify security-critical artifacts,
+  exfiltrate Confidential/Secret information, or inject vulnerabilities into Verity
+  products. Impact on individuals: a compromised CISO Agent producing flawed risk
+  assessments could lead to inadequate security controls that fail to protect
+  customer data, affecting individuals relying on Verity products. Mandatory PR
+  review, scoped agent permissions, and sandboxed execution reduce likelihood to
+  Unlikely (2) and impact to Moderate (3).
+workshop-notes: ""
+---

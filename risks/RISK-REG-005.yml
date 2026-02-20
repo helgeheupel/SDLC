@@ -1,0 +1,63 @@
+---
+risk-id: RISK-REG-005
+title: "TISAX scope change assessment reveals gaps requiring remediation before renewal"
+description: >
+  The TISAX scope change assessment required for the HH Group's certification
+  renewal (label expiring March 16, 2026) reveals significant gaps between the
+  previous TISAX scope (ISA 5.1, two physical locations, automotive project focus)
+  and the current organizational reality (ISA 6, single Berlin location, AI
+  software products, cloud-only infrastructure). The scope has fundamentally
+  changed: old addresses are closed (WeWork Kurfuerstendamm 11, Wolfsburg
+  locations), new address (Kurfuerstendamm 194) is not certified, business model
+  has shifted from automotive consulting to AI product development, and ISA 5.1
+  must be upgraded to ISA 6. TUeV SueD renewal inquiry (from Carsten Diercks,
+  December 30, 2025) remains unanswered as of February 2026.
+category: REG
+ai-risk: false
+affected-entities:
+  - GmbH
+risk-source: internal
+owner: "CISO role"
+status: active
+likelihood: 4
+impact: 4
+inherent-risk-score: 16
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.31
+    description: "Legal and regulatory requirements with TISAX scope redefinition covering new address, business model, and ISA 6 requirements"
+  - control-id: A.5.36
+    description: "Compliance verification through ISA 6 self-assessment identifying gaps against new scope"
+  - control-id: A.5.35
+    description: "Independent review engaging TUeV SueD for scope change pre-assessment consultation"
+  - control-id: A.5.5
+    description: "Contact with authorities responding to TUeV SueD renewal inquiry and ENX portal scope update"
+residual-likelihood: 3
+residual-impact: 3
+residual-risk-score: 9
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: monthly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  The TISAX scope has changed dramatically since the original 2022 certification.
+  Two certified locations are closed, the business address has changed, the business
+  model has pivoted from automotive consulting to AI software products, and ISA 5.1
+  must be upgraded to ISA 6. The TUeV SueD renewal inquiry (December 30, 2025)
+  remains unanswered, creating urgency with the March 2026 label expiration. Rated
+  Likely (4) because the scope changes are extensive and the compressed timeline
+  makes complete remediation before expiration challenging. Impact is Major (4)
+  because TISAX certification is required by automotive enterprise customers; loss
+  of the label would affect existing customer relationships and new business
+  development. ISA 6 self-assessment, scope redefinition, and TUeV SueD engagement
+  reduce likelihood to Possible (3) and impact to Moderate (3) by demonstrating
+  proactive scope management. Monthly review cycle due to approaching deadline.
+workshop-notes: ""
+---

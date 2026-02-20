@@ -1,0 +1,63 @@
+---
+risk-id: RISK-REG-006
+title: "Multi-jurisdictional regulatory conflict between DE/NL/US data protection requirements"
+description: >
+  Conflicting data protection requirements across the three jurisdictions where
+  the HH Group operates (Germany -- BDSG/NIS2UmsuCG, Netherlands -- AVG/Wbni,
+  United States -- state-level privacy laws) create compliance conflicts that
+  cannot be simultaneously satisfied. Examples include: data localization
+  requirements conflicting with cross-border data flows, varying data breach
+  notification timelines (24h NIS2 vs. 72h GDPR vs. varying US state laws),
+  or conflicting retention requirements. The EU-US Data Privacy Framework
+  provides a transfer mechanism but may face legal challenges similar to
+  Schrems I and Schrems II.
+category: REG
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 2
+impact: 3
+inherent-risk-score: 6
+inherent-risk-level: low
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.31
+    description: "Legal and regulatory requirements tracking with jurisdiction-specific compliance matrix maintained by CISO role"
+  - control-id: A.5.14
+    description: "Information transfer policies with documented legal basis for each cross-border data flow"
+  - control-id: A.5.34
+    description: "Privacy and data protection with per-entity data processing registers reflecting jurisdiction-specific requirements"
+  - control-id: A.5.5
+    description: "Contact with authorities in each jurisdiction for guidance on conflicting requirements"
+residual-likelihood: 1
+residual-impact: 3
+residual-risk-score: 3
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Multi-jurisdictional regulatory conflicts are a structural characteristic of
+  operating across DE, NL, and US. The EU-US Data Privacy Framework currently
+  provides a legal mechanism for transatlantic data transfers, but the framework
+  faces ongoing legal scrutiny. Rated Unlikely (2) because the EU-first approach
+  (GmbH and B.V. fully scoped, Inc. skeleton scope) minimizes US regulatory
+  exposure at Startup phase, and GDPR/AVG are largely harmonized within the EU.
+  Impact is Moderate (3) because conflicting requirements would require legal
+  analysis and potential restructuring of data flows but would not be existential.
+  Jurisdiction-specific compliance matrices, documented transfer mechanisms, and
+  authority engagement reduce likelihood to Rare (1); impact remains Moderate (3)
+  as the underlying regulatory divergence persists.
+workshop-notes: ""
+---

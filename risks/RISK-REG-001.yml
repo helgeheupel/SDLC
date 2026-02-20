@@ -1,0 +1,65 @@
+---
+risk-id: RISK-REG-001
+title: "NIS2 non-compliance leading to enforcement action and management body liability"
+description: >
+  The Helge Heupel GmbH fails to meet NIS2UmsuCG requirements, leading to
+  enforcement action by the BSI (Bundesamt fuer Sicherheit in der
+  Informationstechnik). NIS2UmsuCG Section 38 establishes personal liability for
+  management bodies (Geschaeftsfuehrer) who fail to ensure cybersecurity risk
+  management measures. Additionally, Helge Heupel B.V. is subject to the Dutch
+  Wbni (Wet beveiliging netwerk- en informatiesystemen) with NCSC-NL oversight.
+  Non-compliance could result in administrative fines up to EUR 10 million or
+  2% of global turnover (whichever is higher), mandatory corrective measures,
+  and personal liability for CEO Helge Heupel as Geschaeftsfuehrer of the GmbH.
+category: REG
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 5
+inherent-risk-score: 15
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.31
+    description: "Legal, statutory, regulatory, and contractual requirements identification for NIS2UmsuCG (DE) and Wbni (NL)"
+  - control-id: A.5.36
+    description: "Compliance with policies, rules, and standards verified through NIS2 readiness assessment"
+  - control-id: A.5.24
+    description: "Information security incident management meeting NIS2 reporting timelines (24h initial, 72h detailed)"
+  - control-id: A.5.5
+    description: "Contact with BSI for GmbH registration and NCSC-NL for B.V. oversight obligations"
+  - control-id: A.5.2
+    description: "Security roles including NIS2 management body awareness training for CEO as Geschaeftsfuehrer"
+residual-likelihood: 2
+residual-impact: 4
+residual-risk-score: 8
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  NIS2UmsuCG entered into force on December 5, 2025, making compliance immediately
+  mandatory. The regulation's personal liability provisions for management bodies
+  (Sec. 38) make this an existential risk for CEO Helge Heupel personally. The HH
+  Group operates under NIS2 in two jurisdictions (DE via NIS2UmsuCG, NL via Wbni),
+  doubling the regulatory exposure. Rated Possible (3) because NIS2 is newly in
+  force and compliance programs are still being established across the industry; BSI
+  enforcement activities are expected to intensify throughout 2026. Impact is
+  Severe/Existential (5) because enforcement fines, mandatory corrective measures,
+  and personal CEO liability could be existential for a startup. BSI registration,
+  incident reporting procedures, management body training, and NIS2 readiness
+  assessments reduce likelihood to Unlikely (2) and impact to Major (4) by
+  demonstrating proactive compliance efforts.
+workshop-notes: ""
+---

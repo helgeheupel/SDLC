@@ -1,0 +1,62 @@
+---
+risk-id: RISK-REG-002
+title: "GDPR violation in AI training data handling or customer data processing"
+description: >
+  The HH Group violates GDPR (BDSG in Germany, AVG in Netherlands) through
+  improper handling of personal data in AI training datasets, customer data
+  processing for Verity VE/EAM, or cross-border data transfers between the
+  3 legal entities without adequate legal basis. Specific risk scenarios include:
+  using customer data to train AI models without explicit consent, failing to
+  conduct required Data Protection Impact Assessments (DPIAs) for AI features
+  processing personal data per GDPR Art. 35, or transferring personal data to
+  Helge Heupel Inc. (US) without EU-US Data Privacy Framework compliance.
+category: REG
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.34
+    description: "Privacy and protection of personal data with documented data processing register and legal basis per processing activity"
+  - control-id: A.5.31
+    description: "Legal requirements including GDPR/BDSG/AVG compliance assessment for all data processing activities"
+  - control-id: A.5.14
+    description: "Information transfer policies governing inter-entity data flows with documented legal basis for EU-US transfers"
+  - control-id: A.5.33
+    description: "Protection of records with data retention schedules aligned to GDPR storage limitation principle"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  GDPR enforcement by EU data protection authorities has intensified, with
+  particular scrutiny on AI-related data processing. The HH Group processes data
+  across 3 jurisdictions (DE, NL, US) with AI products that may involve personal
+  data, creating multiple compliance touchpoints. Rated Possible (3) because GDPR
+  compliance in the context of AI training data is a rapidly evolving area with
+  regulatory guidance still developing. Impact is Major (4) because GDPR fines can
+  reach EUR 20 million or 4% of global turnover, and a GDPR enforcement action
+  would damage enterprise customer trust critical for Verity product adoption.
+  Data processing registers, DPIA procedures, inter-entity transfer agreements,
+  and retention schedules reduce likelihood to Unlikely (2) and impact to
+  Moderate (3) by demonstrating structured compliance.
+workshop-notes: ""
+---

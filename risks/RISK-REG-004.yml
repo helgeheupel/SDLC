@@ -1,0 +1,61 @@
+---
+risk-id: RISK-REG-004
+title: "ISO 27001/42001 certification failure at Stage 1 or Stage 2 audit"
+description: >
+  The HH Group fails to achieve ISO 27001:2022 and/or ISO 42001:2023
+  certification during Stage 1 (documentation review) or Stage 2 (implementation
+  audit). Failure could result from incomplete ISMS/AIMS documentation, inadequate
+  evidence of control implementation, insufficient management review evidence,
+  or inability to demonstrate continuous improvement. The dual certification
+  target (ISO 27001 + ISO 42001) increases complexity and the risk of
+  nonconformity findings. ISO 42001 auditor expectations are poorly documented
+  given the standard's novelty (published December 2023).
+category: REG
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: internal
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.35
+    description: "Independent review of information security with internal audit program and pre-certification readiness assessment"
+  - control-id: A.5.36
+    description: "Compliance with policies verified through systematic clause-by-clause audit preparation"
+  - control-id: A.5.1
+    description: "Information security policy maintaining audit-ready documentation with complete standard clause coverage"
+  - control-id: A.5.31
+    description: "Legal and regulatory requirements with certification timeline management and milestone tracking"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  ISO 27001 certification has a structured audit process with well-documented
+  expectations, but ISO 42001 is a new standard with limited auditor experience.
+  The dual certification target increases the documentation burden and the
+  probability of at least one nonconformity finding. Rated Possible (3) because
+  the 12-week timeline is ambitious for dual certification and ISO 42001 auditor
+  expectations are still forming. Impact is Major (4) because certification
+  failure would delay enterprise customer engagement (many require ISO 27001),
+  undermine the TISAX renewal timeline, and require costly remediation. Internal
+  audit programs, readiness assessments, and systematic clause coverage reduce
+  likelihood to Unlikely (2) and impact to Moderate (3) by identifying gaps
+  before the certification body does.
+workshop-notes: ""
+---

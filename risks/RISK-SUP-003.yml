@@ -1,0 +1,59 @@
+---
+risk-id: RISK-SUP-003
+title: "Critical SaaS vendor discontinuation or data breach affecting HH operations"
+description: >
+  A critical SaaS vendor used by the HH Group (NorthGRC for GRC management,
+  Linear for task management, Float for resource planning) discontinues service,
+  experiences a significant data breach, or becomes unavailable. These vendors
+  hold HH Group operational data including compliance status, project tasks,
+  and resource allocation information. A vendor data breach could expose
+  internal operational details, while service discontinuation would require
+  migration to alternative tools during the certification timeline.
+category: SUP
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 2
+impact: 3
+inherent-risk-score: 6
+inherent-risk-level: low
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.19
+    description: "Supplier security requirements including SOC 2 or ISO 27001 certification verification for critical SaaS vendors"
+  - control-id: A.5.20
+    description: "Addressing information security within supplier agreements including data portability and exit clauses"
+  - control-id: A.5.22
+    description: "Periodic review of vendor security posture, financial stability, and service continuity indicators"
+  - control-id: A.5.23
+    description: "Cloud service security requirements including data export capabilities and backup procedures"
+residual-likelihood: 1
+residual-impact: 2
+residual-risk-score: 2
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  SaaS vendor risk is manageable for the HH Group because none of these vendors
+  hold customer data or classification-sensitive information (those are in Azure/
+  Neon under direct HH control). NorthGRC, Linear, and Float hold operational and
+  project management data classified as Internal. Rated Unlikely (2) because
+  established SaaS vendors typically provide advance notice of discontinuation
+  and maintain reasonable security practices. Impact is Moderate (3) because
+  vendor disruption would affect workflow efficiency but core data (customer data,
+  source code, compliance artifacts) is stored independently in Azure/Git.
+  Vendor security verification, data portability clauses, and periodic security
+  reviews reduce likelihood to Rare (1) and impact to Minor (2).
+workshop-notes: ""
+---

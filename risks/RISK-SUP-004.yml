@@ -1,0 +1,61 @@
+---
+risk-id: RISK-SUP-004
+title: "Open-source dependency vulnerability in Verity product supply chain"
+description: >
+  A critical vulnerability is discovered in an open-source dependency used by the
+  Verity VE or Verity EAM products (TypeScript/Node.js ecosystem: Qwik, Payload
+  CMS, React, Next.js, and their transitive dependencies). The npm ecosystem has
+  experienced multiple high-profile supply chain attacks (event-stream, ua-parser-
+  js, colors.js), and the HH Group's product stack includes hundreds of transitive
+  dependencies. A compromised dependency could introduce backdoors, data
+  exfiltration, or denial of service into Verity products affecting enterprise
+  customers.
+category: SUP
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 4
+impact: 4
+inherent-risk-score: 16
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.28
+    description: "Secure coding practices with dependency lockfiles (pnpm-lock.yaml) and integrity verification"
+  - control-id: A.8.8
+    description: "Management of technical vulnerabilities with automated dependency scanning (Dependabot, Snyk, or equivalent)"
+  - control-id: A.8.25
+    description: "Secure development lifecycle with SBOM generation and vulnerability tracking for all production dependencies"
+  - control-id: A.5.21
+    description: "ICT supply chain security with documented process for evaluating and updating critical dependencies"
+residual-likelihood: 3
+residual-impact: 3
+residual-risk-score: 9
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  The npm/Node.js ecosystem has a high rate of supply chain vulnerabilities due
+  to the large number of transitive dependencies in typical projects. The Verity
+  products use TypeScript with Qwik, Payload CMS, and Next.js, each bringing
+  significant dependency trees. Rated Likely (4) because vulnerabilities in npm
+  packages are discovered weekly and supply chain attacks on the Node.js ecosystem
+  are well-documented. Impact is Major (4) because a compromised dependency
+  deployed to production could affect enterprise customer data and trigger
+  NIS2 incident reporting obligations. Dependency lockfiles, automated scanning,
+  SBOM generation, and documented update processes reduce likelihood to Possible
+  (3) and impact to Moderate (3); the residual risk remains Medium because the
+  npm ecosystem's attack surface is inherently broad.
+workshop-notes: ""
+---

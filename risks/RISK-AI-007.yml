@@ -1,0 +1,63 @@
+---
+risk-id: RISK-AI-007
+title: "Anthropic/OpenAI API dependency causing service disruption or capability loss"
+description: >
+  The HH Group's critical dependency on Anthropic (Claude Code for 7 SDLC agents)
+  and OpenAI (ChatGPT, Codex) APIs creates a supply chain risk where service
+  disruption, terms of service changes, pricing increases, or capability removal
+  could affect both internal SDLC operations and Verity product AI capabilities.
+  Anthropic is the sole provider for the Claude Code agent system that drives the
+  entire SDLC compliance process; a sustained API outage or policy change
+  prohibiting specific use cases could halt compliance artifact production and
+  degrade Verity product functionality simultaneously.
+category: AI
+ai-risk: true
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.19
+    description: "Information security in supplier relationships with contractual SLA requirements for Anthropic and OpenAI API availability"
+  - control-id: A.5.22
+    description: "Monitoring and review of supplier services including API availability dashboards and usage pattern tracking"
+  - control-id: A.5.29
+    description: "Business continuity planning including multi-provider strategy readiness for critical AI capabilities"
+  - control-id: A.5.21
+    description: "Managing information security in the ICT supply chain with documented fallback procedures for API disruption"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Single-provider AI API dependency is a significant supply chain risk for
+  organizations building core capabilities on third-party AI platforms. Anthropic's
+  Claude Code is the foundation for all 7 SDLC agents, and both Anthropic and
+  OpenAI have experienced service disruptions in the past. Rated Possible (3)
+  because API outages, pricing changes, and terms of service modifications are
+  recurring events in the AI industry. Impact is Major (4) because a sustained
+  disruption would simultaneously affect SDLC compliance operations (all 7 agents)
+  and Verity product capabilities, creating a dual operational and product impact.
+  Impact on individuals: customers relying on Verity VE/EAM would experience
+  degraded service during an API disruption, affecting their ability to make
+  timely decisions. Multi-provider readiness, contractual SLAs, and documented
+  fallback procedures reduce likelihood to Unlikely (2) and impact to Moderate (3).
+workshop-notes: ""
+---

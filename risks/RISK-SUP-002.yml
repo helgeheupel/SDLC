@@ -1,0 +1,61 @@
+---
+risk-id: RISK-SUP-002
+title: "Anthropic Claude API availability or policy change affecting SDLC agents"
+description: >
+  Anthropic restricts, suspends, or significantly changes the Claude API service
+  that powers all 7 Claude Code AI agents in the HH Group's SDLC pipeline.
+  Potential scenarios include: API rate limiting or quota reduction affecting
+  agent throughput, terms of service changes prohibiting specific use cases
+  (e.g., compliance artifact generation), model capability changes degrading
+  agent output quality, or sustained API outages disrupting the entire SDLC
+  compliance workflow. The HH Group has no alternative AI provider configured
+  for the Claude Code agent system.
+category: SUP
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.19
+    description: "Supplier relationship management with documented Anthropic API terms of service review and change monitoring"
+  - control-id: A.5.22
+    description: "Monitoring Anthropic API availability, rate limits, and model version changes"
+  - control-id: A.5.29
+    description: "Business continuity including manual compliance workflow procedures for agent-independent operation"
+  - control-id: A.5.21
+    description: "ICT supply chain with documented migration path to alternative LLM providers (OpenAI, Google) for critical capabilities"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  The HH Group's SDLC model is deeply integrated with Anthropic's Claude Code,
+  making it a critical single-provider dependency. The AI API market is dynamic,
+  with providers adjusting pricing, capabilities, and terms of service frequently.
+  Anthropic has historically been stable but the company is relatively young and
+  the API product is evolving rapidly. Rated Possible (3) because API changes and
+  periodic outages are normal operational events for AI providers. Impact is Major
+  (4) because the entire SDLC compliance workflow depends on Claude Code agents,
+  and a sustained disruption would halt artifact production during the critical
+  12-week certification timeline. Terms of service monitoring, availability
+  tracking, manual workflow procedures, and migration path documentation reduce
+  likelihood to Unlikely (2) and impact to Moderate (3).
+workshop-notes: ""
+---

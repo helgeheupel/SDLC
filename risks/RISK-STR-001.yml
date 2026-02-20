@@ -1,0 +1,60 @@
+---
+risk-id: RISK-STR-001
+title: "Technology obsolescence in AI landscape rendering Verity products non-competitive"
+description: >
+  Rapid advancement in the AI/LLM landscape renders the technological
+  foundations of Verity VE [PATENT-VE-001] and Verity EAM [PATENT-EAM-001]
+  obsolete or non-competitive. The pace of AI innovation (new model
+  architectures, open-source alternatives, commodity AI services) could
+  undermine the differentiation of Verity products before they achieve
+  product-market fit. Enterprise customers may adopt competing solutions
+  that leverage newer AI capabilities or more cost-effective approaches.
+category: STR
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CEO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.7
+    description: "Threat intelligence including AI industry landscape monitoring and competitive analysis"
+  - control-id: A.5.8
+    description: "Information security in project management with technology refresh cycle integrated into product roadmap"
+  - control-id: A.5.6
+    description: "Contact with AI industry special interest groups for early awareness of paradigm shifts"
+  - control-id: A.5.1
+    description: "Information security policies updated to incorporate emerging AI technology security considerations"
+residual-likelihood: 3
+residual-impact: 3
+residual-risk-score: 9
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  The AI industry is experiencing unprecedented innovation velocity, with new
+  model architectures, open-source alternatives, and commodity AI services
+  emerging monthly. Enterprise AI products that rely on specific model capabilities
+  face the risk of being leapfrogged by newer approaches. Rated Possible (3)
+  because the AI landscape is highly dynamic but the HH Group's product
+  architecture is designed for model-agnostic operation where feasible. Impact
+  is Major (4) because technology obsolescence could undermine the entire
+  product strategy and investor thesis. Industry monitoring, competitive analysis,
+  and technology refresh cycles reduce impact to Moderate (3); likelihood remains
+  Possible (3) because the external innovation pace cannot be controlled.
+workshop-notes: ""
+---
