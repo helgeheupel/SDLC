@@ -1,0 +1,66 @@
+---
+risk-id: RISK-PPL-003
+title: "Insider threat from malicious or negligent data handling"
+description: >
+  A current or former HH Group team member intentionally or negligently
+  exfiltrates, destroys, or mishandles sensitive information including customer
+  data, patent-pending Verity VE/EAM specifications, or compliance artifacts.
+  The 6-person team structure means each individual has broad access rights
+  across systems (Azure, M365, Git repositories) with limited segregation of
+  duties. Negligent handling (e.g., forwarding Confidential documents to
+  personal email, storing Secret data on unencrypted personal devices) is more
+  likely than malicious exfiltration at Startup phase but both scenarios must
+  be addressed.
+category: PPL
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CEO role"
+status: active
+likelihood: 2
+impact: 4
+inherent-risk-score: 8
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.6.2
+    description: "Employment terms and conditions with confidentiality agreements and intellectual property assignment clauses"
+  - control-id: A.6.5
+    description: "Responsibilities after termination or change of employment including return of assets and access revocation procedures"
+  - control-id: A.5.10
+    description: "Acceptable use policy for information and associated assets prohibiting personal use of corporate data"
+  - control-id: A.8.12
+    description: "Data loss prevention (DLP) controls in M365 preventing external forwarding of Confidential/Secret content"
+  - control-id: A.5.18
+    description: "Access rights review with immediate revocation upon role change or termination"
+residual-likelihood: 1
+residual-impact: 4
+residual-risk-score: 4
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Insider threats are statistically less frequent than external attacks but can
+  cause disproportionate damage due to the insider's legitimate access rights.
+  At a 6-person startup, broad access is necessary for operational efficiency,
+  creating an inherent tension with least-privilege principles. Rated Unlikely (2)
+  because the small, high-trust team has strong personal relationships and the
+  CEO personally oversees all team members. Impact is Major (4) because
+  exfiltration of patent-pending specifications ([PATENT-VE-001], [PATENT-EAM-001])
+  or customer data could cause competitive damage and trigger GDPR/TISAX
+  obligations. Confidentiality agreements, DLP controls, access reviews, and
+  documented termination procedures reduce likelihood to Rare (1); impact remains
+  Major (4) because the damage from successful insider exfiltration is inherent
+  to the value of the information assets.
+workshop-notes: ""
+---

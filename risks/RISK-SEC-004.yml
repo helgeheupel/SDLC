@@ -1,0 +1,61 @@
+---
+risk-id: RISK-SEC-004
+title: "Malware infection on remote worker endpoint device"
+description: >
+  A malware infection (ransomware, info-stealer, remote access trojan) compromises
+  a laptop used by an HH Group team member working remotely. The fully remote
+  working model means all 6 team members operate from home networks without
+  corporate network perimeter controls. An infected endpoint could exfiltrate
+  credentials, encrypt local data, establish persistence for lateral movement to
+  Azure cloud resources, or be used as a staging point for supply chain attacks
+  against Verity product customers.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 3
+inherent-risk-score: 9
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.7
+    description: "Endpoint detection and response (EDR) deployed on all team member devices with centralized monitoring"
+  - control-id: A.8.1
+    description: "User endpoint device policy requiring disk encryption, automatic OS updates, and screen lock"
+  - control-id: A.8.23
+    description: "Web filtering blocking known malicious domains and restricting downloads from untrusted sources"
+  - control-id: A.6.7
+    description: "Remote working security requirements including home network security baseline"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Malware targeting remote workers has increased significantly since the shift
+  to remote work, with info-stealers and ransomware being the most prevalent
+  threats. The HH Group's fully remote model exposes endpoints to home network
+  risks without corporate firewall protection. Rated Possible (3) based on
+  industry data showing malware encounters are common for technology workers
+  browsing, downloading tools, and working from shared networks. Impact is
+  Moderate (3) because Entra ID Conditional Access and MFA requirements create
+  a barrier between endpoint compromise and cloud resource access, limiting
+  lateral movement. EDR with centralized monitoring, mandatory disk encryption,
+  and web filtering reduce likelihood to Unlikely (2); impact remains Moderate (3)
+  as defense-in-depth controls contain the blast radius of an endpoint infection.
+workshop-notes: ""
+---

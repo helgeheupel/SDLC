@@ -1,0 +1,59 @@
+---
+risk-id: RISK-OPS-002
+title: "CI/CD pipeline compromise or failure affecting deployment integrity"
+description: >
+  The GitHub Actions CI/CD pipeline used for Verity VE and Verity EAM deployments
+  is compromised through supply chain attack, misconfiguration, or dependency
+  poisoning, leading to deployment of malicious or untested code to production.
+  Alternatively, pipeline failure during a critical deployment window prevents
+  timely security patches or feature releases. The HH Group's deployment pipeline
+  handles all production deployments for Vercel (helgeheupel-cms, verity-cms) and
+  Cloudflare Pages (verity-website), making it a high-value target.
+category: OPS
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.25
+    description: "Secure development lifecycle with mandatory code review via PR before merge to main"
+  - control-id: A.8.31
+    description: "Separation of development, test, and production environments in deployment pipeline"
+  - control-id: A.8.27
+    description: "Secure system architecture with least-privilege GitHub Actions runners and scoped tokens"
+  - control-id: A.5.8
+    description: "Information security integrated into project management with deployment checklists"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  CI/CD pipeline attacks have increased significantly since the SolarWinds and
+  Codecov incidents, with GitHub Actions being a common attack surface. The HH
+  Group's pipeline handles deployments across multiple platforms (Vercel, Cloudflare
+  Pages) with access to production secrets. Rated Possible (3) because pipeline
+  compromise via dependency confusion or malicious GitHub Actions is a recognized
+  threat for TypeScript/Node.js projects. Impact is Major (4) because compromised
+  deployments could inject malicious code into customer-facing Verity products.
+  Treatment through mandatory PR reviews, environment separation, and scoped
+  tokens reduces both likelihood to Unlikely (2) and impact to Moderate (3), as
+  PR reviews catch most malicious changes before they reach production.
+workshop-notes: ""
+---

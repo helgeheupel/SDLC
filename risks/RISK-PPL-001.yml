@@ -1,0 +1,62 @@
+---
+risk-id: RISK-PPL-001
+title: "Key person dependency on CEO as single point of failure for multiple critical roles"
+description: >
+  CEO Helge Heupel currently serves as Managing Director (Geschaeftsfuehrer) of
+  all 3 entities, interim CISO delegate, ultimate risk acceptance authority,
+  policy approver, and primary orchestrator of the SDLC agent system. A prolonged
+  absence (illness, incapacitation, or departure) would simultaneously affect
+  executive leadership, security governance, compliance approvals, and the ability
+  to steer AI agents. No deputy is formally designated for any of these roles.
+  This concentration of authority is an accepted structural risk at Startup phase
+  but represents the single highest impact people risk.
+category: PPL
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CEO role"
+status: active
+likelihood: 2
+impact: 5
+inherent-risk-score: 10
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.2
+    description: "Information security roles and responsibilities documented with succession plan identifying interim delegates for CEO functions"
+  - control-id: A.5.4
+    description: "Management responsibilities delegated through documented authorization matrix with deputy designations"
+  - control-id: A.5.37
+    description: "Documented operating procedures enabling AI agents and team members to continue critical processes without CEO direction"
+  - control-id: A.6.2
+    description: "Employment terms and conditions including key person insurance and non-compete protections"
+residual-likelihood: 2
+residual-impact: 4
+residual-risk-score: 8
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Key person dependency is a structural characteristic of a 6-person startup
+  where the CEO covers multiple leadership roles simultaneously. The risk is
+  well-understood and accepted at Startup phase per the governance model. Rated
+  Unlikely (2) because prolonged CEO absence events are statistically infrequent
+  in the short term, though the probability increases over multi-year horizons.
+  Impact is Severe/Existential (5) because the CEO's absence would halt risk
+  acceptance, policy approvals, investor communications, and strategic direction
+  across all 3 entities simultaneously. Documentation of procedures, deputy
+  designations, and AI agent capability to maintain operational continuity reduce
+  the impact to Major (4) by enabling continued operations in a degraded mode;
+  likelihood remains Unlikely (2) as the risk source is inherent.
+workshop-notes: ""
+---

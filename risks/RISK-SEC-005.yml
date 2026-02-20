@@ -1,0 +1,61 @@
+---
+risk-id: RISK-SEC-005
+title: "API key or secret exposure in Git repository or CI/CD logs"
+description: >
+  An API key, database connection string, Azure service principal credential,
+  Anthropic API key, or other secret is accidentally committed to a Git repository
+  or exposed in CI/CD pipeline logs (GitHub Actions). The HH Group's development
+  workflow uses multiple API integrations (Anthropic Claude, OpenAI, Neon PostgreSQL,
+  Vercel, Cloudflare, Azure) each requiring secrets management. A single exposed
+  secret could grant unauthorized access to production services, AI APIs, or
+  customer databases.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: internal
+owner: "CISO role"
+status: active
+likelihood: 4
+impact: 4
+inherent-risk-score: 16
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.4
+    description: "Access control to source code repositories with .gitignore templates and pre-commit hooks scanning for secrets"
+  - control-id: A.8.9
+    description: "Configuration management with environment-specific secret injection via GitHub Secrets and Azure Key Vault"
+  - control-id: A.8.24
+    description: "Use of cryptographic key management via Azure Key Vault for all production secrets with automatic rotation"
+  - control-id: A.8.15
+    description: "Automated secret scanning alerts via GitHub Advanced Security or equivalent tooling"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Secret exposure in Git repositories is one of the most common security incidents
+  in software development, with GitHub reporting millions of leaked secrets annually.
+  The HH Group uses multiple external APIs (Anthropic, OpenAI, Neon, Vercel,
+  Cloudflare) and Azure service principals, each requiring secrets that could be
+  inadvertently committed. Rated Likely (4) because the development workflow
+  involves frequent configuration changes and multiple developers handling secrets
+  across different deployment targets. Impact is Major (4) because exposed API keys
+  could grant access to production databases (Neon), AI services (Claude/OpenAI),
+  or deployment platforms (Vercel/Cloudflare). Pre-commit secret scanning hooks,
+  Azure Key Vault for centralized secrets management, and automated scanning
+  alerts reduce likelihood to Unlikely (2) and impact to Moderate (3) by enabling
+  rapid detection and rotation of exposed secrets.
+workshop-notes: ""
+---

@@ -1,0 +1,60 @@
+---
+risk-id: RISK-OPS-003
+title: "Data loss due to backup failure or corruption in Azure SQL and Blob Storage"
+description: >
+  Critical business data stored in Neon (PostgreSQL) databases, Azure Blob Storage,
+  or Git repositories is lost due to backup failure, silent corruption, or
+  accidental deletion without adequate recovery capability. The HH Group stores
+  customer data, compliance artifacts, risk register entries, and AI model
+  configurations across these systems. At Startup phase, backup verification
+  procedures may not be fully tested, creating a gap between assumed and actual
+  recoverability.
+category: OPS
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: internal
+owner: "CTO role"
+status: active
+likelihood: 2
+impact: 5
+inherent-risk-score: 10
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.13
+    description: "Information backup with automated daily backups for Neon databases and weekly full backups for Azure Blob Storage"
+  - control-id: A.8.14
+    description: "Redundancy through geo-redundant storage (GRS) for Azure Blob Storage and Neon automated point-in-time recovery"
+  - control-id: A.5.30
+    description: "ICT readiness with quarterly backup restoration testing against defined RPO targets"
+  - control-id: A.5.37
+    description: "Documented operating procedures for backup verification and restoration"
+residual-likelihood: 1
+residual-impact: 5
+residual-risk-score: 5
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Data loss from backup failure is a low-frequency but catastrophic-impact event.
+  The HH Group uses managed database services (Neon PostgreSQL) and cloud storage
+  (Azure Blob) which provide built-in redundancy, but silent corruption and
+  accidental deletion remain risks if backup verification is not regularly tested.
+  Rated Unlikely (2) because managed cloud services provide automatic backups by
+  default. Impact is Severe/Existential (5) because permanent loss of customer data
+  or compliance artifacts would trigger GDPR breach notifications, potential
+  regulatory investigation, and loss of enterprise customer trust. Treatment through
+  geo-redundant storage, automated backups, and quarterly restoration testing reduces
+  likelihood to Rare (1); impact remains Severe (5) because the consequences of
+  actual data loss are inherent to the business.
+workshop-notes: ""
+---

@@ -1,0 +1,61 @@
+---
+risk-id: RISK-PPL-002
+title: "Insufficient security awareness among team members"
+description: >
+  HH Group team members lack adequate security awareness regarding phishing
+  recognition, information classification procedures, secure handling of
+  credentials, and incident reporting obligations. At 6 team members, each
+  individual handles sensitive information across multiple classification levels
+  daily. The newly implemented 4-level classification scheme (Public, Internal,
+  Confidential, Secret) and NIS2 incident reporting requirements (24h/72h
+  timelines) require training that may not yet be fully embedded in daily
+  workflows.
+category: PPL
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: internal
+owner: "CEO role"
+status: active
+likelihood: 3
+impact: 3
+inherent-risk-score: 9
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.6.3
+    description: "Information security awareness, education, and training program with annual training and quarterly reinforcement"
+  - control-id: A.6.1
+    description: "Pre-employment screening with security clearance verification for access to Confidential/Secret information"
+  - control-id: A.5.4
+    description: "Management responsibilities including security awareness as part of performance expectations"
+  - control-id: A.5.24
+    description: "Information security incident management planning with clear reporting channels known to all team members"
+residual-likelihood: 2
+residual-impact: 2
+residual-risk-score: 4
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Security awareness gaps are a consistent root cause of security incidents,
+  particularly in organizations transitioning from informal to formal security
+  governance. The HH Group has recently formalized its IS Policy, classification
+  scheme, and AI Policy, creating a learning curve for team members. Rated
+  Possible (3) because security awareness is a new formal requirement and team
+  members may not yet have internalized the procedures. Impact is Moderate (3)
+  because awareness gaps typically lead to minor policy violations rather than
+  catastrophic breaches, and the small team size enables rapid informal
+  correction. Annual training with quarterly reinforcement, clear reporting
+  channels, and management accountability reduce likelihood to Unlikely (2) and
+  impact to Minor (2) by embedding security awareness into daily workflows.
+workshop-notes: ""
+---

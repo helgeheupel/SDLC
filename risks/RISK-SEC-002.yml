@@ -1,0 +1,63 @@
+---
+risk-id: RISK-SEC-002
+title: "Unauthorized access to Azure production environment via RBAC/PIM bypass"
+description: >
+  An external attacker or malicious insider gains unauthorized access to the
+  Azure production subscription hosting Verity VE and Verity EAM by exploiting
+  misconfigured Role-Based Access Control (RBAC) policies, Privileged Identity
+  Management (PIM) weaknesses, or stale service principal credentials. The HH
+  Group's Azure environment contains customer data, AI model configurations,
+  application source code deployments, and compliance infrastructure. A
+  compromised production environment could lead to data exfiltration, service
+  manipulation, or supply chain compromise of Verity products.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 5
+inherent-risk-score: 15
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.15
+    description: "Azure RBAC with least-privilege principle enforced across all subscriptions and resource groups"
+  - control-id: A.8.2
+    description: "Privileged Identity Management (PIM) with time-limited just-in-time elevation for administrative access"
+  - control-id: A.8.5
+    description: "MFA enforced via Entra ID Conditional Access for all Azure management plane operations"
+  - control-id: A.8.15
+    description: "Azure activity log monitoring with alerts for privileged operations and anomalous access patterns"
+  - control-id: A.5.18
+    description: "Quarterly access rights review for all Azure production environment permissions"
+residual-likelihood: 2
+residual-impact: 5
+residual-risk-score: 10
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Azure production environment access is the highest-value target for both external
+  attackers and insider threats. RBAC misconfiguration and overly permissive service
+  principals are among the top cloud security findings across industry. Rated
+  Possible (3) because cloud environment misconfiguration is a frequent occurrence
+  in startups with rapid infrastructure changes. Impact is Severe/Existential (5)
+  because unauthorized production access could lead to customer data breach,
+  regulatory investigation under GDPR/NIS2, TISAX certification loss, and
+  destruction of enterprise customer trust. PIM with JIT elevation, mandatory MFA,
+  and quarterly access reviews reduce likelihood to Unlikely (2); impact remains
+  Severe (5) because the consequences of actual unauthorized access are inherent
+  to the data classification of production assets.
+workshop-notes: ""
+---

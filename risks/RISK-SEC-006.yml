@@ -1,0 +1,63 @@
+---
+risk-id: RISK-SEC-006
+title: "Insufficient logging preventing incident detection and forensics"
+description: >
+  Inadequate or misconfigured logging across the HH Group's technology stack
+  (Azure, M365, Git, Vercel, Cloudflare, Neon) prevents timely detection of
+  security incidents or renders post-incident forensics insufficient for root
+  cause analysis and regulatory reporting. NIS2UmsuCG and GDPR both require
+  the ability to detect and report security incidents within strict timelines
+  (24h initial notification, 72h detailed report under NIS2; 72h notification
+  under GDPR). Without comprehensive logging, these reporting obligations
+  cannot be met.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: internal
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.15
+    description: "Centralized logging with Azure Monitor and Log Analytics aggregating logs from Azure, M365, and application services"
+  - control-id: A.8.16
+    description: "Monitoring activities with defined alert rules for security-relevant events (failed logins, privilege escalation, data access anomalies)"
+  - control-id: A.8.17
+    description: "Clock synchronization across all systems using NTP to ensure log correlation accuracy"
+  - control-id: A.5.28
+    description: "Evidence collection procedures for incident response ensuring forensic integrity of log data"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Logging gaps are a frequent finding in ISO 27001 audits and a critical weakness
+  for NIS2 incident reporting compliance. The HH Group's distributed technology
+  stack spans multiple platforms (Azure, M365, Git, Vercel, Cloudflare, Neon)
+  each with independent logging capabilities that may not be centrally aggregated
+  or monitored. Rated Possible (3) because logging configuration is often
+  incomplete during rapid startup growth, and log retention policies may not
+  cover the full investigation timeline needed for forensics. Impact is Major (4)
+  because insufficient logging could result in failure to detect breaches within
+  NIS2 reporting timelines, leading to regulatory penalties under NIS2UmsuCG
+  Sec. 38 (management body personal liability). Centralized logging, defined
+  monitoring rules, and evidence collection procedures reduce likelihood to
+  Unlikely (2) and impact to Moderate (3) by ensuring detection capability
+  and forensic readiness.
+workshop-notes: ""
+---

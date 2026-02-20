@@ -1,0 +1,60 @@
+---
+risk-id: RISK-OPS-004
+title: "Development environment compromise affecting code integrity"
+description: >
+  A developer workstation (laptop) used by one of the 6 HH Group team members is
+  compromised, allowing an attacker to inject malicious code into Git repositories,
+  steal API keys or credentials, or pivot to Azure production resources. Remote
+  working arrangements mean developer endpoints operate outside traditional network
+  perimeters, relying on endpoint security controls and identity-based access. The
+  TypeScript/Qwik/Payload CMS development stack with numerous npm dependencies
+  increases the attack surface through potential dependency confusion attacks.
+category: OPS
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 3
+inherent-risk-score: 9
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.1
+    description: "User endpoint device management with MDM enrollment, disk encryption (BitLocker/FileVault), and remote wipe capability"
+  - control-id: A.8.7
+    description: "Protection against malware with endpoint detection and response (EDR) on all developer workstations"
+  - control-id: A.8.25
+    description: "Secure development lifecycle with signed commits and branch protection rules"
+  - control-id: A.6.7
+    description: "Remote working security policy with minimum endpoint security requirements"
+residual-likelihood: 2
+residual-impact: 3
+residual-risk-score: 6
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Developer endpoint compromise is a well-documented attack vector, particularly
+  for remote-first organizations where endpoints connect from untrusted networks.
+  The HH Group's fully remote workforce operates without office network controls,
+  relying on endpoint security and identity-based access. Rated Possible (3) based
+  on industry frequency of endpoint compromises in technology companies. Impact is
+  Moderate (3) because branch protection rules and PR review requirements create a
+  second line of defense -- a compromised endpoint does not automatically translate
+  to compromised production code. Treatment through MDM, EDR, signed commits, and
+  remote working policies reduces likelihood to Unlikely (2); impact remains
+  Moderate (3) as defense-in-depth limits blast radius.
+workshop-notes: ""
+---

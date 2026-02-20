@@ -1,0 +1,59 @@
+---
+risk-id: RISK-SEC-001
+title: "Phishing attack compromises employee credentials"
+description: >
+  A targeted phishing campaign compromises the credentials of a Helge Heupel
+  Group team member, granting the attacker access to Azure cloud resources,
+  Git repositories, or M365 services. At 6 team members, each individual has
+  broad access, amplifying the blast radius of a single credential compromise.
+  The CEO's credentials are particularly high-value as they provide access to
+  all 3 entities' resources, risk acceptance authority, and policy approval
+  capabilities.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 4
+impact: 4
+inherent-risk-score: 16
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.17
+    description: "Entra ID Conditional Access with MFA requirement for all users and location-based access restrictions"
+  - control-id: A.6.3
+    description: "Annual phishing awareness training for all personnel with simulated phishing exercises"
+  - control-id: A.8.5
+    description: "FIDO2 hardware keys for privileged accounts (CEO, CTO, IT Pentester/Super Admin)"
+  - control-id: A.5.7
+    description: "Threat intelligence subscription for phishing campaign indicators relevant to technology startups"
+residual-likelihood: 2
+residual-impact: 4
+residual-risk-score: 8
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Phishing is the most common initial access vector for cloud-hosted organizations.
+  With 6 team members each having significant access to Azure, M365, and Git,
+  a single compromised credential provides broad lateral movement opportunity.
+  Rated Likely (4) based on industry frequency data showing targeted attacks on
+  small technology companies occur at least monthly. Impact is Major (4) due to
+  potential access to source code, customer data, compliance artifacts, and the
+  risk of regulatory investigation under GDPR and NIS2. MFA with Conditional
+  Access and FIDO2 hardware keys for privileged accounts reduces likelihood to
+  Unlikely (2); impact remains Major (4) because MFA bypass techniques (adversary-
+  in-the-middle, SIM swapping) continue to evolve.
+workshop-notes: ""
+---

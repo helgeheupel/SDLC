@@ -1,0 +1,66 @@
+---
+risk-id: RISK-SEC-003
+title: "Data breach exposing confidential or secret information due to classification failure"
+description: >
+  Confidential or Secret information (patent-pending Verity VE/EAM specifications,
+  customer data, cryptographic keys, M&A documents) is inadvertently exposed due
+  to incorrect classification, misconfigured sharing permissions in M365/SharePoint,
+  or accidental publication in a public Git repository. The HH Group's 4-level
+  classification scheme (Public, Internal, Confidential, Secret) requires consistent
+  application across all documents, emails, and collaboration tools. A classification
+  failure in a 6-person team where individuals handle multiple classification levels
+  daily is a realistic scenario.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: internal
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 5
+inherent-risk-score: 15
+inherent-risk-level: high
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.12
+    description: "Four-level information classification scheme (Public, Internal, Confidential, Secret) applied via YAML frontmatter and Azure Information Protection labels"
+  - control-id: A.5.13
+    description: "Information labeling procedures with mandatory classification in all document headers and email subjects"
+  - control-id: A.8.12
+    description: "Data loss prevention (DLP) policies in M365 preventing external sharing of Confidential/Secret content"
+  - control-id: A.8.11
+    description: "Data masking for sensitive fields in non-production environments"
+  - control-id: A.5.14
+    description: "Information transfer policies governing cross-entity data flows between GmbH, B.V., and Inc."
+residual-likelihood: 2
+residual-impact: 4
+residual-risk-score: 8
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Data breaches from classification failures are among the most common information
+  security incidents in organizations transitioning to formal classification schemes.
+  The HH Group handles patent-sensitive materials (Verity VE [PATENT-VE-001], Verity
+  EAM [PATENT-EAM-001]), customer data across 3 jurisdictions, and compliance
+  artifacts at Confidential classification. Rated Possible (3) because the
+  classification scheme is newly implemented and team members are adapting to
+  consistent labeling requirements. Impact is Severe/Existential (5) because
+  exposure of patent-pending specifications or customer data could trigger GDPR
+  breach notifications, TISAX certification issues, and competitive damage.
+  DLP policies, Azure Information Protection, and mandatory labeling procedures
+  reduce likelihood to Unlikely (2) and impact to Major (4) by preventing the
+  most egregious classification failures while accepting that human error in
+  labeling will occasionally occur.
+workshop-notes: ""
+---

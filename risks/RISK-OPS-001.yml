@@ -1,0 +1,60 @@
+---
+risk-id: RISK-OPS-001
+title: "Azure production environment outage disrupting Verity VE/EAM availability"
+description: >
+  An outage in the Microsoft Azure cloud platform (West Europe or Germany West
+  Central regions) renders the Verity VE and Verity EAM products unavailable to
+  enterprise customers. Given that all HH Group production workloads run
+  exclusively on Azure with no secondary cloud provider, a regional outage would
+  affect all customer-facing services simultaneously. At Startup phase, the
+  6-person team has limited capacity to execute manual failover procedures under
+  pressure, increasing mean time to recovery.
+category: OPS
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: external
+owner: "CTO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.5.29
+    description: "Business continuity plan covering Azure regional failover and degraded-mode operations"
+  - control-id: A.5.30
+    description: "ICT readiness for business continuity with defined RTO/RPO targets per service tier"
+  - control-id: A.8.14
+    description: "Redundancy through Azure availability zones and geo-redundant storage for critical data"
+  - control-id: A.8.6
+    description: "Capacity management with Azure Monitor alerts for resource utilization thresholds"
+residual-likelihood: 2
+residual-impact: 4
+residual-risk-score: 8
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  Azure regional outages occur multiple times per year across Microsoft's global
+  infrastructure, though individual regions are affected less frequently. The HH
+  Group's concentration on two Azure regions (West Europe and Germany West Central)
+  creates single-provider dependency. Rated Possible (3) based on Azure's published
+  availability history showing 2-4 significant regional incidents annually across
+  all regions. Impact is Major (4) because an extended outage exceeding 2 days would
+  breach enterprise SLA commitments and erode the customer trust that differentiates
+  Verity products. Treatment through availability zones, geo-redundant storage, and
+  documented failover procedures reduces likelihood to Unlikely (2); impact remains
+  Major (4) because even with redundancy, a multi-zone Azure failure would still
+  cause disruption.
+workshop-notes: ""
+---

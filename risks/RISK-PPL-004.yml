@@ -1,0 +1,61 @@
+---
+risk-id: RISK-PPL-004
+title: "Skill gap in cloud security or AI governance competencies"
+description: >
+  The HH Group team lacks sufficient expertise in cloud security (Azure security
+  architecture, identity management, network security) or AI governance (ISO 42001
+  implementation, AI risk assessment, EU AI Act compliance) to adequately implement
+  and maintain the ISMS/AIMS. The IT Pentester/Super Admin handles platform security
+  but may lack formal cloud security certification. The human CISO may have limited
+  ISO 42001 experience given the standard's novelty (published December 2023).
+  Skill gaps could lead to misconfigured security controls, inadequate risk
+  assessments, or audit nonconformities.
+category: PPL
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+risk-source: internal
+owner: "CEO role"
+status: active
+likelihood: 3
+impact: 3
+inherent-risk-score: 9
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.6.3
+    description: "Targeted training program for cloud security (Azure AZ-500) and AI governance (ISO 42001 Lead Implementer) competencies"
+  - control-id: A.6.8
+    description: "Information security event reporting including escalation paths for situations exceeding team expertise"
+  - control-id: A.5.6
+    description: "Contact with special interest groups (ISACA, CSA, IAPP) for AI governance and cloud security knowledge sharing"
+  - control-id: A.5.5
+    description: "Contact with authorities (BSI, NCSC-NL) for regulatory guidance on NIS2 and EU AI Act compliance"
+residual-likelihood: 2
+residual-impact: 2
+residual-risk-score: 4
+residual-risk-level: low
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  The intersection of cloud security and AI governance is a relatively new domain
+  with limited available expertise. ISO 42001 was published in December 2023 and
+  auditor expectations are still forming. The HH Group's dual certification target
+  (ISO 27001 + ISO 42001) requires competencies that few individuals possess.
+  Rated Possible (3) because the AI governance domain is new and the team may lack
+  depth in specific areas. Impact is Moderate (3) because the CISO Agent provides
+  expert-level guidance that supplements human expertise, and external CISO support
+  from NorthGRC provides additional coverage. Targeted training, professional
+  community engagement, and authority contacts reduce likelihood to Unlikely (2)
+  and impact to Minor (2) by building in-house capability and external support
+  networks.
+workshop-notes: ""
+---

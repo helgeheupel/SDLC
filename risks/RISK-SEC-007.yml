@@ -1,0 +1,63 @@
+---
+risk-id: RISK-SEC-007
+title: "MFA bypass or authentication weakness exploitation"
+description: >
+  An attacker exploits weaknesses in the HH Group's multi-factor authentication
+  implementation to gain unauthorized access to Azure, M365, or Git resources.
+  Attack vectors include adversary-in-the-middle (AitM) proxy attacks that
+  capture session tokens after MFA completion, SIM swapping to intercept SMS-based
+  MFA codes, MFA fatigue attacks bombarding users with push notifications, or
+  exploitation of legacy authentication protocols that bypass Conditional Access
+  policies. The CEO's account is a particularly high-value target given the
+  broad access rights across all 3 entities and all systems.
+category: SEC
+ai-risk: false
+affected-entities:
+  - GmbH
+  - B.V.
+  - Inc.
+risk-source: external
+owner: "CISO role"
+status: active
+likelihood: 3
+impact: 4
+inherent-risk-score: 12
+inherent-risk-level: medium
+treatment-strategy: modify
+treatment-controls:
+  - control-id: A.8.5
+    description: "Phishing-resistant FIDO2 hardware security keys for all privileged accounts eliminating AitM attack surface"
+  - control-id: A.5.17
+    description: "Conditional Access policies blocking legacy authentication protocols and requiring compliant devices"
+  - control-id: A.5.16
+    description: "Identity management with Entra ID number matching for push notifications preventing MFA fatigue attacks"
+  - control-id: A.8.15
+    description: "Azure AD sign-in log monitoring with alerts for suspicious authentication patterns (impossible travel, token replay)"
+residual-likelihood: 2
+residual-impact: 4
+residual-risk-score: 8
+residual-risk-level: medium
+residual-risk-accepted-by: ""
+residual-risk-accepted-date: ""
+review-cycle: quarterly
+last-review-date: ""
+next-review-date: ""
+created-date: 2026-02-20
+last-updated: 2026-02-20
+retirement-date: ""
+retirement-reason: ""
+rationale: >
+  MFA bypass techniques have become increasingly sophisticated, with adversary-in-
+  the-middle (AitM) proxy attacks and MFA fatigue attacks being actively exploited
+  in the wild. The HH Group relies heavily on Entra ID MFA as the primary defense
+  for cloud resource access, making MFA bypass a critical threat vector. Rated
+  Possible (3) because AitM toolkits (EvilGinx2, Modlishka) are widely available
+  and MFA fatigue attacks require minimal sophistication. Impact is Major (4)
+  because successful MFA bypass grants the same access as the compromised user,
+  potentially including administrative access to Azure production environments and
+  all 3 entities' resources. FIDO2 hardware keys for privileged accounts eliminate
+  the AitM attack surface entirely for those accounts, reducing likelihood to
+  Unlikely (2); impact remains Major (4) because non-privileged accounts using
+  standard MFA remain theoretically vulnerable.
+workshop-notes: ""
+---
