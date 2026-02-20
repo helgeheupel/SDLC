@@ -25,7 +25,7 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 - [x] **ISMS-01**: Information Security Policy produced — approved by management, communicated to all personnel, reviewed annually
 - [x] **ISMS-02**: ISMS Scope Statement produced — covering all 3 entities (GmbH, B.V., Inc.), 3 jurisdictions (DE, NL, US), all information assets
 - [ ] **ISMS-03**: Statement of Applicability (SoA) produced — all 93 Annex A controls assessed, each justified as applicable/not applicable with implementation status
-- [ ] **ISMS-04**: Risk assessment methodology defined — 5x5 likelihood/impact matrix, calibrated scales, aligned with ISO 31000
+- [x] **ISMS-04**: Risk assessment methodology defined — 5x5 likelihood/impact matrix, calibrated scales, aligned with ISO 31000
 - [ ] **ISMS-05**: Risk register produced in YAML-in-Git format — synced to NorthGRC, covering information security and AI risks
 - [ ] **ISMS-06**: Risk treatment plan produced — treatment strategy per risk, control mappings, residual risk acceptance
 - [ ] **ISMS-07**: Internal audit program defined — audit schedule, scope, methodology, competence requirements
@@ -133,7 +133,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ISMS-01 | Phase 2 | Complete |
 | ISMS-02 | Phase 2 | Complete |
 | ISMS-03 | Phase 3 | Pending |
-| ISMS-04 | Phase 3 | Pending |
+| ISMS-04 | Phase 3 | Complete |
 | ISMS-05 | Phase 3 | Pending |
 | ISMS-06 | Phase 3 | Pending |
 | ISMS-07 | Phase 7 | Pending |
