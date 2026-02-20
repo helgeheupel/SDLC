@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-Growth-v2 to startup-weight, define agent interaction model, establish subagent protocol
 - [x] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
-- [ ] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
+- [x] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
 - [ ] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
 - [ ] **Phase 5: AIMS Core and AI System Registry** - Produce AI System Registry, AI risk/impact assessment processes, ISO 42001 Annex A control mapping, AIMS PDCA documentation
 - [ ] **Phase 6: Remaining Specialist Agents** - Create AI Science, Platform/SRE, and Product/Strategy agents
@@ -75,7 +75,7 @@ Plans:
 Plans:
 - [x] 03-01-PLAN.md -- Risk assessment methodology with calibrated 5x5 matrix and YAML schema (ISMS-04)
 - [x] 03-02-PLAN.md -- Pre-seed 30-50 candidate risks in YAML files with CISO Agent pre-ratings (ISMS-05)
-- [ ] 03-03-PLAN.md -- Workshop preparation package and risk treatment summary template (ISMS-05, ISMS-06)
+- [x] 03-03-PLAN.md -- Workshop preparation package and risk treatment summary template (ISMS-05, ISMS-06)
 - [x] 03-04-PLAN.md -- Statement of Applicability: 93 per-control YAML files and consolidation script (ISMS-03)
 
 ### Phase 4: CTO and AppSec Agents with Security Engineering
@@ -195,7 +195,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 |-------|----------------|--------|-----------|
 | 1. Startup Overlay and Agent Foundation | 4/4 | Complete | 2026-02-19 |
 | 2. CISO Agent and IS/AI Policy Foundation | 3/4 | Gap closure | 2026-02-19 |
-| 3. Risk Framework and Statement of Applicability | 3/4 | In progress | - |
+| 3. Risk Framework and Statement of Applicability | 4/4 | Complete | 2026-02-20 |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
 | 5. AIMS Core and AI System Registry | 0/TBD | Not started | - |
 | 6. Remaining Specialist Agents | 0/TBD | Not started | - |
