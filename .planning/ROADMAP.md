@@ -73,10 +73,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Risk assessment methodology with calibrated 5x5 matrix and YAML schema (ISMS-04)
-- [ ] 03-02-PLAN.md -- Pre-seed 30-50 candidate risks in YAML files with CISO Agent pre-ratings (ISMS-05)
+- [x] 03-01-PLAN.md -- Risk assessment methodology with calibrated 5x5 matrix and YAML schema (ISMS-04)
+- [x] 03-02-PLAN.md -- Pre-seed 30-50 candidate risks in YAML files with CISO Agent pre-ratings (ISMS-05)
 - [ ] 03-03-PLAN.md -- Workshop preparation package and risk treatment summary template (ISMS-05, ISMS-06)
-- [ ] 03-04-PLAN.md -- Statement of Applicability: 93 per-control YAML files and consolidation script (ISMS-03)
+- [x] 03-04-PLAN.md -- Statement of Applicability: 93 per-control YAML files and consolidation script (ISMS-03)
 
 ### Phase 4: CTO and AppSec Agents with Security Engineering
 **Goal**: Technical security architecture and automated security tooling are defined and produce evidence that maps directly to ISO 27001 Annex A.8 controls
@@ -195,7 +195,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 |-------|----------------|--------|-----------|
 | 1. Startup Overlay and Agent Foundation | 4/4 | Complete | 2026-02-19 |
 | 2. CISO Agent and IS/AI Policy Foundation | 3/4 | Gap closure | 2026-02-19 |
-| 3. Risk Framework and Statement of Applicability | 0/TBD | Not started | - |
+| 3. Risk Framework and Statement of Applicability | 3/4 | In progress | - |
 | 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
 | 5. AIMS Core and AI System Registry | 0/TBD | Not started | - |
 | 6. Remaining Specialist Agents | 0/TBD | Not started | - |
