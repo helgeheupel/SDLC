@@ -1,0 +1,22 @@
+---
+control-id: A.5.30
+control-name: "ICT Readiness for Business Continuity"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. ICT systems (Azure cloud, M365, Git repositories, AI services)
+  must be ready to support business continuity requirements. Azure provides
+  SLA-backed availability and disaster recovery capabilities. Formal ICT
+  readiness assessment, recovery time objectives (RTOs), and recovery point
+  objectives (RPOs) are planned for Phase 7 (OPCT-02).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: ICT readiness requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-OPS-002
+responsible-role: "CISO role"
+notes: "ICT readiness for BCP planned for Phase 7 (OPCT-02)"
+last-assessed: 2026-02-20
+---

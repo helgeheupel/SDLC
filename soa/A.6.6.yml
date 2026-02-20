@@ -1,0 +1,21 @@
+---
+control-id: A.6.6
+control-name: "Confidentiality or Non-Disclosure Agreements"
+theme: people
+applicable: true
+justification: >
+  Applicable. All Helge Heupel Group personnel and contractors sign NDAs
+  covering Confidential and Secret information. The NDA requirements are
+  aligned with TISAX ISA Chapter 7 for prototype protection of Verity VE
+  (PATENT-VE-001) and Verity EAM (PATENT-EAM-001). External consultants
+  (BearingPoint, NorthGRC) are subject to engagement-specific NDAs.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: confidentiality requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "NDAs in place for current personnel; standardized NDA template being formalized"
+last-assessed: 2026-02-20
+---

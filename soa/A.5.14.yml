@@ -1,0 +1,21 @@
+---
+control-id: A.5.14
+control-name: "Information Transfer"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Information transfer between the 3 Helge Heupel Group entities
+  and with external parties must be protected. Git-based workflows ensure
+  controlled transfer of compliance artifacts. M365 (Exchange, Teams, SharePoint)
+  with TLS encryption handles business communications. Inter-entity data flows
+  are governed by shared Azure tenant controls and pending inter-entity DPA.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: information transfer requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Inter-entity DPA to be formalized; formal information transfer policy pending Phase 7"
+last-assessed: 2026-02-20
+---

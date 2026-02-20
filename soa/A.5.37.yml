@@ -1,0 +1,24 @@
+---
+control-id: A.5.37
+control-name: "Documented Operating Procedures"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The IS Policy Annex (HH-ISMS-POL-001-ANNEX) provides documented
+  operating procedures for information security activities, mapping 1:1 to the
+  IS Policy sections. The AI Policy Annex (HH-AIMS-POL-001-ANNEX) documents
+  operational procedures for AI governance. Both annexes translate formal
+  policy requirements into actionable day-to-day procedures for the team.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Operational Annex with 11 operational sections"
+    path: "policies/IS-Policy-Annex.md"
+  - document-id: HH-AIMS-POL-001-ANNEX
+    description: "AI Policy Operational Annex"
+    path: "policies/AI-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

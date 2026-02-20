@@ -1,0 +1,28 @@
+---
+control-id: A.5.31
+control-name: "Legal, Statutory, Regulatory and Contractual Requirements"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group operates across 3 jurisdictions (DE, NL, US)
+  with multiple regulatory requirements: NIS2UmsuCG (Germany), Wbni (Netherlands),
+  GDPR/BDSG/AVG (EU data protection), EU AI Act, TISAX. The IS Policy and AI
+  Policy document applicable legal and regulatory requirements. The IMS Context
+  (HH-IMS-CTX-001) maps the regulatory landscape across all entities.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: legal and regulatory requirements"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: EU AI Act and regulatory compliance"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-IMS-CTX-001
+    description: "IMS Context: regulatory landscape mapping"
+    path: "policies/IMS-Context.md"
+risk-references:
+  - RISK-REG-001
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

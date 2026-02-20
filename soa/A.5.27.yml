@@ -1,0 +1,21 @@
+---
+control-id: A.5.27
+control-name: "Learning from Information Security Incidents"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Post-incident reviews (lessons learned) must be conducted after
+  significant security incidents to prevent recurrence. The IS Policy Annex
+  defines the post-incident review process including root cause analysis and
+  corrective action tracking. Formal lessons-learned procedures with integration
+  into the risk register are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: post-incident review requirements"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Post-incident review requirement defined; formal process Phase 7"
+last-assessed: 2026-02-20
+---

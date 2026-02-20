@@ -1,0 +1,24 @@
+---
+control-id: A.5.36
+control-name: "Compliance with Policies, Rules and Standards"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Compliance with information security policies is enforced through
+  the governance model with risk-tiered gate criteria. The Weekly Technical
+  meeting and Monthly Strategic meeting review compliance status. The SDLC
+  framework enforces policy compliance through CI/CD gates for Low/Medium risk
+  and human approval gates for High/Critical risk items.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model with compliance review mechanisms"
+    path: "governance-model.md"
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: compliance requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

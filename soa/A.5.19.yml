@@ -1,0 +1,22 @@
+---
+control-id: A.5.19
+control-name: "Information Security in Supplier Relationships"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group relies on critical suppliers including
+  Microsoft (Azure, M365), Anthropic (Claude Code), OpenAI (ChatGPT, Codex),
+  Vercel, Cloudflare, and Neon (PostgreSQL). Security requirements for supplier
+  relationships must be established and monitored. Formal supplier security
+  management procedures are planned for Phase 7 (OPCT-04).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: supplier relationship requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-SUP-001
+responsible-role: "CISO role"
+notes: "Supplier security management planned for Phase 7 (OPCT-04)"
+last-assessed: 2026-02-20
+---

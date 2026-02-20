@@ -1,0 +1,25 @@
+---
+control-id: A.6.3
+control-name: "Information Security Awareness, Education and Training"
+theme: people
+applicable: true
+justification: >
+  Applicable. All Helge Heupel Group personnel must receive information security
+  awareness training covering the IS Policy, classification handling, incident
+  reporting, and AI-specific risks. The AI Policy Annex defines AI-specific
+  training requirements including prohibited practices awareness. A formal
+  awareness and training program is planned for Phase 7 (OPCT-06).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: training and awareness requirements"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: AI-specific training requirements"
+    path: "policies/AI-Policy.md"
+risk-references:
+  - RISK-PPL-002
+responsible-role: "CISO role"
+notes: "Formal awareness and training program planned for Phase 7 (OPCT-06)"
+last-assessed: 2026-02-20
+---

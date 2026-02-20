@@ -1,0 +1,21 @@
+---
+control-id: A.5.18
+control-name: "Access Rights"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Access rights are provisioned based on role requirements using
+  Azure RBAC with least-privilege principle. Privileged access is managed through
+  Azure PIM with time-limited just-in-time elevation. Access reviews are
+  conducted as part of the quarterly risk register review cycle. Formal periodic
+  access review procedures are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: access rights management requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Azure RBAC and PIM operational; formal access review procedures pending Phase 7"
+last-assessed: 2026-02-20
+---

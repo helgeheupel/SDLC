@@ -1,0 +1,25 @@
+---
+control-id: A.5.12
+control-name: "Classification of Information"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group maintains a four-level information
+  classification scheme (Public, Internal, Confidential, Secret) aligned with
+  TISAX ISA Chapter 7 handling requirements. The classification scheme is defined
+  in IS Policy Section 6 (HH-ISMS-POL-001) and operationalized in IS Policy
+  Annex Section 6 (HH-ISMS-POL-001-ANNEX). All compliance documents carry
+  classification labels in YAML frontmatter metadata.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy Section 6: Information Classification"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex Section 6: Classification Procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

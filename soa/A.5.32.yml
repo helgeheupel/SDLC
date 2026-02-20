@@ -1,0 +1,25 @@
+---
+control-id: A.5.32
+control-name: "Intellectual Property Rights"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group holds patent-pending intellectual property
+  for Verity VE (PATENT-VE-001) and Verity EAM (PATENT-EAM-001). IP protection
+  is enforced through TISAX ISA Chapter 7 prototype protection requirements,
+  classification labelling (Confidential/Secret), and the AI Policy prohibition
+  on training third-party AI models with proprietary data. NDAs are required
+  for all personnel with access to patent-sensitive materials.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: intellectual property protection"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: prohibited practice on proprietary data training"
+    path: "policies/AI-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Patent protection measures active; formal IP management procedure planned"
+last-assessed: 2026-02-20
+---

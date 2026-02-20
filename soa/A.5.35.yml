@@ -1,0 +1,21 @@
+---
+control-id: A.5.35
+control-name: "Independent Review of Information Security"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Independent review of the ISMS is required by ISO 27001 cl. 9.2
+  (internal audit) and cl. 9.3 (management review). The external CISO from
+  NorthGRC provides independent challenge during risk workshops. The TISAX
+  assessment by TUeV SueD provides external independent review. Formal internal
+  audit program is planned for Phase 7 (ISMS-07).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: internal audit and independent review requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Internal audit program planned for Phase 7 (ISMS-07)"
+last-assessed: 2026-02-20
+---

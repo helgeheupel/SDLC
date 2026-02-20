@@ -1,0 +1,24 @@
+---
+control-id: A.5.9
+control-name: "Inventory of Information and Other Associated Assets"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group maintains an inventory of information
+  assets including Azure cloud resources, M365 services, Git repositories,
+  AI systems (7 Claude Code agents, ChatGPT, Codex), and product systems
+  (Verity VE, Verity EAM). The AI Policy Annex includes a current AI systems
+  inventory. A comprehensive asset register is planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-AIMS-POL-001-ANNEX
+    description: "AI Policy Annex Section 1.2: AI Systems Inventory"
+    path: "policies/AI-Policy-Annex.md"
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: asset management requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Comprehensive asset register planned for Phase 7"
+last-assessed: 2026-02-20
+---

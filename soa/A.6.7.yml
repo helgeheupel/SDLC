@@ -1,0 +1,21 @@
+---
+control-id: A.6.7
+control-name: "Remote Working"
+theme: people
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group operates as a fully remote organization
+  with no physical offices in scope. All 6 team members work remotely. The
+  IS Policy Annex Section 7 defines remote working security requirements
+  including secure home network guidance, VPN usage, endpoint encryption
+  (FileVault/BitLocker), and clean desk/clear screen for remote environments.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex Section 7: Remote Working Procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Remote working procedures defined; enforcement mechanisms being strengthened"
+last-assessed: 2026-02-20
+---

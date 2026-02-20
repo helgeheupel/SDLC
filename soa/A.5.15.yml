@@ -1,0 +1,25 @@
+---
+control-id: A.5.15
+control-name: "Access Control"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Access control is implemented through Microsoft Entra ID (Azure AD)
+  with Conditional Access policies for all Azure and M365 resources. The IS Policy
+  Section 5 defines access control requirements including least-privilege principle
+  and need-to-know basis. Full access control procedures including formal access
+  request/revocation workflows are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy Section 5: Access Control"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: access control operational procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references:
+  - RISK-SEC-002
+responsible-role: "CISO role"
+notes: "Entra ID Conditional Access operational; formal access management procedures Phase 7"
+last-assessed: 2026-02-20
+---

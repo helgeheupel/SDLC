@@ -1,0 +1,24 @@
+---
+control-id: A.5.10
+control-name: "Acceptable Use of Information and Other Associated Assets"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The IS Policy and AI Policy define acceptable use requirements for
+  all information assets. The AI Policy specifically enumerates 14 prohibited
+  practices (8 EU AI Act Art. 5 + 6 HH-specific) for AI system usage. The IS
+  Policy Annex provides operational guidelines for acceptable use of Azure, M365,
+  and development tools.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: acceptable use requirements"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: prohibited practices and acceptable AI use"
+    path: "policies/AI-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

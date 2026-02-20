@@ -1,0 +1,25 @@
+---
+control-id: A.5.13
+control-name: "Labelling of Information"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. All controlled documents within the IMS carry classification labels
+  in YAML frontmatter (document-id, classification, version, date). The IS Policy
+  Annex Section 6 defines labelling procedures including YAML frontmatter
+  requirements for all compliance artifacts and Azure Information Protection
+  labels for M365 content. Patent-sensitive materials carry specific reference
+  IDs (e.g., PATENT-VE-001) per TISAX ISA Chapter 7.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex Section 6: Labelling Procedures"
+    path: "policies/IS-Policy-Annex.md"
+  - document-id: HH-ISMS-DOC-001
+    description: "Document Control Framework with YAML frontmatter standards"
+    path: "policies/document-control.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

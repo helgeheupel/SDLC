@@ -1,0 +1,24 @@
+---
+control-id: A.5.4
+control-name: "Management Responsibilities"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. CEO Helge Heupel as Geschaeftsfuehrer of GmbH and Bestuurder of
+  B.V. personally commits to information security in the IS Policy Section 2.
+  Management commitment is demonstrated through the Monthly Strategic meeting
+  (ISO 27001 cl. 9.3 management review), policy approval via Git PR, and
+  NIS2UmsuCG Sec. 38 management body liability acknowledgment.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy Section 2: Management Commitment"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Monthly Strategic meeting as management review"
+    path: "governance-model.md"
+risk-references: []
+responsible-role: "CEO"
+notes: ""
+last-assessed: 2026-02-20
+---

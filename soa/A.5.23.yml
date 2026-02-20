@@ -1,0 +1,22 @@
+---
+control-id: A.5.23
+control-name: "Information Security for Use of Cloud Services"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Cloud services are the primary infrastructure for the Helge Heupel
+  Group (Azure West Europe, Germany West Central). Cloud security requirements
+  must address shared responsibility model boundaries, data residency (EU),
+  encryption at rest and in transit, and cloud-specific access controls. Formal
+  cloud security procedures are planned for Phase 7 (OPCT-04).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: cloud security requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-OPS-001
+responsible-role: "CISO role"
+notes: "Azure shared responsibility model documented; formal cloud security procedures Phase 7"
+last-assessed: 2026-02-20
+---

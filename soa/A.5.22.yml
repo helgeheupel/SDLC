@@ -1,0 +1,22 @@
+---
+control-id: A.5.22
+control-name: "Monitoring, Review and Change Management of Supplier Services"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Supplier services (Azure, Anthropic, OpenAI, Vercel, Cloudflare,
+  Neon) must be monitored for security, availability, and compliance. Azure
+  Service Health and Azure Monitor provide basic supplier service monitoring.
+  Formal supplier monitoring, review, and change management procedures are
+  planned for Phase 7 (OPCT-04).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: supplier service monitoring requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-SUP-001
+responsible-role: "CISO role"
+notes: "Formal supplier monitoring procedures planned for Phase 7 (OPCT-04)"
+last-assessed: 2026-02-20
+---

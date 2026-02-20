@@ -1,0 +1,24 @@
+---
+control-id: A.5.3
+control-name: "Segregation of Duties"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The IS Policy defines segregation of duties principles for the
+  Helge Heupel Group. At Startup with 6 team members, full segregation is
+  constrained; compensating controls include Git PR-based dual approval, Azure
+  RBAC with least-privilege, and risk-tiered gate criteria requiring independent
+  review for High/Critical changes.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: segregation of duties requirements"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model with risk-tiered gate criteria"
+    path: "governance-model.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Full segregation is limited at 6-person team; compensating controls documented"
+last-assessed: 2026-02-20
+---

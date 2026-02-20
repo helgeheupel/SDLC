@@ -1,0 +1,22 @@
+---
+control-id: A.5.20
+control-name: "Addressing Information Security Within Supplier Agreements"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Agreements with suppliers must include information security
+  requirements. Current cloud service agreements (Azure Enterprise Agreement,
+  Anthropic Terms of Service) include baseline security provisions. Formal
+  security requirement clauses for all supplier agreements are planned for
+  Phase 7 (OPCT-04) including data processing agreements.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: supplier agreement security requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-SUP-001
+responsible-role: "CISO role"
+notes: "Supplier agreement security clauses planned for Phase 7 (OPCT-04)"
+last-assessed: 2026-02-20
+---

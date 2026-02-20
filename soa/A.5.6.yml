@@ -1,0 +1,21 @@
+---
+control-id: A.5.6
+control-name: "Contact with Special Interest Groups"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group engages with special interest groups
+  relevant to its security posture including the ENX Association (TISAX),
+  BSI advisories, Azure Security Center intelligence feeds, and AI governance
+  communities. The CISO role monitors relevant threat intelligence and
+  regulatory updates from these groups.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: threat intelligence and external engagement"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Formal membership log to be established in Phase 7"
+last-assessed: 2026-02-20
+---

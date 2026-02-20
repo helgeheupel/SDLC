@@ -1,0 +1,25 @@
+---
+control-id: A.5.34
+control-name: "Privacy and Protection of PII"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group processes personal data across 3 jurisdictions
+  subject to GDPR (EU), BDSG (Germany), and AVG (Netherlands). The IS Policy
+  addresses data protection requirements including DPIAs for AI features processing
+  personal data (GDPR Art. 35). The AI Policy prohibits processing Secret-classified
+  data through AI systems and defines prohibited practices preventing PII misuse.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: data protection and privacy requirements"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: PII protection in AI systems"
+    path: "policies/AI-Policy.md"
+risk-references:
+  - RISK-REG-002
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

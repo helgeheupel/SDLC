@@ -1,0 +1,22 @@
+---
+control-id: A.6.8
+control-name: "Information Security Event Reporting"
+theme: people
+applicable: true
+justification: >
+  Applicable. All Helge Heupel Group personnel must report information security
+  events promptly. The IS Policy Annex defines interim incident response
+  procedures including reporting channels, escalation paths, and NIS2 reporting
+  timelines (24h initial notification to BSI/NCSC-NL, 72h detailed report).
+  Formal event reporting mechanisms with integration to NorthGRC are planned
+  for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: interim incident response and reporting"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Interim reporting procedures in place; formal reporting system Phase 7"
+last-assessed: 2026-02-20
+---

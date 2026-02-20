@@ -1,0 +1,24 @@
+---
+control-id: A.5.1
+control-name: "Policies for Information Security"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group maintains an Information Security Policy
+  (HH-ISMS-POL-001) approved by CEO Helge Heupel, covering all 3 entities
+  (GmbH, B.V., Inc.), all personnel, and all 7 Claude Code AI agents. The policy
+  is reviewed annually and communicated via Git repository access.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "Information Security Policy"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Operational Annex"
+    path: "policies/IS-Policy-Annex.md"
+risk-references:
+  - RISK-REG-001
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

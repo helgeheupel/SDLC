@@ -1,0 +1,21 @@
+---
+control-id: A.5.11
+control-name: "Return of Assets"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. When personnel leave the Helge Heupel Group or change roles,
+  all information assets must be returned or securely wiped. This includes
+  endpoint devices (laptops), access credentials (Entra ID deprovisioning),
+  and any physical or digital media. The IS Policy Annex defines the offboarding
+  checklist including 4-hour access revocation for contractors.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: offboarding procedures and access revocation"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Formal asset return checklist to be documented in Phase 7"
+last-assessed: 2026-02-20
+---

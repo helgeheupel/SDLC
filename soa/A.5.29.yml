@@ -1,0 +1,22 @@
+---
+control-id: A.5.29
+control-name: "Information Security During Disruption"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group must maintain information security during
+  business disruptions including cloud service outages, cyberattacks, and
+  natural disasters. Azure's built-in resilience (availability zones, geo-redundancy)
+  provides baseline continuity. Formal business continuity procedures with
+  information security integration are planned for Phase 7 (OPCT-02).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: business continuity requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-OPS-002
+responsible-role: "CISO role"
+notes: "BCP/DR procedures planned for Phase 7 (OPCT-02)"
+last-assessed: 2026-02-20
+---

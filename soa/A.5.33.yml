@@ -1,0 +1,25 @@
+---
+control-id: A.5.33
+control-name: "Protection of Records"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Document Control Framework (HH-ISMS-DOC-001) establishes
+  Git-based document control satisfying ISO 27001 cl. 7.5. All ISMS/AIMS
+  records are maintained in Git with immutable commit history providing tamper
+  evidence. YAML frontmatter metadata ensures records carry version, date,
+  classification, and approval status. The Document Register (HH-ISMS-REG-001)
+  indexes all controlled documents.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-DOC-001
+    description: "Document Control Framework"
+    path: "policies/document-control.md"
+  - document-id: HH-ISMS-REG-001
+    description: "Document Register"
+    path: "policies/document-register.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

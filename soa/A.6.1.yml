@@ -1,0 +1,22 @@
+---
+control-id: A.6.1
+control-name: "Screening"
+theme: people
+applicable: true
+justification: >
+  Applicable. All personnel joining the Helge Heupel Group must undergo
+  appropriate background screening proportionate to their role and access
+  level. For roles with access to Confidential/Secret information or Azure
+  production environments, enhanced screening is required. Formal screening
+  procedures are planned for Phase 7 (HR security procedures).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: personnel screening requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-PPL-001
+responsible-role: "CISO role"
+notes: "Screening procedures planned for Phase 7 HR security"
+last-assessed: 2026-02-20
+---

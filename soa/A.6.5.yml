@@ -1,0 +1,22 @@
+---
+control-id: A.6.5
+control-name: "Responsibilities After Termination or Change of Employment"
+theme: people
+applicable: true
+justification: >
+  Applicable. Personnel leaving the Helge Heupel Group or changing roles retain
+  information security responsibilities for Confidential and Secret information
+  they accessed. NDAs include post-employment confidentiality obligations. The
+  IS Policy Annex defines offboarding procedures including access revocation
+  within 4 hours and asset return. Formal post-employment procedures planned
+  for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: offboarding procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Post-employment responsibility procedures planned for Phase 7"
+last-assessed: 2026-02-20
+---

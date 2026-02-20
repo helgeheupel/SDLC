@@ -1,0 +1,22 @@
+---
+control-id: A.5.21
+control-name: "Managing Information Security in the ICT Supply Chain"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group's ICT supply chain includes cloud
+  infrastructure (Azure), AI model providers (Anthropic, OpenAI), hosting
+  platforms (Vercel, Cloudflare), and database providers (Neon). Supply chain
+  security risks are identified in the risk register. Formal ICT supply chain
+  security management procedures are planned for Phase 7 (OPCT-04).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: supply chain security requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-SUP-001
+responsible-role: "CISO role"
+notes: "ICT supply chain management planned for Phase 7 (OPCT-04)"
+last-assessed: 2026-02-20
+---

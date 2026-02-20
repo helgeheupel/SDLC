@@ -1,0 +1,24 @@
+---
+control-id: A.5.8
+control-name: "Information Security in Project Management"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The SDLC-Growth-v2 framework and its Startup overlay integrate
+  information security into all project management activities. Risk-tiered gate
+  criteria (Low/Medium auto-flow, High/Critical require human approval) ensure
+  security considerations are addressed at every development gate. The governance
+  model enforces security review in the Weekly Technical meeting.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model with risk-tiered gate criteria"
+    path: "governance-model.md"
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: security in development lifecycle"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

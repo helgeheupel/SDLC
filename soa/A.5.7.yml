@@ -1,0 +1,21 @@
+---
+control-id: A.5.7
+control-name: "Threat Intelligence"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group leverages Azure Security Center, Microsoft
+  Defender for Cloud, and Entra ID Identity Protection for automated threat
+  intelligence. The IS Policy Annex defines threat intelligence collection and
+  analysis procedures. Formal threat intelligence integration with operational
+  response is planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: threat intelligence procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Azure Security Center provides automated threat intelligence; formal SIEM integration Phase 7"
+last-assessed: 2026-02-20
+---

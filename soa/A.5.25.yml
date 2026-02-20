@@ -1,0 +1,21 @@
+---
+control-id: A.5.25
+control-name: "Assessment and Decision on Information Security Events"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Information security events must be assessed to determine whether
+  they constitute information security incidents. The IS Policy Annex defines
+  event classification criteria and escalation thresholds. Azure Security Center
+  and Entra ID Identity Protection provide automated event detection and
+  severity classification. Full event assessment procedures planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: event classification and escalation"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Azure-native event detection operational; formal classification procedures Phase 7"
+last-assessed: 2026-02-20
+---

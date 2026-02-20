@@ -1,0 +1,21 @@
+---
+control-id: A.5.5
+control-name: "Contact with Authorities"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group must maintain contact with multiple
+  regulatory authorities across 3 jurisdictions: BSI (Germany, NIS2UmsuCG),
+  NCSC-NL (Netherlands, Wbni), and data protection authorities (BfDI, AP).
+  The IS Policy Annex documents contact procedures and 24h/72h incident
+  reporting timelines per NIS2 requirements.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: authority contact procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "BSI registration for GmbH pending; NCSC-NL registration for B.V. pending"
+last-assessed: 2026-02-20
+---

@@ -1,0 +1,24 @@
+---
+control-id: A.5.2
+control-name: "Information Security Roles and Responsibilities"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The IS Policy Section 4 defines information security roles and
+  responsibilities for all 6 human team members and 7 AI agents. The RACI matrix
+  (RACI-Startup.md) maps 32 SDLC activities to 13 columns covering all human
+  roles and agent roles. CEO Helge Heupel serves as ultimate risk owner with
+  CISO role accountable for day-to-day security operations.
+implementation-status: fully-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy Section 4: Roles and Responsibilities"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Startup Phase Governance Model"
+    path: "governance-model.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: ""
+last-assessed: 2026-02-20
+---

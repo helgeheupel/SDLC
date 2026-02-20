@@ -1,0 +1,22 @@
+---
+control-id: A.5.17
+control-name: "Authentication Information"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Multi-factor authentication is enforced for all accounts via
+  Microsoft Entra ID Conditional Access policies. FIDO2 hardware keys are
+  available for privileged accounts. Password policies enforce complexity
+  requirements. The IS Policy Annex defines authentication standards including
+  MFA requirements for all cloud resource access.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: authentication standards"
+    path: "policies/IS-Policy-Annex.md"
+risk-references:
+  - RISK-SEC-001
+responsible-role: "CISO role"
+notes: "MFA enforced via Entra ID; formal authentication policy documentation pending Phase 7"
+last-assessed: 2026-02-20
+---

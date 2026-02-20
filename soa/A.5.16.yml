@@ -1,0 +1,21 @@
+---
+control-id: A.5.16
+control-name: "Identity Management"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. All user identities are managed centrally through Microsoft Entra ID
+  for the shared Azure tenant. Each team member has a unique identity with MFA
+  enforcement. AI agents operate under service principal identities. The lifecycle
+  of identities (provisioning, modification, deprovisioning) is managed through
+  Entra ID with 4-hour revocation SLA for terminations.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: identity management procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Entra ID operational; formal identity lifecycle documentation pending Phase 7"
+last-assessed: 2026-02-20
+---

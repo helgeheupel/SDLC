@@ -1,0 +1,21 @@
+---
+control-id: A.5.26
+control-name: "Response to Information Security Incidents"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The IS Policy Annex defines interim incident response procedures
+  including containment, eradication, and recovery steps. Roles and responsibilities
+  during incident response are defined with CEO as incident commander for
+  Critical/High incidents. Detailed incident response playbooks with specific
+  scenarios (ransomware, data breach, account compromise) are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: interim incident response procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Interim response procedures in place; detailed playbooks Phase 7"
+last-assessed: 2026-02-20
+---

@@ -1,0 +1,21 @@
+---
+control-id: A.5.24
+control-name: "Information Security Incident Management Planning and Preparation"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. The IS Policy Annex includes an interim incident response procedure
+  covering detection, triage, containment, eradication, and recovery. NIS2
+  reporting timelines (24h initial notification, 72h detailed report) are
+  documented. A comprehensive incident management plan with playbooks and
+  escalation procedures is planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: Interim incident response procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Interim incident response in place; full incident management plan Phase 7"
+last-assessed: 2026-02-20
+---

@@ -1,0 +1,21 @@
+---
+control-id: A.5.28
+control-name: "Collection of Evidence"
+theme: organizational
+applicable: true
+justification: >
+  Applicable. Evidence collection procedures must be defined for information
+  security incidents to support potential legal action or regulatory investigation.
+  The IS Policy Annex defines basic evidence preservation requirements including
+  log retention, chain of custody awareness, and Azure log immutability. Detailed
+  forensic evidence collection procedures are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: evidence preservation requirements"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Basic evidence preservation defined; forensic procedures Phase 7"
+last-assessed: 2026-02-20
+---

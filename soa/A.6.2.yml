@@ -1,0 +1,21 @@
+---
+control-id: A.6.2
+control-name: "Terms and Conditions of Employment"
+theme: people
+applicable: true
+justification: >
+  Applicable. Employment contracts for all Helge Heupel Group personnel include
+  information security responsibilities and confidentiality obligations. NDAs
+  are signed by all team members and contractors. Employment terms reference the
+  IS Policy and AI Policy compliance requirements. Formal security-specific
+  employment clauses are being standardized.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: personnel security requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "NDAs and confidentiality clauses in place; standardized security employment terms in progress"
+last-assessed: 2026-02-20
+---

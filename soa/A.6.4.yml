@@ -1,0 +1,21 @@
+---
+control-id: A.6.4
+control-name: "Disciplinary Process"
+theme: people
+applicable: true
+justification: >
+  Applicable. A disciplinary process must exist to address information security
+  policy violations by personnel. At Startup with 6 team members, the CEO
+  directly manages disciplinary matters. Formal disciplinary procedures aligned
+  with German labor law (GmbH) and Dutch labor law (B.V.) are planned for
+  Phase 7 HR security procedures.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: policy violation consequences"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CEO"
+notes: "Formal disciplinary procedures planned for Phase 7"
+last-assessed: 2026-02-20
+---
