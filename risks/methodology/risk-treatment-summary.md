@@ -10,7 +10,7 @@ approver: CEO Helge Heupel
 status: Template
 methodology-reference: HH-ISMS-RMA-001
 workshop-date: "[TO BE COMPLETED]"
-change-summary: Initial template -- to be populated after risk assessment workshop
+change-summary: "Initial template: to be populated after risk assessment workshop"
 ---
 
 # Risk Treatment Plan and Residual Risk Acceptance Summary
@@ -21,9 +21,9 @@ change-summary: Initial template -- to be populated after risk assessment worksh
 
 This document summarizes the risk treatment decisions made during the Helge Heupel Group risk assessment workshop and records the CEO's formal acceptance of residual risk. It serves as the auditor-facing package for:
 
-- **ISO 27001 cl. 6.1.3(e)** -- Formulated risk treatment plan
-- **ISO 27001 cl. 6.1.3(f)** -- Risk owner approval of the risk treatment plan and acceptance of residual risk
-- **ISO 42001 cl. 6.1.2** -- AI risk assessment results including consequences to individuals and societies
+- **ISO 27001 cl. 6.1.3(e)** — Formulated risk treatment plan
+- **ISO 27001 cl. 6.1.3(f)** — Risk owner approval of the risk treatment plan and acceptance of residual risk
+- **ISO 42001 cl. 6.1.2** — AI risk assessment results including consequences to individuals and societies
 
 This document operates alongside the Git PR workflow for residual risk acceptance. The Git PR provides the working process audit trail (timestamp, approver identity, file diffs); this document provides the formal consolidated summary for the auditor package.
 
@@ -33,7 +33,7 @@ This document operates alongside the Git PR workflow for residual risk acceptanc
 
 | Item | Detail |
 |------|--------|
-| **Methodology Document** | HH-ISMS-RMA-001 -- Risk Assessment Methodology |
+| **Methodology Document** | HH-ISMS-RMA-001 — Risk Assessment Methodology |
 | **Methodology Version** | v1.0 |
 | **Assessment Technique** | Qualitative risk assessment using 5x5 likelihood-impact matrix (IEC 31010:2019) |
 | **Likelihood Scale** | Time-based, 5 levels: Rare (1) to Almost Certain (5) |
@@ -248,7 +248,7 @@ Next Review Date:   [DATE + 3 months]
 | HH-ISMS-SOA-001 | Statement of Applicability (ISO 27001) | Bidirectional traceability with risk treatment controls |
 | HH-GOV-Startup-v1.0 | Governance Model | Defines risk-tiered escalation (Weekly Technical, Monthly Strategic meetings) |
 | HH-IMS-CTX-001 | IMS Context | Establishes ISMS/AIMS integration framework |
-| -- | Risk Register (risks/*.yml) | Individual risk register entries referenced in the treatment summary table |
+| — | Risk Register (risks/*.yml) | Individual risk register entries referenced in the treatment summary table |
 | HH-ISMS-WRK-001 | Workshop Preparation Package | Pre-workshop preparation materials, agenda, and evidence templates |
 
 ---

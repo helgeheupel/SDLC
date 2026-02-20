@@ -9,7 +9,7 @@ reviewer: [CEO Helge Heupel, External CISO (NorthGRC)]
 approver: CEO Helge Heupel
 status: Draft
 methodology-reference: HH-ISMS-RMA-001
-change-summary: Initial release -- workshop preparation materials for risk assessment session
+change-summary: "Initial release: workshop preparation materials for risk assessment session"
 ---
 
 # Risk Assessment Workshop Preparation Package
@@ -20,10 +20,10 @@ change-summary: Initial release -- workshop preparation materials for risk asses
 
 Validate the pre-seeded risk register, finalize likelihood and impact ratings, determine treatment strategies for each risk, map treatments to Annex A controls, and formally accept residual risk. The workshop produces a committed risk register and risk treatment plan that satisfies:
 
-- **ISO 27001 cl. 6.1.2** -- Risk assessment with consistent, valid, and comparable results
-- **ISO 27001 cl. 6.1.3** -- Risk treatment including SoA-linked control selection and risk owner approval
-- **ISO 42001 cl. 6.1.2** -- AI risk assessment including consequences to individuals and societies
-- **ISO 31000:2018** -- Risk management process alignment
+- **ISO 27001 cl. 6.1.2** – Risk assessment with consistent, valid, and comparable results
+- **ISO 27001 cl. 6.1.3** – Risk treatment including SoA-linked control selection and risk owner approval
+- **ISO 42001 cl. 6.1.2** – AI risk assessment including consequences to individuals and societies
+- **ISO 31000:2018** — Risk management process alignment
 
 ### Workshop Details
 
@@ -43,7 +43,7 @@ The workshop covers all risks affecting the Helge Heupel Group Integrated Manage
 
 - **Legal entities:** Helge Heupel GmbH (Germany), Helge Heupel B.V. (Netherlands), Helge Heupel Inc. (United States)
 - **Risk categories:** Operational (OPS), Security (SEC), AI Risk (AI), Regulatory (REG), People (PPL), Supply Chain (SUP), Strategic (STR)
-- **Standards coverage:** ISO 27001:2022, ISO 42001:2023, TISAX, NIS2, GDPR, EU AI Act
+- **Standards coverage:** ISO 27001:2022, ISO 42001:2023, TISAX, GDPR, EU AI Act
 
 ---
 
@@ -52,7 +52,7 @@ The workshop covers all risks affecting the Helge Heupel Group Integrated Manage
 | Participant | Affiliation | Role in Workshop | Preparation Required |
 |-------------|------------|-----------------|---------------------|
 | **CEO Helge Heupel** | HH Group | Workshop driver. Makes final decisions on all risk ratings and treatment strategies. Accepts residual risk. Enters decisions for CISO Agent to capture. | Curate pre-seeded risk list: flag additions, removals, or rating disagreements before the session |
-| **External CISO** | NorthGRC (contracted to HH GmbH) | Challenge and validation role. Reviews and challenges CEO's ratings. Provides "second opinion" credibility for auditors. Not an equal co-owner -- a challenger who ensures ratings are defensible. | Review all 36 pre-seeded risk YAML files. Prepare challenge notes for any ratings that appear under- or over-estimated. |
+| **External CISO** | NorthGRC (contracted to HH GmbH) | Challenge and validation role. Reviews and challenges CEO's ratings. Provides "second opinion" credibility for auditors. Not an equal co-owner, but a challenger who ensures ratings are defensible. | Review all 36 pre-seeded risk YAML files. Prepare challenge notes for any ratings that appear under- or over-estimated. |
 | **Consultant** | BearingPoint or EY | Domain expertise on regulatory, compliance, and industry-specific risk areas. CEO drives the session; consultant advises on specific risks where domain knowledge is relevant. | Review regulatory risks (RISK-REG-*) and any risks in their domain of expertise. Prepare domain-specific input. |
 | **CISO Agent** | HH Group (AI Agent) | Real-time capture and validation. Validates ratings against the methodology (HH-ISMS-RMA-001), commits decisions to Git during the session, computes risk scores, flags inconsistencies (e.g., rating without rationale, residual higher than inherent). | Pre-seeding complete. Workshop preparation package (this document) distributed. Ready for real-time Git operations. |
 
@@ -96,7 +96,7 @@ Complete all items 3-5 business days before the scheduled workshop date.
 ### Technical Setup
 
 - [ ] Video conference set up with screen sharing for real-time Git commits
-  - Platform: [Teams / Zoom / Google Meet -- to be confirmed]
+  - Platform: [Teams]
   - Screen sharing: CISO Agent terminal visible to all participants for real-time commit verification
 - [ ] CISO Agent ready for real-time Git operations
   - Git repository access confirmed
@@ -130,7 +130,7 @@ Complete all items 3-5 business days before the scheduled workshop date.
 | 0:40-0:50 | Walk through PPL, SUP, STR risks (11 risks). Validate each. CEO leads (these are strategic/organizational). | CEO | PPL/SUP/STR list finalized |
 | 0:50-0:60 | Capture any new risks identified. Assign IDs following RISK-{CAT}-{NNN} convention. Remove any irrelevant risks with documented justification. | All + CISO Agent | Final risk list locked |
 
-### Break (15 minutes) -- 1:00-1:15
+### Break (15 minutes) — 1:00-1:15
 
 ### Block 3: Risk Rating (60 minutes)
 
@@ -150,7 +150,7 @@ Complete all items 3-5 business days before the scheduled workshop date.
 6. CISO Agent computes score, determines level, commits to YAML file
 7. If rating changed from pre-seeded: document "Pre-seeded: L=X, I=Y. Workshop: L=X', I=Y'. Reason: [...]" in workshop-notes
 
-### Break (15 minutes) -- 2:15-2:30
+### Break (15 minutes) — 2:15-2:30
 
 ### Block 4: Treatment Decisions (45 minutes)
 
@@ -196,7 +196,7 @@ The following evidence is captured during the workshop to satisfy ISO 27001 cl. 
 ### 5.1 Attendance Record
 
 ```
-RISK ASSESSMENT WORKSHOP -- ATTENDANCE RECORD
+RISK ASSESSMENT WORKSHOP — ATTENDANCE RECORD
 
 Date:           [YYYY-MM-DD]
 Start Time:     [HH:MM] (CET/CEST)
@@ -228,7 +228,7 @@ Change Reason:        [If changed: who proposed, what rationale, how resolved]
 
 Treatment Decision:
   Strategy:           [avoid / modify / share / retain]
-  Controls Adjusted:  [Yes/No -- list any added/removed Annex A controls]
+  Controls Adjusted:  [Yes/No — list any added/removed Annex A controls]
   Residual:           L=[X''], I=[Y''], Score=[Z''], Level=[level'']
 
 Accepted By:          [CEO Helge Heupel]
@@ -301,7 +301,7 @@ After the workshop, the full risk register enters the quarterly formal review cy
 
 - **Quarterly review** at Monthly Strategic meeting (agenda item 3: Risk register review and treatment status)
 - **Event-triggered reviews** per methodology triggers (new systems, incidents, regulatory changes, organizational changes)
-- **Next quarterly review date:** [TO BE SET -- 3 months from workshop date]
+- **Next quarterly review date:** [TO BE SET — 3 months from workshop date]
 
 ---
 
