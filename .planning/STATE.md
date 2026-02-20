@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 3 of 10 (Risk Framework and Statement of Applicability)
-Plan: 1 of 4 complete in current phase
-Status: Executing Phase 3. Plan 03-01 complete (Risk Assessment Methodology). 3 plans remaining.
-Last activity: 2026-02-20 -- Completed 03-01-PLAN.md (Risk Assessment Methodology)
+Plan: 2 of 4 complete in current phase
+Status: Executing Phase 3. Plans 03-01 and 03-04 complete. 2 plans remaining (03-02 risk pre-seed, 03-03 workshop).
+Last activity: 2026-02-20 -- Completed 03-04-PLAN.md (Statement of Applicability)
 
-Progress: [██░░░░░░░░] 23%
+Progress: [███░░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: 11min
-- Total execution time: 1.72 hours
+- Total execution time: 1.90 hours
 
 **By Phase:**
 
@@ -29,11 +29,11 @@ Progress: [██░░░░░░░░] 23%
 |-------|-------|-------|----------|
 | 1 | 4 | 72min | 18min |
 | 2 | 4 | 27min | 7min |
-| 3 | 1 | 4min | 4min |
+| 3 | 2 | 15min | 8min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (4min), 02-04 (1min), 02-02 (11min), 02-03 (10min), 02-01 (5min)
-- Trend: Phase 3 plans executing fast with pre-researched content from 03-RESEARCH.md and 03-CONTEXT.md.
+- Last 5 plans: 03-04 (11min), 03-01 (4min), 02-04 (1min), 02-02 (11min), 02-03 (10min)
+- Trend: Phase 3 SoA plan produced 93 YAML files + consolidation script in 11min. Content-heavy plans benefit from pre-researched schemas.
 
 *Updated after each plan completion*
 
@@ -92,6 +92,9 @@ Recent decisions affecting current work:
 - [03-01]: AI risks get 5th impact dimension (Individual/Society) per ISO 42001 cl. 6.1.2(d)(1) -- only when ai-risk: true
 - [03-01]: Dual residual risk acceptance: Git PR workflow (working process) + formal summary document (auditor package)
 - [03-01]: 7-category flat taxonomy (OPS, SEC, AI, REG, PPL, SUP, STR) with RISK-{CAT}-{NNN} ID convention
+- [03-04]: 7 physical controls not-applicable (A.7.1-A.7.3, A.7.5-A.7.6, A.7.11-A.7.12) with Azure shared responsibility justification; 7 applicable conservatively
+- [03-04]: Risk-to-control references provisional (10 risk IDs, 22 control refs) -- remainder populated after risk workshop
+- [03-04]: SoA consolidation script uses yaml.loadAll() for front-matter style YAML; generates sections 1-8 with statistics and risk traceability
 
 ### Pending Todos
 
@@ -107,6 +110,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-20
-Stopped at: Completed 03-01-PLAN.md (Risk Assessment Methodology)
-Resume file: .planning/phases/03-risk-framework-and-statement-of-applicability/03-01-SUMMARY.md
+Stopped at: Completed 03-04-PLAN.md (Statement of Applicability)
+Resume file: .planning/phases/03-risk-framework-and-statement-of-applicability/03-04-SUMMARY.md
 Next: Phase 3 Plan 02 (CISO Agent Pre-Seed Risks) -- execute-plan
