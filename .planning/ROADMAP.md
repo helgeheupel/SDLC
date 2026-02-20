@@ -70,11 +70,13 @@ Plans:
   2. A risk register exists in YAML-in-Git format that was validated through a human workshop (not purely AI-generated), with every risk having an identifiable human owner who can explain it
   3. A risk treatment plan exists with treatment strategy per risk, control mappings to Annex A, and explicit residual risk acceptance signed by the CEO
   4. The Statement of Applicability covers all 93 Annex A controls, each justified as applicable or not applicable with implementation status and evidence references
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- Risk assessment methodology with calibrated 5x5 matrix and YAML schema (ISMS-04)
+- [ ] 03-02-PLAN.md -- Pre-seed 30-50 candidate risks in YAML files with CISO Agent pre-ratings (ISMS-05)
+- [ ] 03-03-PLAN.md -- Workshop preparation package and risk treatment summary template (ISMS-05, ISMS-06)
+- [ ] 03-04-PLAN.md -- Statement of Applicability: 93 per-control YAML files and consolidation script (ISMS-03)
 
 ### Phase 4: CTO and AppSec Agents with Security Engineering
 **Goal**: Technical security architecture and automated security tooling are defined and produce evidence that maps directly to ISO 27001 Annex A.8 controls
