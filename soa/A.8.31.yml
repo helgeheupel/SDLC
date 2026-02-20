@@ -1,0 +1,21 @@
+---
+control-id: A.8.31
+control-name: "Separation of Development, Test and Production Environments"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Verity VE and EAM services are deployed across separated
+  environments (development, staging, production) in Azure. Neon PostgreSQL
+  provides separate database branches for development and production.
+  Environment separation is enforced through Azure subscriptions and resource
+  groups. Formal environment separation documentation is planned.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: environment management"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Environment separation operational; formal documentation planned"
+last-assessed: 2026-02-20
+---

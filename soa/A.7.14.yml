@@ -1,0 +1,22 @@
+---
+control-id: A.7.14
+control-name: "Secure Disposal or Re-Use of Equipment"
+theme: physical
+applicable: true
+justification: >
+  Applicable. When endpoint devices (laptops) reach end-of-life or are
+  reassigned, all data must be securely erased. Full disk encryption
+  (FileVault/BitLocker) provides baseline data-at-rest protection. Intune
+  remote wipe capability enables secure disposal. Formal secure disposal
+  procedures with certificate of destruction requirements for end-of-life
+  devices are planned.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: endpoint decommissioning"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Secure disposal procedures planned; Intune remote wipe available as interim measure"
+last-assessed: 2026-02-20
+---

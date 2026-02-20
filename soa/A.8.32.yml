@@ -1,0 +1,24 @@
+---
+control-id: A.8.32
+control-name: "Change Management"
+theme: technological
+applicable: true
+justification: >
+  Applicable. All changes to Verity VE and EAM code, infrastructure
+  configurations, and compliance artifacts are managed through Git-based change
+  control with PR approval workflows. The governance model defines risk-tiered
+  approval requirements: Low/Medium auto-flow via CI/CD, High/Critical require
+  human approval. Git history provides complete audit trail for all changes.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model with change approval workflows"
+    path: "governance-model.md"
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: change management procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Git-based change control operational; formal change management documentation pending"
+last-assessed: 2026-02-20
+---

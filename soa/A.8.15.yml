@@ -1,0 +1,21 @@
+---
+control-id: A.8.15
+control-name: "Logging"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Azure Monitor collects platform-level logs for all cloud resources.
+  Application-level logging is implemented in Verity VE/EAM services. Entra ID
+  sign-in logs and audit logs capture authentication and authorization events.
+  Centralized SIEM integration for cross-platform log correlation is planned
+  for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: logging and monitoring"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Azure Monitor operational; centralized SIEM planned for Phase 7"
+last-assessed: 2026-02-20
+---

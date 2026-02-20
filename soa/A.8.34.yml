@@ -1,0 +1,22 @@
+---
+control-id: A.8.34
+control-name: "Protection of Information Systems During Audit Testing"
+theme: technological
+applicable: true
+justification: >
+  Applicable. During ISO 27001, ISO 42001, and TISAX audits, information
+  systems must be protected from disruption caused by audit activities.
+  Penetration testing performed by the IT Pentester/Super Admin is conducted in
+  controlled environments. External auditor access is restricted to read-only
+  evidence repositories. Formal audit testing protection procedures are planned
+  for Phase 10 (audit readiness).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: audit and assessment requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Audit testing protection procedures planned for Phase 10"
+last-assessed: 2026-02-20
+---

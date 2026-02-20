@@ -1,0 +1,21 @@
+---
+control-id: A.8.16
+control-name: "Monitoring Activities"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Monitoring of Azure infrastructure, application performance, and
+  security events is implemented through Azure Monitor, Azure Security Center,
+  and Entra ID Identity Protection. Alerts are configured for critical security
+  events. Formal monitoring procedures with defined alerting thresholds,
+  escalation paths, and on-call schedules are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: monitoring and alerting"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Azure Monitor and Security Center operational; formal monitoring procedures Phase 7"
+last-assessed: 2026-02-20
+---

@@ -1,0 +1,22 @@
+---
+control-id: A.7.1
+control-name: "Physical Security Perimeters"
+theme: physical
+applicable: false
+justification: >
+  Not applicable. The Helge Heupel Group operates as a fully remote, cloud-only
+  organization with no owned or leased physical premises within the ISMS scope.
+  All information processing occurs in Microsoft Azure cloud datacenters (West
+  Europe, Germany West Central regions). Physical datacenter security is governed
+  by Microsoft under the shared responsibility model, evidenced by Azure ISO
+  27001:2022 certification and SOC 2 Type II attestation.
+implementation-status: not-started
+evidence-references:
+  - document-id: AZURE-ISO27001-CERT
+    description: "Microsoft Azure ISO 27001:2022 Certificate"
+    path: "external-evidence/azure-iso27001-cert.pdf"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Physical datacenter controls delegated to Azure under shared responsibility model"
+last-assessed: 2026-02-20
+---

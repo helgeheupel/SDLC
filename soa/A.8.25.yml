@@ -1,0 +1,24 @@
+---
+control-id: A.8.25
+control-name: "Secure Development Life Cycle"
+theme: technological
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group operates a comprehensive SDLC framework
+  (SDLC-Growth-v2) with security-by-design principles, AI-assisted code review
+  via Claude Code agents, and Git-based change control. Risk-tiered gate criteria
+  enforce security review at every development stage. Formal SAST/DAST
+  integration and security testing automation are planned for Phase 4 (AppSec).
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model with SDLC security gates"
+    path: "governance-model.md"
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: secure development requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "SDLC framework with security gates operational; SAST/DAST planned for Phase 4"
+last-assessed: 2026-02-20
+---

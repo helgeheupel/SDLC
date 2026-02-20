@@ -1,0 +1,12 @@
+{
+  "name": "soa-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generates consolidated SoA document from per-control YAML files",
+  "scripts": {
+    "generate": "node generate-soa.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

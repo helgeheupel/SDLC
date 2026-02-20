@@ -1,0 +1,21 @@
+---
+control-id: A.7.7
+control-name: "Clear Desk and Clear Screen"
+theme: physical
+applicable: true
+justification: >
+  Applicable. All 6 Helge Heupel Group team members work remotely from home
+  offices. Clear desk and clear screen policies apply to prevent unauthorized
+  access to sensitive information displayed on screens or left on desks in
+  shared home environments. The IS Policy Annex Section 7 defines remote working
+  requirements including screen lock after inactivity and clean desk guidance.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex Section 7: Remote Working including clear desk/screen"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Applicable to remote workers; enforcement via MDM screen lock policies planned"
+last-assessed: 2026-02-20
+---

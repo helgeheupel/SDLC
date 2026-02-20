@@ -1,0 +1,21 @@
+---
+control-id: A.8.18
+control-name: "Use of Privileged Utility Programs"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Privileged utility programs (admin scripts, Azure CLI, PowerShell
+  with elevated privileges) must be controlled. The IT Pentester/Super Admin
+  uses privileged tools for penetration testing and infrastructure management.
+  Azure PIM controls elevation. Formal procedures for controlling privileged
+  utility program usage are planned for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: privileged access management"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "PIM controls elevation; formal privileged utility control procedures Phase 7"
+last-assessed: 2026-02-20
+---

@@ -1,0 +1,21 @@
+---
+control-id: A.8.1
+control-name: "User Endpoint Devices"
+theme: technological
+applicable: true
+justification: >
+  Applicable. All HH team members use managed endpoint devices (MacOS/Windows
+  laptops). MDM is deployed via Microsoft Intune with disk encryption
+  (FileVault/BitLocker), remote wipe capability, and OS update enforcement.
+  Conditional Access policies ensure only compliant devices can access Azure
+  and M365 resources. Formal endpoint security policy documentation is pending.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: endpoint security procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Intune MDM operational; formal endpoint security policy document planned"
+last-assessed: 2026-02-20
+---

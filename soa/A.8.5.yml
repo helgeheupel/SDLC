@@ -1,0 +1,22 @@
+---
+control-id: A.8.5
+control-name: "Secure Authentication"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Multi-factor authentication is enforced for all accounts via
+  Microsoft Entra ID Conditional Access policies. FIDO2 hardware keys are
+  available for privileged accounts. Authentication event logging feeds Azure
+  Monitor for anomaly detection. Passwordless authentication options are being
+  evaluated for broader deployment.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: authentication standards"
+    path: "policies/IS-Policy-Annex.md"
+risk-references:
+  - RISK-SEC-001
+responsible-role: "CISO role"
+notes: "MFA via Entra ID enforced; FIDO2 for privileged accounts; passwordless evaluation ongoing"
+last-assessed: 2026-02-20
+---

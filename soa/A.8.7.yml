@@ -1,0 +1,21 @@
+---
+control-id: A.8.7
+control-name: "Protection Against Malware"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Endpoint protection against malware is provided through Microsoft
+  Defender for Endpoint deployed via Intune MDM on all team member devices.
+  Azure cloud workloads are protected by Microsoft Defender for Cloud. Email
+  protection is provided by Exchange Online Protection and Microsoft Defender
+  for Office 365. Formal anti-malware policy documentation is pending.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: malware protection"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Microsoft Defender deployed; formal anti-malware policy document planned"
+last-assessed: 2026-02-20
+---

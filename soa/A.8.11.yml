@@ -1,0 +1,21 @@
+---
+control-id: A.8.11
+control-name: "Data Masking"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Data masking is relevant for non-production environments where
+  real customer data should not be used. Verity VE and EAM development and
+  testing environments must use masked or synthetic data. The AI Policy
+  prohibits using customer data for AI model training. Formal data masking
+  procedures for development environments are planned for Phase 4.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: customer data training prohibition"
+    path: "policies/AI-Policy.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Data masking procedures for dev environments planned for Phase 4"
+last-assessed: 2026-02-20
+---

@@ -1,0 +1,25 @@
+---
+control-id: A.8.12
+control-name: "Data Leakage Prevention"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Data leakage prevention is critical for protecting patent-pending
+  Verity VE and EAM intellectual property, Confidential/Secret classified
+  information, and customer data. Azure Information Protection provides
+  classification-based DLP. M365 DLP policies can be configured for Exchange,
+  Teams, and SharePoint. The AI Policy prohibits processing Secret data through
+  AI systems. Formal DLP deployment is planned for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: data protection requirements"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: data classification prohibitions for AI systems"
+    path: "policies/AI-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "DLP capabilities available in M365; formal deployment planned for Phase 7"
+last-assessed: 2026-02-20
+---

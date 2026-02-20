@@ -1,0 +1,22 @@
+---
+control-id: A.8.10
+control-name: "Information Deletion"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Information stored in Azure cloud services, Neon PostgreSQL
+  databases, M365, and endpoint devices must be deleted when no longer required,
+  in compliance with GDPR/BDSG/AVG data retention requirements. Azure provides
+  soft-delete and purge capabilities. Formal data retention and deletion
+  schedules aligned to legal requirements are planned for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: data retention and deletion requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-REG-002
+responsible-role: "CISO role"
+notes: "Data retention and deletion schedules planned for Phase 7"
+last-assessed: 2026-02-20
+---

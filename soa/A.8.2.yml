@@ -1,0 +1,22 @@
+---
+control-id: A.8.2
+control-name: "Privileged Access Rights"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Privileged access to Azure subscriptions and M365 admin roles is
+  managed through Azure PIM (Privileged Identity Management) with time-limited
+  just-in-time elevation. The IT Pentester/Super Admin role holds standing
+  privileged access with enhanced monitoring. Formal privileged access management
+  procedures and regular access reviews are pending documentation.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: privileged access management"
+    path: "policies/IS-Policy-Annex.md"
+risk-references:
+  - RISK-SEC-002
+responsible-role: "CISO role"
+notes: "Azure PIM configured; formal PAM procedures pending"
+last-assessed: 2026-02-20
+---

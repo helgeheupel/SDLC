@@ -1,0 +1,21 @@
+---
+control-id: A.8.19
+control-name: "Installation of Software on Operational Systems"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Software installation on endpoint devices and deployment to Azure
+  production environments must be controlled. Intune MDM can enforce application
+  allowlists on managed devices. Production deployments follow Git-based CI/CD
+  pipelines with PR approval gates. Formal software installation control
+  procedures are planned for Phase 7.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: deployment and change control"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "CI/CD deployment controls operational; endpoint application control planned Phase 7"
+last-assessed: 2026-02-20
+---

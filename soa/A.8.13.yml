@@ -1,0 +1,23 @@
+---
+control-id: A.8.13
+control-name: "Information Backup"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Critical information including Azure resources, Neon PostgreSQL
+  databases, Git repositories, and M365 data must be backed up regularly. Azure
+  provides built-in backup for VMs and databases. Neon provides automated
+  PostgreSQL backups. Git repositories have inherent distributed backup.
+  Formal backup strategy with RTOs, RPOs, and restore testing procedures is
+  planned for Phase 7 (OPCT-02).
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: backup requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-OPS-002
+responsible-role: "CTO role"
+notes: "Cloud-native backups operational; formal backup strategy with restore testing Phase 7"
+last-assessed: 2026-02-20
+---

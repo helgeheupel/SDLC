@@ -1,0 +1,22 @@
+---
+control-id: A.8.8
+control-name: "Management of Technical Vulnerabilities"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Technical vulnerabilities in Azure infrastructure, application
+  dependencies, and endpoint systems must be identified, assessed, and
+  remediated. Azure Security Center provides vulnerability assessment for
+  cloud resources. Dependabot monitors dependency vulnerabilities in Git
+  repositories. Formal SAST/DAST integration and vulnerability management
+  procedures are planned for Phase 4 (AppSec Agent).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: vulnerability management requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "SAST/DAST and formal vulnerability management planned for Phase 4 (AppSec)"
+last-assessed: 2026-02-20
+---

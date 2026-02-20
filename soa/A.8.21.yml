@@ -1,0 +1,21 @@
+---
+control-id: A.8.21
+control-name: "Security of Network Services"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Network services consumed by the Helge Heupel Group include Azure
+  networking services, Cloudflare CDN/DDoS protection, and Vercel edge network.
+  Azure DDoS Protection Standard and Azure Firewall provide network service
+  security. Service-level agreements with network service providers define
+  availability and security requirements.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: network service security"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Azure and Cloudflare network security operational; formal SLA documentation planned"
+last-assessed: 2026-02-20
+---

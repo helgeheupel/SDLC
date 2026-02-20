@@ -1,0 +1,21 @@
+---
+control-id: A.8.22
+control-name: "Segregation of Networks"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Azure virtual networks provide network segregation between
+  production, staging, and development environments. NSGs enforce traffic
+  flow restrictions between network segments. Verity VE and EAM production
+  workloads are isolated from development workloads. Formal network
+  segmentation architecture documentation is planned.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: network architecture"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Azure VNet segregation configured; formal architecture documentation planned"
+last-assessed: 2026-02-20
+---

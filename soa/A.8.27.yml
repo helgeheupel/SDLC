@@ -1,0 +1,22 @@
+---
+control-id: A.8.27
+control-name: "Secure System Architecture and Engineering Principles"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Secure architecture principles including defense in depth,
+  least privilege, and fail-secure design are incorporated into the Helge
+  Heupel Group's cloud architecture. The SDLC-Growth-v2 framework Section 9
+  defines security-by-design principles. Azure Well-Architected Framework
+  security pillar guides cloud architecture decisions. Formal secure architecture
+  documentation is planned for Phase 4.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: secure architecture requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Secure architecture principles applied; formal documentation Phase 4"
+last-assessed: 2026-02-20
+---

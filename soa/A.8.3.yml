@@ -1,0 +1,22 @@
+---
+control-id: A.8.3
+control-name: "Information Access Restriction"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Access to information is restricted based on the four-level
+  classification scheme (Public, Internal, Confidential, Secret). Azure RBAC
+  enforces resource-level access restrictions. Git repository access is
+  controlled per team role. AI agents operate at Trust Level 2 with supervised
+  access. Full access restriction procedures aligned to classification levels
+  are being formalized.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy Section 6: Information Classification and access"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Azure RBAC and Git access controls operational; classification-based access formalization pending"
+last-assessed: 2026-02-20
+---

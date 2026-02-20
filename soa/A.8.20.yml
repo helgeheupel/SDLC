@@ -1,0 +1,21 @@
+---
+control-id: A.8.20
+control-name: "Networks Security"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Azure virtual networking provides network security through NSGs
+  (Network Security Groups), VNets, and subnet isolation. Azure Firewall
+  provides centralized network traffic filtering. All cloud resources are
+  deployed within controlled network segments. Remote worker connectivity
+  relies on encrypted internet connections to Azure services.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: network security"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Azure NSGs and VNets configured; formal network security architecture documentation planned"
+last-assessed: 2026-02-20
+---

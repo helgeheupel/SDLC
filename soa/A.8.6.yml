@@ -1,0 +1,22 @@
+---
+control-id: A.8.6
+control-name: "Capacity Management"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Azure cloud resources must be monitored for capacity to ensure
+  Verity VE and EAM service availability. Azure Monitor and cost management
+  tools track resource utilization. Auto-scaling capabilities are available
+  for Azure App Services. Formal capacity management procedures with thresholds
+  and alerting are planned for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: service availability requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-OPS-001
+responsible-role: "CTO role"
+notes: "Azure monitoring available; formal capacity management procedures Phase 7"
+last-assessed: 2026-02-20
+---

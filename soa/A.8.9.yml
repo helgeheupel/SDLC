@@ -1,0 +1,21 @@
+---
+control-id: A.8.9
+control-name: "Configuration Management"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Configuration management for Azure resources, M365 settings,
+  and application deployments must be documented and controlled. Infrastructure
+  configurations are partially managed through Azure Resource Manager templates.
+  Application configurations are version-controlled in Git. Formal configuration
+  management baseline documentation is planned for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: configuration management requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Configuration management baseline documentation planned for Phase 7"
+last-assessed: 2026-02-20
+---

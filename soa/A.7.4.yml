@@ -1,0 +1,22 @@
+---
+control-id: A.7.4
+control-name: "Physical Security Monitoring"
+theme: physical
+applicable: true
+justification: >
+  Applicable. While the Helge Heupel Group has no physical premises to monitor,
+  this control is conservatively interpreted to include monitoring of remote
+  access patterns to cloud resources. Azure AD sign-in logs, Conditional Access
+  policy evaluations, and Identity Protection risk detections provide remote
+  access monitoring equivalent. This conservative approach ensures auditor
+  confidence in the cloud-only operating model.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: access monitoring procedures"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Interpreted as remote access monitoring for cloud-only organization"
+last-assessed: 2026-02-20
+---

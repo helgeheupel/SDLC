@@ -1,0 +1,21 @@
+---
+control-id: A.8.23
+control-name: "Web Filtering"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Web filtering to protect against access to malicious websites
+  and web-based threats is relevant for all endpoint devices. Microsoft Defender
+  for Endpoint provides web threat protection. Azure Firewall can enforce
+  web filtering for Azure-hosted workloads. Formal web filtering policy
+  and configuration are planned for Phase 7.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: web security requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Defender web threat protection available; formal web filtering policy Phase 7"
+last-assessed: 2026-02-20
+---

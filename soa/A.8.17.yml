@@ -1,0 +1,21 @@
+---
+control-id: A.8.17
+control-name: "Clock Synchronization"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Accurate time synchronization is critical for log correlation,
+  audit trail integrity, and incident investigation. Azure services use NTP
+  for time synchronization. Endpoint devices synchronize to platform-native
+  NTP services. All timestamps in compliance artifacts use ISO 8601 format.
+  The existing Azure and endpoint time synchronization satisfies this control.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: audit trail requirements"
+    path: "policies/IS-Policy.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Azure and endpoint NTP synchronization operational; formal documentation pending"
+last-assessed: 2026-02-20
+---

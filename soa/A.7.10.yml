@@ -1,0 +1,21 @@
+---
+control-id: A.7.10
+control-name: "Storage Media"
+theme: physical
+applicable: true
+justification: >
+  Applicable. Storage media includes the SSDs in team member laptops and any
+  cloud storage (Azure Blob, OneDrive, SharePoint). All endpoint devices use
+  full disk encryption (FileVault for MacOS, BitLocker for Windows) enforced
+  via Intune MDM. Cloud storage is encrypted at rest by Azure. Removable media
+  usage is discouraged per the IS Policy Annex security guidelines.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: storage media and encryption"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Disk encryption enforced via MDM; formal removable media policy planned"
+last-assessed: 2026-02-20
+---

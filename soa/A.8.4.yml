@@ -1,0 +1,24 @@
+---
+control-id: A.8.4
+control-name: "Access to Source Code"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Source code for Verity VE and Verity EAM (patent-pending products)
+  is stored in Git repositories with access restricted to authorized personnel.
+  Branch protection rules enforce PR-based code review before merging. AI agents
+  generate code through supervised workflows with human review. Source code access
+  is classified as Confidential per the information classification scheme.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: source code protection"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy: AI-generated code review requirements"
+    path: "policies/AI-Policy.md"
+risk-references: []
+responsible-role: "CTO role"
+notes: "Git branch protection and PR review operational; formal source code access policy planned"
+last-assessed: 2026-02-20
+---

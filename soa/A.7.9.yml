@@ -1,0 +1,21 @@
+---
+control-id: A.7.9
+control-name: "Security of Assets Off-Premises"
+theme: physical
+applicable: true
+justification: >
+  Applicable. For a cloud-only, fully remote organization, all assets are
+  effectively off-premises. Endpoint devices carried by team members to
+  different locations (home, travel, co-working spaces) must be protected.
+  Microsoft Intune MDM provides remote wipe, disk encryption enforcement
+  (FileVault/BitLocker), and device compliance monitoring for all endpoints.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: endpoint and remote working security"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "MDM with remote wipe and encryption operational; travel security guidance planned"
+last-assessed: 2026-02-20
+---

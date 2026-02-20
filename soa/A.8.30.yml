@@ -1,0 +1,22 @@
+---
+control-id: A.8.30
+control-name: "Outsourced Development"
+theme: technological
+applicable: true
+justification: >
+  Applicable. While the Helge Heupel Group primarily develops in-house with
+  AI agent assistance, third-party development contributions and open-source
+  dependencies must be governed. SBOM (Software Bill of Materials) generation
+  and supply chain security are relevant. Formal outsourced development
+  security procedures and SBOM management are planned for Phase 4 (AppSec).
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: third-party development requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-SUP-001
+responsible-role: "CTO role"
+notes: "SBOM and supply chain security planned for Phase 4"
+last-assessed: 2026-02-20
+---

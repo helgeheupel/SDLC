@@ -1,0 +1,21 @@
+---
+control-id: A.7.8
+control-name: "Equipment Siting and Protection"
+theme: physical
+applicable: true
+justification: >
+  Applicable. Endpoint devices (MacOS and Windows laptops) used by all 6 team
+  members must be sited and protected appropriately in their remote work
+  environments. This includes positioning screens to prevent shoulder surfing,
+  securing devices when not in use, and protecting against theft in public
+  locations. Formal endpoint siting guidance for remote workers is planned.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex Section 7: Remote Working equipment guidance"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Applicable to remote worker endpoint devices"
+last-assessed: 2026-02-20
+---

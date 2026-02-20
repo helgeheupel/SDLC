@@ -1,0 +1,21 @@
+---
+control-id: A.7.13
+control-name: "Equipment Maintenance"
+theme: physical
+applicable: true
+justification: >
+  Applicable. Endpoint devices (MacOS and Windows laptops) used by team members
+  require lifecycle management including maintenance, warranty tracking, OS and
+  firmware updates, and timely replacement. Microsoft Intune enforces OS update
+  compliance. Formal endpoint lifecycle management procedures covering device
+  refresh cycles and maintenance schedules are planned.
+implementation-status: planned
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: endpoint management"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Endpoint lifecycle management planned; OS update enforcement via Intune operational"
+last-assessed: 2026-02-20
+---

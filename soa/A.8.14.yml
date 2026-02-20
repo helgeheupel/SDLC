@@ -1,0 +1,23 @@
+---
+control-id: A.8.14
+control-name: "Redundancy of Information Processing Facilities"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Azure provides infrastructure redundancy through availability
+  zones and regional redundancy (West Europe, Germany West Central). Verity
+  VE and EAM services can leverage Azure availability zone deployments.
+  Vercel and Cloudflare provide edge redundancy for frontend applications.
+  Formal redundancy requirements and failover testing procedures are planned
+  for Phase 7 (OPCT-02).
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001
+    description: "IS Policy: availability and redundancy requirements"
+    path: "policies/IS-Policy.md"
+risk-references:
+  - RISK-OPS-001
+responsible-role: "CTO role"
+notes: "Azure availability zones available; formal redundancy strategy Phase 7"
+last-assessed: 2026-02-20
+---

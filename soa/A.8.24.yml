@@ -1,0 +1,22 @@
+---
+control-id: A.8.24
+control-name: "Use of Cryptography"
+theme: technological
+applicable: true
+justification: >
+  Applicable. Cryptography is used extensively across the Helge Heupel Group:
+  TLS for all data in transit, Azure Storage Service Encryption for data at
+  rest, FileVault/BitLocker for endpoint disk encryption, and HTTPS enforcement
+  for all web applications. Azure Key Vault provides cryptographic key
+  management. Formal cryptographic policy documenting algorithms, key lengths,
+  and key management procedures is being prepared.
+implementation-status: partially-implemented
+evidence-references:
+  - document-id: HH-ISMS-POL-001-ANNEX
+    description: "IS Policy Annex: cryptography and encryption"
+    path: "policies/IS-Policy-Annex.md"
+risk-references: []
+responsible-role: "CISO role"
+notes: "Encryption operational at all layers; formal cryptographic policy documentation pending"
+last-assessed: 2026-02-20
+---
