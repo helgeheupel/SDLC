@@ -1,0 +1,12 @@
+{
+  "name": "ai-registry-scripts",
+  "version": "1.0.0",
+  "description": "AI System Registry consolidation scripts for generating auditor-facing summary documents",
+  "main": "generate-registry-summary.js",
+  "scripts": {
+    "generate": "node generate-registry-summary.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
