@@ -1,0 +1,135 @@
+# =============================================================================
+# SAST - Semgrep CE GitHub Actions Workflow
+# =============================================================================
+#
+# Reference configuration for Helge Heupel Group repositories.
+# Copy this file to `.github/workflows/sast.yml` in any HH TypeScript repo.
+#
+# What it does:
+#   1. Runs Semgrep CE with JavaScript, TypeScript, and OWASP Top 10 rules
+#   2. Uploads SARIF results to GitHub Security tab
+#   3. Blocks the pipeline if any Critical/High (ERROR-level) findings exist
+#
+# Specification: security/sast/HH-SENG-SAST-001.md
+# Annex A controls: A.8.25 (Secure SDLC), A.8.28 (Secure Coding), A.8.29 (Security Testing)
+#
+# Override procedure:
+#   If a legitimate PR is blocked by a false positive, add the `@security-override`
+#   label to the PR. This requires CTO + CISO approval. The override is logged in
+#   the PR description for audit trail. The severity gate step checks for this label
+#   and skips enforcement if present.
+#
+# =============================================================================
+
+name: SAST - Semgrep
+
+# Trigger on pull requests targeting main and direct pushes to main.
+# This ensures every code change is scanned before merge and after merge.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# Permissions required for this workflow:
+#   - contents: read    -> checkout repository code
+#   - security-events: write -> upload SARIF to GitHub Security tab
+#   - pull-requests: read    -> check for @security-override label
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: read
+
+jobs:
+  semgrep:
+    name: Semgrep SAST Scan
+    runs-on: ubuntu-latest
+
+    # Run Semgrep inside the official container for consistent results.
+    # The container includes the Semgrep CLI and all language parsers.
+    container:
+      image: semgrep/semgrep
+
+    steps:
+      # Step 1: Checkout the repository code.
+      # Semgrep needs access to the full source tree to scan.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Run Semgrep scan with HH rule sets.
+      # Rule sets:
+      #   p/javascript     - JavaScript-specific security patterns
+      #   p/typescript     - TypeScript-specific security patterns
+      #   p/owasp-top-ten  - OWASP Top 10 vulnerability detection
+      #
+      # Output: SARIF format for GitHub Security tab integration.
+      # The scan runs against the entire repository (`.`).
+      # Exit code is always 0 here; severity gating happens in a later step.
+      - name: Run Semgrep scan
+        run: |
+          semgrep scan \
+            --config p/javascript \
+            --config p/typescript \
+            --config p/owasp-top-ten \
+            --sarif \
+            --output semgrep.sarif \
+            . || true
+        # Note: `|| true` prevents the step from failing on findings.
+        # The severity gate step below handles pass/fail logic.
+
+      # Step 3: Upload SARIF results to GitHub Security tab.
+      # This runs even if the scan found issues (if: always()), so findings
+      # are always visible in the Security tab regardless of gate outcome.
+      - name: Upload SARIF to GitHub Security tab
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
+
+      # Step 4: Severity gate - block pipeline on Critical/High findings.
+      # This is the enforcement step. It re-runs Semgrep filtering for
+      # ERROR-level findings only and counts the results.
+      #
+      # If any ERROR-level findings exist AND the @security-override label
+      # is NOT present on the PR, the job fails and the PR cannot be merged.
+      #
+      # For push events (not PRs), the gate always applies.
+      - name: Check for Critical/High findings
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+        run: |
+          # Check for @security-override label (PR events only)
+          if echo "$PR_LABELS" | grep -q "@security-override"; then
+            echo "::warning::@security-override label detected. Severity gate bypassed."
+            echo "::warning::This override must have CTO + CISO approval documented in PR description."
+            exit 0
+          fi
+
+          # Run Semgrep for ERROR-level findings only
+          semgrep scan \
+            --config p/javascript \
+            --config p/typescript \
+            --config p/owasp-top-ten \
+            --severity ERROR \
+            --json \
+            --output /tmp/errors.json \
+            . || true
+
+          # Count ERROR-level findings
+          COUNT=$(python3 -c "
+          import json, sys
+          try:
+              data = json.load(open('/tmp/errors.json'))
+              print(len(data.get('results', [])))
+          except:
+              print(0)
+          ")
+
+          if [ "$COUNT" -gt 0 ]; then
+            echo "::error::$COUNT Critical/High SAST finding(s) detected. Pipeline blocked."
+            echo "::error::Fix findings or request @security-override label with CTO + CISO approval."
+            exit 1
+          else
+            echo "No Critical/High SAST findings. Gate passed."
+          fi

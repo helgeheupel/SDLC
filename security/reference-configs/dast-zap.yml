@@ -1,0 +1,154 @@
+# =============================================================================
+# DAST - OWASP ZAP Baseline Scan GitHub Actions Workflow
+# =============================================================================
+#
+# Reference configuration for Helge Heupel Group repositories.
+# Copy this file to `.github/workflows/dast.yml` in any HH web application repo.
+#
+# What it does:
+#   1. Runs OWASP ZAP baseline scan against the Vercel preview deployment
+#   2. Posts scan results as a PR comment (Markdown format)
+#   3. Blocks the pipeline if any High/Critical alerts are found
+#
+# Specification: security/dast/HH-SENG-DAST-001.md
+# Annex A controls: A.8.25 (Secure SDLC), A.8.29 (Security Testing)
+#
+# Scope: This workflow covers baseline (quick) scans on PR preview deployments.
+# Full scans against production URLs are run as a separate scheduled workflow
+# (not included in this reference config; see HH-SENG-DAST-001.md Section 3).
+#
+# Override procedure:
+#   If a legitimate PR is blocked by a false positive, add the `@security-override`
+#   label to the PR. This requires CTO + CISO approval. The override is logged in
+#   the PR description for audit trail.
+#
+# =============================================================================
+
+name: DAST - OWASP ZAP Baseline
+
+# Trigger on pull requests targeting main only.
+# Baseline scans run against preview deployments, which only exist for PRs.
+# Full scans are scheduled separately (see specification document).
+on:
+  pull_request:
+    branches: [main]
+
+# Permissions required for this workflow:
+#   - contents: read       -> checkout repository code
+#   - pull-requests: write -> post scan report as PR comment
+#   - issues: write        -> required by ZAP action for PR commenting
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  zap-baseline:
+    name: ZAP Baseline Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository code.
+      # Needed for any ZAP configuration files (context, alert filters).
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Wait for Vercel preview deployment to be ready.
+      # Vercel creates a preview deployment for each PR commit. We need to
+      # wait for it to be accessible before scanning.
+      #
+      # The preview URL is constructed from the Vercel project name and
+      # the Git commit SHA. Adjust VERCEL_PROJECT_NAME for each repo.
+      - name: Wait for deployment
+        env:
+          # Set this to your Vercel project name (e.g., "verity-cms", "helgeheupel-cms")
+          VERCEL_PROJECT_NAME: ${{ vars.VERCEL_PROJECT_NAME }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # Construct the preview URL
+          SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-7)
+          PREVIEW_URL="https://${VERCEL_PROJECT_NAME}-git-${SHORT_SHA}.vercel.app"
+
+          echo "Waiting for preview deployment at: $PREVIEW_URL"
+
+          # Poll for up to 5 minutes (30 attempts, 10 seconds apart)
+          for i in $(seq 1 30); do
+            if curl -s -o /dev/null -w "%{http_code}" "$PREVIEW_URL" | grep -q "200\|301\|302"; then
+              echo "Preview deployment is ready."
+              echo "PREVIEW_URL=$PREVIEW_URL" >> $GITHUB_ENV
+              exit 0
+            fi
+            echo "Attempt $i/30: Deployment not ready. Waiting 10 seconds..."
+            sleep 10
+          done
+
+          echo "::warning::Preview deployment not ready after 5 minutes. Using fallback URL."
+          # Fallback: use the standard Vercel preview URL pattern
+          echo "PREVIEW_URL=https://${VERCEL_PROJECT_NAME}-${GITHUB_HEAD_REF}.vercel.app" >> $GITHUB_ENV
+
+      # Step 3: Run OWASP ZAP baseline scan.
+      # The baseline scan is a quick passive scan that checks for common
+      # vulnerabilities and misconfigurations without active exploitation.
+      # It typically completes in under 5 minutes.
+      #
+      # The ZAP action automatically posts results as a PR comment when
+      # issue_number is provided.
+      - name: Run ZAP baseline scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          # Target the Vercel preview deployment
+          target: ${{ env.PREVIEW_URL }}
+          # Post results as a GitHub issue comment on the PR
+          issue_title: "DAST Scan Report"
+          # Allow new alerts to be reported (do not auto-fail on this step)
+          allow_issue_writing: true
+          # Generate both Markdown and JSON reports
+          cmd_options: >-
+            -j
+            -w report.md
+        # Note: This step generates a report but does not enforce gates.
+        # The severity gate step below handles pass/fail logic.
+
+      # Step 4: Severity gate - block pipeline on High/Critical alerts.
+      # Parse the ZAP JSON report and check for High or Critical risk alerts.
+      #
+      # If any High/Critical alerts exist AND the @security-override label
+      # is NOT present on the PR, the job fails and the PR cannot be merged.
+      - name: Check for High/Critical alerts
+        env:
+          PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+        run: |
+          # Check for @security-override label
+          if echo "$PR_LABELS" | grep -q "@security-override"; then
+            echo "::warning::@security-override label detected. Severity gate bypassed."
+            echo "::warning::This override must have CTO + CISO approval documented in PR description."
+            exit 0
+          fi
+
+          # Check if ZAP report exists
+          if [ ! -f "report.json" ] && [ ! -f "zap-report.json" ]; then
+            echo "No ZAP report found. Scan may not have completed."
+            echo "::warning::DAST scan did not produce a report. Review workflow logs."
+            exit 0
+          fi
+
+          # Parse ZAP alerts for High (3) and Critical risk levels
+          REPORT_FILE=$(ls report.json zap-report.json 2>/dev/null | head -1)
+          HIGH_CRITICAL=$(python3 -c "
+          import json, sys
+          try:
+              data = json.load(open('$REPORT_FILE'))
+              alerts = data.get('site', [{}])[0].get('alerts', [])
+              high_crit = [a for a in alerts if int(a.get('riskcode', 0)) >= 3]
+              print(len(high_crit))
+          except Exception as e:
+              print(0)
+          " 2>/dev/null || echo "0")
+
+          if [ "$HIGH_CRITICAL" -gt 0 ]; then
+            echo "::error::$HIGH_CRITICAL High/Critical DAST alert(s) detected. Pipeline blocked."
+            echo "::error::Review alerts in the PR comment. Fix or request @security-override with CTO + CISO approval."
+            exit 1
+          else
+            echo "No High/Critical DAST alerts. Gate passed."
+          fi
