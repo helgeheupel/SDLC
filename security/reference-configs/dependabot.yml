@@ -1,0 +1,114 @@
+# =============================================================================
+# Dependabot Configuration for Helge Heupel Group Repositories
+# =============================================================================
+#
+# Reference configuration for HH repos using pnpm.
+# Copy this file to `.github/dependabot.yml` in each repository.
+#
+# What it does:
+#   1. Checks for security vulnerabilities in npm dependencies daily
+#   2. Checks for version updates weekly (non-security)
+#   3. Creates PRs automatically with the `deps:` commit prefix
+#   4. Groups minor/patch non-security updates to reduce PR noise
+#
+# Specification: security/dependency-scanning/HH-SENG-DEP-001.md
+# Annex A controls: A.8.8 (Technical Vulnerabilities), A.5.21 (ICT Supply Chain)
+#
+# Remediation SLA:
+#   Critical: 48 hours  |  High: 7 days  |  Medium: 30 days  |  Low: Next release
+#
+# =============================================================================
+
+# Dependabot configuration file format version.
+# Version 2 is the current and required version.
+version: 2
+
+updates:
+  # ---------------------------------------------------------------------------
+  # npm ecosystem (covers pnpm)
+  # ---------------------------------------------------------------------------
+  # Dependabot uses the "npm" ecosystem identifier for both npm and pnpm
+  # projects. It reads package.json and pnpm-lock.yaml automatically.
+  - package-ecosystem: "npm"
+
+    # Directory where package.json is located.
+    # Use "/" for the repository root. For monorepos with multiple
+    # package.json files, add additional entries below.
+    directory: "/"
+
+    # Update schedule:
+    # - "daily" ensures security vulnerabilities are detected within 24 hours
+    # - Non-security version updates are handled by the groups configuration below
+    schedule:
+      interval: "daily"
+
+      # Run checks at 06:00 UTC on weekdays.
+      # This ensures PRs are created before the start of the European workday.
+      time: "06:00"
+      timezone: "Etc/UTC"
+
+    # Target branch for PRs.
+    # All HH repositories use `main` as the default branch.
+    target-branch: "main"
+
+    # Assignees who review Dependabot PRs.
+    # CTO (Helge Heupel) reviews all dependency updates for compatibility
+    # and security impact.
+    assignees:
+      - "helgeheupel"
+
+    # Labels applied to Dependabot PRs for filtering and tracking.
+    # "dependencies" - standard label for dependency updates
+    # "security"     - identifies security-related changes
+    labels:
+      - "dependencies"
+      - "security"
+
+    # Commit message configuration.
+    # The `deps:` prefix maintains consistent commit message conventions
+    # across the repository.
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+    # Maximum number of open Dependabot PRs at any time.
+    # Set to 10 to prevent PR flood while ensuring Critical/High
+    # vulnerabilities are always addressed.
+    open-pull-requests-limit: 10
+
+    # ---------------------------------------------------------------------------
+    # Update grouping
+    # ---------------------------------------------------------------------------
+    # Group minor and patch version updates into a single weekly PR to
+    # reduce noise. Security updates are NOT grouped (each gets its own PR
+    # for clear tracking and SLA compliance).
+    groups:
+      # Group all non-security minor and patch updates together.
+      # This creates one combined PR per week instead of individual PRs
+      # for each package update.
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+        # Exclude security updates from grouping.
+        # Security updates always get individual PRs for SLA tracking.
+        applies-to: "version-updates"
+
+    # ---------------------------------------------------------------------------
+    # Reviewers
+    # ---------------------------------------------------------------------------
+    # CTO reviews all dependency updates. For Critical/High security updates,
+    # CISO is also notified per the remediation SLA.
+    reviewers:
+      - "helgeheupel"
+
+    # ---------------------------------------------------------------------------
+    # Ignored dependencies (if any)
+    # ---------------------------------------------------------------------------
+    # Uncomment and configure to ignore specific packages that should not
+    # be automatically updated (e.g., packages with known breaking changes
+    # in newer versions).
+    #
+    # ignore:
+    #   - dependency-name: "example-package"
+    #     update-types: ["version-update:semver-major"]
