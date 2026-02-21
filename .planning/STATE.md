@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 4 of 10 (CTO and AppSec Agents with Security Engineering)
-Plan: 2 of 5 complete in current phase
-Status: Executing Phase 4. Plans 04-01 (CTO Agent) and 04-02 (AppSec Agent) complete. Wave 1 done.
-Last activity: 2026-02-21 -- Completed 04-02-PLAN.md (AppSec Agent Construction)
+Plan: 5 of 5 complete in current phase
+Status: Phase 4 COMPLETE. All 5 plans executed: CTO Agent, AppSec Agent, Threat Modeling, SAST/DAST, SBOM/Supply Chain.
+Last activity: 2026-02-22 -- Completed 04-05-PLAN.md (SBOM Generation and Supply Chain Security)
 
-Progress: [████░░░░░░] 35%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
+- Total plans completed: 17
 - Average duration: 10min
-- Total execution time: 2.37 hours
+- Total execution time: 2.70 hours
 
 **By Phase:**
 
@@ -30,11 +30,11 @@ Progress: [████░░░░░░] 35%
 | 1 | 4 | 72min | 18min |
 | 2 | 4 | 27min | 7min |
 | 3 | 4 | 34min | 9min |
-| 4 | 2 | 9min | 5min |
+| 4 | 5 | 29min | 6min |
 
 **Recent Trend:**
-- Last 5 plans: 04-02 (4min), 04-01 (5min), 03-03 (8min), 03-02 (11min), 03-04 (11min)
-- Trend: Agent construction plans consistently fast (4-5 min). Wave 1 of Phase 4 complete in 9 minutes total.
+- Last 5 plans: 04-05 (6min), 04-04 (7min), 04-03 (7min), 04-02 (4min), 04-01 (5min)
+- Trend: Phase 4 complete in 29 min total (5 plans). Security engineering specs averaging 6-7 min. Wave 2 (3 plans) executed in 20 min.
 
 *Updated after each plan completion*
 
@@ -116,6 +116,19 @@ Recent decisions affecting current work:
 - [04-02]: Domain context focused on security engineering, not duplicating CISO organizational context (refers to HH-CISO-REF-001)
 - [04-02]: Centralized false positive management (semgrepignore + policy file) chosen over inline suppressions
 - [04-02]: LINDDUN applicability gated by GDPR scope: Claude Code agent system excluded, Verity products included
+- [04-04]: Semgrep CE selected as primary SAST tool: free for all repos, native TypeScript/JavaScript support, SARIF output, fast CI scans
+- [04-04]: OWASP ZAP selected as primary DAST tool: open-source, Docker-based CI integration, baseline and full scan modes
+- [04-04]: Dependabot selected as primary dependency scanner: free, native GitHub integration, automated fix PRs
+- [04-04]: Critical/High findings block pipeline; Medium/Low advisory only; @security-override label bypass requires CTO + CISO approval
+- [04-04]: Centralized false positive management: .semgrepignore + sast-baseline.md (no inline nosemgrep comments)
+- [04-04]: Vulnerability remediation SLAs: Critical 48h, High 7d, Medium 30d, Low next release
+- [04-04]: License compliance framework: Allowed (MIT, Apache-2.0, BSD, ISC), Warning (LGPL, MPL-2.0), Blocked (GPL, AGPL, SSPL, EUPL)
+- [04-05]: CycloneDX pnpm generator selected over cdxgen for lockfile-based exact version resolution
+- [04-05]: Sigstore/Cosign keyless signing selected over GPG for zero key management overhead with OIDC identity
+- [04-05]: SLSA Level 2 as Startup target; Level 3 deferred to Growth (requires isolated build environments)
+- [04-05]: Monthly SBOM review cycle (first week of month) covering dependencies, licenses, vulnerabilities, supply chain risk
+- [04-05]: License whitelist: MIT, Apache-2.0, ISC, BSD-2-Clause, BSD-3-Clause, 0BSD, CC0-1.0; copyleft requires CTO+CISO approval
+- [04-05]: Provenance verification required before production deployment; verification failures block deployment
 
 ### Pending Todos
 
@@ -130,7 +143,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-21
-Stopped at: Completed 04-02-PLAN.md (AppSec Agent Construction)
-Resume file: .planning/phases/04-cto-and-appsec-agents-with-security-engineering/04-02-SUMMARY.md
-Next: Continue Phase 4 execution (04-03 through 04-05, Wave 2)
+Last session: 2026-02-22
+Stopped at: Completed 04-05-PLAN.md (SBOM Generation and Supply Chain Security) -- Phase 4 COMPLETE
+Resume file: .planning/phases/04-cto-and-appsec-agents-with-security-engineering/04-05-SUMMARY.md
+Next: Phase 5 research and planning

@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Startup Overlay and Agent Foundation** - Distill SDLC-Growth-v2 to startup-weight, define agent interaction model, establish subagent protocol
 - [x] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
 - [x] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
-- [ ] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
+- [x] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
 - [ ] **Phase 5: AIMS Core and AI System Registry** - Produce AI System Registry, AI risk/impact assessment processes, ISO 42001 Annex A control mapping, AIMS PDCA documentation
 - [ ] **Phase 6: Remaining Specialist Agents** - Create AI Science, Platform/SRE, and Product/Strategy agents
 - [ ] **Phase 7: Operational Controls** - Produce incident management, BCP/DR, access control, change management, supplier security, HR security procedures
@@ -93,9 +93,9 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md -- CTO Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-02)
 - [x] 04-02-PLAN.md -- AppSec Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-07)
-- [ ] 04-03-PLAN.md -- Threat modeling framework with STRIDE/LINDDUN templates and two applied threat models (SENG-01)
-- [ ] 04-04-PLAN.md -- SAST/DAST specification and dependency scanning setup with reference configs (SENG-02, SENG-05)
-- [ ] 04-05-PLAN.md -- SBOM generation pipeline and supply chain security framework with SLSA L2 (SENG-03, SENG-04)
+- [x] 04-03-PLAN.md -- Threat modeling framework with STRIDE/LINDDUN templates and two applied threat models (SENG-01)
+- [x] 04-04-PLAN.md -- SAST/DAST specification and dependency scanning setup with reference configs (SENG-02, SENG-05)
+- [x] 04-05-PLAN.md -- SBOM generation pipeline and supply chain security framework with SLSA L2 (SENG-03, SENG-04)
 
 ### Phase 5: AIMS Core and AI System Registry
 **Goal**: The AI Management System artifacts exist and every AI system (including the 7 agents) has a registry entry with full ISO 42001 schema
