@@ -107,11 +107,13 @@ Plans:
   3. An AI impact assessment process exists per ISO 42005, with mandatory assessment criteria for High-Risk and Limited-Risk AI systems
   4. ISO 42001 Annex A control mapping is complete (A.2 through A.10) with implementation approach and evidence pointers for each control
   5. AIMS PDCA documentation exists covering Plan (objectives, risk assessment, resources), Do (operational controls), Check (management review, internal audit), and Act (nonconformity, improvement)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
+- [ ] 05-01-PLAN.md -- AI System Registry with 11 per-system YAML entries and consolidation script (AIMS-02)
+- [ ] 05-02-PLAN.md -- AI Risk Assessment and AI Impact Assessment formal procedures (AIMS-03, AIMS-04)
+- [ ] 05-03-PLAN.md -- ISO 42001 Annex A control mapping: 39 per-control YAML files and AIMS SoA consolidation script (AIMS-05)
+- [ ] 05-04-PLAN.md -- AIMS PDCA documentation: IMS Context extension and AIMS objectives (AIMS-06)
 
 ### Phase 6: Remaining Specialist Agents
 **Goal**: The AI Science, Platform/SRE, and Product/Strategy agents exist and can produce domain-specific artifacts within the established policy and risk framework
@@ -200,7 +202,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 | 2. CISO Agent and IS/AI Policy Foundation | 3/4 | Gap closure | 2026-02-19 |
 | 3. Risk Framework and Statement of Applicability | 4/4 | Complete | 2026-02-20 |
 | 4. CTO and AppSec Agents with Security Engineering | 5/5 | Complete | 2026-02-22 |
-| 5. AIMS Core and AI System Registry | 0/TBD | Not started | - |
+| 5. AIMS Core and AI System Registry | 0/4 | Planned | - |
 | 6. Remaining Specialist Agents | 0/TBD | Not started | - |
 | 7. Operational Controls | 0/TBD | Not started | - |
 | 8. TISAX Maintenance | 0/TBD | Not started | - |
