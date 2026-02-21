@@ -1,0 +1,147 @@
+# Build Provenance Pipeline - SLSA Level 2 with Sigstore/Cosign
+#
+# Reference config for the Helge Heupel Group.
+# Target repository: helgeheupel-cms (Payload CMS, pnpm, TypeScript, Next.js)
+# Specification: security/supply-chain/HH-SENG-SCS-001.md
+#
+# This workflow builds the application, generates a CycloneDX SBOM, signs the
+# SBOM with Cosign (keyless via OIDC), and generates SLSA Level 2 build
+# provenance using GitHub's attest-build-provenance action.
+#
+# The full pipeline:
+#   1. Checkout and install dependencies (frozen lockfile)
+#   2. Build the application
+#   3. Generate CycloneDX SBOM from pnpm-lock.yaml
+#   4. Sign the SBOM with Cosign (keyless signing via GitHub OIDC)
+#   5. Attest build provenance (Sigstore-signed in-toto attestation)
+#   6. Upload signed SBOM and provenance bundle as artifacts
+#
+# To use: Copy this file to .github/workflows/provenance.yml in the target repo.
+#
+# Note: This is a reference config demonstrating the full build-sign-attest
+# pipeline. In production, SAST + SBOM + provenance may be combined into a
+# single composite workflow or run as separate jobs within one workflow.
+#
+# Annex A controls: A.5.21 (ICT Supply Chain), A.5.23 (Cloud Services),
+#                   A.8.25 (Secure SDLC), A.8.30 (Outsourced Development)
+
+name: Build Provenance - SLSA Level 2
+
+on:
+  push:
+    branches: [main]
+
+# Permissions required for SLSA Level 2:
+# - id-token: write    Allows the workflow to request an OIDC token from GitHub's
+#                       identity provider. Sigstore uses this token to issue a
+#                       short-lived signing certificate from Fulcio CA. Without
+#                       this permission, keyless signing fails.
+# - contents: read     Standard permission to check out the repository.
+# - attestations: write Allows the attest-build-provenance action to store the
+#                       provenance attestation in the GitHub Attestation API.
+permissions:
+  id-token: write
+  contents: read
+  attestations: write
+
+jobs:
+  build-and-attest:
+    name: Build, Sign SBOM, and Attest Provenance
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Install pnpm
+      # Reads the packageManager field from package.json for version detection.
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      # Step 3: Set up Node.js with pnpm dependency caching
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # Step 4: Install dependencies with --frozen-lockfile
+      # CRITICAL: Ensures lockfile integrity. If pnpm-lock.yaml is out of sync
+      # with package.json, this step fails. This guarantees the build and SBOM
+      # both reflect the exact dependency tree specified in the lockfile.
+      - name: Install dependencies (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+
+      # Step 5: Build the application
+      # For helgeheupel-cms (Next.js/Payload CMS), this produces the .next/
+      # directory containing the deployment-ready build output.
+      - name: Build application
+        run: pnpm build
+
+      # Step 6: Generate CycloneDX SBOM
+      # Produces a CycloneDX 1.5+ JSON SBOM from pnpm-lock.yaml. The SBOM
+      # contains exact dependency versions, license data, and package URLs.
+      # This SBOM will be signed in the next step to ensure its integrity.
+      - name: Generate CycloneDX SBOM
+        run: npx @cyclonedx/cyclonedx-node-pnpm --output-file sbom.cdx.json --output-format json
+
+      # Step 7: Install Cosign
+      # Cosign is the Sigstore CLI tool for signing and verifying artifacts.
+      # The installer action downloads and caches the Cosign binary.
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3
+
+      # Step 8: Sign SBOM with Cosign (keyless signing)
+      # How keyless signing works:
+      #   1. GitHub Actions provides an OIDC token identifying this workflow run
+      #   2. Cosign exchanges the OIDC token for a short-lived certificate from
+      #      Sigstore's Fulcio Certificate Authority
+      #   3. The SBOM is signed with the ephemeral private key
+      #   4. The signing event (certificate, signature, artifact digest) is
+      #      recorded in Sigstore's Rekor transparency log
+      #   5. The private key is discarded (never stored anywhere)
+      #
+      # The --bundle flag outputs a verification bundle containing the signature,
+      # certificate, and Rekor log entry proof.
+      #
+      # To verify this signature later:
+      #   cosign verify-blob sbom.cdx.json \
+      #     --bundle sbom.cdx.json.bundle \
+      #     --certificate-identity-regexp 'https://github.com/helgeheupel/.*' \
+      #     --certificate-oidc-issuer https://token.actions.githubusercontent.com
+      - name: Sign SBOM with Cosign
+        run: cosign sign-blob --yes sbom.cdx.json --bundle sbom.cdx.json.bundle
+
+      # Step 9: Attest build provenance
+      # This action generates a SLSA Build Level 2 provenance attestation using
+      # the in-toto attestation framework. The attestation is signed with Sigstore
+      # and stored in the GitHub Attestation API.
+      #
+      # The attestation records:
+      #   - Builder: GitHub Actions (workflow URL, runner environment)
+      #   - Source: Repository, branch, commit SHA
+      #   - Build: Workflow name, job name, step sequence
+      #   - Materials: Input artifact digests
+      #
+      # subject-path points to the build output that receives provenance.
+      # For Next.js standalone mode, this is the standalone directory.
+      #
+      # To verify this attestation later:
+      #   gh attestation verify <artifact> --owner helgeheupel --repo helgeheupel-cms
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: '.next/standalone/**'
+
+      # Step 10: Upload signed SBOM and verification bundle as artifacts
+      # The SBOM and its Cosign signature bundle are uploaded as GitHub Actions
+      # artifacts for downstream consumption and audit evidence.
+      - name: Upload signed SBOM and bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-signed-${{ github.sha }}
+          path: |
+            sbom.cdx.json
+            sbom.cdx.json.bundle
+          retention-days: 90
