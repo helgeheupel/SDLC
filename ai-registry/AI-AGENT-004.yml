@@ -1,0 +1,95 @@
+---
+system-id: AI-AGENT-004
+name: "AI Science Agent"
+category: development-ai
+description: >
+  AI research and model evaluation agent for the Helge Heupel Group. Specializes
+  in AI model assessment, bias and fairness monitoring, ISO 42001 Annex A
+  artifact production, AI impact assessment support, and responsible AI
+  research. Provides scientific rigor to AI governance decisions.
+provider: Anthropic
+model: Claude Code (Claude Opus)
+intended-use: >
+  AI research assessment and model evaluation support. Evaluates AI model
+  performance against declared accuracy baselines, conducts bias testing across
+  protected attributes (disparate impact ratio threshold: 0.8), assesses
+  training data quality and representativeness, produces ISO 42001 Annex A
+  artifacts related to AI system verification and validation (A.6.2.4), and
+  supports AI impact assessments per ISO 42005.
+operational-context: >
+  Deployed as a Claude Code agent accessed via CLI. Analyzes model evaluation
+  data, benchmark results, bias test outputs, and training data statistics.
+  Produces assessment reports and ISO 42001 evidence artifacts. Works closely
+  with CISO Agent (risk assessment) and CTO Agent (model architecture).
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50 (transparency obligations).
+  The agent interacts with users and generates content including technical
+  assessments of other AI systems. Transparency obligation fulfilled through
+  Git commit attribution and document metadata.
+sdlc-usage-tier: tier-2-collaborator
+human-oversight: >
+  Trust Level 2 (Supervised Autonomous). AI model evaluation findings require
+  CTO validation before informing architecture decisions. Bias test results
+  require CEO review before determining remediation actions. No model
+  deployment decisions are made by this agent.
+data-inputs:
+  - type: model-evaluation-data
+    classification: confidential
+    description: "Benchmark results, accuracy metrics, performance test outputs from AI models"
+  - type: bias-test-results
+    classification: confidential
+    description: "Disparate impact ratios, fairness metrics across protected attributes"
+  - type: training-data-statistics
+    classification: confidential
+    description: "Data quality reports, provenance records, representativeness assessments"
+  - type: ai-research
+    classification: public
+    description: "Published AI research papers, model cards, safety evaluations from providers"
+data-outputs:
+  - type: model-assessments
+    classification: confidential
+    description: "AI model evaluation reports with performance, bias, and robustness findings"
+  - type: iso42001-evidence
+    classification: internal
+    description: "Annex A.6.2.4 verification/validation evidence, A.5 impact assessment inputs"
+  - type: research-summaries
+    classification: internal
+    description: "AI research assessments informing technology selection and risk classification"
+transparency-information: >
+  All AI Science Agent outputs carry Git commit attribution. Model evaluation
+  reports document methodology, data sources, and confidence levels. Bias
+  testing results include statistical methodology and threshold justifications.
+lifecycle-status: development
+deployment-entities:
+  - GmbH
+responsible-owner: "CTO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.3.2
+  - 42001-A.4.2
+  - 42001-A.4.3
+  - 42001-A.5.2
+  - 42001-A.5.4
+  - 42001-A.6.1.2
+  - 42001-A.6.2.4
+  - 42001-A.7.2
+  - 42001-A.7.4
+  - 42001-A.9.2
+  - 42001-A.9.3
+  - 42001-A.10.2
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-005
+  - RISK-AI-006
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: not-assessed
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  Placeholder agent (Phase 6 deliverable). Not yet created. Will be critical
+  for Verity product AI bias testing and model evaluation before customer
+  deployment. Consumes AI research and produces evidence for ISO 42001 Annex A
+  controls A.5 (impact assessment) and A.6.2.4 (verification/validation).
+---

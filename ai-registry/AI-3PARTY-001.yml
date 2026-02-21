@@ -1,0 +1,75 @@
+---
+system-id: AI-3PARTY-001
+name: "ChatGPT"
+category: third-party-ai
+description: >
+  General-purpose conversational AI assistant provided by OpenAI. Used by
+  Helge Heupel Group team members for research, brainstorming, and internal
+  query resolution. Not used for customer-facing outputs. Subject to data
+  restrictions per AI Policy Section 5.2 HH-specific prohibition #14
+  (non-approved AI tools restriction).
+provider: OpenAI
+model: GPT-4o (current default)
+intended-use: >
+  Internal research and brainstorming tool for team members. Used for
+  general-purpose queries, document drafting assistance, and knowledge
+  retrieval. NOT authorized for processing Confidential or Secret data.
+  NOT authorized for generating customer-facing content. NOT authorized
+  for producing compliance artifacts (that responsibility belongs to the
+  CISO, CTO, and AppSec agents).
+operational-context: >
+  Accessed via OpenAI web interface (chat.openai.com) and API. Team members
+  use under individual accounts. Data handling governed by OpenAI enterprise
+  terms. No Confidential or Secret data may be submitted per AI Policy.
+  Usage is supplementary to the primary Claude Code agent workflow.
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50. The system interacts
+  with humans and generates content. OpenAI as the GPAI provider has its own
+  conformity obligations. HH as deployer has transparency obligations:
+  team members are trained to identify AI-generated content.
+sdlc-usage-tier: tier-1-assistant
+human-oversight: >
+  Tier 1 (Post-hoc review within 24 hours). Team members review outputs
+  before incorporating into any work product. No ChatGPT output may be
+  submitted to customers, production systems, or compliance artifacts
+  without additional human review and re-creation through approved channels.
+data-inputs:
+  - type: user-queries
+    classification: internal
+    description: "Team member questions and prompts (Internal classification maximum)"
+data-outputs:
+  - type: text-responses
+    classification: internal
+    description: "AI-generated text for internal use only (research, brainstorming, drafting)"
+transparency-information: >
+  ChatGPT usage is governed by AI Policy Section 5.2 prohibition #14. Team
+  members are trained to identify AI-generated content. ChatGPT outputs
+  incorporated into work products are disclosed via workflow practices.
+  No ChatGPT-generated content enters compliance artifacts directly.
+lifecycle-status: production
+deployment-entities:
+  - GmbH
+  - B.V.
+responsible-owner: "CTO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.9.2
+  - 42001-A.9.4
+  - 42001-A.10.2
+  - 42001-A.10.3
+risk-references:
+  - RISK-AI-005
+  - RISK-SUP-002
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: in-progress
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  OpenAI enterprise agreement status to be confirmed. Data processing
+  addendum (DPA) required for GDPR compliance. API usage subject to
+  separate assessment if expanded beyond web interface. Fewer applicable
+  ISO 42001 controls because HH does not control the AI system lifecycle;
+  primary controls are responsible use (A.9) and third-party management (A.10).
+---

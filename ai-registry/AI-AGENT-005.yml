@@ -1,0 +1,94 @@
+---
+system-id: AI-AGENT-005
+name: "Platform/SRE Agent"
+category: development-ai
+description: >
+  Platform engineering and Site Reliability Engineering agent for the Helge
+  Heupel Group. Specializes in SLO frameworks, observability pipeline design,
+  incident management procedures, infrastructure monitoring, and Azure platform
+  operations. Ensures AI system operational reliability and drift detection.
+provider: Anthropic
+model: Claude Code (Claude Opus)
+intended-use: >
+  Infrastructure and operational reliability support. Designs SLO frameworks
+  for Verity products and internal systems, configures observability pipelines
+  (logging, metrics, tracing), defines incident management procedures, monitors
+  AI model drift detection infrastructure, and produces platform engineering
+  artifacts. Supports ISO 42001 A.6.2.6 (AI system operation and monitoring)
+  requirements.
+operational-context: >
+  Deployed as a Claude Code agent accessed via CLI. Reads infrastructure
+  configurations (Terraform/Bicep), monitoring dashboards, SLO definitions,
+  and incident reports. Produces operational runbooks, SLO specifications,
+  alerting configurations, and platform architecture documents. Works with CTO
+  Agent on infrastructure decisions and AppSec Agent on security monitoring.
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50 (transparency obligations).
+  The agent interacts with users and generates operational content. Transparency
+  obligation fulfilled through Git commit attribution and document metadata.
+sdlc-usage-tier: tier-2-collaborator
+human-oversight: >
+  Trust Level 2 (Supervised Autonomous). Infrastructure changes require IT
+  Pentester/Super Admin review before execution. SLO targets require CTO
+  approval. Incident response procedures require CISO review for security-
+  relevant incidents. No infrastructure modifications are executed autonomously.
+data-inputs:
+  - type: infrastructure-configs
+    classification: confidential
+    description: "Terraform/Bicep IaC files, Azure resource configurations, network topology"
+  - type: monitoring-data
+    classification: internal
+    description: "SLO dashboards, alerting rules, observability pipeline configurations"
+  - type: incident-reports
+    classification: confidential
+    description: "Post-incident reviews, root cause analyses, corrective action records"
+  - type: platform-requirements
+    classification: internal
+    description: "Performance requirements, availability targets, capacity planning inputs"
+data-outputs:
+  - type: slo-specifications
+    classification: internal
+    description: "Service Level Objective definitions with error budgets and burn-rate alerts"
+  - type: operational-runbooks
+    classification: internal
+    description: "Step-by-step procedures for deployment, rollback, scaling, and incident response"
+  - type: observability-designs
+    classification: internal
+    description: "Logging, metrics, and tracing pipeline configurations for AI system monitoring"
+transparency-information: >
+  All Platform/SRE Agent outputs carry Git commit attribution. Operational
+  runbooks document AI involvement in their creation. SLO specifications
+  include methodology and data sources used for target setting.
+lifecycle-status: development
+deployment-entities:
+  - GmbH
+responsible-owner: "CTO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.3.2
+  - 42001-A.4.2
+  - 42001-A.4.4
+  - 42001-A.4.5
+  - 42001-A.6.2.5
+  - 42001-A.6.2.6
+  - 42001-A.6.2.8
+  - 42001-A.8.4
+  - 42001-A.9.2
+  - 42001-A.9.3
+  - 42001-A.10.2
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-006
+  - RISK-AI-007
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: not-assessed
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  Placeholder agent (Phase 6 deliverable). Not yet created. Will be essential
+  for AI model drift detection and operational monitoring of Verity product AI
+  systems. Consumes infrastructure configs and produces observability artifacts
+  supporting ISO 42001 A.6.2.6 and A.6.2.8.
+---

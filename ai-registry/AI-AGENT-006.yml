@@ -1,0 +1,93 @@
+---
+system-id: AI-AGENT-006
+name: "Product/Strategy Agent"
+category: development-ai
+description: >
+  Product strategy and portfolio governance agent for the Helge Heupel Group.
+  Specializes in strategic alignment, OKR formulation, product portfolio
+  governance, market analysis, and AI feature product requirements. Ensures
+  Verity product decisions align with organizational strategy and AI governance
+  commitments.
+provider: Anthropic
+model: Claude Code (Claude Opus)
+intended-use: >
+  Strategic alignment and product governance support. Formulates OKRs aligned
+  with organizational strategy, analyzes market positioning for Verity VE and
+  EAM products, translates AI governance requirements into product feature
+  requirements, produces customer communication materials about AI features,
+  and supports portfolio-level decision-making. Ensures AI transparency
+  information per ISO/IEC 12792 is reflected in product documentation.
+operational-context: >
+  Deployed as a Claude Code agent accessed via CLI. Reads market data,
+  competitive analysis, product specifications, customer feedback, and OKR
+  frameworks. Produces product strategy documents, feature requirements with
+  AI governance constraints, customer-facing AI transparency documentation,
+  and portfolio governance artifacts. Works with CTO Agent on technical
+  feasibility and CISO Agent on compliance requirements.
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50 (transparency obligations).
+  The agent interacts with users and generates content including customer-
+  facing documentation drafts. All customer-facing outputs require human review
+  per AI Policy prohibition #9.
+sdlc-usage-tier: tier-2-collaborator
+human-oversight: >
+  Trust Level 2 (Supervised Autonomous). Product strategy decisions require CEO
+  approval. Customer-facing documentation requires Strategy Partner review.
+  OKR formulations require CEO alignment. No customer communications are sent
+  without human approval.
+data-inputs:
+  - type: market-data
+    classification: confidential
+    description: "Market analysis, competitive landscape, customer feedback, industry trends"
+  - type: product-specifications
+    classification: confidential
+    description: "Verity VE and EAM product roadmaps, feature specifications, patent references"
+  - type: okr-frameworks
+    classification: internal
+    description: "Organizational OKRs, team-level objectives, strategy documents"
+  - type: ai-governance-requirements
+    classification: internal
+    description: "AI Policy requirements, EU AI Act obligations, ISO 42001 controls for product AI"
+data-outputs:
+  - type: product-strategy
+    classification: confidential
+    description: "Strategic alignment analyses, market positioning recommendations, portfolio governance reports"
+  - type: ai-feature-requirements
+    classification: confidential
+    description: "Product requirements incorporating AI governance constraints (transparency, fairness, oversight)"
+  - type: customer-documentation-drafts
+    classification: internal
+    description: "Draft AI transparency information for product documentation per ISO/IEC 12792"
+transparency-information: >
+  All Product/Strategy Agent outputs carry Git commit attribution. Product
+  strategy documents identify AI involvement. Customer-facing documentation
+  drafts are clearly marked as AI-generated requiring human review.
+lifecycle-status: development
+deployment-entities:
+  - GmbH
+responsible-owner: "CEO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.3.2
+  - 42001-A.4.2
+  - 42001-A.6.1.2
+  - 42001-A.8.2
+  - 42001-A.8.5
+  - 42001-A.9.2
+  - 42001-A.9.3
+  - 42001-A.9.4
+  - 42001-A.10.2
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-007
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: not-assessed
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  Placeholder agent (Phase 6 deliverable). Not yet created. Will be critical
+  for translating AI governance requirements into Verity product features,
+  ensuring EU AI Act transparency obligations are met in customer-facing AI.
+---

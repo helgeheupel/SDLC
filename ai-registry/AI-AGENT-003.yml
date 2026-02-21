@@ -1,0 +1,92 @@
+---
+system-id: AI-AGENT-003
+name: "SDLC Lead Agent"
+category: development-ai
+description: >
+  Cross-domain orchestration agent for the Helge Heupel Group. Coordinates
+  multi-agent workflows across all 6 specialist agents, ensures SDLC compliance
+  across all lifecycle phases, manages gate passage decisions, and synthesizes
+  outputs from specialist agents into cohesive deliverables. Positioned as the
+  CEO's primary interface for SDLC governance.
+provider: Anthropic
+model: Claude Code (Claude Opus)
+intended-use: >
+  Multi-agent workflow orchestration and SDLC governance coordination. The SDLC
+  Lead Agent receives task assignments from the CEO, decomposes them into
+  specialist agent sub-tasks, monitors cross-agent dependencies, resolves
+  conflicts between specialist recommendations, and consolidates outputs into
+  coherent deliverables. Ensures gate criteria (G1-G5) are satisfied before
+  recommending progression.
+operational-context: >
+  Deployed as a Claude Code agent accessed via CLI. Reads outputs from all other
+  agents to identify inconsistencies and integration points. Does not produce
+  domain-specific artifacts directly but coordinates, reviews, and integrates
+  specialist agent outputs. Placed in Phase 6 (not Phase 1) because it
+  orchestrates specialists that must exist first.
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50 (transparency obligations).
+  The agent interacts with users and generates content. As an orchestration
+  agent, its outputs are primarily workflow decisions and coordination artifacts,
+  all clearly attributed to the SDLC Lead Agent.
+sdlc-usage-tier: tier-2-collaborator
+human-oversight: >
+  Trust Level 2 (Supervised Autonomous). CEO Helge Heupel directly oversees all
+  orchestration decisions. Gate passage recommendations require CEO approval via
+  PR merge. Cross-agent conflict resolution escalated to CEO when specialist
+  agents disagree.
+data-inputs:
+  - type: agent-outputs
+    classification: internal
+    description: "Artifacts and recommendations from all 6 specialist agents for integration review"
+  - type: sdlc-framework
+    classification: internal
+    description: "SDLC-Growth-v2 companion document, gate criteria, governance model"
+  - type: project-status
+    classification: internal
+    description: "Phase progress, task completion status, dependency tracking across agents"
+  - type: governance-records
+    classification: internal
+    description: "Meeting notes, governance decisions, CEO directives for workflow coordination"
+data-outputs:
+  - type: orchestration-plans
+    classification: internal
+    description: "Multi-agent task decompositions, dependency graphs, workflow schedules"
+  - type: integration-reviews
+    classification: internal
+    description: "Cross-agent consistency checks, conflict identification, resolution recommendations"
+  - type: gate-assessments
+    classification: internal
+    description: "Gate passage readiness assessments consolidating evidence from specialist agents"
+transparency-information: >
+  All SDLC Lead Agent outputs carry Git commit attribution. Orchestration
+  decisions document which specialist agents contributed and how conflicts were
+  resolved. Gate passage recommendations trace evidence to source agent outputs.
+lifecycle-status: development
+deployment-entities:
+  - GmbH
+responsible-owner: "CEO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.3.2
+  - 42001-A.4.2
+  - 42001-A.4.6
+  - 42001-A.6.1.2
+  - 42001-A.6.2.6
+  - 42001-A.9.2
+  - 42001-A.9.3
+  - 42001-A.9.4
+  - 42001-A.10.2
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-007
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: not-assessed
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  Placeholder agent (Phase 6 deliverable). Not yet created. System prompt and
+  domain context to be developed when prerequisite specialist agents are
+  operational. Depends on CISO, CTO, and AppSec agents being active.
+---

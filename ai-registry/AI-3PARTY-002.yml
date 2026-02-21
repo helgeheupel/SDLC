@@ -1,0 +1,83 @@
+---
+system-id: AI-3PARTY-002
+name: "Codex"
+category: third-party-ai
+description: >
+  AI-assisted code development tool provided by OpenAI. Used by Helge Heupel
+  Group developers for code generation, code completion, and code review
+  assistance within the development workflow. Subject to the same data
+  restrictions as ChatGPT per AI Policy Section 5.2 prohibition #14.
+provider: OpenAI
+model: Codex (OpenAI code generation model)
+intended-use: >
+  AI-assisted code development for Verity VE and EAM products and internal
+  tools. Provides code completion, code generation from natural language
+  prompts, and code review assistance. NOT authorized for autonomous code
+  deployment. All generated code undergoes standard code review via PR
+  workflow before merge. NOT a substitute for the AppSec Agent's security
+  analysis.
+operational-context: >
+  Accessed via IDE integration and OpenAI API. Developers use within their
+  local development environment. Generated code is subject to the same
+  review process as human-written code. Security scanning (Semgrep CE SAST)
+  applies to all code regardless of origin. License compliance checked by
+  Dependabot and SBOM process.
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50. The system generates
+  content (code) that integrates into software products. OpenAI as provider
+  has GPAI conformity obligations. HH as deployer ensures generated code
+  is reviewed, tested, and scanned before production use.
+sdlc-usage-tier: tier-1-assistant
+human-oversight: >
+  Tier 1 (Post-hoc review within 24 hours). All Codex-generated code
+  undergoes PR-based code review by at least one human reviewer. SAST
+  scanning (Semgrep CE) automatically checks generated code. Critical/High
+  security findings block pipeline. No Codex output reaches production
+  without passing CI/CD quality gates.
+data-inputs:
+  - type: code-context
+    classification: confidential
+    description: "Source code context from current file and project for code completion"
+  - type: developer-prompts
+    classification: internal
+    description: "Natural language descriptions of desired code functionality"
+data-outputs:
+  - type: generated-code
+    classification: confidential
+    description: "Code snippets, function implementations, and code suggestions for developer review"
+  - type: code-explanations
+    classification: internal
+    description: "Natural language explanations of existing code for developer understanding"
+transparency-information: >
+  Codex-generated code is identifiable through development workflow practices.
+  Developers are trained to review and validate generated code. PR descriptions
+  may note AI assistance. SAST scanning treats all code equally regardless
+  of origin. Git commit history tracks AI-assisted development patterns.
+lifecycle-status: production
+deployment-entities:
+  - GmbH
+  - B.V.
+responsible-owner: "CTO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.6.2.4
+  - 42001-A.9.2
+  - 42001-A.9.4
+  - 42001-A.10.2
+  - 42001-A.10.3
+risk-references:
+  - RISK-AI-002
+  - RISK-SUP-002
+  - RISK-SUP-004
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: in-progress
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  OpenAI enterprise agreement status to be confirmed. Code generation subject
+  to license compliance review (generated code must not introduce copyleft
+  dependencies). A.6.2.4 (verification/validation) applicable because generated
+  code feeds into Verity products requiring security testing.
+---

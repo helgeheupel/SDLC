@@ -1,0 +1,108 @@
+---
+system-id: AI-AGENT-002
+name: "CTO Agent"
+category: development-ai
+description: >
+  Chief Technology Officer agent for the Helge Heupel Group. Responsible for
+  architecture decisions, Architecture Decision Records (ADRs), AI system
+  design, CI/CD pipeline design, security architecture review, technology
+  evaluation, and platform engineering. Combines expertise from 4 source
+  archetypes: Principal Software Architect, Chief AI Engineer, Principal Azure
+  Cloud Architect, and Principal UX Architect (Developer Experience).
+provider: Anthropic
+model: Claude Code (Claude Opus)
+intended-use: >
+  Architecture decision support and technical artifact generation. Produces ADRs
+  for significant technology choices, designs CI/CD pipelines, evaluates Azure
+  platform options, reviews security architecture, and defines AI engineering
+  standards. The CTO Agent treats architecture decisions and security engineering
+  as equally weighted concerns. Outputs require human CTO review before adoption.
+operational-context: >
+  Deployed as a Claude Code agent accessed via CLI. Operates on HH Group
+  codebase and architecture repositories. Reviews codebase structure, dependency
+  graphs, and infrastructure configurations. Agent system prompt at
+  agents/cto/CLAUDE.md (321 lines) with progressive disclosure via reference/
+  directory. Strict boundary with AppSec Agent: CTO owns ADRs and architecture,
+  AppSec owns threat models, SAST/DAST, SBOM, supply chain.
+eu-ai-act-classification: limited-risk
+eu-ai-act-rationale: >
+  Classified as Limited-Risk under EU AI Act Art. 50 (transparency obligations).
+  The agent interacts with users and generates content. Transparency obligation
+  fulfilled through Git commit attribution, YAML frontmatter author field, and
+  PR descriptions identifying AI-generated content.
+sdlc-usage-tier: tier-2-collaborator
+human-oversight: >
+  Trust Level 2 (Supervised Autonomous). All architecture decisions require human
+  CTO review before adoption. ADRs follow PR-based approval workflow. Security-
+  relevant architectural changes require both CTO and CISO review. No deployment
+  decisions are made autonomously.
+data-inputs:
+  - type: codebase
+    classification: confidential
+    description: "Source code, package manifests, infrastructure-as-code (Terraform/Bicep) for architecture analysis"
+  - type: architecture-documents
+    classification: internal
+    description: "Existing ADRs, system diagrams, API specifications, CI/CD pipeline definitions"
+  - type: technology-evaluations
+    classification: internal
+    description: "Vendor documentation, benchmark results, technology comparison matrices"
+  - type: security-requirements
+    classification: internal
+    description: "IS Policy, AppSec threat models, SAST/DAST findings for security architecture review"
+data-outputs:
+  - type: architecture-decisions
+    classification: internal
+    description: "ADRs documenting significant technology choices with context, decision, and consequences"
+  - type: pipeline-designs
+    classification: internal
+    description: "CI/CD pipeline specifications, build/test/deploy configurations, quality gates"
+  - type: platform-architecture
+    classification: confidential
+    description: "Azure infrastructure designs, landing zone configurations, cost optimization plans"
+  - type: security-reviews
+    classification: confidential
+    description: "Security architecture review reports for AppSec Agent outputs"
+transparency-information: >
+  All CTO Agent outputs carry Git commit attribution identifying the author as
+  the CTO Agent. ADR documents include author: CTO Agent in frontmatter. PR
+  descriptions state that content is AI-generated. Architecture decisions
+  document AI involvement in the decision-making process.
+lifecycle-status: production
+deployment-entities:
+  - GmbH
+  - B.V.
+responsible-owner: "CTO role"
+applicable-controls:
+  - 42001-A.2.2
+  - 42001-A.2.3
+  - 42001-A.3.2
+  - 42001-A.4.2
+  - 42001-A.4.4
+  - 42001-A.4.5
+  - 42001-A.4.6
+  - 42001-A.6.1.2
+  - 42001-A.6.1.3
+  - 42001-A.6.2.2
+  - 42001-A.6.2.3
+  - 42001-A.6.2.6
+  - 42001-A.6.2.8
+  - 42001-A.8.2
+  - 42001-A.9.2
+  - 42001-A.9.3
+  - 42001-A.9.4
+  - 42001-A.10.2
+  - 42001-A.10.3
+risk-references:
+  - RISK-AI-002
+  - RISK-AI-003
+  - RISK-AI-007
+last-risk-assessment: 2026-02-20
+last-impact-assessment: ""
+conformity-status: in-progress
+created-date: 2026-02-22
+last-updated: 2026-02-22
+notes: >
+  Active agent since Phase 4. Security-architecture dual identity is a locked
+  design decision. ADR registry section in domain-context.md populates as CTO
+  Agent produces architecture decisions.
+---
