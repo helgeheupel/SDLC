@@ -1,0 +1,426 @@
+# Threat Model YAML Schema Definition
+# Document ID: HH-SENG-TM-SCHEMA-001
+# Version: v1.0
+# Classification: Internal
+# Author: AppSec Agent
+#
+# This file defines the canonical YAML schema for all Helge Heupel Group
+# threat models. Every threat model in the security/threat-models/ directory
+# MUST conform to this schema. The schema is designed for:
+#   1. Machine-readability (YAML-in-Git, parseable by scripts)
+#   2. Auditor traceability (risk register -> threat model -> Annex A -> SoA)
+#   3. Consistency with the risk assessment methodology (HH-ISMS-RMA-001)
+#
+# Likelihood and impact scales use the same 1-5 definitions as the risk
+# assessment methodology (risks/methodology/risk-assessment-methodology.md):
+#   Likelihood: 1=Rare, 2=Unlikely, 3=Possible, 4=Likely, 5=Almost Certain
+#   Impact: 1=Negligible, 2=Minor, 3=Moderate, 4=Major, 5=Severe/Existential
+#   Risk score: likelihood x impact (range 1-25)
+#   Risk levels: Low (1-6), Medium (7-12), High (13-19), Critical (20-25)
+
+---
+schema-version: "1.0"
+schema-id: HH-SENG-TM-SCHEMA-001
+description: >
+  Canonical threat model schema for the Helge Heupel Group. All threat models
+  stored in security/threat-models/ must conform to this structure.
+
+# =============================================================================
+# FRONTMATTER (YAML document header)
+# =============================================================================
+frontmatter:
+  threat-model-id:
+    type: string
+    format: "TM-[SYSTEM]-NNN"
+    required: true
+    description: >
+      Unique identifier for the threat model. SYSTEM is a short system name
+      (e.g., CLAUDE, VERITY-CMS). NNN is a 3-digit sequential number.
+    examples:
+      - TM-CLAUDE-001
+      - TM-VERITY-CMS-001
+
+  system-name:
+    type: string
+    required: true
+    description: "Full name of the system being modeled"
+    examples:
+      - "Claude Code Agent System"
+      - "Verity CMS (Payload CMS Backend)"
+
+  version:
+    type: string
+    format: "vX.Y"
+    required: true
+    description: "Semantic version of this threat model document"
+
+  date:
+    type: string
+    format: "YYYY-MM-DD (ISO 8601)"
+    required: true
+    description: "Date of last modification"
+
+  classification:
+    type: string
+    required: true
+    valid-values:
+      - Public
+      - Internal
+      - Confidential
+      - Secret
+    description: >
+      Information classification per HH 4-level scheme (IS Policy HH-ISMS-POL-001).
+      Threat models are typically Confidential.
+
+  author:
+    type: string
+    required: true
+    description: "Author role or agent name"
+    examples:
+      - "AppSec Agent"
+
+  reviewer:
+    type: list
+    required: true
+    description: "List of reviewer roles"
+    examples:
+      - ["CTO", "CISO"]
+
+  status:
+    type: string
+    required: true
+    valid-values:
+      - Draft
+      - Active
+      - Under-Review
+      - Superseded
+      - Archived
+    description: "Document lifecycle status"
+
+  methodology:
+    type: string
+    required: true
+    valid-values:
+      - STRIDE
+      - "STRIDE+LINDDUN"
+    description: >
+      Threat modeling methodology applied. STRIDE for all systems.
+      STRIDE+LINDDUN when the system processes personal data (GDPR scope).
+
+  linddun-applied:
+    type: boolean
+    required: true
+    description: >
+      Whether LINDDUN privacy threat analysis is included. Set to true only
+      when the system processes personal data subject to GDPR. The Claude Code
+      agent system processes SDLC artifacts (not personal data) and should
+      have linddun-applied: false.
+
+# =============================================================================
+# SYSTEM DESCRIPTION
+# =============================================================================
+system-description:
+  type: string
+  required: true
+  description: >
+    2-3 sentence description of the system being modeled, including its purpose,
+    key technologies, and the organizational context. Must name specific HH
+    entities, systems, and personnel where relevant.
+
+# =============================================================================
+# DATA FLOWS
+# =============================================================================
+data-flows:
+  type: list
+  required: true
+  minimum-count: 5
+  item-schema:
+    id:
+      type: string
+      format: "DF-NNN"
+      required: true
+      description: "Unique data flow identifier within this threat model"
+
+    name:
+      type: string
+      required: true
+      description: "Short descriptive name for the data flow"
+
+    source:
+      type: string
+      required: true
+      description: "Component or entity where the data flow originates"
+
+    destination:
+      type: string
+      required: true
+      description: "Component or entity where the data flow terminates"
+
+    data-type:
+      type: string
+      required: true
+      description: "Description of the data being transferred"
+
+    classification:
+      type: string
+      required: true
+      valid-values:
+        - Public
+        - Internal
+        - Confidential
+        - Secret
+      description: "Classification of data in transit per HH 4-level scheme"
+
+    trust-boundary-crossing:
+      type: boolean
+      required: true
+      description: >
+        Whether this data flow crosses a trust boundary. Flows crossing trust
+        boundaries are higher-priority targets for threat analysis.
+
+# =============================================================================
+# TRUST BOUNDARIES
+# =============================================================================
+trust-boundaries:
+  type: list
+  required: true
+  minimum-count: 3
+  item-schema:
+    id:
+      type: string
+      format: "TB-NNN"
+      required: true
+      description: "Unique trust boundary identifier within this threat model"
+
+    name:
+      type: string
+      required: true
+      description: "Short descriptive name for the trust boundary"
+
+    description:
+      type: string
+      required: true
+      description: "What separates the trusted from untrusted zone"
+
+    components-inside:
+      type: list
+      required: true
+      description: "Component IDs that are inside (trusted side) of this boundary"
+
+    components-outside:
+      type: list
+      required: true
+      description: "Component IDs that are outside (untrusted side) of this boundary"
+
+# =============================================================================
+# COMPONENTS
+# =============================================================================
+components:
+  type: list
+  required: true
+  minimum-count: 4
+  item-schema:
+    id:
+      type: string
+      format: "COMP-NNN"
+      required: true
+      description: "Unique component identifier within this threat model"
+
+    name:
+      type: string
+      required: true
+      description: "Component name (use specific HH system names)"
+
+    type:
+      type: string
+      required: true
+      valid-values:
+        - process
+        - datastore
+        - external-entity
+      description: >
+        Component type per data flow diagram conventions:
+        process = active software component transforming data,
+        datastore = passive data storage,
+        external-entity = actor or system outside the model boundary.
+
+    technology:
+      type: string
+      required: true
+      description: "Specific technology or platform (e.g., Next.js, Neon PostgreSQL, Anthropic API)"
+
+    threats:
+      type: list
+      required: true
+      item-schema:
+        threat-id:
+          type: string
+          format: "T-NNN"
+          required: true
+          description: "Unique threat identifier within this threat model"
+
+        category:
+          type: string
+          required: true
+          valid-values:
+            - Spoofing
+            - Tampering
+            - Repudiation
+            - Information-Disclosure
+            - Denial-of-Service
+            - Elevation-of-Privilege
+          description: "STRIDE category for this threat"
+
+        description:
+          type: string
+          required: true
+          description: >
+            Specific threat description referencing HH components and data flows.
+            Must not be generic. Must name specific systems, data, and actors.
+
+        likelihood:
+          type: integer
+          required: true
+          valid-values: [1, 2, 3, 4, 5]
+          description: >
+            Likelihood rating per risk assessment methodology (HH-ISMS-RMA-001):
+            1=Rare, 2=Unlikely, 3=Possible, 4=Likely, 5=Almost Certain
+
+        impact:
+          type: integer
+          required: true
+          valid-values: [1, 2, 3, 4, 5]
+          description: >
+            Impact rating per risk assessment methodology (HH-ISMS-RMA-001):
+            1=Negligible, 2=Minor, 3=Moderate, 4=Major, 5=Severe/Existential
+
+        risk-score:
+          type: integer
+          required: true
+          description: "Calculated as likelihood x impact (range 1-25)"
+
+        mitigations:
+          type: list
+          required: true
+          minimum-count: 1
+          item-schema:
+            control-id:
+              type: string
+              format: "A.X.Y (ISO 27001:2022 Annex A)"
+              required: true
+              description: >
+                Annex A control ID that mitigates this threat. Must match
+                control IDs in the SoA files (soa/A.X.Y.yml).
+
+            description:
+              type: string
+              required: true
+              description: "How this Annex A control mitigates the specific threat"
+
+            status:
+              type: string
+              required: true
+              valid-values:
+                - implemented
+                - planned
+                - not-started
+              description: "Current implementation status of this mitigation"
+
+        residual-risk:
+          type: string
+          required: true
+          valid-values:
+            - low
+            - medium
+            - high
+            - critical
+          description: >
+            Residual risk level after mitigations are applied.
+            Uses the same risk level definitions as the risk matrix.
+
+# =============================================================================
+# RISK REFERENCES
+# =============================================================================
+risk-references:
+  type: list
+  required: true
+  minimum-count: 3
+  item-schema:
+    type: string
+    format: "RISK-{CAT}-{NNN}"
+    description: >
+      Reference to a risk register entry in risks/RISK-*.yml. Links this
+      threat model to the organizational risk register for auditor traceability.
+      The chain is: Risk Register -> Threat Model -> Annex A Control -> SoA.
+
+# =============================================================================
+# LINDDUN THREATS (conditional: only when linddun-applied: true)
+# =============================================================================
+linddun-threats:
+  type: list
+  required-when: "linddun-applied: true"
+  description: >
+    Privacy-specific threats using the LINDDUN methodology. Only included
+    when the system processes personal data subject to GDPR.
+  item-schema:
+    threat-id:
+      type: string
+      format: "LT-NNN"
+      required: true
+      description: "Unique LINDDUN threat identifier"
+
+    category:
+      type: string
+      required: true
+      valid-values:
+        - Linkability
+        - Identifiability
+        - Non-repudiation
+        - Detectability
+        - Disclosure-of-information
+        - Unawareness
+        - Non-compliance
+      description: "LINDDUN category for this privacy threat"
+
+    component-id:
+      type: string
+      format: "COMP-NNN"
+      required: true
+      description: "Component ID where this privacy threat manifests"
+
+    description:
+      type: string
+      required: true
+      description: "Specific privacy threat description referencing personal data flows"
+
+    gdpr-article:
+      type: string
+      required: true
+      description: >
+        Relevant GDPR article(s) that this privacy threat may violate.
+        Examples: Art. 5(1)(f), Art. 17, Art. 25, Art. 32, Art. 35
+
+    mitigations:
+      type: list
+      required: true
+      minimum-count: 1
+      item-schema:
+        control-id:
+          type: string
+          format: "A.X.Y"
+          required: true
+          description: "Annex A control that mitigates this privacy threat"
+
+        description:
+          type: string
+          required: true
+          description: "How this control addresses the GDPR-relevant privacy threat"
+
+        status:
+          type: string
+          required: true
+          valid-values:
+            - implemented
+            - planned
+            - not-started
+---

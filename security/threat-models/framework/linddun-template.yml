@@ -1,0 +1,224 @@
+# LINDDUN Privacy Threat Model Extension Template
+# Conforming to: HH-SENG-TM-SCHEMA-001 v1.0
+# Classification: Internal
+# Author: AppSec Agent
+#
+# Usage: When a system processes personal data (GDPR scope), append this
+# LINDDUN section to the STRIDE threat model. Copy the linddun-threats block
+# below into the system's threat model YAML file (e.g., TM-VERITY-CMS-001.yml)
+# and replace all [PLACEHOLDER] values.
+#
+# Prerequisites:
+#   1. The base STRIDE threat model must already exist with methodology: STRIDE+LINDDUN
+#   2. The frontmatter must have linddun-applied: true
+#   3. The system must process personal data subject to GDPR
+#
+# The 7 LINDDUN categories map to specific GDPR principles and articles:
+#
+#   L - Linkability:        GDPR Art. 5(1)(b) purpose limitation, Art. 25 DPbD
+#   I - Identifiability:    GDPR Art. 5(1)(c) data minimisation, Art. 25 DPbD
+#   N - Non-repudiation:    GDPR Art. 5(1)(f) integrity, Art. 17 right to erasure
+#   D - Detectability:      GDPR Art. 5(1)(c) data minimisation, Art. 25 DPbD
+#   D - Disclosure:         GDPR Art. 5(1)(f) confidentiality, Art. 32 security
+#   U - Unawareness:        GDPR Art. 12-14 transparency, Art. 13 information
+#   N - Non-compliance:     GDPR Art. 5(2) accountability, Art. 17 erasure,
+#                           Art. 20 portability, Art. 35 DPIA
+#
+# References:
+#   - LINDDUN methodology: https://linddun.org/
+#   - GDPR full text: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+#   - Risk assessment methodology: risks/methodology/risk-assessment-methodology.md
+
+---
+# =============================================================================
+# LINDDUN THREATS
+# Append this section to the STRIDE threat model when linddun-applied: true.
+# Minimum entries: at least 3 LINDDUN threats covering different categories.
+# =============================================================================
+linddun-threats:
+
+  # ---------------------------------------------------------------------------
+  # L - LINKABILITY
+  # Can an attacker link two or more items of interest (actions, identities,
+  # data records) belonging to the same data subject?
+  # GDPR relevance: Art. 5(1)(b) purpose limitation, Art. 25 data protection
+  # by design and by default
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-001
+    category: Linkability
+    component-id: COMP-001         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] An attacker or data processor links user session metadata
+      (IP addresses, timestamps, user-agent strings) across multiple interactions
+      to build a behavioral profile of the data subject, beyond the originally
+      consented purpose.
+    gdpr-article: "Art. 5(1)(b) purpose limitation, Art. 25 data protection by design"
+    mitigations:
+      - control-id: A.8.11        # Data masking
+        description: >
+          Pseudonymize session metadata in logs by replacing direct identifiers
+          with hashed tokens. Retain mapping table separately with restricted access.
+        status: planned            # implemented | planned | not-started
+      - control-id: A.8.10        # Information deletion
+        description: >
+          Enforce log retention periods aligned with GDPR storage limitation
+          (Art. 5(1)(e)). Auto-delete session logs after 90 days.
+        status: planned
+
+  # ---------------------------------------------------------------------------
+  # I - IDENTIFIABILITY
+  # Can an attacker identify a data subject from the data processed?
+  # GDPR relevance: Art. 5(1)(c) data minimisation, Art. 25 DPbD
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-002
+    category: Identifiability
+    component-id: COMP-002         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] User accounts in the application contain directly
+      identifying information (full name, email address) that is accessible
+      to other users or administrators without need-to-know justification,
+      violating the data minimisation principle.
+    gdpr-article: "Art. 5(1)(c) data minimisation, Art. 25 data protection by design"
+    mitigations:
+      - control-id: A.5.12        # Classification of information
+        description: >
+          Classify personal data fields as Confidential. Apply field-level
+          access controls so only authorized roles can view identifying information.
+        status: planned
+      - control-id: A.8.3         # Information access restriction
+        description: >
+          Implement role-based access control restricting access to personal
+          data fields to users with a documented need-to-know.
+        status: planned
+
+  # ---------------------------------------------------------------------------
+  # N - NON-REPUDIATION (privacy context)
+  # Is a data subject unable to deny having performed an action, even when
+  # it would be in their interest to do so? (Note: in privacy context,
+  # non-repudiation is a THREAT, not a control -- the system proves too much
+  # about the data subject's actions.)
+  # GDPR relevance: Art. 5(1)(f) integrity and confidentiality, Art. 17
+  # right to erasure
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-003
+    category: Non-repudiation
+    component-id: COMP-003         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] The system maintains immutable audit logs of all user
+      actions that cannot be deleted even when a data subject exercises their
+      right to erasure (Art. 17), creating a conflict between audit integrity
+      and privacy rights.
+    gdpr-article: "Art. 17 right to erasure, Art. 5(1)(f) integrity"
+    mitigations:
+      - control-id: A.8.10        # Information deletion
+        description: >
+          Implement a data erasure procedure that anonymizes audit log entries
+          related to the data subject while preserving the non-identifiable
+          audit trail for compliance purposes.
+        status: planned
+
+  # ---------------------------------------------------------------------------
+  # D - DETECTABILITY
+  # Can an attacker determine whether a data subject's data exists in the
+  # system, even without accessing the actual content?
+  # GDPR relevance: Art. 5(1)(c) data minimisation, Art. 25 DPbD
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-004
+    category: Detectability
+    component-id: COMP-002         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] An attacker determines whether a specific person has an
+      account by observing differences in system behavior (e.g., different
+      error messages for valid vs. invalid usernames during login or password
+      reset).
+    gdpr-article: "Art. 5(1)(c) data minimisation, Art. 25 data protection by design"
+    mitigations:
+      - control-id: A.8.26        # Application security requirements
+        description: >
+          Ensure login and password reset flows return identical responses
+          regardless of whether the account exists, preventing user enumeration.
+        status: planned
+
+  # ---------------------------------------------------------------------------
+  # D - DISCLOSURE OF INFORMATION (privacy-specific)
+  # Can personal data be disclosed to unauthorized parties?
+  # GDPR relevance: Art. 5(1)(f) confidentiality, Art. 32 security of processing
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-005
+    category: Disclosure-of-information
+    component-id: COMP-003         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] Personal data stored in the database is exposed through
+      an application vulnerability (SQL injection, insecure API endpoint, or
+      backup file exposure), resulting in a personal data breach requiring
+      notification under GDPR Art. 33/34.
+    gdpr-article: "Art. 5(1)(f) confidentiality, Art. 32 security of processing, Art. 33 breach notification"
+    mitigations:
+      - control-id: A.8.25        # Secure development lifecycle
+        description: >
+          SAST/DAST scanning in CI pipeline to detect injection vulnerabilities
+          and insecure API configurations before deployment.
+        status: planned
+      - control-id: A.8.24        # Use of cryptography
+        description: >
+          Encrypt personal data at rest using database-level encryption and
+          in transit using TLS 1.3.
+        status: planned
+
+  # ---------------------------------------------------------------------------
+  # U - UNAWARENESS
+  # Are data subjects unaware of how their data is collected, processed,
+  # shared, or stored?
+  # GDPR relevance: Art. 12-14 transparency, Art. 13 information to be provided
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-006
+    category: Unawareness
+    component-id: COMP-001         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] Data subjects are not adequately informed about what
+      personal data is collected, how it is processed, who it is shared with,
+      and how long it is retained. The privacy notice is incomplete, outdated,
+      or not accessible at the point of data collection.
+    gdpr-article: "Art. 12 transparent information, Art. 13 information at collection, Art. 14 information not obtained from data subject"
+    mitigations:
+      - control-id: A.5.34        # Privacy and protection of PII
+        description: >
+          Maintain a comprehensive, plain-language privacy notice covering all
+          Art. 13 information requirements. Review and update with every system
+          change affecting personal data processing.
+        status: planned
+      - control-id: A.5.12        # Classification of information
+        description: >
+          Maintain a personal data inventory (RoPA - Record of Processing
+          Activities) that documents all personal data flows for transparency.
+        status: planned
+
+  # ---------------------------------------------------------------------------
+  # N - NON-COMPLIANCE
+  # Does the system fail to comply with GDPR requirements such as the right
+  # to erasure, right to portability, or DPIA obligations?
+  # GDPR relevance: Art. 5(2) accountability, Art. 17 erasure, Art. 20
+  # portability, Art. 35 DPIA
+  # ---------------------------------------------------------------------------
+  - threat-id: LT-007
+    category: Non-compliance
+    component-id: COMP-002         # [PLACEHOLDER] Replace with actual component ID
+    description: >
+      [PLACEHOLDER] The system cannot fulfill data subject rights requests
+      (right to erasure Art. 17, right to data portability Art. 20, right to
+      rectification Art. 16) within the GDPR-mandated timeframe of one month
+      (Art. 12(3)), because the data is distributed across multiple components
+      without a centralized data subject request handling mechanism.
+    gdpr-article: "Art. 12(3) response timeframe, Art. 17 right to erasure, Art. 20 right to portability"
+    mitigations:
+      - control-id: A.5.34        # Privacy and protection of PII
+        description: >
+          Implement a data subject request handling procedure with documented
+          data locations, responsible persons, and SLA for one-month response.
+        status: planned
+      - control-id: A.8.10        # Information deletion
+        description: >
+          Build technical capability to locate and delete or export all personal
+          data for a given data subject across all system components.
+        status: planned
+---

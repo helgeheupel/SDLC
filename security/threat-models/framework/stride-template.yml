@@ -1,0 +1,302 @@
+# STRIDE Threat Model Template
+# Conforming to: HH-SENG-TM-SCHEMA-001 v1.0
+# Classification: Internal
+#
+# Usage: Copy this file to security/threat-models/TM-[SYSTEM]-NNN.yml and
+# replace all placeholder values (marked with [PLACEHOLDER]) with system-specific
+# content. Remove these header comments in the final threat model.
+#
+# This template demonstrates the STRIDE-only methodology (linddun-applied: false).
+# For systems processing personal data, use this template AND append the LINDDUN
+# extension from linddun-template.yml.
+
+---
+# =============================================================================
+# FRONTMATTER
+# =============================================================================
+threat-model-id: TM-[SYSTEM]-NNN   # Replace with actual ID (e.g., TM-CLAUDE-001)
+system-name: "[System Full Name]"   # Replace with actual system name
+version: v1.0
+date: 2026-01-01                    # Replace with actual date (YYYY-MM-DD)
+classification: Confidential        # Threat models are typically Confidential
+author: AppSec Agent
+reviewer:
+  - CTO
+  - CISO
+status: Draft                       # Change to Active after CTO+CISO review
+methodology: STRIDE                 # STRIDE-only for systems without personal data
+linddun-applied: false              # Set to true if personal data is processed
+
+# =============================================================================
+# SYSTEM DESCRIPTION
+# =============================================================================
+# Write 2-3 sentences describing the system, its purpose, key technologies,
+# and organizational context. Name specific HH entities and systems.
+system-description: >
+  [PLACEHOLDER] The [System Name] is a [type of system] operated by the Helge
+  Heupel Group [GmbH/B.V./Inc.] for [purpose]. It uses [key technologies] and
+  processes [type of data] classified as [classification level].
+
+# =============================================================================
+# DATA FLOWS
+# Minimum 5 data flows per threat model.
+# Each flow crossing a trust boundary is a priority target for threat analysis.
+# =============================================================================
+data-flows:
+  - id: DF-001
+    name: "[PLACEHOLDER] User request"            # Short descriptive name
+    source: "[PLACEHOLDER] User"                   # Where data originates
+    destination: "[PLACEHOLDER] Application"       # Where data goes
+    data-type: "[PLACEHOLDER] HTTP request with authentication credentials"
+    classification: Confidential                   # Per HH 4-level scheme
+    trust-boundary-crossing: true                  # Does it cross a trust boundary?
+
+  - id: DF-002
+    name: "[PLACEHOLDER] Application response"
+    source: "[PLACEHOLDER] Application"
+    destination: "[PLACEHOLDER] User"
+    data-type: "[PLACEHOLDER] HTTP response with application data"
+    classification: Internal
+    trust-boundary-crossing: true
+
+  - id: DF-003
+    name: "[PLACEHOLDER] Database query"
+    source: "[PLACEHOLDER] Application"
+    destination: "[PLACEHOLDER] Database"
+    data-type: "[PLACEHOLDER] SQL query with parameters"
+    classification: Confidential
+    trust-boundary-crossing: true
+
+  - id: DF-004
+    name: "[PLACEHOLDER] Database result"
+    source: "[PLACEHOLDER] Database"
+    destination: "[PLACEHOLDER] Application"
+    data-type: "[PLACEHOLDER] Query result set"
+    classification: Confidential
+    trust-boundary-crossing: true
+
+  - id: DF-005
+    name: "[PLACEHOLDER] External API call"
+    source: "[PLACEHOLDER] Application"
+    destination: "[PLACEHOLDER] External Service"
+    data-type: "[PLACEHOLDER] API request with bearer token"
+    classification: Internal
+    trust-boundary-crossing: true
+
+# =============================================================================
+# TRUST BOUNDARIES
+# Minimum 3 trust boundaries per threat model.
+# Boundaries define where privilege levels or ownership change.
+# =============================================================================
+trust-boundaries:
+  - id: TB-001
+    name: "[PLACEHOLDER] Internet boundary"
+    description: >
+      [PLACEHOLDER] Separates external users (untrusted) from the application
+      server (trusted). All inbound traffic traverses this boundary.
+    components-inside:
+      - COMP-002     # Application server
+    components-outside:
+      - COMP-001     # External users
+
+  - id: TB-002
+    name: "[PLACEHOLDER] Database boundary"
+    description: >
+      [PLACEHOLDER] Separates the application layer from the data storage layer.
+      Only authenticated application connections are permitted.
+    components-inside:
+      - COMP-003     # Database
+    components-outside:
+      - COMP-002     # Application server
+
+  - id: TB-003
+    name: "[PLACEHOLDER] External service boundary"
+    description: >
+      [PLACEHOLDER] Separates HH-controlled systems from third-party services.
+      Data leaving this boundary exits HH's control.
+    components-inside:
+      - COMP-002     # Application server
+    components-outside:
+      - COMP-004     # External service
+
+# =============================================================================
+# COMPONENTS
+# Minimum 4 components per threat model.
+# Each component has STRIDE threats enumerated against it.
+# =============================================================================
+components:
+  # -------------------------------------------------------------------------
+  # Component 1: External Entity (example: user or external system)
+  # -------------------------------------------------------------------------
+  - id: COMP-001
+    name: "[PLACEHOLDER] Users"
+    type: external-entity
+    technology: "[PLACEHOLDER] Web browser / API client"
+    threats:
+      # -- SPOOFING example --
+      # Spoofing targets external entities and processes. Ask: "Can someone
+      # pretend to be this component?"
+      - threat-id: T-001
+        category: Spoofing
+        description: >
+          [PLACEHOLDER] An attacker impersonates a legitimate user by stealing
+          session tokens or authentication credentials, gaining unauthorized
+          access to [System Name].
+        likelihood: 3    # 1-5 per HH-ISMS-RMA-001 (Possible)
+        impact: 4        # 1-5 per HH-ISMS-RMA-001 (Major)
+        risk-score: 12   # likelihood x impact
+        mitigations:
+          - control-id: A.8.5     # Annex A control ID
+            description: "MFA enforcement via Entra ID Conditional Access for all user authentication"
+            status: implemented   # implemented | planned | not-started
+          - control-id: A.5.17
+            description: "Session management with token expiration and rotation"
+            status: planned
+        residual-risk: medium    # After mitigations: low | medium | high | critical
+
+      # -- REPUDIATION example --
+      # Repudiation targets external entities and processes. Ask: "Can this
+      # component deny performing an action?"
+      - threat-id: T-002
+        category: Repudiation
+        description: >
+          [PLACEHOLDER] A user denies performing a destructive action (e.g.,
+          deleting content) because audit logging is insufficient to prove
+          the action occurred.
+        likelihood: 2
+        impact: 2
+        risk-score: 4
+        mitigations:
+          - control-id: A.8.15
+            description: "Comprehensive audit logging of all user actions with tamper-evident log storage"
+            status: planned
+        residual-risk: low
+
+  # -------------------------------------------------------------------------
+  # Component 2: Process (example: application server)
+  # -------------------------------------------------------------------------
+  - id: COMP-002
+    name: "[PLACEHOLDER] Application Server"
+    type: process
+    technology: "[PLACEHOLDER] Next.js on Vercel"
+    threats:
+      # -- TAMPERING example --
+      # Tampering targets processes and datastores. Ask: "Can someone modify
+      # data in transit or at rest within this component?"
+      - threat-id: T-003
+        category: Tampering
+        description: >
+          [PLACEHOLDER] An attacker modifies request parameters or API payloads
+          to bypass input validation and alter application behavior or stored data.
+        likelihood: 3
+        impact: 3
+        risk-score: 9
+        mitigations:
+          - control-id: A.8.26
+            description: "Input validation and sanitization enforced at the application layer"
+            status: planned
+          - control-id: A.8.28
+            description: "Secure coding practices with SAST enforcement (Semgrep) scanning for injection patterns"
+            status: planned
+        residual-risk: medium
+
+      # -- DENIAL OF SERVICE example --
+      # DoS targets processes. Ask: "Can this component be made unavailable?"
+      - threat-id: T-004
+        category: Denial-of-Service
+        description: >
+          [PLACEHOLDER] An attacker overwhelms the application server with
+          excessive requests, causing service degradation or unavailability
+          for legitimate users.
+        likelihood: 3
+        impact: 3
+        risk-score: 9
+        mitigations:
+          - control-id: A.8.20
+            description: "Rate limiting and request throttling at the CDN/load balancer level"
+            status: planned
+        residual-risk: medium
+
+  # -------------------------------------------------------------------------
+  # Component 3: Datastore (example: database)
+  # -------------------------------------------------------------------------
+  - id: COMP-003
+    name: "[PLACEHOLDER] Database"
+    type: datastore
+    technology: "[PLACEHOLDER] Neon PostgreSQL"
+    threats:
+      # -- INFORMATION DISCLOSURE example --
+      # Info Disclosure targets datastores and data flows. Ask: "Can someone
+      # read data they should not have access to?"
+      - threat-id: T-005
+        category: Information-Disclosure
+        description: >
+          [PLACEHOLDER] An attacker exploits a SQL injection vulnerability or
+          misconfigured database permissions to read sensitive data from the
+          database, including user credentials and confidential content.
+        likelihood: 2
+        impact: 5
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.25
+            description: "Parameterized queries enforced via ORM (Payload CMS uses Drizzle ORM)"
+            status: implemented
+          - control-id: A.8.3
+            description: "Database access restricted to application service account with least privilege"
+            status: planned
+        residual-risk: medium
+
+      # -- TAMPERING example for datastore --
+      - threat-id: T-006
+        category: Tampering
+        description: >
+          [PLACEHOLDER] An attacker or compromised application modifies database
+          records, corrupting content integrity without detection.
+        likelihood: 2
+        impact: 4
+        risk-score: 8
+        mitigations:
+          - control-id: A.8.15
+            description: "Database audit logging capturing all write operations with timestamps and user context"
+            status: planned
+        residual-risk: medium
+
+  # -------------------------------------------------------------------------
+  # Component 4: External Entity (example: third-party service)
+  # -------------------------------------------------------------------------
+  - id: COMP-004
+    name: "[PLACEHOLDER] External Service"
+    type: external-entity
+    technology: "[PLACEHOLDER] Third-party API"
+    threats:
+      # -- ELEVATION OF PRIVILEGE example --
+      # EoP targets processes and external entities. Ask: "Can this component
+      # gain permissions it should not have?"
+      - threat-id: T-007
+        category: Elevation-of-Privilege
+        description: >
+          [PLACEHOLDER] The external service exploits its API integration to
+          access resources beyond its intended scope, or a compromised external
+          service is used as a pivot point to attack internal systems.
+        likelihood: 2
+        impact: 4
+        risk-score: 8
+        mitigations:
+          - control-id: A.5.21
+            description: "ICT supply chain management with scoped API credentials and least-privilege access tokens"
+            status: planned
+          - control-id: A.5.19
+            description: "Supplier security requirements including API security assessment"
+            status: planned
+        residual-risk: medium
+
+# =============================================================================
+# RISK REFERENCES
+# Minimum 3 references to risk register entries (risks/RISK-*.yml).
+# These link the threat model to the organizational risk register.
+# =============================================================================
+risk-references:
+  - RISK-SEC-001     # [PLACEHOLDER] Replace with actual risk IDs relevant to this system
+  - RISK-SEC-002     # [PLACEHOLDER]
+  - RISK-OPS-002     # [PLACEHOLDER]
+---
