@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** CEO can interchangeably steer humans and AI agents to produce audit-ready compliance artifacts at enterprise quality with startup speed
-**Current focus:** Phase 4: CTO and AppSec Agents with Security Engineering
+**Current focus:** Phase 5: AIMS Core and AI System Registry
 
 ## Current Position
 
-Phase: 4 of 10 (CTO and AppSec Agents with Security Engineering)
-Plan: 5 of 5 complete in current phase
-Status: Phase 4 COMPLETE. All 5 plans executed: CTO Agent, AppSec Agent, Threat Modeling, SAST/DAST, SBOM/Supply Chain.
-Last activity: 2026-02-22 -- Completed 04-05-PLAN.md (SBOM Generation and Supply Chain Security)
+Phase: 5 of 10 (AIMS Core and AI System Registry)
+Plan: 2 of 4 complete in current phase
+Status: Plan 05-02 complete (AI Risk and Impact Assessment Procedures). 2 plans remaining in Phase 5.
+Last activity: 2026-02-22 -- Completed 05-02-PLAN.md (AI Risk and Impact Assessment Procedures)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 57%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 17
+- Total plans completed: 19
 - Average duration: 10min
-- Total execution time: 2.70 hours
+- Total execution time: 2.93 hours
 
 **By Phase:**
 
@@ -31,10 +31,11 @@ Progress: [█████░░░░░] 50%
 | 2 | 4 | 27min | 7min |
 | 3 | 4 | 34min | 9min |
 | 4 | 5 | 29min | 6min |
+| 5 | 1 | 6min | 6min |
 
 **Recent Trend:**
-- Last 5 plans: 04-05 (6min), 04-04 (7min), 04-03 (7min), 04-02 (4min), 04-01 (5min)
-- Trend: Phase 4 complete in 29 min total (5 plans). Security engineering specs averaging 6-7 min. Wave 2 (3 plans) executed in 20 min.
+- Last 5 plans: 05-01 (6min), 04-05 (6min), 04-04 (7min), 04-03 (7min), 04-02 (4min)
+- Trend: Phase 5 started. AI System Registry completed in 6 min (11 YAML files + consolidation script).
 
 *Updated after each plan completion*
 
@@ -133,6 +134,10 @@ Recent decisions affecting current work:
 - [04-05]: Monthly SBOM review cycle (first week of month) covering dependencies, licenses, vulnerabilities, supply chain risk
 - [04-05]: License whitelist: MIT, Apache-2.0, ISC, BSD-2-Clause, BSD-3-Clause, 0BSD, CC0-1.0; copyleft requires CTO+CISO approval
 - [04-05]: Provenance verification required before production deployment; verification failures block deployment
+- [05-01]: 24-field YAML schema per registry entry covering system identity, EU AI Act classification, SDLC tier, data I/O, controls, and lifecycle
+- [05-01]: Three categories (development-ai, third-party-ai, product-ai) matching AI Policy Section 1 taxonomy
+- [05-01]: Product AI systems have 36 applicable controls; third-party tools have 5-6; agents have 10-19 reflecting actual governance needs
+- [05-01]: Separate consolidation script for AI registry (not extending soa/scripts/generate-soa.js) avoids risk to working ISO 27001 SoA output
 
 ### Pending Todos
 
@@ -148,6 +153,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-CONTEXT.md
-Next: /gsd:plan-phase 5
+Stopped at: Completed 05-01-PLAN.md (AI System Registry)
+Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-01-SUMMARY.md
+Next: Execute 05-02-PLAN.md (AI Risk and Impact Assessment Procedures)
