@@ -64,7 +64,7 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 
 ### Security Engineering
 
-- [ ] **SENG-01**: Threat modeling framework produced — STRIDE/LINDDUN templates, threat-model-as-code approach
+- [x] **SENG-01**: Threat modeling framework produced — STRIDE/LINDDUN templates, threat-model-as-code approach
 - [x] **SENG-02**: SAST/DAST configuration produced — tool selection, pipeline integration, pass/fail criteria
 - [x] **SENG-03**: SBOM generation pipeline defined — CycloneDX format, per-release generation, dependency tracking
 - [x] **SENG-04**: Supply chain security framework produced — SLSA level targeting, artifact signing (Sigstore/Cosign), provenance verification
@@ -157,7 +157,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | OPCT-04 | Phase 7 | Pending |
 | OPCT-05 | Phase 7 | Pending |
 | OPCT-06 | Phase 7 | Pending |
-| SENG-01 | Phase 4 | Pending |
+| SENG-01 | Phase 4 | Complete |
 | SENG-02 | Phase 4 | Complete |
 | SENG-03 | Phase 4 | Complete |
 | SENG-04 | Phase 4 | Complete |

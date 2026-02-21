@@ -116,6 +116,10 @@ Recent decisions affecting current work:
 - [04-02]: Domain context focused on security engineering, not duplicating CISO organizational context (refers to HH-CISO-REF-001)
 - [04-02]: Centralized false positive management (semgrepignore + policy file) chosen over inline suppressions
 - [04-02]: LINDDUN applicability gated by GDPR scope: Claude Code agent system excluded, Verity products included
+- [04-03]: Threat model YAML schema (HH-SENG-TM-SCHEMA-001) with multi-document format consistent with risk register pattern
+- [04-03]: TM-CLAUDE-001 (STRIDE only, 15 threats, 8 components) and TM-VERITY-CMS-001 (STRIDE+LINDDUN, 20 threats, 7 components) validate framework
+- [04-03]: All 79 mitigation references use A.X.Y format matching SoA file naming for automated cross-referencing
+- [04-03]: Auditor traceability chain complete: Risk Register -> Threat Model -> Annex A Control -> SoA -> Evidence
 - [04-04]: Semgrep CE selected as primary SAST tool: free for all repos, native TypeScript/JavaScript support, SARIF output, fast CI scans
 - [04-04]: OWASP ZAP selected as primary DAST tool: open-source, Docker-based CI integration, baseline and full scan modes
 - [04-04]: Dependabot selected as primary dependency scanner: free, native GitHub integration, automated fix PRs
