@@ -1,0 +1,604 @@
+# Threat Model: Verity CMS (Payload CMS Backend)
+# Conforming to: HH-SENG-TM-SCHEMA-001 v1.0
+# Classification: Confidential
+# Produced by: AppSec Agent (Phase 4 Plan 03)
+
+---
+threat-model-id: TM-VERITY-CMS-001
+system-name: "Verity CMS (Payload CMS Backend)"
+version: v1.0
+date: 2026-02-22
+classification: Confidential
+author: AppSec Agent
+reviewer:
+  - CTO
+  - CISO
+status: Draft
+methodology: "STRIDE+LINDDUN"
+linddun-applied: true  # CMS processes admin user personal data (GDPR scope)
+
+# =============================================================================
+# SYSTEM DESCRIPTION
+# =============================================================================
+system-description: >
+  Verity CMS is the content management backend for the Verity product suite,
+  operated by Helge Heupel GmbH. It is built on Payload CMS (Next.js framework)
+  deployed on Vercel (verity-cms.vercel.app), with Neon PostgreSQL as the managed
+  database. Admin users (content editors within the HH Group) access the CMS admin
+  panel to manage content that is consumed by the Verity website (Qwik frontend on
+  Cloudflare Pages at verity-website.pages.dev). The CMS stores content data,
+  admin user accounts, and media assets. It may handle content that references
+  Verity VE [PATENT-VE-001] and Verity EAM [PATENT-EAM-001] product information.
+  LINDDUN applies because the system stores and processes admin user personal data
+  (names, email addresses, authentication credentials, activity logs).
+
+# =============================================================================
+# DATA FLOWS
+# =============================================================================
+data-flows:
+  - id: DF-001
+    name: "Admin user authentication"
+    source: "Admin users"
+    destination: "Payload CMS admin"
+    data-type: "Login credentials (email, password), session tokens"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-001 (internet -> Vercel)
+
+  - id: DF-002
+    name: "Content management operations"
+    source: "Admin users"
+    destination: "Payload CMS admin"
+    data-type: "Content create/read/update/delete requests, media uploads"
+    classification: Internal
+    trust-boundary-crossing: true  # Crosses TB-001
+
+  - id: DF-003
+    name: "CMS API to database queries"
+    source: "Payload CMS API"
+    destination: "Neon PostgreSQL"
+    data-type: "SQL queries (via Drizzle ORM) for content, user accounts, media metadata"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-002 (Vercel -> Neon)
+
+  - id: DF-004
+    name: "Database query results"
+    source: "Neon PostgreSQL"
+    destination: "Payload CMS API"
+    data-type: "Content records, user account data, media metadata, migration state"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-002
+
+  - id: DF-005
+    name: "Content API delivery to Verity website"
+    source: "Payload CMS API"
+    destination: "Verity website (Cloudflare Pages)"
+    data-type: "REST/GraphQL content responses, media URLs"
+    classification: Internal
+    trust-boundary-crossing: true  # Crosses TB-003 (Vercel -> Cloudflare Pages)
+
+  - id: DF-006
+    name: "Public visitor requests to Verity website"
+    source: "External visitors"
+    destination: "Verity website (Cloudflare Pages)"
+    data-type: "HTTP requests for public content pages"
+    classification: Public
+    trust-boundary-crossing: true  # Crosses TB-003
+
+  - id: DF-007
+    name: "Vercel deployment pipeline"
+    source: "Git repository (GitHub)"
+    destination: "Vercel platform"
+    data-type: "Source code, environment variables, build configuration"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-001
+
+# =============================================================================
+# TRUST BOUNDARIES
+# =============================================================================
+trust-boundaries:
+  - id: TB-001
+    name: "Internet to Vercel boundary"
+    description: >
+      Separates external users (admin users, public visitors) from the
+      Payload CMS application hosted on Vercel. All inbound traffic traverses
+      the public internet. Vercel provides TLS termination and edge network.
+    components-inside:
+      - COMP-002  # Payload CMS admin
+      - COMP-003  # Payload CMS API
+    components-outside:
+      - COMP-001  # Admin users
+      - COMP-007  # External visitors
+
+  - id: TB-002
+    name: "Vercel to Neon database boundary"
+    description: >
+      Separates the Vercel-hosted application layer from the Neon-managed
+      PostgreSQL database. Database connections use connection strings with
+      SSL enforcement. Only the Payload CMS API service connects to the
+      database; no direct database access from admin users or external services.
+    components-inside:
+      - COMP-004  # Neon PostgreSQL
+    components-outside:
+      - COMP-003  # Payload CMS API
+
+  - id: TB-003
+    name: "Vercel to Cloudflare Pages boundary"
+    description: >
+      Separates the CMS backend (Vercel) from the Verity website frontend
+      (Cloudflare Pages). Content flows from CMS to website via API calls.
+      These are separate deployment platforms with separate access controls,
+      DNS configurations, and SSL certificates.
+    components-inside:
+      - COMP-005  # Vercel platform (CMS hosting)
+    components-outside:
+      - COMP-006  # Cloudflare Pages (website hosting)
+
+# =============================================================================
+# COMPONENTS AND THREATS
+# =============================================================================
+components:
+  # ---------------------------------------------------------------------------
+  # COMP-001: Admin Users (External Entity)
+  # ---------------------------------------------------------------------------
+  - id: COMP-001
+    name: "Admin users"
+    type: external-entity
+    technology: "Web browser accessing verity-cms.vercel.app"
+    threats:
+      - threat-id: T-001
+        category: Spoofing
+        description: >
+          An attacker steals admin user credentials (email + password) via
+          phishing, credential stuffing, or session hijacking to impersonate
+          a legitimate content editor. With admin access, the attacker can
+          modify, delete, or publish content on the Verity website, potentially
+          injecting malicious content or defacing the site.
+        likelihood: 3  # Possible: phishing targeting CMS admin credentials
+        impact: 4      # Major: unauthorized content modification, brand damage
+        risk-score: 12
+        mitigations:
+          - control-id: A.5.17
+            description: "MFA enforcement via Payload CMS or Entra ID SSO integration for all admin user authentication"
+            status: planned
+          - control-id: A.8.5
+            description: "Strong authentication requirements: minimum password complexity, account lockout after 5 failed attempts"
+            status: planned
+          - control-id: A.5.16
+            description: "Identity management: admin user accounts provisioned only for HH Group team members with documented need"
+            status: implemented
+        residual-risk: medium
+
+      - threat-id: T-002
+        category: Repudiation
+        description: >
+          A content editor makes a destructive change (deleting pages, modifying
+          product content referencing [PATENT-VE-001]) and denies responsibility
+          because the CMS audit trail is insufficient to prove which admin user
+          performed the action.
+        likelihood: 2  # Unlikely: Payload CMS has audit logging capabilities
+        impact: 3      # Moderate: content integrity dispute, recovery from backups
+        risk-score: 6
+        mitigations:
+          - control-id: A.8.15
+            description: "CMS audit logging of all content operations (create, update, delete) with authenticated user ID and timestamp"
+            status: planned
+          - control-id: A.8.13
+            description: "Information backup: automated Neon PostgreSQL backups enabling content recovery"
+            status: implemented
+        residual-risk: low
+
+  # ---------------------------------------------------------------------------
+  # COMP-002: Payload CMS Admin (Process)
+  # ---------------------------------------------------------------------------
+  - id: COMP-002
+    name: "Payload CMS admin"
+    type: process
+    technology: "Payload CMS 3.x (Next.js admin interface) on Vercel"
+    threats:
+      - threat-id: T-003
+        category: Tampering
+        description: >
+          An attacker exploits a cross-site scripting (XSS) vulnerability in
+          the Payload CMS admin interface to inject malicious JavaScript that
+          executes in the context of authenticated admin sessions. This could
+          steal session tokens, modify content silently, or redirect admin
+          users to phishing pages.
+        likelihood: 2  # Unlikely: Payload CMS uses React with built-in XSS protection
+        impact: 4      # Major: session hijacking, unauthorized content modification
+        risk-score: 8
+        mitigations:
+          - control-id: A.8.28
+            description: "Secure coding: React framework provides automatic XSS escaping; Semgrep SAST rules scan for dangerouslySetInnerHTML patterns"
+            status: planned
+          - control-id: A.8.26
+            description: "Application security requirements: Content Security Policy (CSP) headers to prevent inline script execution"
+            status: planned
+        residual-risk: medium
+
+      - threat-id: T-004
+        category: Denial-of-Service
+        description: >
+          An attacker overwhelms the Payload CMS admin interface with excessive
+          requests or exploits a resource-intensive API endpoint (e.g., complex
+          GraphQL query, bulk media upload) to exhaust Vercel serverless function
+          limits, making the CMS unavailable for legitimate content editors.
+        likelihood: 2  # Unlikely: Vercel provides DDoS protection at edge
+        impact: 3      # Moderate: content editors unable to publish temporarily
+        risk-score: 6
+        mitigations:
+          - control-id: A.8.20
+            description: "Vercel edge network provides DDoS mitigation and rate limiting for serverless functions"
+            status: implemented
+          - control-id: A.8.26
+            description: "GraphQL query depth limiting and complexity analysis to prevent resource-exhaustion queries"
+            status: planned
+        residual-risk: low
+
+      - threat-id: T-005
+        category: Elevation-of-Privilege
+        description: >
+          A content editor with limited role permissions (e.g., can only edit
+          blog posts) exploits a Payload CMS access control bypass to gain
+          admin-level privileges, enabling them to modify system configuration,
+          create admin accounts, or access restricted collections.
+        likelihood: 2  # Unlikely: Payload CMS has role-based access control
+        impact: 4      # Major: full CMS control from limited-privilege account
+        risk-score: 8
+        mitigations:
+          - control-id: A.8.3
+            description: "Payload CMS role-based access control with per-collection permissions restricting user capabilities"
+            status: implemented
+          - control-id: A.8.29
+            description: "Security testing: DAST scanning of CMS admin for authorization bypass vulnerabilities"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-003: Payload CMS API (Process)
+  # ---------------------------------------------------------------------------
+  - id: COMP-003
+    name: "Payload CMS API"
+    type: process
+    technology: "Payload CMS REST and GraphQL API (Next.js API routes) on Vercel"
+    threats:
+      - threat-id: T-006
+        category: Tampering
+        description: >
+          An attacker sends crafted API requests to the Payload CMS REST or
+          GraphQL endpoints to bypass input validation and modify content
+          records, user accounts, or system configuration in the Neon database.
+          This includes mass assignment attacks where unexpected fields in
+          API payloads alter protected properties.
+        likelihood: 3  # Possible: API endpoints are externally accessible
+        impact: 4      # Major: data integrity compromise in production database
+        risk-score: 12
+        mitigations:
+          - control-id: A.8.26
+            description: "Input validation enforced at the Payload CMS API layer with schema validation for all mutation operations"
+            status: implemented
+          - control-id: A.8.28
+            description: "Semgrep SAST scanning for mass assignment and injection patterns in API route handlers"
+            status: planned
+          - control-id: A.8.25
+            description: "API authentication required for all mutation endpoints; read endpoints scoped by collection access control"
+            status: implemented
+        residual-risk: medium
+
+      - threat-id: T-007
+        category: Information-Disclosure
+        description: >
+          The Payload CMS API returns excessive data in API responses (including
+          internal fields, draft content, or admin user details) to authenticated
+          or unauthenticated callers due to insufficient field-level access
+          control or missing response filtering. The Verity website's API calls
+          could inadvertently expose content not intended for public consumption.
+        likelihood: 3  # Possible: GraphQL introspection and flexible queries increase exposure
+        impact: 3      # Moderate: internal content or user details exposed
+        risk-score: 9
+        mitigations:
+          - control-id: A.8.3
+            description: "Payload CMS collection-level and field-level access control restricting API response content per user role"
+            status: implemented
+          - control-id: A.8.26
+            description: "Disable GraphQL introspection in production; restrict query depth and field exposure"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-004: Neon PostgreSQL (Datastore)
+  # ---------------------------------------------------------------------------
+  - id: COMP-004
+    name: "Neon PostgreSQL"
+    type: datastore
+    technology: "Neon managed PostgreSQL (serverless, cloud-hosted)"
+    threats:
+      - threat-id: T-008
+        category: Information-Disclosure
+        description: >
+          An attacker exploits a SQL injection vulnerability in the Payload CMS
+          API (bypassing the Drizzle ORM) or compromises the Neon database
+          connection string to directly query the PostgreSQL database, extracting
+          admin user credentials, content data, and potentially content that
+          references Verity VE [PATENT-VE-001] product information.
+        likelihood: 2  # Unlikely: Drizzle ORM uses parameterized queries
+        impact: 5      # Severe: full database exposure including user credentials
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.25
+            description: "Parameterized queries enforced via Drizzle ORM; no raw SQL queries in application code"
+            status: implemented
+          - control-id: A.8.24
+            description: "Database connection strings stored in Vercel environment variables (encrypted at rest), not in source code"
+            status: implemented
+          - control-id: A.8.5
+            description: "Neon database access restricted by connection string with SSL enforcement; no public IP exposure"
+            status: implemented
+        residual-risk: medium
+
+      - threat-id: T-009
+        category: Tampering
+        description: >
+          A compromised application or leaked database connection string is used
+          to directly modify database records, bypassing Payload CMS application-
+          level access controls and audit logging. An attacker could alter
+          published content, escalate user privileges, or corrupt migration state.
+        likelihood: 2  # Unlikely: connection string is encrypted in Vercel env vars
+        impact: 4      # Major: undetected data modification at database level
+        risk-score: 8
+        mitigations:
+          - control-id: A.8.9
+            description: "Database connection strings managed via Vercel environment variables with encryption at rest"
+            status: implemented
+          - control-id: A.8.15
+            description: "Neon PostgreSQL audit logging for direct database access and DDL/DML operations"
+            status: planned
+          - control-id: A.5.18
+            description: "Quarterly review of Neon database access: ensure only Vercel deployment has connection credentials"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-005: Vercel (External Entity / Hosting)
+  # ---------------------------------------------------------------------------
+  - id: COMP-005
+    name: "Vercel platform"
+    type: external-entity
+    technology: "Vercel serverless deployment platform"
+    threats:
+      - threat-id: T-010
+        category: Elevation-of-Privilege
+        description: >
+          An attacker compromises the Vercel deployment pipeline (via leaked
+          Vercel API token, GitHub integration exploit, or supply chain attack
+          on the build process) to deploy a modified version of the CMS
+          containing backdoors, data exfiltration code, or malicious content
+          injection logic.
+        likelihood: 2  # Unlikely: Vercel deployment requires GitHub integration authentication
+        impact: 5      # Severe: complete application compromise via malicious deployment
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.27
+            description: "Secure architecture: Vercel deployment triggered only from main branch after PR merge with required reviews"
+            status: implemented
+          - control-id: A.8.9
+            description: "Vercel API tokens and environment variables managed with least-privilege access"
+            status: implemented
+          - control-id: A.5.21
+            description: "ICT supply chain: review Vercel platform security posture and SOC 2 attestation annually"
+            status: planned
+        residual-risk: medium
+
+      - threat-id: T-011
+        category: Information-Disclosure
+        description: >
+          Vercel build logs, function logs, or error traces expose sensitive
+          information (database connection strings, API keys, internal system
+          paths, or content marked as Confidential) in the Vercel dashboard
+          accessible to team members with Vercel account access.
+        likelihood: 3  # Possible: error messages commonly leak sensitive details
+        impact: 3      # Moderate: internal system details exposed to broad team access
+        risk-score: 9
+        mitigations:
+          - control-id: A.8.9
+            description: "Environment variables marked as sensitive in Vercel to prevent exposure in build logs"
+            status: implemented
+          - control-id: A.8.15
+            description: "Log sanitization: configure error handling to mask sensitive data in error responses and build output"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-006: Cloudflare Pages (External Entity / Hosting)
+  # ---------------------------------------------------------------------------
+  - id: COMP-006
+    name: "Cloudflare Pages"
+    type: external-entity
+    technology: "Cloudflare Pages hosting the Verity website (verity-website.pages.dev)"
+    threats:
+      - threat-id: T-012
+        category: Tampering
+        description: >
+          An attacker compromises the Cloudflare Pages deployment or DNS
+          configuration to serve modified Verity website content to visitors,
+          potentially defacing the site, injecting malicious scripts, or
+          redirecting users to phishing pages.
+        likelihood: 2  # Unlikely: Cloudflare has robust security and DNS protection
+        impact: 4      # Major: brand damage, visitor data compromise
+        risk-score: 8
+        mitigations:
+          - control-id: A.8.27
+            description: "Cloudflare Pages deployment from Git with automated builds; manual deployment disabled"
+            status: implemented
+          - control-id: A.8.21
+            description: "DNSSEC and Cloudflare DNS protection preventing DNS hijacking and cache poisoning"
+            status: implemented
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-007: External Visitors (External Entity)
+  # ---------------------------------------------------------------------------
+  - id: COMP-007
+    name: "External visitors"
+    type: external-entity
+    technology: "Web browser accessing verity-website.pages.dev"
+    threats:
+      - threat-id: T-013
+        category: Spoofing
+        description: >
+          An attacker creates a phishing site that impersonates the Verity
+          website (verity-website.pages.dev) to trick visitors into submitting
+          data or credentials, damaging HH brand reputation and potentially
+          capturing visitor information.
+        likelihood: 2  # Unlikely: requires domain typosquatting or DNS manipulation
+        impact: 3      # Moderate: brand reputation damage, potential visitor data loss
+        risk-score: 6
+        mitigations:
+          - control-id: A.8.21
+            description: "DNSSEC enforcement on verity-website domain preventing DNS-based impersonation"
+            status: implemented
+          - control-id: A.5.23
+            description: "Cloudflare SSL/TLS enforcement with HSTS headers preventing downgrade attacks"
+            status: implemented
+        residual-risk: low
+
+# =============================================================================
+# LINDDUN THREATS
+# Applied because Verity CMS processes admin user personal data (GDPR scope).
+# =============================================================================
+linddun-threats:
+  - threat-id: LT-001
+    category: Linkability
+    component-id: COMP-004  # Neon PostgreSQL
+    description: >
+      CMS content metadata (created_by, updated_by fields, timestamps) stored
+      in the Neon PostgreSQL database links admin user identities across all
+      content operations, building a comprehensive activity profile of each
+      content editor. This metadata persists indefinitely and can reveal
+      work patterns, content preferences, and activity volumes beyond what
+      is necessary for content management purposes.
+    gdpr-article: "Art. 5(1)(b) purpose limitation, Art. 5(1)(e) storage limitation"
+    mitigations:
+      - control-id: A.8.11
+        description: "Pseudonymize author metadata in content records by using user IDs instead of names/emails in content audit fields"
+        status: planned
+      - control-id: A.8.10
+        description: "Enforce metadata retention limits: anonymize content author metadata after 24 months of content publication"
+        status: planned
+
+  - threat-id: LT-002
+    category: Identifiability
+    component-id: COMP-002  # Payload CMS admin
+    description: >
+      Admin user accounts in the Payload CMS admin panel contain directly
+      identifying personal data (full name, email address) visible to all
+      other admin users and potentially exposed via API responses. The admin
+      user list functions as a directory of HH Group team members with CMS
+      access, violating data minimisation principles if not restricted.
+    gdpr-article: "Art. 5(1)(c) data minimisation, Art. 25 data protection by design"
+    mitigations:
+      - control-id: A.8.3
+        description: "Restrict admin user list visibility: only users with admin role can see full user directory; editors see only display names"
+        status: planned
+      - control-id: A.5.34
+        description: "Privacy by design: minimize personal data fields in user profiles to what is operationally necessary"
+        status: planned
+
+  - threat-id: LT-003
+    category: Non-repudiation
+    component-id: COMP-004  # Neon PostgreSQL
+    description: >
+      The CMS maintains immutable audit logs linking every content operation
+      to a specific admin user. When an admin user exercises their right to
+      erasure (Art. 17), their personal data in user account records can be
+      deleted, but their identity persists in audit logs and content metadata
+      (created_by, updated_by fields), creating a conflict between audit
+      integrity requirements (ISO 27001 cl. 7.5) and privacy rights.
+    gdpr-article: "Art. 17 right to erasure, Art. 5(1)(f) integrity and confidentiality"
+    mitigations:
+      - control-id: A.8.10
+        description: "Implement erasure procedure that anonymizes user identity in audit logs and content metadata while preserving the audit trail"
+        status: planned
+      - control-id: A.5.34
+        description: "Document the lawful basis (legitimate interest under Art. 6(1)(f)) for retaining anonymized audit records after user account deletion"
+        status: planned
+
+  - threat-id: LT-004
+    category: Detectability
+    component-id: COMP-002  # Payload CMS admin
+    description: >
+      The Payload CMS login page reveals whether an email address is registered
+      as an admin account through different error messages for valid vs. invalid
+      email addresses (user enumeration). An attacker can probe the login
+      endpoint to determine which HH Group members have CMS access.
+    gdpr-article: "Art. 5(1)(c) data minimisation, Art. 25 data protection by design"
+    mitigations:
+      - control-id: A.8.26
+        description: "Configure identical error responses for valid and invalid login attempts to prevent user enumeration"
+        status: planned
+
+  - threat-id: LT-005
+    category: Disclosure-of-information
+    component-id: COMP-003  # Payload CMS API
+    description: >
+      Admin user personal data (email addresses, names, role assignments,
+      last login timestamps) is exposed through the Payload CMS API endpoints
+      (REST or GraphQL) to authenticated callers without proper field-level
+      access control, resulting in personal data disclosure beyond the intended
+      audience. A personal data breach under GDPR Art. 33 could be triggered
+      if this data is exposed to unauthorized parties.
+    gdpr-article: "Art. 5(1)(f) confidentiality, Art. 32 security of processing, Art. 33 breach notification"
+    mitigations:
+      - control-id: A.8.3
+        description: "Field-level access control on user collection: restrict personal data fields (email, name) to admin role only"
+        status: planned
+      - control-id: A.8.25
+        description: "SAST/DAST scanning for API endpoints that expose personal data without authorization checks"
+        status: planned
+
+  - threat-id: LT-006
+    category: Unawareness
+    component-id: COMP-001  # Admin users
+    description: >
+      Admin users (content editors) are not adequately informed about what
+      personal data the CMS collects, how long it is retained, who has access
+      to it, and what their data subject rights are. The CMS does not present
+      a privacy notice at account creation or login. Admin users may be
+      unaware that their activity is logged and linked to their identity.
+    gdpr-article: "Art. 12 transparent information, Art. 13 information at collection"
+    mitigations:
+      - control-id: A.5.34
+        description: "Privacy notice for CMS admin users covering Art. 13 required information: data controller, purposes, retention, rights"
+        status: planned
+      - control-id: A.6.2
+        description: "Employment terms (or contractor agreements) include data processing transparency for internal tools including CMS"
+        status: planned
+
+  - threat-id: LT-007
+    category: Non-compliance
+    component-id: COMP-004  # Neon PostgreSQL
+    description: >
+      The CMS cannot fulfill data subject rights requests (Art. 17 erasure,
+      Art. 20 portability) within the GDPR-mandated one-month timeframe
+      (Art. 12(3)) because admin user data is distributed across the user
+      accounts table, content metadata fields, and audit logs in the Neon
+      PostgreSQL database without a centralized data subject request mechanism.
+    gdpr-article: "Art. 12(3) response timeframe, Art. 17 right to erasure, Art. 20 right to portability"
+    mitigations:
+      - control-id: A.5.34
+        description: "Data subject request procedure: document all locations of admin user personal data in the CMS database schema"
+        status: planned
+      - control-id: A.8.10
+        description: "Build technical capability to locate and delete/export all personal data for a given admin user across all database tables"
+        status: planned
+
+# =============================================================================
+# RISK REFERENCES
+# =============================================================================
+risk-references:
+  - RISK-SEC-001  # Phishing attack compromises employee credentials (admin access)
+  - RISK-SEC-003  # Data breach exposing confidential information
+  - RISK-SEC-005  # API key or secret exposure in Git repository (DB connection strings)
+  - RISK-SUP-004  # Open-source dependency vulnerability in Verity product supply chain
+  - RISK-OPS-002  # CI/CD pipeline compromise affecting deployment integrity
+  - RISK-SEC-002  # Unauthorized access via RBAC bypass (admin panel access control)
+---

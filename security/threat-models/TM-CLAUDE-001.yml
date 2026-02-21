@@ -1,0 +1,530 @@
+# Threat Model: Claude Code Agent System
+# Conforming to: HH-SENG-TM-SCHEMA-001 v1.0
+# Classification: Confidential
+# Produced by: AppSec Agent (Phase 4 Plan 03)
+
+---
+threat-model-id: TM-CLAUDE-001
+system-name: "Claude Code Agent System"
+version: v1.0
+date: 2026-02-22
+classification: Confidential
+author: AppSec Agent
+reviewer:
+  - CTO
+  - CISO
+status: Draft
+methodology: STRIDE
+linddun-applied: false  # Agent system processes SDLC artifacts, not personal data
+
+# =============================================================================
+# SYSTEM DESCRIPTION
+# =============================================================================
+system-description: >
+  The Claude Code Agent System is a 7-agent AI-assisted SDLC platform operated by
+  the Helge Heupel Group (GmbH, B.V.). CEO Helge Heupel orchestrates 7 specialized
+  Claude Code agents (SDLC Lead, CTO, CISO, AI Science, Platform/SRE, Product/Strategy,
+  AppSec) via the Claude Code CLI. Agents read reference documents and risk register
+  entries from the Git repository, submit prompts to the Anthropic API, and produce
+  compliance artifacts (policies, risk assessments, threat models, ADRs) that are
+  committed to Git. All agents operate at Trust Level 2 (Supervised Autonomous) with
+  mandatory human review via PR before any artifact is merged.
+
+# =============================================================================
+# DATA FLOWS
+# =============================================================================
+data-flows:
+  - id: DF-001
+    name: "CEO prompt input"
+    source: "CEO (Helge Heupel)"
+    destination: "Claude Code CLI"
+    data-type: "Natural language prompt with task instructions"
+    classification: Internal
+    trust-boundary-crossing: false
+
+  - id: DF-002
+    name: "Prompt and context submission to Anthropic API"
+    source: "Claude Code CLI"
+    destination: "Anthropic API"
+    data-type: "Prompt text, system prompt (CLAUDE.md), reference document excerpts, conversation history"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-001 (local machine -> cloud)
+
+  - id: DF-003
+    name: "LLM response from Anthropic API"
+    source: "Anthropic API"
+    destination: "Claude Code CLI"
+    data-type: "Generated text, tool use requests, artifact content"
+    classification: Internal
+    trust-boundary-crossing: true  # Crosses TB-001 (cloud -> local machine)
+
+  - id: DF-004
+    name: "Artifact write to Git repository"
+    source: "Claude Code CLI"
+    destination: "Git repository"
+    data-type: "Compliance artifacts (policies, risk entries, threat models, ADRs, configurations)"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-002 (runtime -> persisted)
+
+  - id: DF-005
+    name: "Context read from Git repository"
+    source: "Git repository"
+    destination: "Claude Code CLI"
+    data-type: "Reference documents (domain-context.md), policies, risk register entries, SoA files"
+    classification: Confidential
+    trust-boundary-crossing: true  # Crosses TB-002 (persisted -> runtime)
+
+  - id: DF-006
+    name: "Task delegation to subagent"
+    source: "Parent agent (via Claude Code Task tool)"
+    destination: "Subagent (spawned Claude Code instance)"
+    data-type: "Task prompt, file path references, expected output format, tool permissions"
+    classification: Internal
+    trust-boundary-crossing: true  # Crosses TB-003 (parent -> child privilege)
+
+  - id: DF-007
+    name: "Subagent result return"
+    source: "Subagent (spawned Claude Code instance)"
+    destination: "Parent agent (via Claude Code Task tool)"
+    data-type: "Task result text, structured output, file modification summaries"
+    classification: Internal
+    trust-boundary-crossing: true  # Crosses TB-003 (child -> parent privilege)
+
+# =============================================================================
+# TRUST BOUNDARIES
+# =============================================================================
+trust-boundaries:
+  - id: TB-001
+    name: "Local machine to cloud API boundary"
+    description: >
+      Separates the CEO's local machine (where Claude Code CLI runs) from the
+      Anthropic cloud API. Prompts and context crossing this boundary leave HH's
+      infrastructure and are processed by Anthropic's servers. Data classification
+      constraints apply: Secret-classified content must never cross this boundary.
+    components-inside:
+      - COMP-001  # CEO
+      - COMP-002  # Claude Code CLI
+      - COMP-004  # Agent CLAUDE.md files
+      - COMP-005  # Reference documents
+      - COMP-006  # Git repository
+    components-outside:
+      - COMP-003  # Anthropic API
+
+  - id: TB-002
+    name: "Git repository persistence boundary"
+    description: >
+      Separates runtime agent operations (in-memory prompt processing) from
+      persisted artifacts in the Git repository. Artifacts crossing this boundary
+      become the permanent record and audit trail. All writes to the repository
+      require review via PR before merge to main.
+    components-inside:
+      - COMP-006  # Git repository
+      - COMP-004  # Agent CLAUDE.md files (stored in Git)
+      - COMP-005  # Reference documents (stored in Git)
+      - COMP-008  # Generated artifacts (once committed)
+    components-outside:
+      - COMP-002  # Claude Code CLI (runtime)
+      - COMP-007  # Subagent spawning (runtime)
+
+  - id: TB-003
+    name: "Agent privilege boundary"
+    description: >
+      Separates parent agent execution from subagent execution. Subagents are
+      spawned with restricted tool permissions (typically Read/Grep/Glob/Bash)
+      and limited maxTurns. A subagent should not be able to write files or
+      escalate its own permissions beyond what the parent granted.
+    components-inside:
+      - COMP-002  # Claude Code CLI (parent agent context)
+    components-outside:
+      - COMP-007  # Subagent spawning (child agent context)
+
+# =============================================================================
+# COMPONENTS AND THREATS
+# =============================================================================
+components:
+  # ---------------------------------------------------------------------------
+  # COMP-001: CEO (External Entity)
+  # ---------------------------------------------------------------------------
+  - id: COMP-001
+    name: "CEO (Helge Heupel)"
+    type: external-entity
+    technology: "Human user interacting via terminal (macOS)"
+    threats:
+      - threat-id: T-001
+        category: Spoofing
+        description: >
+          An attacker gains access to the CEO's macOS workstation or terminal
+          session and issues prompts to Claude Code agents impersonating the CEO.
+          Because the CEO is the sole orchestrator with full tool permissions and
+          risk acceptance authority, a compromised CEO session grants the attacker
+          the ability to produce and commit arbitrary artifacts including modified
+          security policies and false risk acceptance records.
+        likelihood: 2  # Unlikely: requires physical or remote access to CEO's machine
+        impact: 5      # Severe: full control over compliance artifact production
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.1
+            description: "Endpoint device policy requiring disk encryption (FileVault), screen lock, and OS auto-update on CEO's macOS"
+            status: implemented
+          - control-id: A.8.5
+            description: "FIDO2 hardware key for CEO's privileged accounts (Entra ID, GitHub) preventing remote credential theft"
+            status: planned
+          - control-id: A.6.7
+            description: "Remote working security requirements including VPN and home network security baseline for CEO's workspace"
+            status: planned
+        residual-risk: medium
+
+      - threat-id: T-002
+        category: Repudiation
+        description: >
+          The CEO denies having issued a specific prompt or approved a specific
+          artifact, and the system cannot prove the CEO's involvement because
+          Claude Code session history is stored locally and can be deleted.
+          This undermines the audit trail for ISO 27001 cl. 7.5 document control.
+        likelihood: 2  # Unlikely: Git commits provide attribution
+        impact: 3      # Moderate: audit trail gap for specific session
+        risk-score: 6
+        mitigations:
+          - control-id: A.8.15
+            description: "Git commit history with GPG-signed commits providing tamper-evident attribution of all artifact changes"
+            status: planned
+          - control-id: A.5.36
+            description: "Periodic spot-check audits verifying Git commit authorship matches documented RACI assignments"
+            status: planned
+        residual-risk: low
+
+  # ---------------------------------------------------------------------------
+  # COMP-002: Claude Code CLI (Process)
+  # ---------------------------------------------------------------------------
+  - id: COMP-002
+    name: "Claude Code CLI"
+    type: process
+    technology: "Claude Code CLI (Anthropic) running on macOS terminal"
+    threats:
+      - threat-id: T-003
+        category: Tampering
+        description: >
+          An attacker modifies the Claude Code CLI binary or its configuration
+          files on the CEO's workstation to intercept, alter, or redirect
+          prompts and responses. A tampered CLI could silently modify agent
+          outputs, inject malicious content into generated artifacts, or
+          exfiltrate prompt content to an attacker-controlled server.
+        likelihood: 1  # Rare: requires endpoint compromise + targeted tampering
+        impact: 5      # Severe: silent modification of all agent outputs
+        risk-score: 5
+        mitigations:
+          - control-id: A.8.7
+            description: "Endpoint detection and response (EDR) on CEO's macOS monitoring for binary modification and anomalous network connections"
+            status: planned
+          - control-id: A.8.19
+            description: "Software installation restricted to verified sources; Claude Code installed via official Anthropic distribution"
+            status: implemented
+        residual-risk: low
+
+      - threat-id: T-004
+        category: Information-Disclosure
+        description: >
+          The Claude Code CLI includes Confidential or Secret-classified content
+          from reference documents (domain-context.md, risk register entries,
+          patent-referenced files) in prompts sent to the Anthropic API. This
+          data leaves HH's infrastructure and is processed by Anthropic's
+          servers, potentially violating the information classification policy
+          (HH-ISMS-POL-001) and TISAX prototype protection requirements.
+        likelihood: 4  # Likely: context window auto-includes referenced files
+        impact: 4      # Major: Confidential data sent to third-party API
+        risk-score: 16
+        mitigations:
+          - control-id: A.5.14
+            description: "Information transfer policy restricting Secret-classified content from being included in AI agent prompts"
+            status: planned
+          - control-id: A.5.12
+            description: "YAML frontmatter classification on all documents enables pre-submission classification checking"
+            status: implemented
+          - control-id: A.5.23
+            description: "Anthropic API usage governed by cloud service security requirements including data processing terms review"
+            status: planned
+        residual-risk: medium
+
+      - threat-id: T-005
+        category: Denial-of-Service
+        description: >
+          The Claude Code CLI exhausts the Anthropic API context window by
+          reading excessively large reference files, causing the agent session
+          to fail or produce truncated/incoherent outputs. During the critical
+          12-week certification timeline, repeated context window failures
+          could delay artifact production.
+        likelihood: 3  # Possible: large reference files can exceed context limits
+        impact: 2      # Minor: session restart with smaller context resolves
+        risk-score: 6
+        mitigations:
+          - control-id: A.8.25
+            description: "Progressive disclosure pattern in agent design: agents read domain-context.md first, load detailed references on demand"
+            status: implemented
+        residual-risk: low
+
+  # ---------------------------------------------------------------------------
+  # COMP-003: Anthropic API (External Entity)
+  # ---------------------------------------------------------------------------
+  - id: COMP-003
+    name: "Anthropic API"
+    type: external-entity
+    technology: "Anthropic Claude API (cloud-hosted LLM service)"
+    threats:
+      - threat-id: T-006
+        category: Information-Disclosure
+        description: >
+          Anthropic retains or logs prompt data containing HH Confidential
+          information (risk register entries, compliance gap details, organizational
+          vulnerabilities) beyond the data processing terms, or a breach of
+          Anthropic's systems exposes HH prompt data to unauthorized parties.
+        likelihood: 2  # Unlikely: Anthropic's API terms include data handling provisions
+        impact: 4      # Major: exposure of organizational security posture details
+        risk-score: 8
+        mitigations:
+          - control-id: A.5.19
+            description: "Supplier relationship management with documented review of Anthropic API data processing terms and retention policies"
+            status: planned
+          - control-id: A.5.22
+            description: "Monitoring and review of Anthropic's security posture, data handling updates, and incident disclosures"
+            status: planned
+        residual-risk: medium
+
+      - threat-id: T-007
+        category: Denial-of-Service
+        description: >
+          The Anthropic API becomes unavailable due to outage, rate limiting,
+          or service discontinuation, halting all 7 agents and blocking SDLC
+          artifact production during the certification timeline.
+        likelihood: 3  # Possible: API outages occur periodically
+        impact: 3      # Moderate: delays artifact production but manual fallback exists
+        risk-score: 9
+        mitigations:
+          - control-id: A.5.29
+            description: "Business continuity planning including manual compliance workflow procedures for agent-independent operation"
+            status: planned
+          - control-id: A.5.21
+            description: "ICT supply chain with documented migration path to alternative LLM providers (OpenAI, Google)"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-004: Agent CLAUDE.md Files (Datastore)
+  # ---------------------------------------------------------------------------
+  - id: COMP-004
+    name: "Agent CLAUDE.md files"
+    type: datastore
+    technology: "Markdown files with YAML frontmatter stored in Git (agents/[name]/CLAUDE.md)"
+    threats:
+      - threat-id: T-008
+        category: Tampering
+        description: >
+          An attacker or compromised insider modifies an agent's CLAUDE.md system
+          prompt to alter agent behavior: removing security boundaries (e.g.,
+          deleting the "Must NOT Do" section), changing the agent's identity to
+          produce biased outputs, or injecting instructions that cause the agent
+          to exfiltrate data or bypass review requirements.
+        likelihood: 2  # Unlikely: Git PR workflow requires review for all changes
+        impact: 5      # Severe: agent behavior completely controlled by CLAUDE.md
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.4
+            description: "Access control to source code with branch protection rules requiring PR review for changes to agents/ directory"
+            status: planned
+          - control-id: A.8.25
+            description: "Secure development lifecycle with mandatory code review for all CLAUDE.md modifications"
+            status: implemented
+          - control-id: A.8.32
+            description: "Change management requiring documented justification for agent system prompt changes"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-005: Reference Documents (Datastore)
+  # ---------------------------------------------------------------------------
+  - id: COMP-005
+    name: "Reference documents"
+    type: datastore
+    technology: "Markdown and YAML files in Git (domain-context.md, policies, risk register)"
+    threats:
+      - threat-id: T-009
+        category: Tampering
+        description: >
+          An attacker poisons a reference document (e.g., domain-context.md,
+          risk-assessment-methodology.md) with indirect prompt injection content
+          that manipulates agent behavior when the document is read during a
+          session. Because agents read reference files as trusted context, injected
+          instructions could override the CLAUDE.md boundaries.
+        likelihood: 3  # Possible: indirect prompt injection is a known LLM attack vector
+        impact: 4      # Major: compromised agent outputs affecting compliance artifacts
+        risk-score: 12
+        mitigations:
+          - control-id: A.8.4
+            description: "Access control to source code: reference document changes require PR review, limiting injection opportunity"
+            status: implemented
+          - control-id: A.5.7
+            description: "Threat intelligence monitoring for prompt injection techniques and LLM attack patterns"
+            status: planned
+          - control-id: A.8.28
+            description: "Secure coding practices including content validation patterns that flag suspicious instruction-like content in data files"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-006: Git Repository (Datastore)
+  # ---------------------------------------------------------------------------
+  - id: COMP-006
+    name: "Git repository"
+    type: datastore
+    technology: "Git repository hosted on GitHub"
+    threats:
+      - threat-id: T-010
+        category: Information-Disclosure
+        description: >
+          Confidential compliance artifacts (risk register entries, threat
+          models, vulnerability assessments) are exposed through misconfigured
+          repository visibility (accidentally set to public), leaked Git
+          credentials, or insufficient access controls on the GitHub organization.
+        likelihood: 2  # Unlikely: private repo with access controls
+        impact: 5      # Severe: exposure of full organizational security posture
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.4
+            description: "Source code access control with private repository, GitHub organization membership, and branch protection"
+            status: implemented
+          - control-id: A.5.15
+            description: "Access control policy with least-privilege GitHub organization roles"
+            status: implemented
+          - control-id: A.8.9
+            description: "Configuration management: repository visibility settings reviewed quarterly"
+            status: planned
+        residual-risk: medium
+
+      - threat-id: T-011
+        category: Tampering
+        description: >
+          An attacker with write access to the Git repository directly pushes
+          to the main branch bypassing PR review, modifying compliance artifacts
+          (e.g., altering risk scores, removing controls from the SoA, changing
+          policy content) without detection. This undermines the entire document
+          control and audit trail.
+        likelihood: 2  # Unlikely: branch protection rules prevent direct push
+        impact: 5      # Severe: undetected modification of audit-critical documents
+        risk-score: 10
+        mitigations:
+          - control-id: A.8.4
+            description: "Branch protection rules on main: require PR, require approval, no force push, no branch deletion"
+            status: planned
+          - control-id: A.8.15
+            description: "GitHub audit log monitoring for direct push attempts, branch protection changes, and admin actions"
+            status: planned
+        residual-risk: medium
+
+  # ---------------------------------------------------------------------------
+  # COMP-007: Subagent Spawning (Process)
+  # ---------------------------------------------------------------------------
+  - id: COMP-007
+    name: "Subagent spawning"
+    type: process
+    technology: "Claude Code Task tool spawning child agent instances"
+    threats:
+      - threat-id: T-012
+        category: Elevation-of-Privilege
+        description: >
+          A subagent spawned with restricted tool permissions (e.g., Read/Grep/Glob
+          only) exploits the Task tool or conversation context to gain Write or
+          Bash tool access, exceeding its intended privilege scope. A privilege-
+          escalated subagent could modify files, install software, or execute
+          commands beyond the parent agent's delegation intent.
+        likelihood: 2  # Unlikely: Claude Code enforces tool restrictions per spawn
+        impact: 4      # Major: unauthorized file modification or command execution
+        risk-score: 8
+        mitigations:
+          - control-id: A.8.2
+            description: "Privileged access management: subagent tool permissions explicitly scoped in spawn configuration per subagent-protocol.md"
+            status: implemented
+          - control-id: A.8.25
+            description: "Secure development lifecycle: maximum 2 re-spawns per subagent task before escalation, preventing runaway agents"
+            status: implemented
+        residual-risk: medium
+
+      - threat-id: T-013
+        category: Spoofing
+        description: >
+          A subagent returns fabricated results to its parent agent, claiming
+          analysis was performed when it was not, or returning incorrect data
+          that the parent incorporates into compliance artifacts without
+          validation. This produces flawed threat models, risk assessments,
+          or control mappings.
+        likelihood: 3  # Possible: LLM hallucination in subagent outputs is a known risk
+        impact: 3      # Moderate: incorrect content in compliance artifacts (caught during review)
+        risk-score: 9
+        mitigations:
+          - control-id: A.5.35
+            description: "Independent review: parent agent validates subagent results before incorporation per subagent-protocol.md"
+            status: implemented
+          - control-id: A.8.25
+            description: "All agent-generated artifacts require human review via PR before merge, catching subagent errors"
+            status: implemented
+        residual-risk: low
+
+  # ---------------------------------------------------------------------------
+  # COMP-008: Generated Artifacts (Datastore)
+  # ---------------------------------------------------------------------------
+  - id: COMP-008
+    name: "Generated artifacts"
+    type: datastore
+    technology: "Policies, risk assessments, ADRs, threat models produced by agents and stored in Git"
+    threats:
+      - threat-id: T-014
+        category: Repudiation
+        description: >
+          A generated artifact (e.g., risk treatment plan, policy section) is
+          committed to Git but the commit message and metadata do not clearly
+          identify which agent produced it or which human reviewed it, making
+          it impossible for an auditor to trace the artifact's origin and
+          approval chain per ISO 27001 cl. 7.5.
+        likelihood: 2  # Unlikely: commit conventions include agent identification
+        impact: 3      # Moderate: audit finding for incomplete document control
+        risk-score: 6
+        mitigations:
+          - control-id: A.5.37
+            description: "Documented operating procedures: commit message conventions include agent name and plan reference"
+            status: implemented
+          - control-id: A.5.1
+            description: "IS Policy document control requirements: YAML frontmatter with author, reviewer, approver fields on all artifacts"
+            status: implemented
+        residual-risk: low
+
+      - threat-id: T-015
+        category: Information-Disclosure
+        description: >
+          Generated artifacts inadvertently contain patent-sensitive details
+          about Verity VE [PATENT-VE-001] or Verity EAM [PATENT-EAM-001] that
+          were pulled from reference documents during agent context loading,
+          violating TISAX ISA Chapter 7 prototype protection requirements.
+        likelihood: 3  # Possible: agents may pull and reproduce content from reference files
+        impact: 4      # Major: patent-sensitive content exposure in compliance artifacts
+        risk-score: 12
+        mitigations:
+          - control-id: A.5.12
+            description: "Information classification: patent-sensitive files classified as Confidential/Secret with reference-by-ID-only policy"
+            status: implemented
+          - control-id: A.8.4
+            description: "Agent CLAUDE.md boundary rules explicitly prohibit inlining patent content (reference by ID only)"
+            status: implemented
+          - control-id: A.8.25
+            description: "PR review catches patent-sensitive content before merge to main"
+            status: implemented
+        residual-risk: low
+
+# =============================================================================
+# RISK REFERENCES
+# =============================================================================
+risk-references:
+  - RISK-AI-001   # CISO Agent produces incorrect compliance advice
+  - RISK-AI-002   # Prompt injection attack on Claude Code agents
+  - RISK-AI-003   # Agent-generated artifacts accepted without adequate human review
+  - RISK-SEC-003  # Data breach exposing confidential information
+  - RISK-SEC-005  # API key or secret exposure in Git repository
+  - RISK-SUP-002  # Anthropic Claude API availability or policy change
+---
