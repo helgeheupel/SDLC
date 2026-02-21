@@ -88,11 +88,14 @@ Plans:
   3. A threat modeling framework exists with STRIDE/LINDDUN templates and a threat-model-as-code approach that can be applied to any HH system
   4. SAST/DAST configuration is defined with tool selection, pipeline integration points, and pass/fail criteria
   5. An SBOM generation pipeline is defined using CycloneDX format with per-release generation and dependency tracking, plus a supply chain security framework targeting SLSA levels with artifact signing
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md -- CTO Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-02)
+- [ ] 04-02-PLAN.md -- AppSec Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-07)
+- [ ] 04-03-PLAN.md -- Threat modeling framework with STRIDE/LINDDUN templates and two applied threat models (SENG-01)
+- [ ] 04-04-PLAN.md -- SAST/DAST specification and dependency scanning setup with reference configs (SENG-02, SENG-05)
+- [ ] 04-05-PLAN.md -- SBOM generation pipeline and supply chain security framework with SLSA L2 (SENG-03, SENG-04)
 
 ### Phase 5: AIMS Core and AI System Registry
 **Goal**: The AI Management System artifacts exist and every AI system (including the 7 agents) has a registry entry with full ISO 42001 schema
@@ -196,7 +199,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 | 1. Startup Overlay and Agent Foundation | 4/4 | Complete | 2026-02-19 |
 | 2. CISO Agent and IS/AI Policy Foundation | 3/4 | Gap closure | 2026-02-19 |
 | 3. Risk Framework and Statement of Applicability | 4/4 | Complete | 2026-02-20 |
-| 4. CTO and AppSec Agents with Security Engineering | 0/TBD | Not started | - |
+| 4. CTO and AppSec Agents with Security Engineering | 0/5 | Planned | - |
 | 5. AIMS Core and AI System Registry | 0/TBD | Not started | - |
 | 6. Remaining Specialist Agents | 0/TBD | Not started | - |
 | 7. Operational Controls | 0/TBD | Not started | - |
