@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** CEO can interchangeably steer humans and AI agents to produce audit-ready compliance artifacts at enterprise quality with startup speed
-**Current focus:** Phase 3: Risk Framework and Statement of Applicability
+**Current focus:** Phase 4: CTO and AppSec Agents with Security Engineering
 
 ## Current Position
 
-Phase: 3 of 10 (Risk Framework and Statement of Applicability)
-Plan: 4 of 4 complete in current phase
-Status: Phase 3 COMPLETE. All 4 plans (03-01, 03-02, 03-03, 03-04) finished. Ready for Phase 4.
-Last activity: 2026-02-20 -- Completed 03-03-PLAN.md (Risk Assessment Workshop Preparation)
+Phase: 4 of 10 (CTO and AppSec Agents with Security Engineering)
+Plan: 2 of 5 complete in current phase
+Status: Executing Phase 4. Plans 04-01 (CTO Agent) and 04-02 (AppSec Agent) complete. Wave 1 done.
+Last activity: 2026-02-21 -- Completed 04-02-PLAN.md (AppSec Agent Construction)
 
-Progress: [████░░░░░░] 30%
+Progress: [████░░░░░░] 35%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
-- Average duration: 11min
-- Total execution time: 2.21 hours
+- Total plans completed: 14
+- Average duration: 10min
+- Total execution time: 2.37 hours
 
 **By Phase:**
 
@@ -30,10 +30,11 @@ Progress: [████░░░░░░] 30%
 | 1 | 4 | 72min | 18min |
 | 2 | 4 | 27min | 7min |
 | 3 | 4 | 34min | 9min |
+| 4 | 2 | 9min | 5min |
 
 **Recent Trend:**
-- Last 5 plans: 03-03 (8min), 03-02 (11min), 03-04 (11min), 03-01 (4min), 02-04 (1min)
-- Trend: Phase 3 complete in 34min total. Workshop preparation with checkpoint adds modest overhead but CEO review ensures human validation of risk materials.
+- Last 5 plans: 04-02 (4min), 04-01 (5min), 03-03 (8min), 03-02 (11min), 03-04 (11min)
+- Trend: Agent construction plans consistently fast (4-5 min). Wave 1 of Phase 4 complete in 9 minutes total.
 
 *Updated after each plan completion*
 
@@ -103,6 +104,18 @@ Recent decisions affecting current work:
 - [03-03]: Workshop materials approved by CEO for distribution to External CISO (NorthGRC) and Consultant (BearingPoint)
 - [03-03]: 4-hour remote workshop with 6-block structure and evidence capture template for auditor verification of human involvement
 - [03-03]: Risk treatment summary (HH-ISMS-RTP-001) includes CEO signature block covering all 3 entities (GmbH, B.V., Inc.)
+- [04-01]: CTO Agent prompt at 321 lines (under 500-line target) using progressive disclosure via reference/ directory
+- [04-01]: Security-architecture dual identity as locked decision: equal weight on architecture decisions AND security engineering review
+- [04-01]: Strict CTO-AppSec boundary: CTO owns ADRs and architecture, AppSec owns threat models, SAST/DAST, SBOM, supply chain
+- [04-01]: Domain context includes ADR registry section (initially empty, populates as CTO Agent produces ADRs)
+- [04-01]: Expanded Technology Stack section in domain-context.md covering frontend, backend, hosting, cloud, development toolchain
+- [04-01]: Cross-domain dependency flagging pattern consistent with CISO Agent
+- [04-02]: AppSec Agent prompt at 304 lines (under 500-line target) using progressive disclosure via reference/ directory
+- [04-02]: AppSec positioned as operational arm of CISO Agent consuming IS Policy and AI Policy as upstream constraints
+- [04-02]: 9 Annex A.8 controls mapped to AppSec artifacts plus A.5.21 and A.5.23 from threat model contributions
+- [04-02]: Domain context focused on security engineering, not duplicating CISO organizational context (refers to HH-CISO-REF-001)
+- [04-02]: Centralized false positive management (semgrepignore + policy file) chosen over inline suppressions
+- [04-02]: LINDDUN applicability gated by GDPR scope: Claude Code agent system excluded, Verity products included
 
 ### Pending Todos
 
@@ -118,6 +131,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: Phase 4 context gathered. Ready for planning.
-Resume file: .planning/phases/04-cto-and-appsec-agents-with-security-engineering/04-CONTEXT.md
-Next: /gsd:plan-phase 4
+Stopped at: Completed 04-02-PLAN.md (AppSec Agent Construction)
+Resume file: .planning/phases/04-cto-and-appsec-agents-with-security-engineering/04-02-SUMMARY.md
+Next: Continue Phase 4 execution (04-03 through 04-05, Wave 2)
