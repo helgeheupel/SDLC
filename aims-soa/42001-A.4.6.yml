@@ -1,0 +1,61 @@
+---
+control-id: A.4.6
+control-name: "Human resources"
+group: A.4
+group-name: "Resources for AI systems"
+group-objective: >
+  To ensure that the organization accounts for the resources (including AI
+  system components and assets) of the AI system in order to fully understand
+  and address risks and impacts.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group has 6 human team members with defined
+  AI governance responsibilities. CEO, CTO, and CISO carry primary AI
+  governance accountability. AI competence requirements are defined per role.
+  EU AI Act Art. 4 mandates AI literacy for all personnel by August 2025,
+  requiring documented AI literacy training.
+implementation-status: partially-implemented
+implementation-approach: >
+  Human resources for AI governance are defined in the AI Policy Section 6
+  (6 human roles with specific AI governance responsibilities) and the RACI
+  matrix (32 SDLC activities mapped to 13 columns). AI competence
+  requirements include: CEO/CISO must understand AI risk classification and
+  EU AI Act obligations; CTO must understand AI architecture, model lifecycle,
+  and performance metrics; IT Pentester must understand AI-specific security
+  testing. EU AI Act Art. 4 AI literacy training program is in preparation
+  for the August 2025 deadline.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 6 (human roles and responsibilities)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-RACI-Startup-v1.0
+    description: "RACI matrix with AI governance assignments"
+    path: "governance/RACI-Startup.md"
+iso27001-mapping:
+  - control-id: A.6.1
+    relationship: "A.6.1 (Screening) addresses personnel verification before employment; A.4.6 extends this to ensure personnel involved in AI system development and governance have appropriate AI competence."
+  - control-id: A.6.2
+    relationship: "A.6.2 (Terms and conditions of employment) includes information security obligations; A.4.6 adds AI-specific competence requirements and AI literacy training obligations."
+  - control-id: A.6.3
+    relationship: "A.6.3 (Information security awareness, education and training) provides the training framework; A.4.6 extends it to include AI literacy and AI governance training per EU AI Act Art. 4."
+risk-references:
+  - RISK-PPL-001
+  - RISK-PPL-002
+  - RISK-REG-003
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CEO"
+annex-b-reference: "B.4.6"
+notes: "EU AI Act Art. 4 AI literacy training deadline: August 2025."
+last-assessed: 2026-02-22
+---

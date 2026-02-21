@@ -1,0 +1,59 @@
+---
+control-id: A.6.2.3
+control-name: "Documentation of AI system design and development"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. All AI systems have design documentation: agents have prompt
+  specifications, reference materials, and domain context documents; Product
+  AI has architecture decision records (ADRs) and technical design documents.
+  Git history provides a complete, timestamped record of all design and
+  development decisions. The CTO Agent is responsible for architecture
+  documentation and ADR production.
+implementation-status: partially-implemented
+implementation-approach: >
+  AI system design documentation follows established patterns: agent design
+  is documented in agent prompt files (agents/*/AGENT.md, 300-400 lines
+  each), reference materials (agents/*/reference/), and domain context
+  documents. Product AI design uses ADRs managed by the CTO Agent in the
+  ADR registry. The Git repository provides immutable history of all design
+  changes. Technical documentation includes system architecture, component
+  interactions, data flow diagrams, and API specifications. Product AI
+  technical design documentation is in active development alongside the
+  Verity AI features.
+evidence-references:
+  - document-id: HH-CISO-AGENT
+    description: "CISO Agent design specification"
+    path: "agents/ciso/AGENT.md"
+  - document-id: HH-CTO-AGENT
+    description: "CTO Agent design specification"
+    path: "agents/cto/AGENT.md"
+  - document-id: HH-APPSEC-AGENT
+    description: "AppSec Agent design specification"
+    path: "agents/appsec/AGENT.md"
+iso27001-mapping:
+  - control-id: A.8.25
+    relationship: "A.8.25 (Secure development life cycle) requires development documentation; A.6.2.3 extends this to AI-specific design documentation including model architecture, training methodology, and responsible AI design decisions."
+  - control-id: A.5.37
+    relationship: "A.5.37 (Documented operating procedures) covers operational documentation; A.6.2.3 specifically addresses AI system design and development documentation for traceability and audit."
+risk-references:
+  - RISK-AI-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.3"
+notes: "Product AI technical design documentation expanding with feature development."
+last-assessed: 2026-02-22
+---

@@ -1,0 +1,52 @@
+---
+control-id: A.10.4
+control-name: "Customers"
+group: A.10
+group-name: "Third-party and customer relationships"
+group-objective: >
+  To ensure appropriate management of AI-related responsibilities in
+  third-party and customer relationships.
+applicable: true
+justification: >
+  Applicable. Verity VE and EAM products include AI features that serve
+  enterprise customers. Customer relationships require: transparency about
+  AI capabilities and limitations (EU AI Act Art. 50), DPAs for AI
+  processing of customer data, documentation of AI feature intended use,
+  and incident communication procedures. Even though Product AI is in
+  development, customer governance framework must be established before
+  first deployment.
+implementation-status: planned
+implementation-approach: >
+  Customer governance for AI features is being established alongside Product
+  AI development: customer-facing transparency information (capability
+  descriptions, limitations, "AI-assisted" indicators) is designed per
+  AI Policy Principle 2 and ISO 12792. Customer DPAs will include AI
+  processing clauses covering: purpose limitation, data minimization,
+  automated decision-making disclosure (GDPR Art. 22), and customer rights.
+  Customer documentation includes AI feature user guides, accuracy
+  disclaimers, and human oversight recommendations. AI incident
+  communication procedures ensure customers are notified of issues
+  affecting their data or decisions per defined timelines.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Principle 2 (Transparency) and Section 7 (Lifecycle)"
+    path: "policies/AI-Policy.md"
+  - document-id: AI-Registry
+    description: "Product AI registry entries (AI-PROD-001, AI-PROD-002)"
+    path: "ai-registry/"
+iso27001-mapping:
+  - control-id: A.5.19
+    relationship: "A.5.19 (Information security in supplier relationships) addresses security in supply chain; from the customer perspective, A.10.4 ensures HH as AI provider delivers transparency, documentation, and incident communication to customers."
+  - control-id: A.5.23
+    relationship: "A.5.23 (Information security for use of cloud services) applies to Product AI hosted on Azure; A.10.4 extends to customer-facing AI governance for SaaS-delivered AI features."
+risk-references:
+  - RISK-AI-005
+  - RISK-REG-004
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.10.4"
+notes: "Customer AI governance framework established before first Product AI deployment."
+last-assessed: 2026-02-22
+---

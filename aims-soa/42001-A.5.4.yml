@@ -1,0 +1,54 @@
+---
+control-id: A.5.4
+control-name: "Assessing AI system impact on individuals or groups of individuals"
+group: A.5
+group-name: "Assessing impacts of AI systems"
+group-objective: >
+  To identify and assess the potential consequences of AI systems on
+  individuals, groups of individuals, and societies.
+applicable: true
+justification: >
+  Applicable. Verity product AI directly impacts customer users through
+  value engineering recommendations and cost predictions. Development AI
+  (Claude Code agents) impacts team members' work processes and decision-making.
+  The AI risk assessment methodology includes a 5th impact dimension
+  (Individual/Society) specifically for AI risks per ISO 42001 cl. 6.1.2(d)(1).
+  Bias testing with disparate impact ratio threshold (0.8) is required.
+implementation-status: planned
+implementation-approach: >
+  Individual impact assessment is embedded in the AI Impact Assessment
+  Procedure (HH-AIMS-AIA-001) as specific assessment dimensions: fairness
+  (disparate impact ratio >= 0.8 across protected attributes), autonomy
+  (human override capability for all AI decisions), privacy (DPIA for
+  personal data processing), and accessibility (AI features accessible to
+  users with disabilities). For Product AI, individual impact assessment
+  is mandatory before customer deployment. For Development AI, impact on
+  team member autonomy and decision quality is assessed annually.
+evidence-references:
+  - document-id: HH-AIMS-AIA-001
+    description: "AI Impact Assessment Procedure (individual impact dimensions)"
+    path: "procedures/ai-impact-assessment-procedure.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Principle 6 (Fairness and Non-Discrimination)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: "none"
+    relationship: "No direct ISO 27001 equivalent. Individual impact assessment for AI systems addresses fairness, autonomy, and discrimination dimensions that are outside ISO 27001 scope. The GDPR DPIA process (referenced by ISO 27001 A.5.34) provides partial overlap for privacy impacts only."
+risk-references:
+  - RISK-AI-004
+  - RISK-AI-005
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CISO role"
+annex-b-reference: "B.5.4"
+notes: "Disparate impact ratio threshold of 0.8 (four-fifths rule) per AI Policy Principle 6."
+last-assessed: 2026-02-22
+---

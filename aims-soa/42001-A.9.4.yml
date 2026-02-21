@@ -1,0 +1,58 @@
+---
+control-id: A.9.4
+control-name: "Intended use of the AI system"
+group: A.9
+group-name: "Use of AI systems"
+group-objective: >
+  To ensure that AI systems are used responsibly, taking into account the
+  intended use and the potential impacts on individuals, groups, and societies.
+applicable: true
+justification: >
+  Applicable. Every AI system in the registry has a documented intended-use
+  field specifying authorized use cases, boundaries, and restrictions. The
+  AI Policy dual-axis classification (Section 4) determines the appropriate
+  use context. Prohibited practices (Section 5) define the hard boundaries
+  of acceptable use. Use outside the documented intended purpose requires
+  reassessment and CEO approval.
+implementation-status: fully-implemented
+implementation-approach: >
+  Intended use is documented per AI system in the AI System Registry
+  (intended-use field with specific authorized use cases). For agents:
+  intended use aligns with their domain specification (CISO Agent for
+  compliance, CTO Agent for architecture, AppSec Agent for security
+  engineering). For Product AI: intended use covers authorized product
+  features and customer segments. For third-party tools: intended use
+  restricts to Internal-classified data and internal work products.
+  Use outside documented intended purpose triggers the reclassification
+  process per AI Policy Section 4. The SDLC-Growth-v2 framework
+  enforces intended use boundaries through gate criteria and PR review.
+evidence-references:
+  - document-id: AI-Registry
+    description: "AI System Registry (intended-use per system)"
+    path: "ai-registry/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 4 (classification) and Section 5 (restrictions)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.10
+    relationship: "A.5.10 (Acceptable use of information and other associated assets) defines acceptable use of information assets; A.9.4 specifically addresses intended use documentation for AI systems including authorized use cases, user groups, and operational boundaries."
+risk-references:
+  - RISK-AI-001
+  - RISK-AI-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CEO"
+annex-b-reference: "B.9.4"
+notes: ""
+last-assessed: 2026-02-22
+---

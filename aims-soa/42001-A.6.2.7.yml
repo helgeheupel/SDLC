@@ -1,0 +1,57 @@
+---
+control-id: A.6.2.7
+control-name: "AI system technical documentation"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. Technical documentation is maintained for all AI systems:
+  agent specifications (300-400 lines each), reference materials, domain
+  context documents, and threat models. Product AI requires additional
+  documentation per EU AI Act (Annex IV for High-Risk systems, Art. 50
+  transparency information for Limited-Risk systems). The AI System Registry
+  serves as the index to all technical documentation per system.
+implementation-status: partially-implemented
+implementation-approach: >
+  Technical documentation is produced and maintained per AI system category:
+  Development AI (agents) have prompt specifications, domain context documents,
+  reference materials, and threat models (TM-CLAUDE-001). Product AI
+  technical documentation includes architecture design, API specifications,
+  model performance characteristics, and transparency information per
+  ISO 12792. The AI System Registry entry links to all technical documents
+  per system. Git-based document control ensures version tracking and
+  approval history. EU AI Act Annex IV documentation framework is prepared
+  for Product AI systems that may require High-Risk classification.
+evidence-references:
+  - document-id: AI-Registry
+    description: "AI System Registry linking to technical documents"
+    path: "ai-registry/"
+  - document-id: TM-CLAUDE-001
+    description: "Threat model for Claude Code agent system"
+    path: "security-engineering/threat-models/TM-CLAUDE-001.yml"
+iso27001-mapping:
+  - control-id: A.5.37
+    relationship: "A.5.37 (Documented operating procedures) covers general operational documentation; A.6.2.7 specifically addresses AI system technical documentation including model characteristics, training methodology, performance metrics, and known limitations."
+  - control-id: A.8.25
+    relationship: "A.8.25 (Secure development life cycle) requires security-related documentation; A.6.2.7 extends to AI-specific technical documentation including transparency information and EU AI Act conformity evidence."
+risk-references:
+  - RISK-AI-001
+  - RISK-REG-004
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.7"
+notes: "EU AI Act Annex IV documentation prepared for potential High-Risk Product AI."
+last-assessed: 2026-02-22
+---

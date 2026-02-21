@@ -1,0 +1,58 @@
+---
+control-id: A.6.2.6
+control-name: "AI system operation and monitoring"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. All operational AI systems require monitoring. Claude Code
+  agents are monitored via the PR-based review workflow where output quality
+  is assessed per interaction. Third-party tools are monitored via usage
+  policies. Product AI monitoring includes performance metrics, drift
+  detection, and error rate tracking. The AI Policy Section 7.5 requires
+  5% drift detection threshold and automated alerting.
+implementation-status: partially-implemented
+implementation-approach: >
+  Monitoring approaches differ by category: Development AI (agents) are
+  monitored through PR review quality assessment; output accuracy is tracked
+  and trust level adjustments are made based on 30+ interaction assessments.
+  Third-party AI tools are monitored via acceptable use compliance checks
+  and data classification enforcement. Product AI monitoring infrastructure
+  (drift detection, performance dashboards, error rate alerting) is designed
+  per AI Policy Section 7.5 requirements with 5% deviation threshold. The
+  Monthly Strategic meeting reviews AI governance metrics as agenda item 2.
+  Full automated monitoring pipelines are implemented alongside Product AI
+  deployment.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 7.5 (Monitoring Requirements)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model (Monthly Strategic meeting reviews AI metrics)"
+    path: "governance-model.md"
+iso27001-mapping:
+  - control-id: A.8.16
+    relationship: "A.8.16 (Monitoring activities) provides general monitoring controls; A.6.2.6 extends this with AI-specific monitoring including model performance degradation, distributional drift, fairness metric tracking, and output quality assessment."
+risk-references:
+  - RISK-OPS-001
+  - RISK-AI-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.6"
+notes: "Automated monitoring pipelines for Product AI implemented with deployment."
+last-assessed: 2026-02-22
+---

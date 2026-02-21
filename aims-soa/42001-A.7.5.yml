@@ -1,0 +1,57 @@
+---
+control-id: A.7.5
+control-name: "Data provenance"
+group: A.7
+group-name: "Data for AI systems"
+group-objective: >
+  To ensure appropriate data management practices for AI systems, including
+  data collection, processing, and usage throughout the AI system life cycle.
+applicable: true
+justification: >
+  Applicable. Data provenance tracking is essential for audit traceability
+  and regulatory compliance. For Product AI, provenance must cover data
+  source, acquisition date, consent status, processing history, and
+  transformations applied. For Development AI, context data provenance is
+  tracked via Git history and document control metadata (YAML frontmatter
+  with author, date, version fields).
+implementation-status: partially-implemented
+implementation-approach: >
+  Data provenance is tracked at two levels: for all documents used as AI
+  context data, Git provides immutable provenance records (commit history,
+  author attribution, timestamp). YAML frontmatter in every document captures
+  document-id, author, date, version, and change-summary. For Product AI
+  training and inference data, a data provenance framework is being
+  established covering: data source identification, collection timestamp,
+  consent records, transformation pipeline documentation, and data lineage
+  visualization. The AI System Registry data-inputs field captures high-level
+  provenance for each system's data sources.
+evidence-references:
+  - document-id: AI-Registry
+    description: "Registry data-inputs with source documentation"
+    path: "ai-registry/"
+  - document-id: Git-History
+    description: "Git commit history as provenance record"
+    path: ".git/"
+iso27001-mapping:
+  - control-id: A.5.33
+    relationship: "A.5.33 (Protection of records) ensures records integrity and availability; A.7.5 extends this to AI-specific data provenance tracking including source attribution, transformation history, and consent chains."
+  - control-id: A.5.12
+    relationship: "A.5.12 (Classification of information) tracks data classification; A.7.5 adds provenance metadata tracking the full lifecycle of data used in AI systems."
+risk-references:
+  - RISK-AI-004
+  - RISK-REG-004
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CTO role"
+annex-b-reference: "B.7.5"
+notes: "Full data lineage visualization for Product AI planned for Growth phase."
+last-assessed: 2026-02-22
+---

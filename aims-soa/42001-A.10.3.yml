@@ -1,0 +1,65 @@
+---
+control-id: A.10.3
+control-name: "Suppliers"
+group: A.10
+group-name: "Third-party and customer relationships"
+group-objective: >
+  To ensure appropriate management of AI-related responsibilities in
+  third-party and customer relationships.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group relies on AI suppliers for core
+  operations: Anthropic provides the Claude foundation model used by all 7
+  agents, OpenAI provides ChatGPT and Codex, and Microsoft provides Azure
+  OpenAI Service for Product AI. Supplier governance includes: evaluating
+  AI provider practices (data handling, model safety, transparency),
+  monitoring provider compliance with GPAI obligations, and ensuring
+  contractual terms cover AI-specific requirements.
+implementation-status: partially-implemented
+implementation-approach: >
+  AI supplier governance extends the existing supplier management framework:
+  Anthropic (primary supplier for Development AI) is evaluated on model
+  safety practices, data handling policies, and API reliability. OpenAI
+  is evaluated for enterprise data handling, DPA availability, and model
+  capabilities. Microsoft (Azure OpenAI Service) is evaluated under the
+  existing Azure enterprise agreement with AI-specific addenda. Supplier
+  evaluation criteria include: GPAI provider obligations under EU AI Act,
+  data processing terms (GDPR compliance), model transparency documentation,
+  incident notification commitments, and service level agreements. Formal
+  AI supplier assessment framework is being developed per ISO 42001 Annex
+  B.10.3 guidance.
+evidence-references:
+  - document-id: AI-Registry
+    description: "Registry entries identifying AI suppliers"
+    path: "ai-registry/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 5.2 (approved AI toolchain)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.19
+    relationship: "A.5.19 (Information security in supplier relationships) provides the supplier management framework; A.10.3 extends to AI-specific supplier requirements including model safety, GPAI compliance, and AI-specific DPA terms."
+  - control-id: A.5.21
+    relationship: "A.5.21 (Managing information security in the ICT supply chain) covers ICT supply chain; A.10.3 specifically addresses AI model supply chain governance including foundation model provider evaluation and monitoring."
+  - control-id: A.5.22
+    relationship: "A.5.22 (Monitoring, review and change management of supplier services) covers supplier monitoring; A.10.3 adds AI-specific monitoring of model performance, safety incidents, and provider policy changes."
+risk-references:
+  - RISK-SUP-001
+  - RISK-SUP-002
+  - RISK-SUP-003
+ai-system-references:
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.10.3"
+notes: "Formal AI supplier assessment framework in development."
+last-assessed: 2026-02-22
+---

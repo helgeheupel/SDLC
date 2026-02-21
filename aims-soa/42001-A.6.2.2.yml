@@ -1,0 +1,56 @@
+---
+control-id: A.6.2.2
+control-name: "AI system requirements and specification"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. Every AI system in the registry has documented requirements:
+  intended-use, operational-context, EU AI Act classification, human oversight
+  requirements, and data handling constraints. For Product AI, detailed
+  functional and non-functional requirements are specified as part of the
+  SDLC G1 gate. For agents, the agent prompt specification and reference
+  materials define operational requirements.
+implementation-status: partially-implemented
+implementation-approach: >
+  AI system requirements are documented at two levels: the AI System Registry
+  entry captures high-level requirements (intended-use, classification,
+  oversight level, data boundaries) for all 11 systems, and the SDLC process
+  captures detailed specifications for systems under active development. Agent
+  requirements are defined in agent prompt files (agents/*/AGENT.md) with
+  reference materials. Product AI requirements follow G1 gate criteria in the
+  SDLC-Growth-v2 framework. Third-party tool requirements are documented
+  as acceptable use constraints per AI Policy Section 5.2.
+evidence-references:
+  - document-id: AI-Registry
+    description: "Registry entries with requirements per system"
+    path: "ai-registry/"
+  - document-id: HH-CISO-AGENT
+    description: "CISO Agent specification (example agent requirements)"
+    path: "agents/ciso/AGENT.md"
+iso27001-mapping:
+  - control-id: A.8.26
+    relationship: "A.8.26 (Application security requirements) addresses security requirement specification; A.6.2.2 extends to AI-specific requirements including fairness targets, explainability thresholds, and human oversight design."
+  - control-id: A.5.8
+    relationship: "A.5.8 (Information security in project management) ensures security requirements in projects; A.6.2.2 adds AI-specific requirement dimensions to project specifications."
+risk-references:
+  - RISK-AI-001
+  - RISK-OPS-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.2"
+notes: ""
+last-assessed: 2026-02-22
+---

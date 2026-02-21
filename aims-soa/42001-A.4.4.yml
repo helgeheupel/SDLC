@@ -1,0 +1,58 @@
+---
+control-id: A.4.4
+control-name: "Tooling resources"
+group: A.4
+group-name: "Resources for AI systems"
+group-objective: >
+  To ensure that the organization accounts for the resources (including AI
+  system components and assets) of the AI system in order to fully understand
+  and address risks and impacts.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group uses specific tooling for AI system
+  development and operation: Claude Code CLI for agent execution, Azure
+  OpenAI Service for product AI inference, GitHub for version control and
+  CI/CD, Semgrep for SAST, OWASP ZAP for DAST, and CycloneDX for SBOM
+  generation. Tooling is documented in the CTO Agent domain context and
+  security engineering specifications.
+implementation-status: fully-implemented
+implementation-approach: >
+  AI tooling resources are documented in two locations: the CTO Agent domain
+  context (agents/cto/reference/domain-context.md) lists the complete
+  technology stack including AI-specific tools, and the AI System Registry
+  entries reference the operational-context (CLI, API, web interface) for
+  each system. The approved AI toolchain is defined in AI Policy Section 5.2
+  (prohibition #14): Claude Code, ChatGPT, Codex, Azure OpenAI Service.
+  New tools require assessment and CEO approval before use.
+evidence-references:
+  - document-id: HH-CTO-REF-001
+    description: "CTO Agent domain context with technology stack"
+    path: "agents/cto/reference/domain-context.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 5.2 (approved toolchain)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.8.25
+    relationship: "A.8.25 (Secure development life cycle) addresses development tooling security; A.4.4 extends this to ensure AI-specific tooling (model training frameworks, inference APIs, evaluation tools) is documented and controlled."
+  - control-id: A.5.9
+    relationship: "A.5.9 (Inventory of information and other associated assets) covers general tool inventory; A.4.4 specifically addresses AI development and operational tooling as managed assets."
+risk-references:
+  - RISK-SUP-001
+  - RISK-OPS-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.4.4"
+notes: ""
+last-assessed: 2026-02-22
+---

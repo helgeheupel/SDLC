@@ -1,0 +1,57 @@
+---
+control-id: A.7.4
+control-name: "Quality of data for AI systems"
+group: A.7
+group-name: "Data for AI systems"
+group-objective: >
+  To ensure appropriate data management practices for AI systems, including
+  data collection, processing, and usage throughout the AI system life cycle.
+applicable: true
+justification: >
+  Applicable. Data quality directly affects AI system performance and
+  fairness. For Product AI, data quality dimensions include accuracy,
+  completeness, representativeness, timeliness, and consistency. Poor
+  data quality in cost prediction models can lead to material errors in
+  customer-facing recommendations. For Development AI, context data
+  quality affects agent output accuracy and compliance artifact correctness.
+implementation-status: planned
+implementation-approach: >
+  Data quality assessment is defined in the AI impact assessment procedure
+  with specific quality dimensions: accuracy (verified against authoritative
+  sources), completeness (coverage of required domains and demographics),
+  representativeness (across target populations for bias prevention),
+  timeliness (data currency relative to intended use), and consistency
+  (format standardization). For Product AI, data quality gates are
+  integrated into the SDLC at G1 (requirements include data quality
+  criteria) and G3 (build includes data quality validation). For agents,
+  context data quality is maintained through document control framework
+  and regular review cycles. Quality metrics are reported in the Monthly
+  Strategic meeting.
+evidence-references:
+  - document-id: HH-AIMS-AIA-001
+    description: "AI Impact Assessment (data quality dimensions)"
+    path: "procedures/ai-impact-assessment-procedure.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Principle 4 (data quality requirements)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.33
+    relationship: "A.5.33 (Protection of records) ensures record integrity; A.7.4 extends data integrity to AI-specific quality dimensions including representativeness and bias assessment that go beyond traditional information integrity."
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-004
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CTO role"
+annex-b-reference: "B.7.4"
+notes: "Data quality gates for Product AI integrated into SDLC pipeline."
+last-assessed: 2026-02-22
+---

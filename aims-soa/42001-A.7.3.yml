@@ -1,0 +1,58 @@
+---
+control-id: A.7.3
+control-name: "Acquisition of data"
+group: A.7
+group-name: "Data for AI systems"
+group-objective: >
+  To ensure appropriate data management practices for AI systems, including
+  data collection, processing, and usage throughout the AI system life cycle.
+applicable: true
+justification: >
+  Applicable but with different scope per system category. For Development AI
+  (agents), HH does not acquire training data as Anthropic provides the
+  pre-trained model; however, context data (ISO standards, compliance
+  documents) is acquired and managed. For Product AI (Verity VE/EAM),
+  data acquisition includes customer project data (under DPA), industry
+  benchmarks, and public datasets. Data acquisition controls are needed
+  for both categories.
+implementation-status: partially-implemented
+implementation-approach: >
+  Data acquisition controls vary by source: licensed ISO standards are
+  procured through official channels with usage rights documented. Customer
+  data for Product AI is acquired under executed DPAs with explicit consent
+  for AI processing per AI Policy prohibition #13. Public datasets are
+  assessed for licensing terms, data quality, and potential biases before
+  use. Third-party AI providers (Anthropic, OpenAI, Azure) handle their
+  own training data acquisition; HH assesses provider data practices as
+  part of supplier evaluation. Data acquisition records are maintained
+  for audit traceability.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy prohibition #13 (customer data training)"
+    path: "policies/AI-Policy.md"
+  - document-id: AI-Registry
+    description: "Registry data-inputs documenting data sources"
+    path: "ai-registry/"
+iso27001-mapping:
+  - control-id: A.5.12
+    relationship: "A.5.12 (Classification of information) classifies acquired data; A.7.3 extends to ensure AI-specific data acquisition includes provenance, consent verification, and bias assessment."
+  - control-id: A.5.34
+    relationship: "A.5.34 (Privacy and protection of PII) addresses personal data acquisition; A.7.3 adds AI-specific requirements for training data consent and DPIA completion."
+risk-references:
+  - RISK-AI-004
+  - RISK-REG-004
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CTO role"
+annex-b-reference: "B.7.3"
+notes: "Agent training data acquisition is Anthropic's responsibility; HH manages context data acquisition."
+last-assessed: 2026-02-22
+---

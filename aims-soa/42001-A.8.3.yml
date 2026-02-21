@@ -1,0 +1,57 @@
+---
+control-id: A.8.3
+control-name: "External reporting"
+group: A.8
+group-name: "Information for interested parties of AI systems"
+group-objective: >
+  To ensure that interested parties of AI systems are informed about the
+  AI system's capabilities, limitations, and intended use.
+applicable: true
+justification: >
+  Applicable. External reporting obligations exist for multiple regulatory
+  frameworks: NIS2 requires reporting of significant AI-related cybersecurity
+  incidents to BSI/NCSC-NL (24h initial, 72h detailed). EU AI Act requires
+  reporting to market surveillance authorities for serious incidents involving
+  High-Risk AI systems. TISAX assessments may require AI governance reporting.
+  Additionally, customers may request AI governance transparency reports.
+implementation-status: partially-implemented
+implementation-approach: >
+  External reporting processes are established through the incident response
+  framework: NIS2 incident reporting timelines (24h/72h) cover AI-related
+  cybersecurity events (model compromise, data poisoning, adversarial attack).
+  EU AI Act serious incident reporting to market surveillance authorities is
+  documented in procedures (to be activated when High-Risk systems are
+  deployed). Customer transparency reporting provides AI governance posture
+  summaries on request. TISAX assessment evidence includes AI governance
+  documentation. The CISO Agent monitors regulatory reporting obligations
+  and flags new requirements.
+evidence-references:
+  - document-id: HH-ISMS-IRP-001
+    description: "Interim Incident Response Procedure (includes AI incidents)"
+    path: "policies/IS-Policy-Annex.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 8 (Regulatory Compliance)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.24
+    relationship: "A.5.24 (Information security incident management planning and preparation) provides the incident management framework; A.8.3 extends external reporting to AI-specific incidents and regulatory bodies (market surveillance authorities, BSI)."
+  - control-id: A.5.31
+    relationship: "A.5.31 (Legal, statutory, regulatory and contractual requirements) tracks reporting obligations; A.8.3 adds AI-specific regulatory reporting requirements (EU AI Act, NIS2 AI provisions)."
+risk-references:
+  - RISK-REG-002
+  - RISK-SEC-005
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CISO role"
+annex-b-reference: "B.8.3"
+notes: "EU AI Act serious incident reporting activates with High-Risk system deployment."
+last-assessed: 2026-02-22
+---

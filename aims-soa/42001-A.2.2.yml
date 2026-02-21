@@ -1,0 +1,54 @@
+---
+control-id: A.2.2
+control-name: "AI policy"
+group: A.2
+group-name: "Policies related to AI"
+group-objective: >
+  To provide management direction and support for AI, in accordance with
+  business requirements, relevant laws, regulations, and contracts.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group maintains a dedicated AI Policy
+  (HH-AIMS-POL-001) approved by CEO Helge Heupel. The policy covers all
+  three entities (GmbH, B.V., Inc.), all AI system categories (Product AI,
+  Development AI, Third-party AI), and addresses responsible AI principles,
+  prohibited practices, classification framework, and lifecycle requirements.
+  The policy is reviewed semi-annually per ISO 42001 cl. 5.2.
+implementation-status: fully-implemented
+implementation-approach: >
+  The AI Policy (HH-AIMS-POL-001) is published in the Git repository at
+  policies/AI-Policy.md. It contains 12 sections covering purpose, management
+  commitment, 8 governance principles, dual-axis classification, prohibited
+  practices, roles and responsibilities, lifecycle requirements, regulatory
+  compliance, review cycle, German and Dutch executive summaries, and document
+  control. The CISO Agent drafts policy updates; CEO approves via PR merge.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-AIMS-POL-001-ANNEX
+    description: "AI Policy Operational Annex"
+    path: "policies/AI-Policy-Annex.md"
+iso27001-mapping:
+  - control-id: A.5.1
+    relationship: "A.5.1 (Policies for information security) requires documented IS policy; A.2.2 requires documented AI policy. Both are separate policy documents within the IMS, sharing the same document control framework and approval process."
+risk-references:
+  - RISK-REG-001
+  - RISK-AI-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CISO role"
+annex-b-reference: "B.2.2"
+notes: ""
+last-assessed: 2026-02-22
+---

@@ -1,0 +1,57 @@
+---
+control-id: A.6.2.4
+control-name: "AI system verification and validation"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. All AI systems undergo verification and validation: agents are
+  validated through PR-based review of outputs against requirements; Product
+  AI follows the SDLC testing framework (Semgrep SAST, OWASP ZAP DAST, bias
+  testing, performance benchmarking). The AI Policy Section 7.3 defines
+  testing requirements including bias testing with disparate impact ratio
+  threshold (0.8) and adversarial robustness testing.
+implementation-status: partially-implemented
+implementation-approach: >
+  V&V processes are defined at two levels: for Development AI (agents),
+  verification is performed through PR review of agent outputs and
+  periodic accuracy assessment by human domain experts. For Product AI,
+  the SDLC-Growth-v2 testing framework applies: automated testing via
+  CI/CD (Semgrep SAST, OWASP ZAP DAST, Dependabot SCA), AI-specific
+  testing (bias testing across protected attributes, adversarial
+  robustness testing, explainability validation), and acceptance testing
+  at G4 gate. CycloneDX SBOM generation ensures supply chain verification.
+  Full V&V execution for Product AI occurs as features reach testable state.
+evidence-references:
+  - document-id: HH-SENG-SAST-001
+    description: "SAST/DAST Configuration Specification"
+    path: "security-engineering/sast-dast-configuration.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 7.3 (Testing Requirements)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.8.25
+    relationship: "A.8.25 (Secure development life cycle) includes security testing; A.6.2.4 adds AI-specific verification (bias testing, robustness testing, explainability validation) to the secure development lifecycle."
+  - control-id: A.8.29
+    relationship: "A.8.29 (Security testing in development and acceptance) provides the testing framework; A.6.2.4 extends it with AI-specific test types (distributional drift, fairness metrics, model performance benchmarks)."
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-004
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.4"
+notes: "Full AI-specific V&V suite execution begins with Product AI feature development."
+last-assessed: 2026-02-22
+---

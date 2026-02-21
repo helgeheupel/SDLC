@@ -1,0 +1,56 @@
+---
+control-id: A.3.3
+control-name: "Reporting of concerns"
+group: A.3
+group-name: "Internal organization"
+group-objective: >
+  To establish a framework for the implementation and operation of the AI
+  management system within the organization.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group provides mechanisms for all personnel
+  and AI agents to report AI-related concerns including bias detection,
+  prohibited practice suspicion, safety issues, and ethical concerns. The
+  AI Policy Section 5 defines violation response procedures. AI agents flag
+  concerns using dependency tags ([CISO-DEPENDENCY], [CTO-DEPENDENCY]) and
+  the PR review workflow ensures concerns are visible to all reviewers.
+implementation-status: partially-implemented
+implementation-approach: >
+  AI concern reporting uses existing channels adapted for AI context: the
+  AI Policy Section 5 requires immediate reporting of prohibited practice
+  violations to CISO Agent and CEO. AI agents flag cross-domain concerns
+  via dependency tags in their outputs. The PR workflow provides a visible
+  audit trail for concerns raised during artifact review. At Startup, the
+  small team size (6 people) enables direct reporting without a formal
+  whistleblowing system. A structured AI concern reporting form is planned
+  for the Growth phase when team size increases.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 5 (violation response)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-ISMS-IRP-001
+    description: "Interim Incident Response Procedure"
+    path: "policies/IS-Policy-Annex.md"
+iso27001-mapping:
+  - control-id: A.6.8
+    relationship: "A.6.8 (Information security event reporting) establishes IS event reporting mechanisms; A.3.3 extends this to AI-specific concerns (bias, prohibited practices, ethical issues) that may not qualify as traditional security events."
+risk-references:
+  - RISK-AI-002
+  - RISK-REG-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CISO role"
+annex-b-reference: "B.3.3"
+notes: "Formal AI concern reporting form planned for Growth phase."
+last-assessed: 2026-02-22
+---

@@ -1,0 +1,60 @@
+---
+control-id: A.8.4
+control-name: "Communication of incidents"
+group: A.8
+group-name: "Information for interested parties of AI systems"
+group-objective: >
+  To ensure that interested parties of AI systems are informed about the
+  AI system's capabilities, limitations, and intended use.
+applicable: true
+justification: >
+  Applicable. AI-related incidents (bias detection, hallucination with
+  business impact, model compromise, unauthorized data processing, prohibited
+  practice detection) must be communicated to affected stakeholders. The AI
+  Policy defines violation response (Section 5) and the incident response
+  framework covers AI-specific incident types. Stakeholder communication
+  includes internal team, customers (for Product AI), and regulators.
+implementation-status: partially-implemented
+implementation-approach: >
+  AI incident communication follows the established incident response
+  framework extended for AI-specific events. Internal communication: AI
+  incidents are flagged to CEO and CISO Agent immediately; Weekly Technical
+  meeting reviews ongoing incidents. Customer communication: Product AI
+  incidents affecting customer data or decisions trigger customer notification
+  per DPA terms. Regulatory communication: NIS2 timelines apply to AI
+  cybersecurity incidents; EU AI Act serious incident reporting applies to
+  High-Risk systems. The AI Policy Section 5 defines immediate suspension
+  and investigation for prohibited practice violations. Communication
+  templates for each stakeholder group are in development.
+evidence-references:
+  - document-id: HH-ISMS-IRP-001
+    description: "Interim Incident Response Procedure"
+    path: "policies/IS-Policy-Annex.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 5 (violation response)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.24
+    relationship: "A.5.24 (Information security incident management planning and preparation) provides incident communication framework; A.8.4 extends to AI-specific incident types (bias, hallucination, model compromise)."
+  - control-id: A.5.25
+    relationship: "A.5.25 (Assessment and decision on information security events) covers event assessment; A.8.4 adds AI-specific severity assessment criteria for AI incidents."
+  - control-id: A.5.26
+    relationship: "A.5.26 (Response to information security incidents) provides response procedures; A.8.4 extends with AI-specific response actions (model suspension, output recall, retraining)."
+risk-references:
+  - RISK-AI-002
+  - RISK-SEC-005
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CISO role"
+annex-b-reference: "B.8.4"
+notes: "AI incident communication templates in development."
+last-assessed: 2026-02-22
+---

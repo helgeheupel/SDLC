@@ -1,0 +1,59 @@
+---
+control-id: A.4.5
+control-name: "System and computing resources"
+group: A.4
+group-name: "Resources for AI systems"
+group-objective: >
+  To ensure that the organization accounts for the resources (including AI
+  system components and assets) of the AI system in order to fully understand
+  and address risks and impacts.
+applicable: true
+justification: >
+  Applicable. AI systems rely on external computing resources: Anthropic API
+  for Claude Code agent execution, Azure OpenAI Service for Verity product AI
+  inference, Azure compute (West Europe, Germany West Central) for hosting.
+  The cloud-only model means HH does not operate physical AI compute
+  infrastructure, but must document provider capabilities, SLAs, and
+  capacity planning.
+implementation-status: partially-implemented
+implementation-approach: >
+  Computing resources for AI systems are documented in registry entries
+  (operational-context field) and the CTO Agent domain context (infrastructure
+  section). Anthropic API provides compute for the 7 Claude Code agents with
+  usage tracking. Azure OpenAI Service provides inference compute for Verity
+  product AI with configurable throughput. Capacity planning and cost
+  monitoring are tracked via Azure Cost Management and Anthropic usage
+  dashboards. Formal compute resource planning documentation is being
+  developed alongside product AI deployment.
+evidence-references:
+  - document-id: AI-Registry
+    description: "Registry entries with operational-context per system"
+    path: "ai-registry/"
+  - document-id: HH-CTO-REF-001
+    description: "CTO domain context with infrastructure documentation"
+    path: "agents/cto/reference/domain-context.md"
+iso27001-mapping:
+  - control-id: A.8.6
+    relationship: "A.8.6 (Capacity management) addresses general capacity planning; A.4.5 extends this to AI-specific compute capacity including inference throughput, model training compute, and API rate limits."
+  - control-id: A.5.23
+    relationship: "A.5.23 (Information security for use of cloud services) addresses cloud security controls that apply to AI compute hosted on Azure and Anthropic API."
+risk-references:
+  - RISK-OPS-001
+  - RISK-SUP-003
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.4.5"
+notes: "Formal compute capacity planning documentation in progress for Product AI."
+last-assessed: 2026-02-22
+---

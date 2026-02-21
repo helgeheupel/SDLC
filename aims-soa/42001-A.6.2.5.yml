@@ -1,0 +1,59 @@
+---
+control-id: A.6.2.5
+control-name: "AI system deployment"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. Claude Code agents are deployed and operational (lifecycle-status:
+  production). Third-party AI tools (ChatGPT, Codex) are deployed via vendor
+  platforms. Verity product AI is in development with deployment planned. The
+  AI Policy Section 7.4 defines deployment requirements: human approval at G4
+  gate, CEO sign-off for Critical risk deployments, monitoring configuration,
+  and rollback procedures.
+implementation-status: partially-implemented
+implementation-approach: >
+  Deployment processes differ by AI system category: Development AI (agents)
+  are deployed as Claude Code configurations in the Git repository with
+  changes tracked via PR workflow. Third-party AI tools are deployed by
+  their providers; HH manages access and acceptable use policies. Product
+  AI follows the SDLC G4 (Release Readiness) gate with CI/CD pipeline
+  deployment, environment separation (A.8.31), signed artifacts (Cosign),
+  and monitoring configuration. The AI Policy prohibits AI deployment without
+  human approval (prohibition #12). Rollback procedures are documented per
+  system.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 7.4 (Deployment Requirements)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-SENG-SBOM-001
+    description: "SBOM and Supply Chain Security (deployment verification)"
+    path: "security-engineering/sbom-supply-chain.md"
+iso27001-mapping:
+  - control-id: A.8.25
+    relationship: "A.8.25 (Secure development life cycle) includes secure deployment; A.6.2.5 adds AI-specific deployment controls including model artifact signing, inference endpoint configuration, and AI feature flag management."
+  - control-id: A.8.31
+    relationship: "A.8.31 (Separation of development, test and production environments) applies to AI system deployment; A.6.2.5 ensures AI models and configurations are properly separated across environments."
+  - control-id: A.8.32
+    relationship: "A.8.32 (Change management) governs deployment changes; A.6.2.5 adds AI-specific change assessment (model retraining, configuration changes, data pipeline modifications)."
+risk-references:
+  - RISK-OPS-002
+  - RISK-AI-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.5"
+notes: "Product AI deployment processes to be fully exercised when Verity AI features are production-ready."
+last-assessed: 2026-02-22
+---

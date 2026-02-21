@@ -1,0 +1,57 @@
+---
+control-id: A.3.2
+control-name: "AI roles and responsibilities"
+group: A.3
+group-name: "Internal organization"
+group-objective: >
+  To establish a framework for the implementation and operation of the AI
+  management system within the organization.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group has defined AI governance roles for all
+  6 human personnel and 7 AI agents in the RACI-Startup matrix
+  (HH-RACI-Startup-v1.0). The AI Policy Section 6 specifies AI governance
+  responsibilities per role. The accountable human (A in RACI) is always a
+  human; AI agents can be Responsible or Consulted but never Accountable.
+implementation-status: fully-implemented
+implementation-approach: >
+  AI roles and responsibilities are documented in two complementary artifacts:
+  the AI Policy Section 6 (HH-AIMS-POL-001) defines per-role AI governance
+  responsibilities for 6 human roles and 7 AI agent roles, and the RACI
+  matrix (RACI-Startup.md) maps 32 SDLC activities to 13 columns (6 humans
+  + 7 agents). The governance model (HH-GOV-Startup-v1.0) defines the
+  two-meeting structure for AI governance review. CEO is ultimately
+  accountable for all AI governance across the three entities.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 6 (Roles and Responsibilities)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-RACI-Startup-v1.0
+    description: "RACI matrix with AI governance assignments"
+    path: "governance/RACI-Startup.md"
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model with AI review meetings"
+    path: "governance-model.md"
+iso27001-mapping:
+  - control-id: A.5.2
+    relationship: "A.5.2 (Information security roles and responsibilities) defines IS roles; A.3.2 extends this with AI-specific governance responsibilities. Both use the same RACI matrix, with IS and AI responsibilities assigned to the same personnel."
+risk-references:
+  - RISK-PPL-001
+  - RISK-AI-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CEO"
+annex-b-reference: "B.3.2"
+notes: ""
+last-assessed: 2026-02-22
+---

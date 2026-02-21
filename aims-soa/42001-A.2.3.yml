@@ -1,0 +1,61 @@
+---
+control-id: A.2.3
+control-name: "Alignment with other organizational policies"
+group: A.2
+group-name: "Policies related to AI"
+group-objective: >
+  To provide management direction and support for AI, in accordance with
+  business requirements, relevant laws, regulations, and contracts.
+applicable: true
+justification: >
+  Applicable. The AI Policy (HH-AIMS-POL-001) is explicitly aligned with the
+  Information Security Policy (HH-ISMS-POL-001) and the IMS Context
+  (HH-IMS-CTX-001) through the Integrated Management System architecture.
+  Cross-references between policies are documented in each policy's "Related
+  Documents" section. Shared controls (access control, incident management,
+  document control) are implemented once and referenced by both policies.
+implementation-status: fully-implemented
+implementation-approach: >
+  The IMS Context document (HH-IMS-CTX-001) establishes the relationship
+  between IS Policy and AI Policy at Tier 1 of the document hierarchy. The
+  AI Policy Section 1 explicitly references the IS Policy and IMS Context.
+  The AI Policy Annex aligns operational procedures with IS Policy Annex
+  procedures. Shared controls use a single implementation referenced by
+  both Annex A SoAs (ISO 27001 and ISO 42001). Annual policy review
+  includes alignment verification across both policies.
+evidence-references:
+  - document-id: HH-IMS-CTX-001
+    description: "IMS Context establishing policy integration"
+    path: "policies/IMS-Context.md"
+  - document-id: HH-ISMS-POL-001
+    description: "Information Security Policy (alignment target)"
+    path: "policies/IS-Policy.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy (Section 1 cross-references)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.1
+    relationship: "A.5.1 (Policies for information security) and A.2.3 both require alignment of security/AI policies with organizational policies. The IMS Context document provides the integration point."
+  - control-id: A.5.2
+    relationship: "A.5.2 (Information security roles and responsibilities) defines roles that also carry AI governance responsibilities per the integrated RACI matrix."
+  - control-id: A.5.31
+    relationship: "A.5.31 (Legal, statutory, regulatory and contractual requirements) ensures AI policy alignment with external obligations (EU AI Act, GDPR)."
+risk-references:
+  - RISK-REG-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CISO role"
+annex-b-reference: "B.2.3"
+notes: ""
+last-assessed: 2026-02-22
+---

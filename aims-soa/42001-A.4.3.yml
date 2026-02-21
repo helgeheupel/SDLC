@@ -1,0 +1,58 @@
+---
+control-id: A.4.3
+control-name: "Data resources"
+group: A.4
+group-name: "Resources for AI systems"
+group-objective: >
+  To ensure that the organization accounts for the resources (including AI
+  system components and assets) of the AI system in order to fully understand
+  and address risks and impacts.
+applicable: true
+justification: >
+  Applicable. Each AI system in the registry has documented data-inputs and
+  data-outputs with classification levels. For Development AI (Claude Code
+  agents), data resources include compliance documents, ISO standards, and
+  code repositories. For Product AI (Verity VE/EAM), data resources include
+  customer project data and historical benchmarks. Data classification per
+  the 4-level scheme (Public, Internal, Confidential, Secret) is applied.
+implementation-status: partially-implemented
+implementation-approach: >
+  Data resources are documented per AI system in the AI System Registry
+  entries (data-inputs and data-outputs fields with classification level).
+  The AI Policy Section 4 (Principle 4: Data Governance and Privacy by Design)
+  establishes data handling requirements. For Development AI agents, data
+  inputs are constrained to Internal and Confidential classification. For
+  Product AI, customer data handling is governed by DPAs. Full data lineage
+  documentation for Product AI training data is planned for Growth phase.
+evidence-references:
+  - document-id: AI-Registry
+    description: "AI System Registry with data-inputs/outputs per system"
+    path: "ai-registry/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 4 (Data Governance)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.12
+    relationship: "A.5.12 (Classification of information) provides the 4-level classification scheme applied to AI data resources. Each data input/output in the registry is classified using this scheme."
+  - control-id: A.5.13
+    relationship: "A.5.13 (Labelling of information) applies to ensuring AI training data and inference data are labelled with their classification level."
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-004
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.4.3"
+notes: "Full data lineage for Product AI training data deferred to Growth phase."
+last-assessed: 2026-02-22
+---

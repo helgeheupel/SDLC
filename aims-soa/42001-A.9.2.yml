@@ -1,0 +1,59 @@
+---
+control-id: A.9.2
+control-name: "Processes for responsible use of AI systems"
+group: A.9
+group-name: "Use of AI systems"
+group-objective: >
+  To ensure that AI systems are used responsibly, taking into account the
+  intended use and the potential impacts on individuals, groups, and societies.
+applicable: true
+justification: >
+  Applicable. The AI Policy establishes 8 governance principles for responsible
+  AI use, and the SDLC-Growth-v2 framework operationalizes these principles
+  through gate criteria and human oversight requirements. All AI system
+  usage by team members and agents is governed by acceptable use policies
+  (AI Policy Section 5) and prohibited practices (Section 5.1 and 5.2).
+  The PR-based workflow ensures all AI outputs are reviewed before use.
+implementation-status: fully-implemented
+implementation-approach: >
+  Responsible use processes are implemented through multiple mechanisms: the
+  AI Policy Principles 1-8 define the governance framework; the RACI matrix
+  assigns responsible use oversight to specific roles; the SDLC gates (G1-G5)
+  enforce responsible use checkpoints for Product AI; the PR review workflow
+  ensures agent outputs are validated by humans before acceptance; the AI
+  Policy prohibitions (Section 5) define hard boundaries; and the Monthly
+  Strategic meeting reviews AI governance metrics. For third-party AI tools,
+  acceptable use guidelines restrict data classification levels and require
+  output review before incorporation into work products.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy (responsible use framework)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-RACI-Startup-v1.0
+    description: "RACI matrix (responsible use oversight assignments)"
+    path: "governance/RACI-Startup.md"
+iso27001-mapping:
+  - control-id: A.5.10
+    relationship: "A.5.10 (Acceptable use of information and other associated assets) defines acceptable use of information assets; A.9.2 extends this to AI-specific responsible use including human oversight requirements, prohibited practices, and output verification processes."
+  - control-id: A.5.1
+    relationship: "A.5.1 (Policies for information security) provides IS policy governing information use; A.9.2 adds AI-specific responsible use processes that go beyond information security to cover fairness, transparency, and accountability."
+risk-references:
+  - RISK-AI-001
+  - RISK-AI-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CEO"
+annex-b-reference: "B.9.2"
+notes: ""
+last-assessed: 2026-02-22
+---

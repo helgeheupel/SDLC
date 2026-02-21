@@ -1,0 +1,57 @@
+---
+control-id: A.7.2
+control-name: "Data for development and enhancement of AI system"
+group: A.7
+group-name: "Data for AI systems"
+group-objective: >
+  To ensure appropriate data management practices for AI systems, including
+  data collection, processing, and usage throughout the AI system life cycle.
+applicable: true
+justification: >
+  Applicable. Development data varies by AI system category: Claude Code agents
+  use compliance documents, ISO standards, and code repositories as context
+  data (not training data, as Anthropic trains the base model). Product AI
+  (Verity VE/EAM) uses customer project data, historical benchmarks, and
+  industry datasets for model development and enhancement. Data quality
+  and representativeness requirements are defined in AI Policy Principle 4.
+implementation-status: partially-implemented
+implementation-approach: >
+  For Development AI (agents), context data (compliance documents, standards,
+  code) is managed via Git with classification labels. Agents do not train
+  models; they use pre-trained models with context-specific prompts. For
+  Product AI, development data governance includes: data quality assessment
+  before use, representativeness evaluation across target industries, consent
+  verification for customer data (AI Policy prohibition #13), and DPA
+  requirements. Data provenance tracking is documented in the AI System
+  Registry data-inputs fields. Full data governance procedures for Product
+  AI training data are being developed alongside model development.
+evidence-references:
+  - document-id: AI-Registry
+    description: "Registry data-inputs per system"
+    path: "ai-registry/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Principle 4 (Data Governance) and Prohibition #13"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.12
+    relationship: "A.5.12 (Classification of information) provides the classification scheme applied to AI development data. Training data classification determines handling controls."
+  - control-id: A.5.33
+    relationship: "A.5.33 (Protection of records) addresses record protection; applies to AI training data records and data provenance documentation that must be retained for audit."
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-004
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CTO role"
+annex-b-reference: "B.7.2"
+notes: "Agents use context data, not training data. Product AI data governance in active development."
+last-assessed: 2026-02-22
+---

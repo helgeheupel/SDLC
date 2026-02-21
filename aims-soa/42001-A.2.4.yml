@@ -1,0 +1,52 @@
+---
+control-id: A.2.4
+control-name: "Review of the AI policy"
+group: A.2
+group-name: "Policies related to AI"
+group-objective: >
+  To provide management direction and support for AI, in accordance with
+  business requirements, relevant laws, regulations, and contracts.
+applicable: true
+justification: >
+  Applicable. The AI Policy has a semi-annual review cycle (faster than the
+  IS Policy annual cycle) reflecting the rapid evolution of AI regulation and
+  technology. The next review date is 2026-08-19. Extraordinary review triggers
+  are defined for new EU AI Act implementing acts, new High-Risk AI deployments,
+  significant AI incidents, and ISO 42001 auditor findings.
+implementation-status: fully-implemented
+implementation-approach: >
+  The AI Policy (HH-AIMS-POL-001) specifies a semi-annual review cycle in
+  Section 9.2 with the next review date tracked in YAML frontmatter
+  (next-review field). Six change triggers requiring extraordinary review are
+  documented. The review process follows the document control framework:
+  CISO Agent drafts changes, CTO and CISO review via PR, CEO approves via
+  merge. The document register (HH-ISMS-REG-001) tracks review dates.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 9.2 (review cycle)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-ISMS-REG-001
+    description: "Document Register tracking review dates"
+    path: "governance/document-register.md"
+iso27001-mapping:
+  - control-id: A.5.1
+    relationship: "A.5.1 (Policies for information security) requires periodic IS policy review; A.2.4 requires periodic AI policy review. Both use the same document control framework and PR-based approval process, but with different review cadences (annual vs. semi-annual)."
+risk-references:
+  - RISK-REG-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CISO role"
+annex-b-reference: "B.2.4"
+notes: ""
+last-assessed: 2026-02-22
+---

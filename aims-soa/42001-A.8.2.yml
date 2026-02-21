@@ -1,0 +1,57 @@
+---
+control-id: A.8.2
+control-name: "System documentation and information for users"
+group: A.8
+group-name: "Information for interested parties of AI systems"
+group-objective: >
+  To ensure that interested parties of AI systems are informed about the
+  AI system's capabilities, limitations, and intended use.
+applicable: true
+justification: >
+  Applicable. All AI systems require user-facing documentation. For
+  Development AI (agents), documentation includes prompt specifications,
+  reference materials, and operational guides for team members. For Product
+  AI (Verity VE/EAM), customer-facing documentation includes capability
+  descriptions, known limitations, intended use statements, and "AI-assisted"
+  indicators per EU AI Act Art. 50 transparency obligations.
+implementation-status: partially-implemented
+implementation-approach: >
+  System documentation is produced at multiple levels: AI System Registry
+  entries provide standardized summaries for auditor review. Agent
+  documentation (agents/*/AGENT.md and reference materials) serves internal
+  users. Product AI user documentation is developed alongside features and
+  includes: capability description with accuracy metrics, known limitations
+  and failure modes, intended use boundaries, "AI-assisted" UI indicators,
+  and instructions for interpreting AI outputs. Transparency information
+  follows ISO 12792 structure per AI Policy Principle 2. Customer-facing
+  documentation is reviewed by CTO and CEO before publication.
+evidence-references:
+  - document-id: AI-Registry
+    description: "AI System Registry with transparency-information per system"
+    path: "ai-registry/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Principle 2 (Transparency and Explainability)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.37
+    relationship: "A.5.37 (Documented operating procedures) covers general operational documentation; A.8.2 specifically addresses AI system user documentation including capability descriptions, limitations, and transparency information."
+risk-references:
+  - RISK-AI-005
+  - RISK-REG-004
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.8.2"
+notes: "Product AI customer documentation developed alongside feature development."
+last-assessed: 2026-02-22
+---

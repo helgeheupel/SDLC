@@ -1,0 +1,60 @@
+---
+control-id: A.6.2.8
+control-name: "AI system recording of event logs"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. All AI system interactions produce auditable records. Claude
+  Code agent sessions are captured in Git commit history with attribution.
+  Third-party tool usage is governed by acceptable use policies with usage
+  tracking. Product AI requires inference logging for audit, debugging, and
+  compliance traceability. EU AI Act Art. 12 requires automatic logging for
+  High-Risk systems.
+implementation-status: partially-implemented
+implementation-approach: >
+  Event logging approaches vary by system category: Development AI (agents)
+  produce Git commits with agent attribution for every artifact, creating
+  an immutable audit log of all AI-generated content. PR review records
+  capture human validation decisions. Third-party tool usage is logged
+  via organizational policy; detailed API logging available for Azure
+  OpenAI Service. Product AI event logging is designed for inference
+  requests/responses, user interactions, model version tracking, and
+  error events. Log retention follows the 7-year minimum per data retention
+  policy. EU AI Act Art. 12 logging requirements are addressed for future
+  High-Risk classifications.
+evidence-references:
+  - document-id: Git-History
+    description: "Git commit history providing agent action audit trail"
+    path: ".git/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 7.5 (monitoring and logging)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.8.15
+    relationship: "A.8.15 (Logging) provides general logging controls; A.6.2.8 extends this with AI-specific event logging including inference requests, model version, confidence scores, user feedback, and drift indicators."
+  - control-id: A.8.17
+    relationship: "A.8.17 (Clock synchronization) ensures consistent timestamps; applies to AI event logs for correlating inference events across distributed AI components."
+risk-references:
+  - RISK-SEC-003
+  - RISK-AI-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.2.8"
+notes: "EU AI Act Art. 12 automatic logging for High-Risk systems prepared for future classification."
+last-assessed: 2026-02-22
+---

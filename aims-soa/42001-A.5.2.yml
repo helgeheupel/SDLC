@@ -1,0 +1,55 @@
+---
+control-id: A.5.2
+control-name: "AI system impact assessment process"
+group: A.5
+group-name: "Assessing impacts of AI systems"
+group-objective: >
+  To identify and assess the potential consequences of AI systems on
+  individuals, groups of individuals, and societies.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group operates 11 AI systems that interact
+  with individuals (team members, customers). ISO 42001 cl. 6.1.4 mandates
+  an impact assessment process. All current systems are classified as
+  Limited-Risk under EU AI Act Art. 50 with transparency obligations.
+  Product AI (Verity VE/EAM) directly impacts customer decision-making,
+  requiring formal impact assessment before deployment.
+implementation-status: partially-implemented
+implementation-approach: >
+  An AI impact assessment procedure following ISO 42005 structure is defined
+  with 8 steps: scoping, responsibility assignment, threshold definition,
+  execution, analysis, documentation, approval, and monitoring. The procedure
+  specifies thresholds per impact dimension: fairness (disparate impact ratio
+  >= 0.8), privacy (no special category data without DPIA), safety (no
+  autonomous decisions without HITL), transparency (all AI outputs
+  identifiable). For Limited-Risk systems, assessment focuses on transparency
+  obligations and individual/societal impact.
+evidence-references:
+  - document-id: HH-AIMS-AIA-001
+    description: "AI Impact Assessment Procedure"
+    path: "procedures/ai-impact-assessment-procedure.md"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 4 (classification framework)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: "none"
+    relationship: "No direct ISO 27001 equivalent. AI impact assessment is additive to the ISMS. ISO 27001 risk assessment (cl. 6.1.2) addresses information security risks but does not cover individual/societal impact assessment required by ISO 42001 cl. 6.1.4."
+risk-references:
+  - RISK-AI-003
+  - RISK-AI-004
+  - RISK-AI-005
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CISO role"
+annex-b-reference: "B.5.2"
+notes: "Third-party AI tools (ChatGPT, Codex) have lighter assessment scope as HH is a deployer, not provider."
+last-assessed: 2026-02-22
+---

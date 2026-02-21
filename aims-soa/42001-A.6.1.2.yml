@@ -1,0 +1,54 @@
+---
+control-id: A.6.1.2
+control-name: "Objectives for responsible development of AI system"
+group: A.6
+group-name: "AI system life cycle"
+group-objective: >
+  To define and manage the AI system life cycle, including design,
+  development, deployment, operation, monitoring, and retirement.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group has documented responsible AI
+  development objectives in the AI Policy (8 governance principles) and
+  measurable AIMS objectives. Development of both the 7 Claude Code agents
+  (prompt engineering, configuration) and Verity product AI (model
+  development, feature engineering) follows the SDLC-Growth-v2 framework
+  with responsible AI checkpoints at each gate.
+implementation-status: fully-implemented
+implementation-approach: >
+  Responsible development objectives are established through the AI Policy
+  Principles 1-8, which cover human oversight, transparency, accountability,
+  data governance, safety, fairness, environmental sustainability, and
+  continuous improvement. These principles translate into measurable AIMS
+  objectives tracked in the AIMS objectives document. The SDLC-Growth-v2
+  framework integrates responsible AI checkpoints at gates G1-G5 for
+  product AI development. Agent development follows the agent framework
+  specification with trust level governance.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Principles 1-8 (responsible AI objectives)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-SDLC-COMPANION
+    description: "SDLC Startup Companion with responsible AI gate criteria"
+    path: "sdlc/SDLC-Growth-Startup-Companion.md"
+iso27001-mapping:
+  - control-id: A.8.25
+    relationship: "A.8.25 (Secure development life cycle) defines secure development objectives; A.6.1.2 extends this to responsible AI development objectives covering fairness, transparency, and human oversight in addition to security."
+risk-references:
+  - RISK-AI-001
+  - RISK-AI-002
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CTO role"
+annex-b-reference: "B.6.1.2"
+notes: ""
+last-assessed: 2026-02-22
+---

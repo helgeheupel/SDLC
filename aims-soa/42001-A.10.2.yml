@@ -1,0 +1,60 @@
+---
+control-id: A.10.2
+control-name: "Allocating responsibilities"
+group: A.10
+group-name: "Third-party and customer relationships"
+group-objective: >
+  To ensure appropriate management of AI-related responsibilities in
+  third-party and customer relationships.
+applicable: true
+justification: >
+  Applicable. The Helge Heupel Group has third-party AI relationships with
+  Anthropic (Claude Code agents), OpenAI (ChatGPT, Codex), and Microsoft
+  (Azure OpenAI Service). Customer relationships for Product AI (Verity
+  VE/EAM) include AI governance responsibilities. Responsibility allocation
+  between HH and third parties must be documented per the EU AI Act value
+  chain requirements (provider vs. deployer obligations).
+implementation-status: partially-implemented
+implementation-approach: >
+  Responsibility allocation follows the EU AI Act value chain model: for
+  third-party AI providers (Anthropic, OpenAI, Microsoft), HH is the
+  deployer with transparency and monitoring obligations while providers
+  carry GPAI model provider obligations. For Product AI customers, HH is
+  the provider with conformity assessment, documentation, and monitoring
+  obligations. Responsibility allocation is documented in: AI System
+  Registry entries (provider field identifies the responsible party for
+  the base AI system), supplier agreements (DPAs, terms of service), and
+  customer contracts (AI feature terms, transparency obligations). Formal
+  responsibility matrices per supplier/customer are in development.
+evidence-references:
+  - document-id: AI-Registry
+    description: "Registry with provider identification per system"
+    path: "ai-registry/"
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy Section 8 (Regulatory Compliance)"
+    path: "policies/AI-Policy.md"
+iso27001-mapping:
+  - control-id: A.5.19
+    relationship: "A.5.19 (Information security in supplier relationships) addresses IS responsibilities with suppliers; A.10.2 extends to AI-specific responsibility allocation including EU AI Act provider/deployer obligations, model safety responsibilities, and data governance duties."
+  - control-id: A.5.20
+    relationship: "A.5.20 (Addressing information security within supplier agreements) covers IS in supplier agreements; A.10.2 adds AI-specific clauses (model transparency, safety assurances, conformity evidence sharing)."
+risk-references:
+  - RISK-SUP-001
+  - RISK-SUP-002
+ai-system-references:
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+responsible-role: "CISO role"
+annex-b-reference: "B.10.2"
+notes: "Formal responsibility matrices per supplier in development."
+last-assessed: 2026-02-22
+---

@@ -1,0 +1,58 @@
+---
+control-id: A.9.3
+control-name: "Objectives for responsible use of AI system"
+group: A.9
+group-name: "Use of AI systems"
+group-objective: >
+  To ensure that AI systems are used responsibly, taking into account the
+  intended use and the potential impacts on individuals, groups, and societies.
+applicable: true
+justification: >
+  Applicable. Measurable AIMS objectives for responsible use are defined per
+  ISO 42001 cl. 6.2 requirements, derived from AI Policy commitments. These
+  include: 100% human oversight compliance (HITL for all AI outputs), zero
+  prohibited practice violations, 100% AI system registration, and 100%
+  transparency compliance. Objectives are monitored via the Monthly Strategic
+  meeting and AIMS SoA implementation tracking.
+implementation-status: fully-implemented
+implementation-approach: >
+  AIMS objectives for responsible use are documented with measurable KPIs:
+  (1) 100% of AI outputs reviewed before external use (PR approval records),
+  (2) zero EU AI Act Art. 5 prohibited practice violations (incident
+  register), (3) 100% AI systems registered in the AI System Registry
+  (quarterly audit), (4) 100% transparency compliance for Limited-Risk
+  systems (product UI audit), (5) AI literacy training completion for all
+  personnel by August 2025 (training records). Objectives are reviewed in
+  the Monthly Strategic meeting (agenda item 2) and updated semi-annually
+  with AI Policy review. Progress is tracked in the AIMS SoA implementation
+  status and AIMS objectives document.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy (source of responsible use commitments)"
+    path: "policies/AI-Policy.md"
+  - document-id: HH-GOV-Startup-v1.0
+    description: "Governance model (Monthly Strategic review of objectives)"
+    path: "governance-model.md"
+iso27001-mapping:
+  - control-id: A.5.1
+    relationship: "A.5.1 (Policies for information security) establishes IS objectives; A.9.3 establishes responsible AI use objectives that complement IS objectives within the IMS, covering fairness, transparency, and human oversight dimensions."
+risk-references:
+  - RISK-AI-001
+  - RISK-REG-001
+ai-system-references:
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+  - AI-PROD-001
+  - AI-PROD-002
+responsible-role: "CEO"
+annex-b-reference: "B.9.3"
+notes: ""
+last-assessed: 2026-02-22
+---

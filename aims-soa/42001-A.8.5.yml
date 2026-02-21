@@ -1,0 +1,63 @@
+---
+control-id: A.8.5
+control-name: "Information for interested parties"
+group: A.8
+group-name: "Information for interested parties of AI systems"
+group-objective: >
+  To ensure that interested parties of AI systems are informed about the
+  AI system's capabilities, limitations, and intended use.
+applicable: true
+justification: >
+  Applicable. Multiple interested parties require AI governance information:
+  customers need transparency about Product AI capabilities and limitations;
+  regulators need conformity evidence; auditors need AIMS documentation;
+  employees need AI literacy and acceptable use guidance; suppliers need
+  AI requirement specifications. The AI Policy and AI System Registry serve
+  as primary information sources for interested parties.
+implementation-status: partially-implemented
+implementation-approach: >
+  Information is provided to interested parties through multiple channels:
+  auditors receive the AIMS SoA, AI System Registry summary, and PDCA
+  evidence. Customers receive Product AI documentation (capability
+  descriptions, limitations, "AI-assisted" indicators) integrated into
+  product UI and documentation. Regulators receive conformity evidence
+  packages assembled per EU AI Act requirements. Team members receive
+  AI Policy, acceptable use guidelines, and AI literacy training materials.
+  Business partners (BearingPoint, NorthGRC) receive AI governance posture
+  summaries as part of collaboration. Information provision is proportionate
+  to the interested party's role and legitimate interest.
+evidence-references:
+  - document-id: HH-AIMS-POL-001
+    description: "AI Policy (primary governance information)"
+    path: "policies/AI-Policy.md"
+  - document-id: AI-Registry-Summary
+    description: "AI System Registry Summary (auditor document)"
+    path: "ai-registry/AI-Registry-Summary.md"
+  - document-id: HH-AIMS-SOA-001
+    description: "AIMS SoA (auditor document)"
+    path: "aims-soa/AIMS-SoA-Consolidated.md"
+iso27001-mapping:
+  - control-id: A.5.1
+    relationship: "A.5.1 (Policies for information security) provides IS policy to interested parties; A.8.5 extends to comprehensive AI governance information provision covering transparency, conformity, and accountability dimensions."
+  - control-id: A.5.6
+    relationship: "A.5.6 (Contact with special interest groups) addresses engagement with relevant groups; A.8.5 extends to AI-specific interested parties including AI ethics organizations, industry consortia, and regulatory bodies."
+risk-references:
+  - RISK-REG-004
+  - RISK-AI-005
+ai-system-references:
+  - AI-PROD-001
+  - AI-PROD-002
+  - AI-AGENT-001
+  - AI-AGENT-002
+  - AI-AGENT-003
+  - AI-AGENT-004
+  - AI-AGENT-005
+  - AI-AGENT-006
+  - AI-AGENT-007
+  - AI-3PARTY-001
+  - AI-3PARTY-002
+responsible-role: "CISO role"
+annex-b-reference: "B.8.5"
+notes: "Customer-facing AI documentation developed alongside Product AI features."
+last-assessed: 2026-02-22
+---
