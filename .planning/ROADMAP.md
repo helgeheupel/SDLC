@@ -91,8 +91,8 @@ Plans:
 **Plans**: 5 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- CTO Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-02)
-- [ ] 04-02-PLAN.md -- AppSec Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-07)
+- [x] 04-01-PLAN.md -- CTO Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-02)
+- [x] 04-02-PLAN.md -- AppSec Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-07)
 - [ ] 04-03-PLAN.md -- Threat modeling framework with STRIDE/LINDDUN templates and two applied threat models (SENG-01)
 - [ ] 04-04-PLAN.md -- SAST/DAST specification and dependency scanning setup with reference configs (SENG-02, SENG-05)
 - [ ] 04-05-PLAN.md -- SBOM generation pipeline and supply chain security framework with SLSA L2 (SENG-03, SENG-04)
