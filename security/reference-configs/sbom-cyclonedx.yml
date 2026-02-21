@@ -1,0 +1,91 @@
+# SBOM Generation Pipeline - CycloneDX for pnpm
+#
+# Reference config for the Helge Heupel Group.
+# Target repository: helgeheupel-cms (Payload CMS, pnpm, TypeScript, Next.js)
+# Specification: security/sbom/HH-SENG-SBOM-001.md
+#
+# This workflow generates a CycloneDX SBOM from pnpm-lock.yaml on every push
+# to main and every published release. The SBOM provides a complete inventory
+# of all production dependencies with exact versions, licenses, and package URLs.
+#
+# To use: Copy this file to .github/workflows/sbom-cyclonedx.yml in the target repo.
+#
+# Annex A controls: A.8.30 (Outsourced Development), A.5.21 (ICT Supply Chain),
+#                   A.8.8 (Technical Vulnerabilities)
+
+name: SBOM Generation - CycloneDX
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+
+permissions:
+  contents: write  # Required for uploading release assets
+  actions: read
+
+jobs:
+  generate-sbom:
+    name: Generate CycloneDX SBOM
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Install pnpm
+      # pnpm/action-setup@v4 reads the packageManager field from package.json
+      # to determine the correct pnpm version automatically.
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      # Step 3: Set up Node.js with pnpm dependency caching
+      # The cache: pnpm option caches the pnpm store directory to speed up
+      # subsequent installs. Node version should match the project's engines.node.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # Step 4: Install dependencies with --frozen-lockfile
+      # CRITICAL: --frozen-lockfile ensures the lockfile is not modified during install.
+      # If pnpm-lock.yaml is out of sync with package.json, this step FAILS the build.
+      # This guarantees the SBOM reflects exactly what the lockfile specifies,
+      # not a silently updated dependency tree. Without this flag, the SBOM could
+      # contain different versions than what was tested and deployed.
+      - name: Install dependencies (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+
+      # Step 5: Generate CycloneDX SBOM
+      # @cyclonedx/cyclonedx-node-pnpm reads pnpm-lock.yaml directly for exact
+      # version resolution. Output is CycloneDX 1.5+ JSON with:
+      #   - All direct and transitive dependencies
+      #   - SPDX license identifiers
+      #   - Package URLs (purl format)
+      #   - Dependency relationship graph
+      - name: Generate CycloneDX SBOM
+        run: npx @cyclonedx/cyclonedx-node-pnpm --output-file sbom.cdx.json --output-format json
+
+      # Step 6: Upload SBOM as GitHub Actions artifact
+      # Artifacts are retained for 90 days (default). The artifact name includes
+      # the git SHA for traceability. Anyone with repository access can download
+      # the SBOM from the Actions run page.
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-${{ github.sha }}
+          path: sbom.cdx.json
+          retention-days: 90
+
+      # Step 7: Attach SBOM to GitHub release (release trigger only)
+      # When a release is published, the SBOM is uploaded as a release asset
+      # for permanent retention. This provides auditors with a stable reference
+      # point for the dependency inventory at each release version.
+      - name: Upload SBOM to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: sbom.cdx.json
