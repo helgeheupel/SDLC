@@ -148,6 +148,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 04-05-PLAN.md (SBOM Generation and Supply Chain Security) -- Phase 4 COMPLETE
-Resume file: .planning/phases/04-cto-and-appsec-agents-with-security-engineering/04-05-SUMMARY.md
-Next: Phase 5 research and planning
+Stopped at: Phase 5 context gathered
+Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-CONTEXT.md
+Next: /gsd:plan-phase 5
