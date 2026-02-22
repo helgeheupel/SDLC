@@ -31,11 +31,11 @@ Progress: [██████░░░░] 57%
 | 2 | 4 | 27min | 7min |
 | 3 | 4 | 34min | 9min |
 | 4 | 5 | 29min | 6min |
-| 5 | 1 | 6min | 6min |
+| 5 | 2 | 14min | 7min |
 
 **Recent Trend:**
-- Last 5 plans: 05-01 (6min), 04-05 (6min), 04-04 (7min), 04-03 (7min), 04-02 (4min)
-- Trend: Phase 5 started. AI System Registry completed in 6 min (11 YAML files + consolidation script).
+- Last 5 plans: 05-02 (8min), 05-01 (6min), 04-05 (6min), 04-04 (7min), 04-03 (7min)
+- Trend: Phase 5 progressing well. AI risk/impact assessment procedures completed in 8 min (2 formal procedure documents, 1618 lines total).
 
 *Updated after each plan completion*
 
@@ -138,6 +138,11 @@ Recent decisions affecting current work:
 - [05-01]: Three categories (development-ai, third-party-ai, product-ai) matching AI Policy Section 1 taxonomy
 - [05-01]: Product AI systems have 36 applicable controls; third-party tools have 5-6; agents have 10-19 reflecting actual governance needs
 - [05-01]: Separate consolidation script for AI registry (not extending soa/scripts/generate-soa.js) avoids risk to working ISO 27001 SoA output
+- [05-02]: AI risk assessment extends (not replaces) Phase 3 methodology; single risk register with ai-risk: true tag, same 5x5 matrix + 5th dimension
+- [05-02]: Individual/Society impact >= 4 always requires explicit CEO acceptance regardless of overall risk level
+- [05-02]: 6 measurable impact dimensions: fairness (0.8 disparate impact), safety (HITL gate), privacy (DPIA), transparency (Art. 50), environmental (per-inference), rights (no profiling)
+- [05-02]: Limited-Risk focused assessment vs High-Risk full assessment; High-Risk process documented but not exercised at Startup
+- [05-02]: Worked example pattern: CISO Agent (AI-AGENT-001) demonstrates complete Limited-Risk AIA process end-to-end
 
 ### Pending Todos
 
@@ -153,6 +158,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 05-01-PLAN.md (AI System Registry)
-Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-01-SUMMARY.md
-Next: Execute 05-02-PLAN.md (AI Risk and Impact Assessment Procedures)
+Stopped at: Completed 05-02-PLAN.md (AI Risk and Impact Assessment Procedures)
+Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-02-SUMMARY.md
+Next: Execute 05-03-PLAN.md (ISO 42001 Annex A Control Mapping)

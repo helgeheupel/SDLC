@@ -36,8 +36,8 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 
 - [x] **AIMS-01**: AI Policy produced — standalone governance document, commitment to responsible AI, regulatory conformity, prohibited practices
 - [x] **AIMS-02**: AI System Registry produced — all 7 agents + future product AI registered with full schema (system ID, intended use, risk classification, lifecycle status, applicable controls)
-- [ ] **AIMS-03**: AI risk assessment process defined — dual-axis classification (EU AI Act product risk × SDLC usage tier), ISO 23894 risk sources
-- [ ] **AIMS-04**: AI impact assessment process defined — per ISO 42005, mandatory for High-Risk and Limited-Risk AI systems
+- [x] **AIMS-03**: AI risk assessment process defined — dual-axis classification (EU AI Act product risk × SDLC usage tier), ISO 23894 risk sources
+- [x] **AIMS-04**: AI impact assessment process defined — per ISO 42005, mandatory for High-Risk and Limited-Risk AI systems
 - [ ] **AIMS-05**: ISO 42001 Annex A control mapping produced — A.2 (Policies) through A.10 (Third-party), each with implementation approach and evidence
 - [ ] **AIMS-06**: AIMS PDCA documentation produced — Plan (objectives, risk assessment, resources), Do (operational controls), Check (management review, internal audit), Act (nonconformity, improvement)
 
@@ -141,8 +141,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ISMS-09 | Phase 2 | Complete |
 | AIMS-01 | Phase 2 | Complete |
 | AIMS-02 | Phase 5 | Complete |
-| AIMS-03 | Phase 5 | Pending |
-| AIMS-04 | Phase 5 | Pending |
+| AIMS-03 | Phase 5 | Complete |
+| AIMS-04 | Phase 5 | Complete |
 | AIMS-05 | Phase 5 | Pending |
 | AIMS-06 | Phase 5 | Pending |
 | OVLY-01 | Phase 1 | Complete |
