@@ -1,0 +1,9 @@
+{
+  "name": "aims-soa-scripts",
+  "version": "1.0.0",
+  "description": "AIMS SoA consolidation scripts for ISO 42001 Annex A controls",
+  "private": true,
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
