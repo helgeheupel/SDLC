@@ -14,7 +14,7 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 - [x] **AGNT-03**: CISO Agent (Security + EU Compliance + AI Governance) created with EU-CA + AIGO + partial US-CA expertise — can spawn subagents for risk assessment, policy drafting, gap analysis
 - [x] **AGNT-04**: Head of AI Science Agent created with CAIS expertise — can spawn subagents for model evaluation, AI strategy, research assessment
 - [x] **AGNT-05**: Head of Platform/SRE Agent created with PSRE expertise — can spawn subagents for SLO design, observability, incident response, BCP/DR planning
-- [ ] **AGNT-06**: Product/Strategy Lead Agent created with CSA expertise — can spawn subagents for market analysis, OKR design, portfolio governance
+- [x] **AGNT-06**: Product/Strategy Lead Agent created with CSA expertise — can spawn subagents for market analysis, OKR design, portfolio governance
 - [x] **AGNT-07**: AppSec Agent (Product Security Engineering) created — can spawn subagents for threat modeling, SAST/DAST config, SBOM generation, supply chain analysis
 - [x] **AGNT-08**: Agent interaction model defined — hierarchical (CEO → SDLC Lead → specialists), file-mediated via Git, CEO can also engage any specialist directly
 - [x] **AGNT-09**: Subagent spawning protocol defined — context passing, result collection, token budget governance, when/how agents spawn subagents
@@ -125,7 +125,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AGNT-03 | Phase 2 | Complete |
 | AGNT-04 | Phase 6 | Complete |
 | AGNT-05 | Phase 6 | Complete |
-| AGNT-06 | Phase 6 | Pending |
+| AGNT-06 | Phase 6 | Complete |
 | AGNT-07 | Phase 4 | Complete |
 | AGNT-08 | Phase 1 | Complete |
 | AGNT-09 | Phase 1 | Complete |
