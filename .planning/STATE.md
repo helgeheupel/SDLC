@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 5 of 10 (AIMS Core and AI System Registry)
-Plan: 2 of 4 complete in current phase
-Status: Plan 05-02 complete (AI Risk and Impact Assessment Procedures). 2 plans remaining in Phase 5.
-Last activity: 2026-02-22 -- Completed 05-02-PLAN.md (AI Risk and Impact Assessment Procedures)
+Plan: 3 of 4 complete in current phase
+Status: Plan 05-03 complete (ISO 42001 Annex A Control Mapping). 1 plan remaining in Phase 5.
+Last activity: 2026-02-22 -- Completed 05-03-PLAN.md (ISO 42001 Annex A Control Mapping)
 
-Progress: [██████░░░░] 57%
+Progress: [██████░░░░] 60%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 19
+- Total plans completed: 20
 - Average duration: 10min
-- Total execution time: 2.93 hours
+- Total execution time: 3.10 hours
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: [██████░░░░] 57%
 | 2 | 4 | 27min | 7min |
 | 3 | 4 | 34min | 9min |
 | 4 | 5 | 29min | 6min |
-| 5 | 2 | 14min | 7min |
+| 5 | 3 | 24min | 8min |
 
 **Recent Trend:**
-- Last 5 plans: 05-02 (8min), 05-01 (6min), 04-05 (6min), 04-04 (7min), 04-03 (7min)
-- Trend: Phase 5 progressing well. AI risk/impact assessment procedures completed in 8 min (2 formal procedure documents, 1618 lines total).
+- Last 5 plans: 05-03 (10min), 05-02 (8min), 05-01 (6min), 04-05 (6min), 04-04 (7min)
+- Trend: Phase 5 progressing well. ISO 42001 Annex A control mapping completed in 10 min (38 control YAMLs + consolidation script + generated SoA).
 
 *Updated after each plan completion*
 
@@ -143,6 +143,11 @@ Recent decisions affecting current work:
 - [05-02]: 6 measurable impact dimensions: fairness (0.8 disparate impact), safety (HITL gate), privacy (DPIA), transparency (Art. 50), environmental (per-inference), rights (no profiling)
 - [05-02]: Limited-Risk focused assessment vs High-Risk full assessment; High-Risk process documented but not exercised at Startup
 - [05-02]: Worked example pattern: CISO Agent (AI-AGENT-001) demonstrates complete Limited-Risk AIA process end-to-end
+- [05-03]: 38 actual ISO 42001 Annex A controls across 9 groups (research stated 39 but enumeration yields 38); all controls present
+- [05-03]: 100% applicability: all 38 controls applicable at Startup with implementation status reflecting reality (10 full, 22 partial, 6 planned)
+- [05-03]: Separate AIMS SoA consolidation script (aims-soa/scripts/) avoids any risk to working ISO 27001 SoA generation
+- [05-03]: A.5.2-A.5.5 documented as "No direct ISO 27001 equivalent" for impact assessment controls additive to ISMS
+- [05-03]: 62 ISO 27001 cross-reference mappings with specific relationship descriptions for bidirectional audit traceability
 
 ### Pending Todos
 
@@ -158,6 +163,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 05-02-PLAN.md (AI Risk and Impact Assessment Procedures)
-Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-02-SUMMARY.md
-Next: Execute 05-03-PLAN.md (ISO 42001 Annex A Control Mapping)
+Stopped at: Completed 05-03-PLAN.md (ISO 42001 Annex A Control Mapping)
+Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-03-SUMMARY.md
+Next: Execute 05-04-PLAN.md (AIMS PDCA Documentation)
