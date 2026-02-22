@@ -1,8 +1,8 @@
 ---
 document-id: HH-IMS-CTX-001
 title: "Integrated Management System Context"
-version: v1.0
-date: 2026-02-19
+version: v1.1
+date: 2026-02-22
 classification: Internal
 author: CISO Agent
 reviewer: [CISO, CTO]
@@ -10,7 +10,7 @@ approver: CEO Helge Heupel
 review-cycle: Annual
 next-review: 2027-02-19
 status: Draft
-change-summary: Initial release
+change-summary: "Added AIMS PDCA cycle (Section 7) and AIMS Objectives (Section 8)"
 ---
 
 # Integrated Management System Context
@@ -94,12 +94,17 @@ Tier 1: IMS Context (this document)
     +-- Tier 3: Procedures and Frameworks
     |     |-- Risk Assessment Methodology
     |     |-- Statement of Applicability (SoA)
+    |     |-- AIMS Statement of Applicability (AIMS SoA)
     |     |-- Unified Control Library (UCL)
+    |     |-- AI Risk Assessment Procedure
+    |     |-- AI Impact Assessment Procedure
     |     |-- Incident Response Procedures
     |     |-- Document Control Framework
     |
     +-- Tier 4: Evidence and Records
           |-- Risk Register
+          |-- AI System Registry
+          |-- AI Impact Assessment Reports
           |-- Audit Reports
           |-- Management Review Minutes
           |-- Training Records
@@ -164,6 +169,97 @@ Interested parties with climate-related information security requirements includ
 ### Assessment Outcome
 
 Given the Helge Heupel Group's cloud-only operating model with no physical data centers, the direct climate risk to information assets is low and primarily mitigated by Azure's infrastructure resilience. A formal, detailed climate risk assessment is planned for the Growth phase. At Startup, this acknowledgment ensures compliance with ISO 27001:2022/Amd 1:2024 while reflecting the organization's actual risk profile.
+
+---
+
+## 7. AIMS Plan-Do-Check-Act Cycle
+
+The AI Management System (AIMS) operates through the Plan-Do-Check-Act cycle integrated into the ISMS PDCA cycle per the Annex SL harmonized structure (Section 3). This section documents the operational PDCA for AIMS at Startup phase.
+
+### 7.1 Plan
+
+**AIMS Objectives:** Established by CEO Helge Heupel, derived from AI Policy (HH-AIMS-POL-001) commitments, and documented in the AIMS Objectives document ([aims-objectives.md](aims-objectives.md)). Objectives are reviewed at the Monthly Strategic meeting (60 minutes, monthly cadence). Each objective has measurable KPIs with specific targets. Reference: ISO 42001 cl. 6.2.
+
+**AI Risk Assessment Schedule:** Annual full cycle for all registered AI systems per the AI Risk Assessment Procedure (HH-AIMS-RMA-001). Event-driven assessments triggered by:
+- New AI system introduction or registration
+- Major changes to existing AI systems (model update, data source change, scope expansion)
+- AI-related incidents (bias detection, hallucination impact, unauthorized data processing)
+- Regulatory changes (EU AI Act implementing acts, new guidance)
+
+Next scheduled annual assessment: [DATE-TO-BE-SET-AT-FIRST-REVIEW].
+
+**AI Impact Assessment Schedule:** Per the AI Impact Assessment Procedure (HH-AIMS-AIA-001). All Limited-Risk and High-Risk AI systems assessed before deployment and annually thereafter. Currently 11 systems classified as Limited-Risk under EU AI Act Art. 50. Impact assessments use 6 measurable dimensions (fairness, safety, privacy, transparency, environmental, individual rights) with specific thresholds per dimension.
+
+**Resource Requirements:** AI governance is resourced through the existing team structure:
+- **Personnel:** CEO (ultimate accountability), CTO (architecture decisions), CISO (compliance oversight), IT Pentester/Super Admin (infrastructure security), and 7 Claude Code AI agents (operational artifact production)
+- **Budget:** No dedicated AI governance budget at Startup. AI governance costs are integrated into operational costs (Azure AI services, Anthropic API, team time)
+- **External support:** BearingPoint consultant available for guidance on certification readiness and gap assessment
+- **Growth trigger:** A dedicated AI governance role will be established when the team exceeds 15 people or a High-Risk AI system is deployed under EU AI Act Art. 6
+
+### 7.2 Do
+
+**AI System Registry Maintenance:** The AI System Registry (ai-registry/ directory) is maintained as the YAML-in-Git source of truth for all AI systems within AIMS scope. Currently 11 registered systems across 3 categories (7 development-ai agents, 2 third-party-ai tools, 2 product-ai systems). Each entry follows a 24-field schema covering system identity, EU AI Act classification, SDLC usage tier, data I/O, human oversight, applicable ISO 42001 Annex A controls, and lifecycle status. The CISO Agent performs quarterly review of all entries. Event-driven updates occur when AI systems change. CEO approves updates via the PR workflow.
+
+**AI Risk Treatment Implementation:** Applicable ISO 42001 Annex A controls are documented in the AIMS Statement of Applicability (aims-soa/ directory). 38 controls across 9 groups are assessed for applicability, with implementation status reflecting Startup reality (10 fully implemented, 22 partially implemented, 6 planned). Treatment actions for AI-specific risks are tracked in risk register entries with the `ai-risk: true` tag, using the same treatment framework as ISMS risks (avoid, modify, share, retain).
+
+**AI System Lifecycle Governance:** Design, development, deployment, and operational monitoring of AI systems are governed by the SDLC-Growth-v2 framework adapted for Startup (SDLC-Startup-v2.md). PR-based approval is required for all AI system changes. All 7 Claude Code agents operate at Trust Level 2 (Supervised Autonomous), meaning all outputs require human review before acceptance. The AI system lifecycle requirements defined in AI Policy Section 7 (HH-AIMS-POL-001) establish specific obligations for each lifecycle phase.
+
+**AI Competence and Training:** The EU AI Act Art. 4 AI literacy obligation is addressed through:
+- (a) All team members trained on the AI Policy including prohibited practices (Section 5)
+- (b) All 7 Claude Code agents configured with policy constraints via CLAUDE.md system prompts and reference directories
+- (c) Training records maintained per the document control framework (HH-ISMS-DOC-001)
+- (d) AI literacy training completion tracked as AIMS Objective 6 with a target of 100% personnel trained by August 2025
+
+### 7.3 Check
+
+**Management Review Inputs for AIMS:** AIMS performance is reviewed at the Monthly Strategic meeting, which satisfies ISO 42001 cl. 9.3 management review requirements alongside ISO 27001 cl. 9.3. AIMS-specific inputs for each review include:
+- AI System Registry status (new systems, changes, retirements)
+- AI risk assessment outcomes and residual risk levels
+- AI impact assessment outcomes and threshold compliance
+- AI incident reports (bias events, hallucination impacts, prohibited practice concerns)
+- Regulatory changes (EU AI Act implementing acts, ISO 42001 guidance evolution)
+- AIMS objective KPI performance (7 objectives with measurable targets)
+
+**AI Governance Metrics:** The following metrics are monitored as standing agenda items:
+- Registry completeness: percentage of deployed AI systems registered (target: 100%)
+- Assessment currency: percentage of systems with risk assessment within 12 months (target: 100%)
+- AIA completion rate: percentage of Limited-Risk and High-Risk systems with impact assessment (target: 100%)
+- Prohibited practice compliance: number of EU AI Act Art. 5 violations (target: zero)
+- AIMS objective KPI performance: per-objective status reported against targets
+
+**Internal Audit Program:** AIMS-specific internal audit criteria are deferred to Phase 7 (Operational Controls) where the broader audit program covering both ISMS and AIMS is established. At Startup, the Monthly Strategic meeting review serves as the primary AIMS performance check, with CEO Helge Heupel responsible for identifying nonconformities and initiating corrective actions.
+
+> Detailed AIMS internal audit procedures and management review input templates will be established in Phase 7 as part of the integrated audit program covering both ISMS and AIMS.
+
+### 7.4 Act
+
+**Nonconformity and Corrective Action:** AIMS nonconformities are handled through the same corrective action process as ISMS nonconformities, maintaining a single improvement pipeline. Nonconformities may be identified during:
+- Monthly Strategic meeting reviews
+- Ad-hoc discovery by team members or AI agents
+- External audit findings
+- AI incident investigations
+
+All AIMS corrective actions are tracked in a unified corrective action log alongside ISMS corrective actions. CEO Helge Heupel is the accountable owner for all corrective actions, consistent with the Startup governance model where the CEO covers CISO responsibilities.
+
+**Continual Improvement:** AI governance improvements are captured as action items at the Monthly Strategic meeting. These are prioritized alongside ISMS improvements in a single organizational improvement pipeline. AI-specific improvement drivers include:
+- EU AI Act updates (implementing acts, delegated regulations, guidance documents)
+- ISO 42001 guidance evolution (Annex B updates, auditor feedback, certification body publications)
+- AI incident learnings (post-incident review findings)
+- Audit findings (internal and external, integrated across ISMS and AIMS)
+
+**Improvement Backlog:** No separate AIMS improvement backlog is maintained at Startup. All improvement items are integrated into the single organizational improvement backlog. Growth trigger: separate AIMS improvement tracking will be established when the AIMS has been operational for 12 months and improvement volume justifies separation.
+
+> At Startup phase, AIMS PDCA is integrated into the ISMS PDCA cycle via the Monthly Strategic meeting. Separate AIMS governance bodies and dedicated audit programs are introduced at Growth phase when team size and AI system complexity justify the overhead. This integration is enabled by the Annex SL harmonized structure (Section 3) and serves both audit efficiency and operational simplicity.
+
+---
+
+## 8. AIMS Objectives
+
+AIMS objectives satisfying ISO 42001 cl. 6.2 are documented in [aims-objectives.md](aims-objectives.md). These objectives are derived from AI Policy (HH-AIMS-POL-001) commitments and reviewed at each Monthly Strategic meeting. Measurable targets and monitoring mechanisms are specified per objective.
+
+The 7 AIMS objectives cover: ISO 42001 certification readiness, AI System Registry completeness, AI risk assessment currency, AI impact assessment completion, EU AI Act prohibited practice compliance, AI literacy training, and human oversight compliance. Each objective has a specific KPI, measurable target, defined measurement method, monitoring frequency, and named owner.
+
+Objective performance is reported as a standing agenda item at the Monthly Strategic meeting, with CEO Helge Heupel accountable for ensuring monitoring occurs and corrective actions are initiated when targets are not met.
 
 ---
 
