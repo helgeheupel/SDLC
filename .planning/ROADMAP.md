@@ -124,11 +124,13 @@ Plans:
   2. The AI Science Agent (CLAUDE.md) is constructed and can produce AI research assessments, model evaluation frameworks, and ISO 42001 Annex A artifacts
   3. The Platform/SRE Agent (CLAUDE.md) is constructed and can produce SLO frameworks, observability configurations, incident management procedures, and BCP/DR plans
   4. The Product/Strategy Agent (CLAUDE.md) is constructed and can produce strategic alignment artifacts, OKR frameworks, WSJF scoring, and portfolio governance
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
+- [ ] 06-01-PLAN.md -- AI Science Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-04)
+- [ ] 06-02-PLAN.md -- Platform/SRE Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-05)
+- [ ] 06-03-PLAN.md -- Product/Strategy Agent construction (CLAUDE.md + reference/domain-context.md) (AGNT-06)
+- [ ] 06-04-PLAN.md -- SDLC Lead Agent construction (CLAUDE.md + reference/ files) (AGNT-01)
 
 ### Phase 7: Operational Controls
 **Goal**: All operational security procedures exist as actionable, HH-specific documents that personnel can follow and auditors can verify against real operational evidence
