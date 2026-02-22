@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
 - [x] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
 - [x] **Phase 5: AIMS Core and AI System Registry** - Produce AI System Registry, AI risk/impact assessment processes, ISO 42001 Annex A control mapping, AIMS PDCA documentation
-- [ ] **Phase 6: Remaining Specialist Agents** - Create AI Science, Platform/SRE, and Product/Strategy agents
+- [x] **Phase 6: Remaining Specialist Agents** - Create AI Science, Platform/SRE, and Product/Strategy agents (completed 2026-02-22)
 - [ ] **Phase 7: Operational Controls** - Produce incident management, BCP/DR, access control, change management, supplier security, HR security procedures
 - [ ] **Phase 8: TISAX Maintenance** - Map VDA ISA 6 controls to existing ISO 27001 evidence, produce prototype protection docs, document Level 3 maturity
 - [ ] **Phase 9: Toolchain Integration** - Define NorthGRC, Linear, and Float integrations for evidence sync, task traceability, and milestone tracking
@@ -205,7 +205,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 | 3. Risk Framework and Statement of Applicability | 4/4 | Complete | 2026-02-20 |
 | 4. CTO and AppSec Agents with Security Engineering | 5/5 | Complete | 2026-02-22 |
 | 5. AIMS Core and AI System Registry | 0/4 | Planned | - |
-| 6. Remaining Specialist Agents | 0/TBD | Not started | - |
+| 6. Remaining Specialist Agents | 0/TBD | Complete    | 2026-02-22 |
 | 7. Operational Controls | 0/TBD | Not started | - |
 | 8. TISAX Maintenance | 0/TBD | Not started | - |
 | 9. Toolchain Integration | 0/TBD | Not started | - |
