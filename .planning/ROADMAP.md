@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: CISO Agent and IS/AI Policy Foundation** - Create CISO Agent and produce foundational IS Policy, AI Policy, ISMS Scope, document control framework
 - [x] **Phase 3: Risk Framework and Statement of Applicability** - Establish risk methodology, populate risk register via human workshop, produce SoA for all 93 Annex A controls
 - [x] **Phase 4: CTO and AppSec Agents with Security Engineering** - Create CTO and AppSec agents, produce threat models, SAST/DAST config, SBOM pipeline, supply chain security
-- [ ] **Phase 5: AIMS Core and AI System Registry** - Produce AI System Registry, AI risk/impact assessment processes, ISO 42001 Annex A control mapping, AIMS PDCA documentation
+- [x] **Phase 5: AIMS Core and AI System Registry** - Produce AI System Registry, AI risk/impact assessment processes, ISO 42001 Annex A control mapping, AIMS PDCA documentation
 - [ ] **Phase 6: Remaining Specialist Agents** - Create AI Science, Platform/SRE, and Product/Strategy agents
 - [ ] **Phase 7: Operational Controls** - Produce incident management, BCP/DR, access control, change management, supplier security, HR security procedures
 - [ ] **Phase 8: TISAX Maintenance** - Map VDA ISA 6 controls to existing ISO 27001 evidence, produce prototype protection docs, document Level 3 maturity
@@ -110,10 +110,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 05-01-PLAN.md -- AI System Registry with 11 per-system YAML entries and consolidation script (AIMS-02)
-- [ ] 05-02-PLAN.md -- AI Risk Assessment and AI Impact Assessment formal procedures (AIMS-03, AIMS-04)
-- [ ] 05-03-PLAN.md -- ISO 42001 Annex A control mapping: 39 per-control YAML files and AIMS SoA consolidation script (AIMS-05)
-- [ ] 05-04-PLAN.md -- AIMS PDCA documentation: IMS Context extension and AIMS objectives (AIMS-06)
+- [x] 05-01-PLAN.md -- AI System Registry with 11 per-system YAML entries and consolidation script (AIMS-02)
+- [x] 05-02-PLAN.md -- AI Risk Assessment and AI Impact Assessment formal procedures (AIMS-03, AIMS-04)
+- [x] 05-03-PLAN.md -- ISO 42001 Annex A control mapping: 38 per-control YAML files and AIMS SoA consolidation script (AIMS-05)
+- [x] 05-04-PLAN.md -- AIMS PDCA documentation: IMS Context extension and AIMS objectives (AIMS-06)
 
 ### Phase 6: Remaining Specialist Agents
 **Goal**: The AI Science, Platform/SRE, and Product/Strategy agents exist and can produce domain-specific artifacts within the established policy and risk framework

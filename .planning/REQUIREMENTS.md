@@ -39,7 +39,7 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 - [x] **AIMS-03**: AI risk assessment process defined — dual-axis classification (EU AI Act product risk × SDLC usage tier), ISO 23894 risk sources
 - [x] **AIMS-04**: AI impact assessment process defined — per ISO 42005, mandatory for High-Risk and Limited-Risk AI systems
 - [x] **AIMS-05**: ISO 42001 Annex A control mapping produced — A.2 (Policies) through A.10 (Third-party), each with implementation approach and evidence
-- [ ] **AIMS-06**: AIMS PDCA documentation produced — Plan (objectives, risk assessment, resources), Do (operational controls), Check (management review, internal audit), Act (nonconformity, improvement)
+- [x] **AIMS-06**: AIMS PDCA documentation produced — Plan (objectives, risk assessment, resources), Do (operational controls), Check (management review, internal audit), Act (nonconformity, improvement)
 
 ### Startup Overlay
 
@@ -144,7 +144,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AIMS-03 | Phase 5 | Complete |
 | AIMS-04 | Phase 5 | Complete |
 | AIMS-05 | Phase 5 | Complete |
-| AIMS-06 | Phase 5 | Pending |
+| AIMS-06 | Phase 5 | Complete |
 | OVLY-01 | Phase 1 | Complete |
 | OVLY-02 | Phase 1 | Complete |
 | OVLY-03 | Phase 1 | Complete |
