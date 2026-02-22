@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** CEO can interchangeably steer humans and AI agents to produce audit-ready compliance artifacts at enterprise quality with startup speed
-**Current focus:** Phase 5 complete. Ready for Phase 6: SDLC Lead Agent and Multi-Agent Orchestration
+**Current focus:** Phase 6 in progress. Remaining Specialist Agents (AI Science, Platform/SRE, Product/Strategy, SDLC Lead).
 
 ## Current Position
 
-Phase: 5 of 10 (AIMS Core and AI System Registry) -- COMPLETE
-Plan: 4 of 4 complete in current phase
-Status: Phase 5 complete. All 4 plans executed (Registry, Risk/Impact Assessment, Annex A Controls, PDCA/Objectives).
-Last activity: 2026-02-22 -- Completed 05-04-PLAN.md (AIMS PDCA Documentation)
+Phase: 6 of 10 (Remaining Specialist Agents)
+Plan: 1 of 4 complete in current phase
+Status: Plan 01 complete (AI Science Agent). Plans 02-04 remaining (Platform/SRE, Product/Strategy, SDLC Lead).
+Last activity: 2026-02-22 -- Completed 06-01-PLAN.md (AI Science Agent)
 
-Progress: [██████░░░░] 60%
+Progress: [██████░░░░] 63%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 21
+- Total plans completed: 22
 - Average duration: 9min
-- Total execution time: 3.15 hours
+- Total execution time: 3.23 hours
 
 **By Phase:**
 
@@ -32,12 +32,14 @@ Progress: [██████░░░░] 60%
 | 3 | 4 | 34min | 9min |
 | 4 | 5 | 29min | 6min |
 | 5 | 4 | 27min | 7min |
+| 6 | 1/4 | 5min | 5min |
 
 **Recent Trend:**
-- Last 5 plans: 05-04 (3min), 05-03 (10min), 05-02 (8min), 05-01 (6min), 04-05 (6min)
-- Trend: Phase 5 complete in 27 min total (4 plans). AIMS PDCA and objectives completed in 3 min. Phase 5 delivered: AI System Registry (11 entries), AI risk/impact assessment procedures, ISO 42001 Annex A mapping (38 controls), and AIMS PDCA with objectives.
+- Last 5 plans: 06-01 (5min), 05-04 (3min), 05-03 (10min), 05-02 (8min), 05-01 (6min)
+- Trend: Phase 6 started. AI Science Agent completed in 5 min (338-line CLAUDE.md + domain context). Consistent with Phase 4 agent creation velocity.
 
 *Updated after each plan completion*
+| Phase 06 P01 | 5min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -153,6 +155,10 @@ Recent decisions affecting current work:
 - [05-04]: Check and Act sections explicitly defer detailed audit criteria and management review templates to Phase 7
 - [05-04]: 7 AIMS objectives with specific measurable KPIs, targets, measurement methods, and AI Policy traceability per ISO 42001 cl. 6.2
 - [05-04]: Semi-annual AIMS objectives review cycle aligned with AI Policy review cycle (faster than annual)
+- [06-01]: AI Science Agent prompt at 338 lines (under 400-line target) using progressive disclosure via reference/ directory
+- [06-01]: AI Science sections 8 (IEA v2) and 9.4 (AI-specific testing) mapped as primary ownership using V2 numbering
+- [06-01]: Technical vs governance ownership qualifier: AI Science owns evaluation methodologies, CISO owns management system artifacts
+- [06-01]: Startup AI testing simplified to prompt injection resistance and hallucination rate; full model evaluation deferred to Growth
 
 ### Pending Todos
 
@@ -168,6 +174,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 05-04-PLAN.md (AIMS PDCA Documentation) -- Phase 5 COMPLETE
-Resume file: .planning/phases/05-aims-core-and-ai-system-registry/05-04-SUMMARY.md
-Next: Phase 6 (SDLC Lead Agent and Multi-Agent Orchestration)
+Stopped at: Completed 06-01-PLAN.md (AI Science Agent)
+Resume file: .planning/phases/06-remaining-specialist-agents/06-01-SUMMARY.md
+Next: 06-02-PLAN.md (Platform/SRE Agent)
