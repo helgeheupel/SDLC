@@ -1,14 +1,14 @@
 ---
-status: diagnosed
+status: gap-resolved
 phase: 06-remaining-specialist-agents
 source: [06-01-SUMMARY.md, 06-02-SUMMARY.md, 06-03-SUMMARY.md, 06-04-SUMMARY.md]
 started: 2026-02-23T10:00:00Z
-updated: 2026-02-24T10:00:00Z
+updated: 2026-02-24T12:00:00Z
 ---
 
 ## Current Test
 
-[testing paused - systemic issue diagnosed, migration planned]
+[gap resolved — agents migrated to .claude/agents/, re-run UAT to verify all 10 tests]
 
 ## Tests
 
@@ -74,29 +74,17 @@ skipped: 9
 ## Gaps
 
 - truth: "All 7 agents load via Claude Code --agent mechanism with correct identity, scope, and can be coordinated as Agent Teams"
-  status: failed
-  reason: "Systemic: Agent CLAUDE.md files are in agents/<name>/CLAUDE.md but Claude Code expects .claude/agents/<name>.md. Agent Teams not enabled. SDLC Lead lacks Agent Teams coordination instructions."
+  status: resolved
+  reason: "All 7 agents migrated to .claude/agents/<name>.md. Agent Teams enabled via settings.json. SDLC Lead updated with three-tier coordination model (Tier 1: direct specialist, Tier 2: lead-spawned specialist, Tier 3: Agent Team)."
   severity: major
   test: 1
   root_cause: "Three issues: (1) Files in wrong location for Claude Code subagent discovery, (2) Agent Teams experimental feature not enabled in settings.json, (3) SDLC Lead prompt describes manual routing but needs Agent Teams coordination pattern (team lead spawns teammates, shared task list, mailbox communication)"
-  artifacts:
-    - path: "agents/ai-science/CLAUDE.md"
-      issue: "Wrong location - should be .claude/agents/ai-science.md"
-    - path: "agents/platform-sre/CLAUDE.md"
-      issue: "Wrong location - should be .claude/agents/platform-sre.md"
-    - path: "agents/product-strategy/CLAUDE.md"
-      issue: "Wrong location - should be .claude/agents/product-strategy.md"
-    - path: "agents/sdlc-lead/CLAUDE.md"
-      issue: "Wrong location + needs Agent Teams coordination update"
-    - path: "agents/ciso/CLAUDE.md"
-      issue: "Wrong location - should be .claude/agents/ciso.md"
-    - path: "agents/cto/CLAUDE.md"
-      issue: "Wrong location - should be .claude/agents/cto.md"
-    - path: "agents/appsec/CLAUDE.md"
-      issue: "Wrong location - should be .claude/agents/appsec.md"
-  missing:
-    - "Create .claude/agents/ directory with 7 agent .md files using correct YAML frontmatter"
-    - "Enable Agent Teams in .claude/settings.json (CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1)"
-    - "Update SDLC Lead prompt with Agent Teams coordination: spawn teammates, shared task list, mailbox, when to use teams vs subagents"
-    - "Keep agents/*/reference/ as version-controlled reference material (progressive disclosure)"
-  debug_session: ""
+  resolution:
+    - "Migrated all 7 agents from agents/<name>/CLAUDE.md to .claude/agents/<name>.md"
+    - "Added maxTurns: 50 to all agent frontmatter"
+    - "Agent Teams already enabled in settings.json (CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1)"
+    - "Replaced SDLC Lead 'Peer Agent Spawning vs Subagent Spawning' with 'Multi-Agent Coordination Model' (three tiers)"
+    - "Updated agent-registry.md and routing-rules.md with new paths and tier terminology"
+    - "Created redirect README.md in each agents/<name>/ directory"
+    - "Reference directories (agents/<name>/reference/) remain in place"
+  resolved_date: "2026-02-24"
