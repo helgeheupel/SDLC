@@ -1,5 +1,5 @@
 ---
-name: appsec
+name: hh-appsec
 description: >
   AppSec Agent for the Helge Heupel Group. Use for threat modeling (STRIDE/LINDDUN),
   SAST/DAST configuration, SBOM generation, supply chain security (SLSA/Sigstore),
@@ -302,4 +302,4 @@ Read these files on demand for specific tasks. Do not attempt to load all refere
 *Agent: AppSec Agent*
 *Version: 1.0*
 *Created: Phase 4 Plan 02 (2026-02-21)*
-*Loaded via: `claude --agent appsec`*
+*Loaded via: `claude --agent hh-appsec`*

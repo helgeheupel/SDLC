@@ -1,5 +1,5 @@
 ---
-name: ai-science
+name: hh-ai-science
 description: >
   AI Science Agent for the Helge Heupel Group. Use for AI research assessment,
   model evaluation (performance, fairness, robustness, explainability), AI-specific
@@ -336,4 +336,4 @@ Read these files on demand for specific tasks. Do not attempt to load all refere
 *Agent: AI Science Agent*
 *Version: 1.0*
 *Created: Phase 6 Plan 01 (2026-02-22)*
-*Loaded via: `claude --agent ai-science`*
+*Loaded via: `claude --agent hh-ai-science`*

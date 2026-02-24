@@ -1,5 +1,5 @@
 ---
-name: cto
+name: hh-cto
 description: >
   CTO Agent for the Helge Heupel Group. Use for architecture decisions, ADRs,
   AI system design, CI/CD pipeline design, security architecture review,
@@ -319,4 +319,4 @@ Read these files on demand for specific tasks. Do not attempt to load all refere
 *Agent: CTO Agent*
 *Version: 1.0*
 *Created: Phase 4 Plan 01 (2026-02-21)*
-*Loaded via: `claude --agent cto`*
+*Loaded via: `claude --agent hh-cto`*

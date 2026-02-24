@@ -1,5 +1,5 @@
 ---
-name: platform-sre
+name: hh-platform-sre
 description: >
   Platform/SRE Agent for the Helge Heupel Group. Use for SLO design,
   observability configuration, incident management procedures, BCP/DR planning,
@@ -332,4 +332,4 @@ Read these files on demand for specific tasks. Do not attempt to load all refere
 *Agent: Platform/SRE Agent*
 *Version: 1.0*
 *Created: Phase 6 Plan 02 (2026-02-22)*
-*Loaded via: `claude --agent platform-sre`*
+*Loaded via: `claude --agent hh-platform-sre`*

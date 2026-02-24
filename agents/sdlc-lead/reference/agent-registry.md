@@ -3,13 +3,13 @@
 This file describes all 6 specialist agents in the Helge Heupel Group Claude Code agent system. Read this at the start of every new session to understand your specialists.
 
 **Last updated:** 2026-02-22
-**Source of truth:** Each agent's definition in `.claude/agents/[name].md`
+**Source of truth:** Each agent's definition in `.claude/agents/hh-[name].md`
 
 ---
 
 ## CISO Agent
 
-**Agent file:** `.claude/agents/ciso.md`
+**Agent file:** `.claude/agents/hh-ciso.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -56,7 +56,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## CTO Agent
 
-**Agent file:** `.claude/agents/cto.md`
+**Agent file:** `.claude/agents/hh-cto.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -98,7 +98,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## AppSec Agent
 
-**Agent file:** `.claude/agents/appsec.md`
+**Agent file:** `.claude/agents/hh-appsec.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -140,7 +140,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## AI Science Agent
 
-**Agent file:** `.claude/agents/ai-science.md`
+**Agent file:** `.claude/agents/hh-ai-science.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -187,7 +187,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## Platform/SRE Agent
 
-**Agent file:** `.claude/agents/platform-sre.md`
+**Agent file:** `.claude/agents/hh-platform-sre.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -237,7 +237,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## Product/Strategy Agent
 
-**Agent file:** `.claude/agents/product-strategy.md`
+**Agent file:** `.claude/agents/hh-product-strategy.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 

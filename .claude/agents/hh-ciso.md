@@ -1,5 +1,5 @@
 ---
-name: ciso
+name: hh-ciso
 description: >
   CISO Agent for the Helge Heupel Group. Use for information security policy,
   ISMS/AIMS management, risk assessment, EU compliance (NIS2, GDPR, TISAX),
@@ -381,4 +381,4 @@ Read these files on demand for specific tasks. Do not attempt to load all refere
 *Agent: CISO Agent*
 *Version: 1.0*
 *Created: Phase 2 Plan 01 (2026-02-19)*
-*Loaded via: `claude --agent ciso`*
+*Loaded via: `claude --agent hh-ciso`*

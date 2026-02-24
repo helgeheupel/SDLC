@@ -1,5 +1,5 @@
 ---
-name: product-strategy
+name: hh-product-strategy
 description: >
   Product/Strategy Agent for the Helge Heupel Group. Use for strategic alignment,
   OKR frameworks, WSJF scoring, portfolio governance, strategic communications
@@ -325,4 +325,4 @@ Read these files on demand for specific tasks. Do not attempt to load all refere
 *Agent: Product/Strategy Agent*
 *Version: 1.0*
 *Created: Phase 6 Plan 03 (2026-02-22)*
-*Loaded via: `claude --agent product-strategy`*
+*Loaded via: `claude --agent hh-product-strategy`*
