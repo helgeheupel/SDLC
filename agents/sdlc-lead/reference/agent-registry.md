@@ -1,15 +1,15 @@
-# Agent Registry -- SDLC Lead Reference
+# Agent Registry — SDLC Lead Reference
 
 This file describes all 6 specialist agents in the Helge Heupel Group Claude Code agent system. Read this at the start of every new session to understand your specialists.
 
 **Last updated:** 2026-02-22
-**Source of truth:** Each agent's `CLAUDE.md` file in `agents/[name]/CLAUDE.md`
+**Source of truth:** Each agent's definition in `.claude/agents/[name].md`
 
 ---
 
 ## CISO Agent
 
-**Directory:** `agents/ciso/CLAUDE.md`
+**Agent file:** `.claude/agents/ciso.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -56,7 +56,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## CTO Agent
 
-**Directory:** `agents/cto/CLAUDE.md`
+**Agent file:** `.claude/agents/cto.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -98,7 +98,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## AppSec Agent
 
-**Directory:** `agents/appsec/CLAUDE.md`
+**Agent file:** `.claude/agents/appsec.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -140,7 +140,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## AI Science Agent
 
-**Directory:** `agents/ai-science/CLAUDE.md`
+**Agent file:** `.claude/agents/ai-science.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -187,7 +187,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## Platform/SRE Agent
 
-**Directory:** `agents/platform-sre/CLAUDE.md`
+**Agent file:** `.claude/agents/platform-sre.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 
@@ -237,7 +237,7 @@ This file describes all 6 specialist agents in the Helge Heupel Group Claude Cod
 
 ## Product/Strategy Agent
 
-**Directory:** `agents/product-strategy/CLAUDE.md`
+**Agent file:** `.claude/agents/product-strategy.md`
 **Model:** opus
 **Tools:** Read, Write, Edit, Bash, Grep, Glob
 

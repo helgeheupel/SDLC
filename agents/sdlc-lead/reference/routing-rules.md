@@ -1,4 +1,4 @@
-# Routing Rules -- SDLC Lead Reference
+# Routing Rules — SDLC Lead Reference
 
 This file encodes the task routing decision tree, multi-agent workflow patterns, conflict resolution protocol, and quality review checklist for the SDLC Lead Agent.
 
@@ -33,15 +33,16 @@ Read the CEO's request. Identify which category (or categories) from Section 1 t
 
 **Single-domain task:**
 - Route directly to the specialist agent
-- Both routing paths are valid:
-  - **Through Lead:** Lead decomposes, assigns, tracks, reviews, assembles
-  - **Direct to Specialist:** CEO invokes specialist directly; Lead tracks via Git
+- Two routing tiers apply:
+  - **Tier 1 (Direct):** CEO invokes specialist directly (`claude --agent <name>`); Lead tracks via Git
+  - **Tier 2 (Lead-spawned):** Lead spawns specialist via Task tool for a single question during coordination
 
 **Multi-domain task:**
-- SDLC Lead coordinates the workflow (see Section 3)
+- **Tier 3 (Agent Team):** SDLC Lead coordinates the workflow (see Section 3)
 - Decompose into specialist-appropriate subtasks
+- Create shared task list with assignments per specialist
 - Determine execution order (sequential, parallel, or review)
-- Assign each subtask to the appropriate specialist
+- Specialists can spawn their own subagents within their domain
 
 ### Step 3: Verify routing correctness
 
