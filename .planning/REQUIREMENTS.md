@@ -55,8 +55,8 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 
 ### Operational Controls
 
-- [ ] **OPCT-01**: Incident management procedure produced — detection, classification, response, reporting (NIS2 timelines), post-incident review
-- [ ] **OPCT-02**: BCP/DR plan produced — RPO/RTO targets per service tier, failover procedures, testing schedule
+- [x] **OPCT-01**: Incident management procedure produced — detection, classification, response, reporting (NIS2 timelines), post-incident review
+- [x] **OPCT-02**: BCP/DR plan produced — RPO/RTO targets per service tier, failover procedures, testing schedule
 - [x] **OPCT-03**: Access control policy produced — RBAC, least privilege, JIT elevation, MFA, quarterly access reviews
 - [x] **OPCT-04**: Change management procedure produced — risk-tiered approval, CAB for High/Critical, rollback requirements
 - [x] **OPCT-05**: Supplier security requirements defined — vendor risk assessment, contractual security clauses, third-party AI assessment
@@ -151,8 +151,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TISX-01 | Phase 8 | Pending |
 | TISX-02 | Phase 8 | Pending |
 | TISX-03 | Phase 8 | Pending |
-| OPCT-01 | Phase 7 | Pending |
-| OPCT-02 | Phase 7 | Pending |
+| OPCT-01 | Phase 7 | Complete |
+| OPCT-02 | Phase 7 | Complete |
 | OPCT-03 | Phase 7 | Complete |
 | OPCT-04 | Phase 7 | Complete |
 | OPCT-05 | Phase 7 | Complete |
