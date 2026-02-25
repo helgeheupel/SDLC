@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** CEO can interchangeably steer humans and AI agents to produce audit-ready compliance artifacts at enterprise quality with startup speed
-**Current focus:** Phase 7 in progress. Operational control procedures being produced (8 total). Plans 01-02 complete (incident management, BCP/DR, access control, change management).
+**Current focus:** Phase 7 in progress. Operational control procedures being produced (8 total). Plans 01-04 complete (all 8 procedures: incident management, BCP/DR, access control, change management, supplier security, HR security, internal audit, management review).
 
 ## Current Position
 
 Phase: 7 of 10 (Operational Controls)
-Plan: 1 of 4 complete in current phase
-Status: Phase 7 in progress. Plan 02 complete (access control + change management). Plans 01, 03, 04 summaries pending.
-Last activity: 2026-02-25 -- Completed 07-02-PLAN.md (Access Control + Change Management)
+Plan: 4 of 4 complete in current phase
+Status: Phase 7 in progress. Plan 04 complete (internal audit + management review). All 4 plans executed.
+Last activity: 2026-02-25 -- Completed 07-04-PLAN.md (Internal Audit + Management Review)
 
-Progress: [████████░░] 75%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 26
+- Total plans completed: 27
 - Average duration: 8min
-- Total execution time: 3.62 hours
+- Total execution time: 3.72 hours
 
 **By Phase:**
 
@@ -33,14 +33,16 @@ Progress: [████████░░] 75%
 | 4 | 5 | 29min | 6min |
 | 5 | 4 | 27min | 7min |
 | 6 | 4/4 | 24min | 6min |
-| 7 | 1/4 | 4min | 4min |
+| 7 | 2/4 | 10min | 5min |
 
 **Recent Trend:**
-- Last 5 plans: 07-02 (4min), 06-04 (7min), 06-03 (7min), 06-02 (5min), 06-01 (5min)
-- Trend: Phase 7 operational procedures executing efficiently. Plan 02 produced 2 decision-tree procedures (access control 515 lines + change management 443 lines) in 4 min.
+- Last 5 plans: 07-04 (6min), 07-02 (4min), 06-04 (7min), 06-03 (7min), 06-02 (5min)
+- Trend: Phase 7 operational procedures executing efficiently. Plan 04 produced internal audit program (511 lines) + management review procedure (523 lines) in 6 min.
 
 *Updated after each plan completion*
 | Phase 07 P02 | 4min | 2 tasks | 2 files |
+| Phase 07 P04 | 6min | 2 tasks | 2 files |
+| Phase 07 P03 | 6min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -182,6 +184,15 @@ Recent decisions affecting current work:
 - [07-02]: Change classification uses 6-factor assessment (user impact, data sensitivity, AI involvement, regulatory scope, architecture impact, reversibility); highest factor determines tier
 - [07-02]: Emergency changes: CTO can approve alone for SEV1/SEV2; PR within 24h required; reviewed at next Weekly Technical
 - [07-02]: AI agent config changes always require CEO approval per Trust Level 2 regardless of risk tier
+- [07-03]: 3-tier vendor risk assessment (Tier 1: Confidential/Secret with full questionnaire+DPA; Tier 2: Internal with abbreviated; Tier 3: Public with minimal) based on data classification, not supplier size
+- [07-03]: GDPR DPA requirements embedded in supplier security Section 6 with DPA checklist and current inventory (Azure, Neon, Vercel, Cloudflare, Anthropic, OpenAI, GitHub)
+- [07-03]: Fuehrungszeugnis (DE) and VOG (NL) screening gated on Confidential/Secret data access, not all roles -- proportionate under BDSG Sec. 26
+- [07-03]: AI agents explicitly excluded from HR security scope (no NDA, no screening) -- governance via AI Policy, Trust Level 2 boundaries, and session scoping
+- [07-04]: 124 applicable controls in audit universe (86 ISMS + 38 AIMS) assessed in single combined IMS audit
+- [07-04]: Evidence Source flags (CISO-AGENT/SYSTEM/HUMAN) in audit checklist enforce NorthGRC independence boundary
+- [07-04]: IMS Composite Index above 70% with zero Major NCs as Stage 1 readiness target
+- [07-04]: Quarterly full IMS review (Jan/Apr/Jul/Oct) + monthly action tracking at Monthly Strategic meeting
+- [07-04]: Combined IMS minutes template: 7 ISMS inputs (a-g) + 6 AIMS inputs (AI-1 to AI-6) + 3 mandatory outputs
 
 ### Pending Todos
 
@@ -197,6 +208,6 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 07-02-PLAN.md (Access Control + Change Management)
-Resume file: .planning/phases/07-operational-controls/07-02-SUMMARY.md
-Next: 07-03-PLAN.md (Supplier Security + HR Security)
+Stopped at: Completed 07-04-PLAN.md (Internal Audit + Management Review) -- Phase 7 complete (all 4 plans executed)
+Resume file: .planning/phases/07-operational-controls/07-04-SUMMARY.md
+Next: Phase 8 planning

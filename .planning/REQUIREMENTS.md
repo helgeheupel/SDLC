@@ -28,8 +28,8 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 - [x] **ISMS-04**: Risk assessment methodology defined — 5x5 likelihood/impact matrix, calibrated scales, aligned with ISO 31000
 - [x] **ISMS-05**: Risk register produced in YAML-in-Git format — synced to NorthGRC, covering information security and AI risks
 - [x] **ISMS-06**: Risk treatment plan produced — treatment strategy per risk, control mappings, residual risk acceptance
-- [ ] **ISMS-07**: Internal audit program defined — audit schedule, scope, methodology, competence requirements
-- [ ] **ISMS-08**: Management review template produced — mandatory inputs per cl. 9.3.2, mandatory outputs per cl. 9.3.3
+- [x] **ISMS-07**: Internal audit program defined — audit schedule, scope, methodology, competence requirements
+- [x] **ISMS-08**: Management review template produced — mandatory inputs per cl. 9.3.2, mandatory outputs per cl. 9.3.3
 - [x] **ISMS-09**: Document control framework established — version control, approval, distribution, retention per cl. 7.5
 
 ### AIMS Foundation (ISO 42001)
@@ -59,8 +59,8 @@ Requirements for certification readiness by mid-May 2026. Each maps to roadmap p
 - [ ] **OPCT-02**: BCP/DR plan produced — RPO/RTO targets per service tier, failover procedures, testing schedule
 - [x] **OPCT-03**: Access control policy produced — RBAC, least privilege, JIT elevation, MFA, quarterly access reviews
 - [x] **OPCT-04**: Change management procedure produced — risk-tiered approval, CAB for High/Critical, rollback requirements
-- [ ] **OPCT-05**: Supplier security requirements defined — vendor risk assessment, contractual security clauses, third-party AI assessment
-- [ ] **OPCT-06**: HR security procedures produced — screening, awareness training, termination procedures, NDA management
+- [x] **OPCT-05**: Supplier security requirements defined — vendor risk assessment, contractual security clauses, third-party AI assessment
+- [x] **OPCT-06**: HR security procedures produced — screening, awareness training, termination procedures, NDA management
 
 ### Security Engineering
 
@@ -136,8 +136,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ISMS-04 | Phase 3 | Complete |
 | ISMS-05 | Phase 3 | Complete |
 | ISMS-06 | Phase 3 | Complete |
-| ISMS-07 | Phase 7 | Pending |
-| ISMS-08 | Phase 7 | Pending |
+| ISMS-07 | Phase 7 | Complete |
+| ISMS-08 | Phase 7 | Complete |
 | ISMS-09 | Phase 2 | Complete |
 | AIMS-01 | Phase 2 | Complete |
 | AIMS-02 | Phase 5 | Complete |
@@ -155,8 +155,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | OPCT-02 | Phase 7 | Pending |
 | OPCT-03 | Phase 7 | Complete |
 | OPCT-04 | Phase 7 | Complete |
-| OPCT-05 | Phase 7 | Pending |
-| OPCT-06 | Phase 7 | Pending |
+| OPCT-05 | Phase 7 | Complete |
+| OPCT-06 | Phase 7 | Complete |
 | SENG-01 | Phase 4 | Complete |
 | SENG-02 | Phase 4 | Complete |
 | SENG-03 | Phase 4 | Complete |
