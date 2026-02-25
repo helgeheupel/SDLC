@@ -142,12 +142,13 @@ Plans:
   3. An access control policy exists defining RBAC, least privilege, JIT elevation, MFA requirements, and quarterly access review procedures
   4. A change management procedure exists with risk-tiered approval (including CAB for High/Critical), rollback requirements, and traceability
   5. Supplier security requirements, HR security procedures, an internal audit program, and a management review template all exist and reference specific HH systems, personnel, and processes
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 07-01: TBD
-- [ ] 07-02: TBD
-- [ ] 07-03: TBD
+- [ ] 07-01-PLAN.md -- Incident management procedure (full runbook) and BCP/DR plan (full runbook) (OPCT-01, OPCT-02)
+- [ ] 07-02-PLAN.md -- Access control procedure and change management procedure (decision-tree) (OPCT-03, OPCT-04)
+- [ ] 07-03-PLAN.md -- Supplier security procedure and HR security procedure (decision-tree) (OPCT-05, OPCT-06)
+- [ ] 07-04-PLAN.md -- Internal audit program and management review procedure (decision-tree) (ISMS-07, ISMS-08)
 
 ### Phase 8: TISAX Maintenance
 **Goal**: TISAX certification is maintained by mapping existing ISO 27001 evidence to VDA ISA 6 controls without duplicating effort
@@ -206,7 +207,7 @@ Note: Phases 3 and 4 can execute in parallel since Phase 4 depends on Phase 2 (n
 | 4. CTO and AppSec Agents with Security Engineering | 5/5 | Complete | 2026-02-22 |
 | 5. AIMS Core and AI System Registry | 0/4 | Planned | - |
 | 6. Remaining Specialist Agents | 0/TBD | Complete    | 2026-02-22 |
-| 7. Operational Controls | 0/TBD | Not started | - |
+| 7. Operational Controls | 0/4 | Planned | - |
 | 8. TISAX Maintenance | 0/TBD | Not started | - |
 | 9. Toolchain Integration | 0/TBD | Not started | - |
 | 10. Agent ISO 42001 Documentation and Integration | 0/TBD | Not started | - |
