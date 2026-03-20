@@ -14,9 +14,9 @@
 This document compresses the full SDLC-Growth-v2 Enterprise gate structure (5 governance bodies, formal process assessment) into 2 meetings while preserving risk-tiered criteria. It defines the governance model for the Startup phase of the Helge Heupel Group SDLC.
 
 **Related documents:**
-- [SDLC-Startup-v2.md](SDLC-Startup-v2.md) -- Startup SDLC companion document (gate criteria from SDLC Growth Sec. 13)
-- [RACI-Startup.md](RACI-Startup.md) -- Role consolidation RACI matrix (meeting attendees aligned with RACI roles)
-- [protocols/interaction-model.md](protocols/interaction-model.md) -- Agent interaction model
+- [SDLC-Startup-v2.md](SDLC-Startup-v2.md) – Startup SDLC companion document (gate criteria from SDLC Growth Sec. 13)
+- [RACI-Startup.md](RACI-Startup.md) – Role consolidation RACI matrix (meeting attendees aligned with RACI roles)
+- [protocols/interaction-model.md](protocols/interaction-model.md) – Agent interaction model
 
 ---
 

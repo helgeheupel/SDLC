@@ -4,7 +4,7 @@ title: "v2 Strategy-as-Code Operating Model — Milestone Brief"
 version: v0.1
 date: 2026-03-20
 classification: Internal
-author: CEO Helge Heupel (via SDLC Lead Agent)
+author: CEO (via SDLC Lead Agent)
 status: Draft — pending CEO refinement through role-by-role discussion
 ---
 
@@ -38,7 +38,7 @@ Define the complete role model for HH Group across:
 - CISO
 - IT Pentester / Head of Platform
 - Developer (new — proper definition with AI agent)
-- Strategy Partner (3 instances — EY + 2× BearingPoint)
+- Strategy Partner (3 instances — consulting partners)
 - Finance Industry Senior Manager
 - Additional roles as identified during discussion
 
@@ -65,8 +65,8 @@ Every team member gets access to best-in-class AI tooling, role-appropriate:
 - **Developer AI Agent** — proper dev assistant with project context, code review, testing
 - **SEO AI Agent** — uses Similarweb solution for search optimization
 - **Role-adapted SDLC agents** — simplified versions of specialist agents for non-specialist users
-- **Gerrit-specific**: legal/ISO 27001 + coding assistance
-- **René-specific**: financial industries + product design + AI-leveraged promotion
+- **Strategy Partner-specific**: legal/ISO 27001 + coding assistance
+- **Finance Industry Senior Manager-specific**: financial industries + product design + AI-leveraged promotion
 
 ### 4. Role-Based VM Provisioning
 

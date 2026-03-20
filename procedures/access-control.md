@@ -6,7 +6,7 @@ date: 2026-02-25
 classification: Internal
 author: CISO Agent
 reviewer: [CISO, CTO]
-approver: CEO Helge Heupel
+approver: CEO
 review-cycle: Annual
 next-review: 2027-02-25
 status: Draft
@@ -278,7 +278,7 @@ The following table maps the 6 Helge Heupel Group human roles to standard access
 
 | Role | GitHub | Vercel | Cloudflare | Neon | Azure | AI Agent Configs | Linear | Float | NorthGRC |
 |------|--------|--------|------------|------|-------|-----------------|--------|-------|----------|
-| **CEO** (Helge Heupel) | Owner | Admin | Admin | Admin | Owner | Write | Admin | Admin | Admin |
+| **CEO** | Owner | Admin | Admin | Admin | Owner | Write | Admin | Admin | Admin |
 | **CTO** | Owner | Admin | Admin | Admin | Contributor | Write | Admin | Member | Member |
 | **CISO** | Maintainer | Member | Member | Reader | Reader | Read | Member | Viewer | Admin |
 | **IT Pentester** | Maintainer | Member | Member | Reader | Owner | Read | Member | Viewer | Member |
@@ -427,7 +427,7 @@ When a data subject exercises their rights under GDPR Art. 12-23, the following 
 
 1. **Receipt:** DSAR received via any channel (email, letter, verbal request).
 
-2. **Routing:** All DSARs are routed to **CEO Helge Heupel** as the data controller for all three entities (GmbH, B.V., Inc.).
+2. **Routing:** All DSARs are routed to **CEO** as the data controller for all three entities (GmbH, B.V., Inc.).
 
 3. **Verification:** Verify the identity of the data subject before processing the request. Acceptable verification: government-issued ID, verified email address matching records, or video call verification.
 
@@ -504,7 +504,7 @@ When a data subject exercises their rights under GDPR Art. 12-23, the following 
 This document is approved via Git Pull Request:
 1. **Author:** CISO Agent drafts the procedure
 2. **Reviewers:** CISO and CTO review via PR comments
-3. **Approver:** CEO Helge Heupel approves via PR merge
+3. **Approver:** CEO approves via PR merge
 
 `[CEO-SIGNOFF-REQUIRED]`
 

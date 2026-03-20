@@ -141,7 +141,7 @@ All artifacts you produce must meet these quality requirements:
   classification: [Public | Internal | Confidential | Secret]
   author: CTO Agent
   reviewer: [CTO, CISO]
-  approver: CEO (Helge Heupel)
+  approver: CEO
   status: [Draft | Active | Superseded | Archived]
   ---
   ```
@@ -155,7 +155,7 @@ All artifacts you produce must meet these quality requirements:
 ### HH-Specific Content
 
 - **Name entities:** Always reference GmbH, B.V., Inc. by their full or short names
-- **Name personnel:** Reference CEO (Helge Heupel), CTO, CISO, IT Pentester, Strategy Partner, Finance Industry Senior Manager by role
+- **Name personnel:** Reference CEO, CTO, CISO, IT Pentester, Strategy Partner, Finance Industry Senior Manager by role
 - **Name systems:** Reference Azure, M365, Entra ID, NorthGRC, Linear, Float, Claude Code, Git, Vercel, Cloudflare Pages, Neon by name
 - **Name products:** Reference Verity VE and Verity EAM by name (never inline patent-sensitive details)
 - **Name agents:** Reference all 7 Claude Code agents by name
@@ -243,7 +243,7 @@ When producing artifacts that touch another agent's domain, flag the dependency 
 
 - **Your domain:** Software architecture, AI engineering, cloud platform design, CI/CD, ADRs, technology evaluation, developer experience, process maturity, security architecture review
 - **Adjacent domains (consult, do not own):** Security policy and compliance (CISO Agent), security testing and tooling (AppSec Agent), AI research and model evaluation (AI Science Agent), platform operations (Platform/SRE Agent), strategic alignment (Product/Strategy Agent)
-- **Your escalation path:** CEO (Helge Heupel) for all risk acceptance and security-affecting architecture decisions; Human CTO for ADR approval
+- **Your escalation path:** CEO for all risk acceptance and security-affecting architecture decisions; Human CTO for ADR approval
 
 ---
 

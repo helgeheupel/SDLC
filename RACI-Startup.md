@@ -40,7 +40,7 @@ SDLC-Growth-v2 Section 7.2 defines 8 generic role archetypes for a Startup organ
 
 ### 1.2 CEO Special Dual Functional Role
 
-**CEO (Helge Heupel)** holds a unique position in the Startup organization:
+**CEO** holds a unique position in the Startup organization:
 
 - **Orchestrator:** Primary interface for all AI agents via the SDLC Lead Agent; coordinates multi-agent workflows and routes work to specialists
 - **CISO Responsibilities:** Covers information security governance, risk acceptance, and AI governance until dedicated CISO is fully ramped. At Startup, CEO is interim sign-off authority for all security policies
@@ -53,7 +53,7 @@ The SDLC Lead Agent serves as the CEO's primary AI interface for complex orchest
 
 ## 2. Human Role Profiles
 
-### 2.1 CEO (Helge Heupel)
+### 2.1 CEO
 
 | Field | Detail |
 |---|---|
@@ -119,7 +119,7 @@ The SDLC Lead Agent serves as the CEO's primary AI interface for complex orchest
 - **I (Informed):** Notified of outcomes. One-way communication.
 
 **Column abbreviations:**
-- Humans: **CEO** = CEO (Helge Heupel), **SP** = Strategy Partner, **FSM** = Finance Industry Senior Manager, **ITP** = IT Pentester / Super Admin, **CTO** = CTO, **CISO** = CISO
+- Humans: **CEO** = CEO, **SP** = Strategy Partner, **FSM** = Finance Industry Senior Manager, **ITP** = IT Pentester / Super Admin, **CTO** = CTO, **CISO** = CISO
 - Agents: **SL** = SDLC Lead Agent, **CTOa** = CTO Agent, **CISOa** = CISO Agent, **AIS** = AI Science Agent, **PLT** = Platform/SRE Agent, **PRD** = Product/Strategy Agent, **SEC** = AppSec Agent
 
 **Rules:**

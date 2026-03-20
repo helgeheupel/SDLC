@@ -6,7 +6,7 @@ date: 2026-02-19
 classification: Internal
 author: CISO Agent
 reviewer: [CISO, CTO]
-approver: CEO Helge Heupel
+approver: CEO
 review-cycle: Annual
 next-review: 2027-02-19
 status: Draft
@@ -28,7 +28,7 @@ The operational procedures supporting this policy are documented in the Informat
 
 This policy applies to:
 
-- **All personnel** of GmbH, B.V., and Inc., including the CEO (Helge Heupel), CTO, CISO, IT Pentester/Super Admin, Strategy Partner, and Finance Industry Senior Manager
+- **All personnel** of GmbH, B.V., and Inc., including the CEO, CTO, CISO, IT Pentester/Super Admin, Strategy Partner, and Finance Industry Senior Manager
 - **All AI agents** with access to Helge Heupel Group information assets, including the 7 Claude Code agents (SDLC Lead, CTO, CISO, AI Science, Platform/SRE, Product/Strategy, AppSec), ChatGPT, and Codex
 - **All contractors and third parties** with access to Helge Heupel Group information assets
 - **All information assets** across all three entities: source code repositories, customer data, AI model configurations, compliance artifacts, communication data, product specifications, and cryptographic keys
@@ -47,7 +47,7 @@ Detailed scope boundaries for each entity are defined in the per-entity ISMS Sco
 
 ### ISO 27001 cl. 5.1 and cl. 5.2 Commitment
 
-CEO Helge Heupel, as Geschaeftsfuehrer of Helge Heupel GmbH and Bestuurder of Helge Heupel B.V., commits to:
+CEO, as Geschaeftsfuehrer of Helge Heupel GmbH and Bestuurder of Helge Heupel B.V., commits to:
 
 - Establishing this Information Security Policy and ensuring it is appropriate to the purpose and context of the Helge Heupel Group
 - Ensuring that information security objectives are established and compatible with the strategic direction of the organization
@@ -64,9 +64,9 @@ In accordance with the NIS-2-Umsetzungs- und Cybersicherheitsstarkungsgesetz (NI
 
 1. **Personal liability** of the Geschaeftsfuehrer for cybersecurity risk management under Sec. 38 NIS2UmsuCG. The management body bears personal responsibility for approving and overseeing the implementation of cybersecurity risk management measures (NIS2 Art. 21).
 
-2. **Training obligation:** CEO Helge Heupel completes mandatory cybersecurity training annually, covering the current threat landscape, ISMS performance, NIS2 obligations, personal liability implications, and incident response roles. Training completion is recorded and auditable.
+2. **Training obligation:** CEO completes mandatory cybersecurity training annually, covering the current threat landscape, ISMS performance, NIS2 obligations, personal liability implications, and incident response roles. Training completion is recorded and auditable.
 
-3. **Annual acknowledgment:** CEO Helge Heupel signs an annual acknowledgment of management body personal liability for cybersecurity governance. Legal counsel reviews the acknowledgment form annually.
+3. **Annual acknowledgment:** CEO signs an annual acknowledgment of management body personal liability for cybersecurity governance. Legal counsel reviews the acknowledgment form annually.
 
 4. **Liability mitigation:** The ISMS provides a documented defense demonstrating that the management body has fulfilled its duties: approved risk management measures, overseen implementation, completed training, and responded appropriately to identified risks and incidents.
 
@@ -105,7 +105,7 @@ The Helge Heupel Group establishes the following measurable information security
 
 | Role | Person | Information Security Responsibilities |
 |------|--------|--------------------------------------|
-| **CEO** | Helge Heupel | Ultimate policy approver. Accepts all High/Critical residual risk. Geschaeftsfuehrer liability under NIS2UmsuCG Sec. 38. Bestuurder obligations under Wbni. Oversees all 7 AI agents. Interim CISO delegate when human CISO is unavailable. |
+| **CEO** | — | Ultimate policy approver. Accepts all High/Critical residual risk. Geschaeftsfuehrer liability under NIS2UmsuCG Sec. 38. Bestuurder obligations under Wbni. Oversees all 7 AI agents. Interim CISO delegate when human CISO is unavailable. |
 | **CTO** | (Named individual) | Accountable for technical architecture security decisions. Reviews security-relevant code and architecture. Approves deployments at Weekly Technical. Co-reviewer of IS Policy and AI Policy. |
 | **CISO** | (Named individual) | Accountable for ISMS operation. Responsible for IS Policy maintenance, risk assessment, NIS2 compliance, TISAX ISA 6 control mapping, audit readiness, and cross-framework integration. Reports to CEO. |
 | **IT Pentester/Super Admin** | (Named individual) | Head of Platform. Responsible for Azure infrastructure security, penetration testing, platform operations, deployment execution. Hands-on security testing. Attends Weekly Technical. |
@@ -161,7 +161,7 @@ The Helge Heupel Group's risk appetite reflects the balance between competitive 
 
 ### Residual Risk Acceptance Authority
 
-At Startup phase, **CEO Helge Heupel** is the acceptance authority for all High and Critical residual risk. This consolidation reflects the CEO's dual role covering CISO responsibilities and is documented in the governance model. Residual risk acceptance requires:
+At Startup phase, **CEO** is the acceptance authority for all High and Critical residual risk. This consolidation reflects the CEO's dual role covering CISO responsibilities and is documented in the governance model. Residual risk acceptance requires:
 - Risk register entry with justification
 - FAIR analysis for High/Critical risks
 - `[CEO-SIGNOFF-REQUIRED]` tag on all acceptance decisions
@@ -266,7 +266,7 @@ Exceptions to this policy are permitted under the following conditions:
 1. **Documented:** The exception is formally documented with a clear description of the policy requirement being excepted, the reason, the affected systems/data/personnel, and the compensating controls (if any).
 2. **Time-limited:** All exceptions have an expiration date (maximum 12 months). Expired exceptions must be renewed or remediated.
 3. **Risk-assessed:** The CISO assesses the risk introduced by the exception using the standard risk assessment methodology. The risk assessment is recorded in the risk register.
-4. **CEO-approved:** All exceptions require CEO Helge Heupel approval. The exception request is submitted as a Git Pull Request with the `[CEO-SIGNOFF-REQUIRED]` tag.
+4. **CEO-approved:** All exceptions require CEO approval. The exception request is submitted as a Git Pull Request with the `[CEO-SIGNOFF-REQUIRED]` tag.
 5. **Reviewed:** Active exceptions are reviewed at each Monthly Strategic meeting. Exceptions approaching expiration are flagged 30 days in advance.
 
 ### Exception Request Template
@@ -340,7 +340,7 @@ Dit informatieveiligheidsbeleid vormt het kader voor informatiebeveiliging van d
 This document is approved via Git Pull Request. The approval chain is:
 1. **Author:** CISO Agent drafts the document
 2. **Reviewers:** CISO and CTO review via PR comments
-3. **Approver:** CEO Helge Heupel approves via PR merge
+3. **Approver:** CEO approves via PR merge
 
 `[CEO-SIGNOFF-REQUIRED]`
 
